@@ -35,19 +35,27 @@ function boot() {
 
   const ui = new UI(data, {
     onFilter: () => applyFilters(),
-    onPick: (id) => { view.select(id); view.focus(id); ui.showNode(byId.get(id)); },
+    // The panel opens before the camera moves, so the camera knows how much of
+    // the stage is left to frame the node into — on a phone the panel is a
+    // sheet over the foot of it, and the middle of the map is behind it.
+    onPick: (id) => { view.select(id); ui.showNode(byId.get(id)); view.focus(id); },
     onPickEdge: (id) => {
       const e = edgeById.get(id);
       if (!e) return;
       view.selectEdge(e);
       ui.showEdge(e);
+      view.reveal(e.sourceId);
     },
     onClosePanel: () => view.select(null),
   });
 
   const view = new GraphView(el('canvas'), data, {
-    onSelect: (n) => (n ? ui.showNode(n) : ui.closePanel()),
-    onSelectEdge: (e) => ui.showEdge(e),
+    onSelect: (n) => {
+      if (!n) { ui.closePanel(); return; }
+      ui.showNode(n);
+      view.reveal(n.id);
+    },
+    onSelectEdge: (e) => { ui.showEdge(e); view.reveal(e.sourceId); },
     onHover: (n, pt) => ui.showTooltip(n, pt),
   });
 
@@ -138,7 +146,11 @@ function boot() {
   // A handle on the live view, for the console and for layout checks.
   MAP.view = view;
 
-  window.addEventListener('resize', () => view.resize());
+  const onResize = () => view.resize();
+  window.addEventListener('resize', onResize);
+  // A rotation does not always arrive as a resize, and where it does the new
+  // viewport is not always measurable yet, so it is re-measured a beat later.
+  window.addEventListener('orientationchange', () => setTimeout(onResize, 180));
   document.addEventListener('keydown', (ev) => {
     if (ev.key === '/' && document.activeElement !== el('search')) {
       ev.preventDefault();

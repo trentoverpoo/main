@@ -136,6 +136,14 @@ economical shape than a web, so on a window narrower than about 1700 pixels it
 is larger than the stage and the opening frame scales down to fit it — the map
 pans and zooms, and past a certain smallness only the hubs keep a name.
 
+**On a portrait screen the ladder folds.** Eleven long courses laid across a
+phone would frame as a band through the middle with the screen empty above and
+below, so a course longer than the width continues on the line beneath it. The
+authored order is untouched — the course turns the corner, and keeps its band.
+Where it folds is not a guess: the layout measures the candidate widths and
+takes whichever one leaves the map drawn largest. A landscape screen of any
+size, desktop to phone-on-its-side, frames the ladder exactly as it always has.
+
 **Nothing moves on its own.** Clicking a node selects it; dragging one moves
 that node and no other. An arrangement made by hand is therefore an arrangement
 that survives the next thing you pick up, and a window resize. The force
@@ -157,12 +165,14 @@ from the ladder, and returning the map to it.
 | | |
 |---|---|
 | Drag background / wheel | Pan, zoom |
+| One finger / two fingers | Pan, pinch to zoom |
 | Drag a node | Move it, and only it — every other position holds. A click on its own moves nothing at all |
-| Click a node | Focus it, dim everything but its neighbours, open its panel |
-| Click a connection | Open *that connection's* sources — an edge's citation is never more than one click away |
-| Hover | Name, category, date, source and connection counts |
+| Click or tap a node | Focus it, dim everything but its neighbours, open its panel |
+| Click or tap a connection | Open *that connection's* sources — an edge's citation is never more than one click away |
+| Double-click / double-tap the plane | Re-frame the whole web — the way back from a zoom |
+| Hover | Name, category, date, source and connection counts. A pointer thing: touch goes from a tap straight to the panel |
 | `/` | Jump to search |
-| Sidebar | Filter by category, connection type and how well established |
+| Sidebar | Filter by category, connection type and how well established. Below 900px it is a drawer over the map, behind **Filters** |
 | **Sources** | The map inverted — every document, and what rests on it |
 | **Not claimed** | What the record does not support, and why some expected lines are absent |
 | **Tipline** | What kind of information is useful to send in, and that identities are kept anonymous |

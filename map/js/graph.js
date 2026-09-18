@@ -41,6 +41,14 @@ const MARGIN = 26;         // inset from the stage edge, so no name is clipped
 const WORLD_MIN = [960, 620];
 const TOPBAR = 52;         // the floating toolbar, which the frame sits clear of
 const DRAG_SLOP = 3;       // px of movement that separates a drag from a click
+// A fingertip is a blunter instrument than a cursor and covers what it is
+// aiming at, so what counts as "on" a node or a line is wider for touch.
+const HIT_SLOP = 9;
+const HIT_SLOP_COARSE = 20;
+const EDGE_SLOP = 7;
+const EDGE_SLOP_COARSE = 14;
+const ZOOM_MIN = 0.22;
+const ZOOM_MAX = 4.5;
 
 /** At most two lines, split at whichever space leaves the evenest pair: a
  *  residuary trust reads better stacked than as one line the width of a
@@ -152,9 +160,18 @@ class GraphView {
    *  keeps a floor and scales down rather than jamming the web together. */
   _measureStage() {
     const rect = this.canvas.getBoundingClientRect();
+    const w = rect.width || 1040;
+    const h = rect.height || 720;
+    // The floor is there so a small window scales the map down rather than
+    // jamming it together. It holds the same room whichever way round the
+    // screen is and takes the screen's own proportions: a floor shaped unlike
+    // the stage frames the map as a band across the middle of it, with the rest
+    // of the glass left empty.
+    const minW = Math.sqrt(WORLD_MIN[0] * WORLD_MIN[1] * (w / Math.max(1, h)));
+    const minH = (WORLD_MIN[0] * WORLD_MIN[1]) / minW;
     this.stageBase = [
-      Math.max(WORLD_MIN[0], (rect.width || 1040) - MARGIN * 2),
-      Math.max(WORLD_MIN[1], (rect.height || 720) - MARGIN * 2 - TOPBAR),
+      Math.max(minW, w - MARGIN * 2),
+      Math.max(minH, h - MARGIN * 2 - TOPBAR),
     ];
     this._sizeWorld();
   }
@@ -415,15 +432,60 @@ class GraphView {
     this.draw();
   }
 
+  /** The part of the stage a reader can actually see. The toolbar floats over
+   *  the top of it. The detail panel, when it is open, takes the right of it on
+   *  a wide screen and the foot of it on a narrow one, where it opens as a sheet
+   *  instead — so it is measured rather than assumed, and from the panel's own
+   *  size rather than its position, which is mid-slide as often as not. */
+  viewRect() {
+    const r = { left: 0, top: TOPBAR, right: this.width, bottom: this.height };
+    const panel = document.getElementById('panel');
+    if (!panel || !panel.classList.contains('open')) return r;
+    if (panel.offsetWidth >= this.width - 1) {
+      r.bottom = Math.max(r.top + 100, this.height - panel.offsetHeight);
+    } else {
+      r.right = Math.max(r.left + 100, this.width - panel.offsetWidth);
+    }
+    return r;
+  }
+
   focus(id, zoom = 1.5) {
     const n = this.nodes.find((x) => x.id === id);
     if (!n) return;
-    const rect = this.canvas.getBoundingClientRect();
-    const target = { x: rect.width / 2 - n.x * zoom, y: rect.height / 2 - n.y * zoom, k: zoom };
-    this._animateCamera(target);
+    const v = this.viewRect();
+    this._animateCamera({
+      x: (v.left + v.right) / 2 - n.x * zoom,
+      y: (v.top + v.bottom) / 2 - n.y * zoom,
+      k: zoom,
+    });
+  }
+
+  /** Pans, and only as far as it has to, to bring a node out from under the
+   *  detail panel. Picking something is never what should hide it. */
+  reveal(id, pad = 46) {
+    const n = this.nodes.find((x) => x.id === id);
+    if (!n || !this.width) return;
+    const v = this.viewRect();
+    const s = this.toScreen(n);
+    let dx = 0;
+    let dy = 0;
+    if (s.x < v.left + pad) dx = v.left + pad - s.x;
+    else if (s.x > v.right - pad) dx = v.right - pad - s.x;
+    if (s.y < v.top + pad) dy = v.top + pad - s.y;
+    else if (s.y > v.bottom - pad) dy = v.bottom - pad - s.y;
+    if (!dx && !dy) return;
+    this._animateCamera({ x: this.camera.x + dx, y: this.camera.y + dy, k: this.camera.k });
   }
 
   _animateCamera(target) {
+    // Someone who has asked for less motion gets the destination, not the
+    // flight to it. The CSS honours the same preference for the drawer and
+    // the panel; this is the half of it CSS cannot reach.
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      Object.assign(this.camera, target);
+      this.draw();
+      return;
+    }
     const from = { ...this.camera };
     const t0 = performance.now();
     const dur = 460;
@@ -457,15 +519,15 @@ class GraphView {
       minX = Math.min(minX, b.x0); maxX = Math.max(maxX, b.x1);
       minY = Math.min(minY, b.y0); maxY = Math.max(maxY, b.y1);
     }
-    // The toolbar floats over the top of the stage, so the frame starts below it.
-    const availW = this.width - pad * 2;
-    const availH = this.height - TOPBAR - pad;
-    const k = Math.max(0.22, Math.min(1.6,
+    const v = this.viewRect();
+    const availW = v.right - v.left - pad * 2;
+    const availH = v.bottom - v.top - pad;
+    const k = Math.max(ZOOM_MIN, Math.min(1.6,
       Math.min(availW / Math.max(1, maxX - minX), availH / Math.max(1, maxY - minY))));
     const target = {
       k,
-      x: this.width / 2 - ((minX + maxX) / 2) * k,
-      y: TOPBAR + availH / 2 - ((minY + maxY) / 2) * k,
+      x: (v.left + v.right) / 2 - ((minX + maxX) / 2) * k,
+      y: v.top + availH / 2 - ((minY + maxY) / 2) * k,
     };
     animate ? this._animateCamera(target) : Object.assign(this.camera, target);
     this.draw();
@@ -809,22 +871,22 @@ class GraphView {
 
   // -------------------------------------------------------- interaction ---
 
-  nodeAt(px, py) {
+  nodeAt(px, py, slop = HIT_SLOP) {
     const w = this.toWorld(px, py);
     let best = null;
     let bestD = Infinity;
     for (const n of this.nodes) {
       if (this._nodeState(n) === 'hidden') continue;
       const d = Math.hypot(n.x - w.x, n.y - w.y);
-      if (d < n.radius + 9 && d < bestD) { best = n; bestD = d; }
+      if (d < n.radius + slop && d < bestD) { best = n; bestD = d; }
     }
     return best;
   }
 
   /** Nearest visible edge to a screen point, by sampling the drawn curve. */
-  edgeAt(px, py) {
+  edgeAt(px, py, slop = EDGE_SLOP) {
     const w = this.toWorld(px, py);
-    const tol = 7 / this.camera.k;
+    const tol = slop / this.camera.k;
     let best = null;
     let bestD = tol;
     for (const e of this.edges) {
@@ -856,16 +918,52 @@ class GraphView {
     const c = this.canvas;
     let dragging = null;
     let panning = null;
+    let pinch = null;
+    // Every pointer currently down, so a second finger can be recognised as the
+    // start of a pinch rather than mistaken for a second drag.
+    const pointers = new Map();
+    let coarse = false;
+    let swallowClick = false;
 
     const pos = (ev) => {
       const r = c.getBoundingClientRect();
       return { x: ev.clientX - r.left, y: ev.clientY - r.top };
     };
+    const zoomTo = (k, sx, sy, wx, wy) => {
+      this.camera.k = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, k));
+      this.camera.x = sx - wx * this.camera.k;
+      this.camera.y = sy - wy * this.camera.k;
+    };
+    const twoPoints = () => [...pointers.values()].slice(0, 2);
 
     c.addEventListener('pointerdown', (ev) => {
       const pt = pos(ev);
-      const n = this.nodeAt(pt.x, pt.y);
+      if (pointers.size === 0) swallowClick = false;
+      coarse = ev.pointerType !== 'mouse';
+      pointers.set(ev.pointerId, pt);
       c.setPointerCapture(ev.pointerId);
+
+      if (pointers.size === 2) {
+        // Two fingers zoom and pan as one gesture. Whatever one finger had
+        // started is abandoned rather than left half-applied: a node must not
+        // come along for the ride while the map is being scaled.
+        const [a, b] = twoPoints();
+        const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+        pinch = {
+          dist: Math.hypot(a.x - b.x, a.y - b.y) || 1,
+          k: this.camera.k,
+          world: this.toWorld(mid.x, mid.y),
+        };
+        dragging = null;
+        panning = null;
+        c.classList.remove('dragging');
+        if (this.hover) { this.hover = null; this.draw(); }
+        this.onHover(null);
+        return;
+      }
+      if (pointers.size > 2) return;
+
+      const n = this.nodeAt(pt.x, pt.y, coarse ? HIT_SLOP_COARSE : HIT_SLOP);
       if (n) {
         // Armed, not started: a click is a press and a release in the same
         // place, and it must leave the map alone. The drag begins on the first
@@ -879,6 +977,21 @@ class GraphView {
 
     c.addEventListener('pointermove', (ev) => {
       const pt = pos(ev);
+      if (pointers.has(ev.pointerId)) pointers.set(ev.pointerId, pt);
+
+      if (pinch && pointers.size >= 2) {
+        // The world point under the midpoint where the pinch began is held
+        // under the midpoint now: the map scales about the fingers and follows
+        // them if they travel, which is the one gesture rather than two.
+        const [a, b] = twoPoints();
+        const dist = Math.hypot(a.x - b.x, a.y - b.y) || 1;
+        zoomTo(pinch.k * (dist / pinch.dist),
+          (a.x + b.x) / 2, (a.y + b.y) / 2, pinch.world.x, pinch.world.y);
+        swallowClick = true;
+        this.draw();
+        return;
+      }
+
       if (dragging) {
         if (!dragging.live) {
           if (Math.hypot(pt.x - dragging.from.x, pt.y - dragging.from.y) <= DRAG_SLOP) return;
@@ -902,6 +1015,10 @@ class GraphView {
         this.draw();
         return;
       }
+      // Hover is a cursor idea. A finger has nowhere to rest, and a tooltip
+      // chasing it would sit under the finger that summoned it, so touch goes
+      // straight from a tap to the detail panel.
+      if (ev.pointerType !== 'mouse') return;
       const n = this.nodeAt(pt.x, pt.y);
       const id = n ? n.id : null;
       if (id !== this.hover) {
@@ -913,6 +1030,31 @@ class GraphView {
     });
 
     const end = (ev) => {
+      pointers.delete(ev.pointerId);
+      if (pinch) {
+        if (pointers.size >= 2) {
+          // A third finger lifting changes which two define the gesture, so the
+          // baseline is re-taken here rather than left describing a pair that is
+          // no longer on the glass.
+          const [a, b] = twoPoints();
+          pinch = {
+            dist: Math.hypot(a.x - b.x, a.y - b.y) || 1,
+            k: this.camera.k,
+            world: this.toWorld((a.x + b.x) / 2, (a.y + b.y) / 2),
+          };
+          return;
+        }
+        pinch = null;
+        swallowClick = true;
+        // One finger left of two: it takes over as a pan from where it is, so
+        // lifting the other does not throw the map across the screen. It counts
+        // as moved, because a pinch is not a tap on empty space.
+        const [rest] = twoPoints();
+        panning = rest
+          ? { x: rest.x, y: rest.y, cx: this.camera.x, cy: this.camera.y, moved: true }
+          : null;
+        return;
+      }
       if (dragging) {
         // Where it was dropped is where it stays, and the seat it would be
         // held to — by the ring morph, the one thing that still runs the
@@ -933,10 +1075,13 @@ class GraphView {
     c.addEventListener('pointercancel', end);
 
     c.addEventListener('click', (ev) => {
+      // A pinch can end in a click on the browsers that synthesise one. It is
+      // not a selection, so it is spent here rather than acted on.
+      if (swallowClick) { swallowClick = false; return; }
       const pt = pos(ev);
-      const n = this.nodeAt(pt.x, pt.y);
+      const n = this.nodeAt(pt.x, pt.y, coarse ? HIT_SLOP_COARSE : HIT_SLOP);
       if (n) { this.select(n.id); this.onSelect(n); return; }
-      const e = this.edgeAt(pt.x, pt.y);
+      const e = this.edgeAt(pt.x, pt.y, coarse ? EDGE_SLOP_COARSE : EDGE_SLOP);
       if (e) { this.selectEdge(e); this.onSelectEdge(e); }
     });
 
@@ -949,12 +1094,25 @@ class GraphView {
       ev.preventDefault();
       const pt = pos(ev);
       const w = this.toWorld(pt.x, pt.y);
-      const k = Math.max(0.22, Math.min(4.5, this.camera.k * Math.exp(-ev.deltaY * 0.0014)));
-      this.camera.k = k;
-      this.camera.x = pt.x - w.x * k;
-      this.camera.y = pt.y - w.y * k;
+      // A trackpad pinch arrives as a ctrl-held wheel, and wants a firmer step
+      // than a scroll wheel does.
+      const step = ev.ctrlKey ? 0.009 : 0.0014;
+      zoomTo(this.camera.k * Math.exp(-ev.deltaY * step), pt.x, pt.y, w.x, w.y);
       this.draw();
     }, { passive: false });
+
+    // Double-tapping the empty plane re-frames the whole web. Pinching about on
+    // a small screen is easy to get lost in, and this is the way back. On a
+    // name it does nothing beyond the selection the taps already made: what a
+    // reader wants after picking something is not the map pulled out from
+    // under them.
+    c.addEventListener('dblclick', (ev) => {
+      const pt = pos(ev);
+      const slop = coarse ? HIT_SLOP_COARSE : HIT_SLOP;
+      if (this.nodeAt(pt.x, pt.y, slop)) return;
+      ev.preventDefault();
+      this.fit(16, true);
+    });
   }
 }
 

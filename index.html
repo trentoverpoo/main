@@ -13,6 +13,8 @@
 <div id="app">
 
   <aside id="sidebar">
+    <button id="sidebar-close" aria-label="Close filters">✕</button>
+
     <div class="masthead">
       <h1>SWMo - Data Center Network Map</h1>
       <p>Every entity and every connection on this map cites a document in this
@@ -64,8 +66,13 @@
     <canvas id="canvas"></canvas>
 
     <div id="topbar">
-      <button id="open-tipline" title="Send a tip">Tipline</button>
-      <button id="open-modal" title="What this map claims, and what it does not">Not claimed</button>
+      <button id="open-filters" aria-expanded="false" aria-controls="sidebar"
+              aria-label="Filters and legend">Filters</button>
+      <button id="open-tipline" title="Send a tip" aria-label="Send a tip"
+              data-short="Tip">Tipline</button>
+      <button id="open-modal" title="What this map claims, and what it does not"
+              aria-label="What this map claims, and what it does not"
+              data-short="Claims">Not claimed</button>
       <a href="sources.html">Sources</a>
       <button id="theme-toggle">Light</button>
     </div>
@@ -80,6 +87,8 @@
       </div>
     </aside>
   </div>
+
+  <div id="scrim" hidden></div>
 
   <div id="timeline">
     <button id="play" aria-label="Play" title="Play the network assembling"></button>

@@ -46,6 +46,7 @@ class UI {
     this._buildTiers();
     this._buildAgeKey();
     this._buildSearch();
+    this._buildDrawer();
     this._buildPanel();
     this._buildModal();
     this._buildTiplineModal();
@@ -214,12 +215,40 @@ class UI {
       if (!b) return;
       close();
       input.value = '';
+      input.blur();
+      this.setDrawer(false);
       this.h.onPick(b.dataset.id);
     });
 
     el('search-clear').addEventListener('click', () => { input.value = ''; close(); input.focus(); });
     document.addEventListener('click', (ev) => {
       if (!ev.target.closest('.search-wrap')) close();
+    });
+  }
+
+  // -------------------------------------------------------------- drawer ---
+
+  /** Below the small-screen breakpoint the sidebar is a drawer over the map.
+   *  Above it the class does nothing, so the same wiring runs at every width
+   *  and there is no size to watch for. */
+  _buildDrawer() {
+    const bar = el('sidebar');
+    const scrim = el('scrim');
+    const toggle = el('open-filters');
+
+    const set = (open) => {
+      bar.classList.toggle('open', open);
+      scrim.hidden = false;
+      scrim.classList.toggle('show', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    this.setDrawer = set;
+
+    toggle.addEventListener('click', () => set(!bar.classList.contains('open')));
+    el('sidebar-close').addEventListener('click', () => { set(false); toggle.focus(); });
+    scrim.addEventListener('click', () => set(false));
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && bar.classList.contains('open')) set(false);
     });
   }
 
@@ -231,7 +260,7 @@ class UI {
       const edge = ev.target.closest('[data-edge]');
       if (edge) { this.h.onPickEdge(edge.dataset.edge); return; }
       const b = ev.target.closest('[data-goto]');
-      if (b) this.h.onPick(b.dataset.goto);
+      if (b) { this.setDrawer(false); this.h.onPick(b.dataset.goto); }
     });
   }
 

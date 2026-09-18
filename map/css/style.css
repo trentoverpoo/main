@@ -64,7 +64,13 @@
 html, body {
   margin: 0;
   height: 100%;
+  /* Mobile browsers grow and shrink the viewport as their chrome slides in and
+     out. dvh follows that; the vh above it is the fallback for anything that
+     does not know the unit, and is what desktop uses either way. */
+  height: 100dvh;
   overflow: hidden;
+  /* No rubber-banding or pull-to-refresh behind a map you drag with a finger. */
+  overscroll-behavior: none;
   background: var(--plane);
   color: var(--ink);
   font-family: var(--font);
@@ -85,10 +91,22 @@ a { color: var(--accent); }
 }
 
 #stage { position: relative; grid-row: 1; overflow: hidden; }
-#canvas { display: block; width: 100%; height: 100%; cursor: grab; }
+#canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
 #canvas.dragging { cursor: grabbing; }
 
 /* ------------------------------------------------------------ sidebar --- */
+
+/* Below the breakpoint the sidebar leaves the grid and slides over the map as
+   a drawer; these two exist only for that, and stay out of the way until then. */
+#sidebar-close, #open-filters { display: none; }
+
+#scrim {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+}
+#scrim[hidden] { display: none; }
 
 #sidebar {
   grid-row: 1 / span 2;
@@ -419,7 +437,16 @@ a { color: var(--accent); }
 
 /* --------------------------------------------------------- sources --- */
 
-body.sources { overflow: auto; }
+/* The document pages scroll as documents. The map's shell pins the body to the
+   viewport, which would leave these trapped in a scrolling body — a nested
+   scroller as far as a mobile browser is concerned, so its address bar never
+   retracts and the scroll never gets momentum. */
+html:has(body.sources), body.sources {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+  overscroll-behavior: auto;
+}
 .sources-wrap { max-width: 940px; margin: 0 auto; padding: 44px 20px 80px; }
 .sources-wrap h1 { font-size: 26px; letter-spacing: -0.02em; margin: 0 0 8px; }
 .sources-wrap .lede { color: var(--ink-2); font-size: 14px; line-height: 1.65; margin: 0 0 26px; max-width: 64ch; }
@@ -453,14 +480,133 @@ body.sources { overflow: auto; }
 }
 #doc-filter:focus { border-color: var(--accent); }
 
+/* ------------------------------------------------------ small screens --- */
+
+/* A phone has one screen's worth of room and the map is what it is for, so the
+   sidebar stops taking a share of it: it becomes a drawer over the map, the
+   detail panel becomes a sheet rising from the bottom, and the canvas keeps
+   everything else. Controls grow to finger size on the way. */
 @media (max-width: 900px) {
-  #app { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; }
-  #sidebar {
-    grid-row: 1; grid-column: 1; max-height: 38vh;
-    border-right: 0; border-bottom: 1px solid var(--hairline);
+  #app {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
   }
-  #stage { grid-row: 2; grid-column: 1; }
-  #timeline { grid-row: 3; grid-column: 1; padding: 10px 16px; flex-wrap: wrap; }
-  #panel { width: 100%; }
+
+  #stage { grid-row: 1; grid-column: 1; }
+
+  /* --- the sidebar, as a drawer --- */
+  #sidebar {
+    position: fixed; z-index: 55;
+    top: 0; bottom: 0; left: 0;
+    width: min(86vw, 330px);
+    border-right: 1px solid var(--hairline);
+    transform: translateX(-100%);
+    transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 18px 0 44px rgba(0, 0, 0, 0.36);
+    padding-top: 46px;
+  }
+  #sidebar.open { transform: none; }
+  #scrim.show { opacity: 1; pointer-events: auto; }
+
+  #sidebar-close {
+    display: grid; place-items: center;
+    position: absolute; top: 9px; right: 9px;
+    width: 38px; height: 38px; border-radius: 50%;
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--ink-2); cursor: pointer; font-size: 14px;
+  }
+
+  #open-filters { display: inline-flex; align-items: center; }
+
+  /* --- room for a fingertip --- */
+  .check { padding: 8px 6px; }
+  .check .label { font-size: 13px; }
+  #suggest button { padding: 11px 11px; }
+  /* Under 16px iOS zooms the whole page in on focus and leaves it there. */
+  #search, #doc-filter { font-size: 16px; padding-top: 11px; padding-bottom: 11px; }
+  .sidebar-foot { font-size: 12px; gap: 10px; }
+
+  /* --- the floating toolbar --- */
+  #topbar {
+    top: 10px; left: 10px; right: 10px;
+    flex-wrap: wrap; justify-content: flex-end; gap: 6px;
+  }
+  /* The sheet rises from the bottom rather than covering the right edge, so
+     the toolbar has no reason to move out of its way. */
+  #stage.panel-open #topbar { left: 10px; right: 10px; }
+  #topbar button, #topbar a {
+    padding: 9px 11px; min-height: 38px; display: inline-flex; align-items: center;
+  }
+
+  /* --- the detail panel, as a bottom sheet --- */
+  #panel {
+    position: fixed; z-index: 45;
+    top: auto; right: 0; bottom: 0; left: 0;
+    width: 100%; max-width: none;
+    height: 74vh;
+    height: 74dvh;
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+    border-radius: var(--r) var(--r) 0 0;
+    transform: translateY(101%);
+    box-shadow: 0 -18px 44px rgba(0, 0, 0, 0.36);
+  }
+  .panel-inner { padding: 16px var(--pad) 40px; }
+  #panel-close { top: 6px; width: 38px; height: 38px; }
+  /* A bar across the top edge, so the panel reads as a sheet that pulls up. */
+  #panel::before {
+    content: ""; position: absolute; z-index: 1;
+    top: 8px; left: 50%; transform: translateX(-50%);
+    width: 42px; height: 4px; border-radius: 3px;
+    background: var(--hairline);
+  }
+
+  /* --- the timeline --- */
+  #timeline { grid-row: 2; grid-column: 1; padding: 9px 12px 11px; gap: 11px; }
+  /* A range thumb is a small target; the track keeps its look and the row
+     around it grows. */
+  #scrubber { height: 26px; }
+  #ring-toggle { padding: 9px 11px; min-height: 38px; }
+
   .sources-wrap { padding: 28px 16px 60px; }
+  .modal-card { padding: 24px 18px 30px; }
+  #modal, #tipline-modal { padding: 16px 12px; }
+}
+
+/* On a phone the five toolbar buttons do not fit a row at their full names, and
+   two rows of chrome over a small map costs more than the words are worth. The
+   accessible name is on aria-label, so only the visible text is shortened. */
+@media (max-width: 560px) {
+  #topbar [data-short] { font-size: 0; }
+  #topbar [data-short]::after { content: attr(data-short); font-size: 12px; }
+  #topbar button, #topbar a { padding: 9px 10px; }
+
+  /* The readout carries the date; the sentence under it does not survive the
+     width, and the same count is on the masthead. */
+  #scrub-count { display: none; }
+  .scrub-head { justify-content: flex-start; }
+
+  .masthead h1 { font-size: 16px; }
+  .modal-card h2 { font-size: 19px; }
+  .sources-wrap h1 { font-size: 22px; }
+  .p-title { font-size: 18px; }
+}
+
+/* Landscape on a phone is mostly a strip of screen. The timeline is the one
+   piece that can stand down to give the map its height back. */
+@media (max-height: 460px) and (max-width: 900px) {
+  #timeline { padding: 5px 12px 6px; gap: 9px; }
+  /* The date the cursor is on is the point of the scrubber and stays. The
+     sentence beside it is the one that can go. */
+  #scrub-count { display: none; }
+  .scrub-head { justify-content: flex-start; }
+  .scrub-head strong { font-size: 12px; }
+  #play { width: 30px; height: 30px; }
+  #panel { height: 92vh; height: 92dvh; }
+}
+
+/* Someone who has asked for less motion should not be handed a sliding drawer,
+   a sheet, or a camera that flies to a node. */
+@media (prefers-reduced-motion: reduce) {
+  #sidebar, #panel, #scrim, #topbar { transition: none; }
 }

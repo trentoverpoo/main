@@ -26,6 +26,7 @@ const ROW_GAP = 8;    // between courses inside a band
 const BAND_GAP = 28;  // between bands, so the ladder reads as steps
 const SWEEPS = 8;     // barycenter passes; converges well before this
 const PULL = 0.78;    // how far a name follows its connections, vs its own slot
+const FOLD_TRIES = 24;  // fold widths measured on a portrait stage; see seed()
 
 /** Places `members` along one course. The authored order is the reading order
  *  and is never re-sorted — `tx` only says where inside that order a node
@@ -58,6 +59,70 @@ function spread(members, halfW) {
   if (shift) for (const n of members) n.x += shift;
 }
 
+/** A portrait screen is the one shape the ladder cannot fill: eleven courses
+ *  laid across it frame as a band through the middle, with the screen empty
+ *  above and below and every name too small to read. There, a course longer
+ *  than the width continues on the line beneath it. The authored order is
+ *  untouched — the course just turns the corner — so the reading order and the
+ *  band it belongs to survive the fold.
+ *
+ *  Lines are evened out rather than filled to the brim, because a course
+ *  packed greedily ends on a line holding one name, which reads as a stray
+ *  rather than as the end of a course. */
+function foldCourse(members, width) {
+  const w = members.map((n) => 2 * n.boxHW + COL_GAP);
+  const total = w.reduce((s, x) => s + x, -COL_GAP);
+  if (total <= width || members.length < 2) return [members];
+
+  const lines = Math.ceil(total / width);
+  const target = total / lines;
+  const out = [];
+  let run = [];
+  let span = -COL_GAP;
+  for (let i = 0; i < members.length; i++) {
+    const linesLeft = lines - out.length;
+    // Closing here must still leave a name for every line that is left.
+    const canClose = run.length && members.length - i >= linesLeft - 1;
+    if (canClose && (span + w[i] > width || (linesLeft > 1 && span + w[i] > target))) {
+      out.push(run);
+      run = [];
+      span = -COL_GAP;
+    }
+    run.push(members[i]);
+    span += w[i];
+  }
+  if (run.length) out.push(run);
+  return out;
+}
+
+/** One course laid out end to end, in world units. */
+function courseSpan(members) {
+  return members.reduce((s, n) => s + 2 * n.boxHW + COL_GAP, -COL_GAP);
+}
+
+/** Folds every course to a width, keeping each one's band and its place in the
+ *  ladder. The first course stays the first: it is the one the map hangs from. */
+function foldAll(rows, width) {
+  return rows.flatMap((c) => foldCourse(c.members, width).map((members, i) => ({
+    band: c.band, members, first: c.first && i === 0,
+  })));
+}
+
+/** Writes the heights, gaps and spans a list of courses needs, and returns the
+ *  box they come to. */
+function measure(rows) {
+  rows.forEach((c, i) => {
+    c.up = Math.max(...c.members.map((n) => n.boxUp));
+    c.down = Math.max(...c.members.map((n) => n.boxDown));
+    c.gap = i === 0 ? 0 : rows[i - 1].band === c.band ? ROW_GAP : BAND_GAP;
+    c.span = courseSpan(c.members);
+  });
+  return [
+    Math.max(...rows.map((c) => c.span)),
+    rows.reduce((s, c) => s + c.gap + c.up + c.down, 0),
+  ];
+}
+
 /** Reads the authored hierarchy into a flat list of courses, top to bottom.
  *  Anything the hierarchy does not name still has to be drawn, so it lands on
  *  a course of its own at the foot of the map and says so — though the build
@@ -72,7 +137,9 @@ function courses(nodes, hierarchy) {
       const members = row.map((id) => byId.get(id)).filter(Boolean);
       if (!members.length) continue;
       for (const n of members) { n.band = band.key; seated.add(n.id); }
-      out.push({ band: bi, members });
+      // The first course is the one the rest of the map hangs from, and it is
+      // the one course that is never pulled onto its own contents.
+      out.push({ band: bi, members, first: out.length === 0 });
     }
   });
 
@@ -81,7 +148,7 @@ function courses(nodes, hierarchy) {
     console.warn('map: no seat in the taxonomy.yaml hierarchy for ' +
       orphans.map((n) => n.id).join(', '));
     for (const n of orphans) n.band = 'unplaced';
-    out.push({ band: hierarchy.length, members: orphans });
+    out.push({ band: hierarchy.length, members: orphans, first: out.length === 0 });
   }
   return out;
 }
@@ -92,21 +159,36 @@ function courses(nodes, hierarchy) {
  *  comes to — whereas a course squeezed into less room than its names need
  *  would simply overlap. */
 function seed(nodes, edges, hierarchy, [worldW, worldH]) {
-  const rows = courses(nodes, hierarchy || []);
-  if (!rows.length) return [worldW, worldH];
+  const authored = courses(nodes, hierarchy || []);
+  if (!authored.length) return [worldW, worldH];
+
+  // Only a portrait stage folds. Every landscape one — desktop, laptop, tablet,
+  // a phone turned on its side — frames the ladder exactly as it always has.
+  let rows = authored;
+  if (worldH > worldW) {
+    // Where to fold decides the shape of the whole ladder, and both ends of the
+    // choice are bad: fold narrow and it grows into a ribbon far taller than
+    // the screen, fold wide and it stays a strip across the middle of it. The
+    // camera then has to zoom out to whichever dimension overshoots, so the
+    // fold worth having is simply the one that leaves the map drawn largest.
+    // That is cheap to measure and hard to guess, so it is measured.
+    const widest = Math.max(...nodes.map((n) => 2 * n.boxHW));
+    const longest = Math.max(...authored.map((c) => courseSpan(c.members)));
+    let best = null;
+    for (let i = 0; i <= FOLD_TRIES; i++) {
+      const width = Math.max(widest, widest + ((longest - widest) * i) / FOLD_TRIES);
+      const cand = foldAll(authored, width);
+      const [w, h] = measure(cand);
+      const drawn = Math.min(worldW / Math.max(worldW, w), worldH / Math.max(worldH, h));
+      if (!best || drawn > best.drawn) best = { drawn, rows: cand };
+    }
+    rows = best.rows;
+  }
 
   // A course is as tall as the tallest box on it — the glyph, and the name
   // underneath — and as long as its boxes laid end to end. Both are measured
   // before anything is placed, so nothing has to be compressed afterwards.
-  rows.forEach((c, i) => {
-    c.up = Math.max(...c.members.map((n) => n.boxUp));
-    c.down = Math.max(...c.members.map((n) => n.boxDown));
-    c.gap = i === 0 ? 0 : rows[i - 1].band === c.band ? ROW_GAP : BAND_GAP;
-    c.span = c.members.reduce((s, n) => s + 2 * n.boxHW + COL_GAP, -COL_GAP);
-  });
-
-  const needW = Math.max(...rows.map((c) => c.span));
-  const needH = rows.reduce((s, c) => s + c.gap + c.up + c.down, 0);
+  const [needW, needH] = measure(rows);
   const halfW = Math.max(worldW, needW) / 2;
   const halfH = Math.max(worldH, needH) / 2;
 
@@ -152,8 +234,9 @@ function seed(nodes, edges, hierarchy, [worldW, worldH]) {
   for (let pass = 0; pass < SWEEPS; pass++) {
     // The data centers stay where the even spread put them: they are the
     // columns, and a column that drifts towards its own contents is not one.
-    for (let i = 1; i < rows.length; i++) {
+    for (let i = 0; i < rows.length; i++) {
       const c = rows[i];
+      if (c.first) continue;
       for (const n of c.members) {
         let sum = 0;
         let count = 0;
