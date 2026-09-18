@@ -10,9 +10,11 @@
 </head>
 <body>
 
+<a class="skip-link" href="#canvas">Skip to the map</a>
+
 <div id="app">
 
-  <aside id="sidebar">
+  <aside id="sidebar" aria-label="Filters and legend">
     <button id="sidebar-close" aria-label="Close filters">✕</button>
 
     <div class="masthead">
@@ -26,10 +28,13 @@
       <h2>Find an entity</h2>
       <div class="search-wrap">
         <input id="search" type="search" placeholder="Search names and aliases…"
-               autocomplete="off" spellcheck="false" aria-label="Search entities">
+               autocomplete="off" spellcheck="false" aria-label="Search entities"
+               role="combobox" aria-expanded="false" aria-controls="suggest"
+               aria-haspopup="listbox" aria-autocomplete="list">
         <button id="search-clear" aria-label="Clear search">✕</button>
-        <div id="suggest" role="listbox"></div>
+        <div id="suggest" role="listbox" aria-label="Matching entities"></div>
       </div>
+      <p id="search-status" class="visually-hidden" role="status"></p>
     </div>
 
     <div class="group">
@@ -62,22 +67,38 @@
     </div>
   </aside>
 
-  <div id="stage">
-    <canvas id="canvas"></canvas>
+  <main id="stage">
+    <canvas id="canvas" tabindex="0" role="application"
+            aria-label="Entity map. An interactive network of the entities, people, land and proceedings behind the southwest Missouri data-center build-out."
+            aria-describedby="canvas-help">Your browser does not support the
+      canvas element. The same entities and their sources are listed on the
+      <a href="sources.html">Sources</a> page.</canvas>
+
+    <div id="canvas-help">
+      <kbd>←</kbd> <kbd>→</kbd> step through entities ·
+      <kbd>↑</kbd> <kbd>↓</kbd> follow a connection ·
+      <kbd>Enter</kbd> open details ·
+      <kbd>+</kbd> <kbd>−</kbd> <kbd>0</kbd> zoom ·
+      <kbd>/</kbd> search ·
+      <kbd>Esc</kbd> clear
+    </div>
+    <p id="canvas-status" class="visually-hidden" role="status"></p>
 
     <div id="topbar">
       <button id="open-filters" aria-expanded="false" aria-controls="sidebar"
               aria-label="Filters and legend">Filters</button>
-      <button id="open-tipline" title="Send a tip" aria-label="Send a tip"
+      <button id="open-tipline" aria-label="Tipline — send a tip"
               data-short="Tip">Tipline</button>
-      <button id="open-modal" title="What this map claims, and what it does not"
-              aria-label="What this map claims, and what it does not"
+      <button id="open-modal"
+              aria-label="Not claimed — what this map claims, and what it does not"
               data-short="Claims">Not claimed</button>
       <a href="sources.html">Sources</a>
-      <button id="theme-toggle">Light</button>
+      <button id="theme-toggle" aria-label="Light theme — switch to it">Light</button>
     </div>
 
-    <div id="tooltip" role="tooltip"></div>
+    <!-- Pointer-hover only, and everything in it is in the panel and the
+         keyboard readout as well, so it is not exposed a third time. -->
+    <div id="tooltip" aria-hidden="true"></div>
     <div id="empty">No entity categories selected.</div>
 
     <aside id="panel" aria-label="Entity detail">
@@ -86,14 +107,14 @@
         <div id="panel-body"></div>
       </div>
     </aside>
-  </div>
+  </main>
 
   <div id="scrim" hidden></div>
 
   <div id="timeline">
     <button id="play" aria-label="Play" title="Play the network assembling"></button>
     <div class="scrub">
-      <div class="scrub-head">
+      <div class="scrub-head" role="status">
         <strong id="scrub-readout"></strong>
         <span id="scrub-count"></span>
       </div>
@@ -108,14 +129,14 @@
 
 <div id="modal" role="dialog" aria-modal="true" aria-label="What this map claims, and what it does not">
   <div class="modal-card">
-    <button id="modal-close" data-close style="float:right;background:none;border:0;cursor:pointer;color:var(--ink-muted);font-size:18px">✕</button>
+    <button id="modal-close" class="modal-close" data-close aria-label="Close">✕</button>
     <div id="modal-body"></div>
   </div>
 </div>
 
 <div id="tipline-modal" role="dialog" aria-modal="true" aria-label="Send a tip">
   <div class="modal-card">
-    <button id="tipline-modal-close" data-close style="float:right;background:none;border:0;cursor:pointer;color:var(--ink-muted);font-size:18px">✕</button>
+    <button id="tipline-modal-close" class="modal-close" data-close aria-label="Close">✕</button>
     <div id="tipline-modal-body"></div>
   </div>
 </div>

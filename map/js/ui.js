@@ -16,6 +16,33 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 // Where the small-screen note records that it has been read.
 const NOTE_KEY = 'map-mobile-note';
 
+/** Makes everything outside `keep` unreachable — to the pointer, to Tab, and
+ *  to a screen reader's own cursor. `inert` is what aria-modal only promises:
+ *  aria-hidden on a container full of buttons is itself a violation, and a
+ *  hand-rolled Tab trap does nothing about a virtual cursor. */
+function setBackgroundInert(keep) {
+  for (const child of document.body.children) {
+    if (child === keep) child.inert = false;
+    else child.inert = !!keep;
+  }
+}
+
+/** Opens a dialog: remembers the opener, seals the background, moves focus in.
+ *  Returns the close half, which puts all three back. */
+function dialogFocus(dialog, firstFocus) {
+  const opener = document.activeElement;
+  setBackgroundInert(dialog);
+  const target = firstFocus || dialog.querySelector('button, [href], input, [tabindex]') || dialog;
+  if (target === dialog && !dialog.hasAttribute('tabindex')) dialog.setAttribute('tabindex', '-1');
+  try { target.focus({ preventScroll: true }); } catch { /* detached */ }
+  return () => {
+    setBackgroundInert(null);
+    if (opener && document.contains(opener)) {
+      try { opener.focus({ preventScroll: true }); } catch { /* gone */ }
+    }
+  };
+}
+
 /** The bare host of a live url, for a link that has nothing better to say. */
 function hostOf(url) {
   const m = /^https?:\/\/([^/?#]+)/i.exec(String(url || ''));
@@ -76,13 +103,21 @@ class UI {
     const host = el('legend');
     host.innerHTML = this.data.taxonomy.hueFamilies.map((fam) => {
       const cats = this.data.taxonomy.categories.filter((c) => c.family === fam.key);
-      const rows = cats.map((c) => `
-        <label class="check" data-cat="${c.key}" title="${esc(c.note || c.label)}">
-          <input type="checkbox" checked data-category="${c.key}">
+      // The note rides on title for the pointer and on aria-describedby for
+      // everyone else — title alone reaches neither a keyboard nor a fingertip.
+      const rows = cats.map((c) => {
+        const note = c.note || '';
+        const nid = `cat-note-${c.key}`;
+        return `
+        <label class="check" data-cat="${c.key}" title="${esc(note || c.label)}">
+          <input type="checkbox" checked data-category="${c.key}"${
+            note ? ` aria-describedby="${nid}"` : ''}>
           ${swatchSVG(c.shape, c.fill, this.hue(fam.key))}
           <span class="label">${esc(c.label)}</span>
           <span class="n">${this._countNodes(c.key)}</span>
-        </label>`).join('');
+          ${note ? `<span class="visually-hidden" id="${nid}">${esc(note)}</span>` : ''}
+        </label>`;
+      }).join('');
       return `<div class="family">
         <span class="family-label">${esc(fam.label)}</span>${rows}</div>`;
     }).join('');
@@ -111,12 +146,18 @@ class UI {
     const host = el('types');
     const counts = new Map();
     for (const e of this.data.edges) counts.set(e.type, (counts.get(e.type) || 0) + 1);
-    host.innerHTML = this.data.taxonomy.connectionTypes.map((t) => `
-      <label class="check" title="${esc(t.note || '')}">
-        <input type="checkbox" checked data-type="${t.key}">
+    host.innerHTML = this.data.taxonomy.connectionTypes.map((t) => {
+      const note = t.note || '';
+      const nid = `type-note-${t.key}`;
+      return `
+      <label class="check" title="${esc(note)}">
+        <input type="checkbox" checked data-type="${t.key}"${
+          note ? ` aria-describedby="${nid}"` : ''}>
         <span class="label">${esc(t.label)}</span>
         <span class="n">${counts.get(t.key) || 0}</span>
-      </label>`).join('');
+        ${note ? `<span class="visually-hidden" id="${nid}">${esc(note)}</span>` : ''}
+      </label>`;
+    }).join('');
 
     host.addEventListener('change', (ev) => {
       const key = ev.target.dataset.type;
@@ -162,12 +203,25 @@ class UI {
 
   // -------------------------------------------------------------- search ---
 
+  /** The ARIA 1.2 combobox pattern. The previous markup was a listbox holding
+   *  buttons, which is not a thing: a listbox's children must be options, and
+   *  aria-selected on a button is discarded. Focus stays in the input and the
+   *  active option is named by aria-activedescendant, so arrowing through the
+   *  results is spoken instead of silent. */
   _buildSearch() {
     const input = el('search');
     const list = el('suggest');
+    const status = el('search-status');
     let cursor = -1;
 
-    const close = () => { list.innerHTML = ''; cursor = -1; };
+    const options = () => [...list.querySelectorAll('[role="option"]')];
+
+    const close = () => {
+      list.innerHTML = '';
+      cursor = -1;
+      input.setAttribute('aria-expanded', 'false');
+      input.removeAttribute('aria-activedescendant');
+    };
 
     const results = (q) => {
       const s = q.trim().toLowerCase();
@@ -187,44 +241,73 @@ class UI {
     const render = (items) => {
       list.innerHTML = items.map((n, i) => {
         const cat = this.catById.get(n.category);
-        return `<button data-id="${esc(n.id)}" data-i="${i}">
+        return `<div class="s-opt" role="option" id="suggest-opt-${i}"
+                     aria-selected="false" data-id="${esc(n.id)}">
           ${swatchSVG(cat.shape, cat.fill, this.hue(n.family), 14)}
           <span class="s-name">${esc(n.name)}</span>
           <span class="s-cat">${esc(cat.label)}</span>
-        </button>`;
+        </div>`;
       }).join('');
+      cursor = -1;
+      input.setAttribute('aria-expanded', 'true');
+      input.removeAttribute('aria-activedescendant');
+    };
+
+    const announce = (n) => {
+      status.textContent = n === 0 ? 'No matches.'
+        : `${n} ${n === 1 ? 'match' : 'matches'}. Use the up and down arrow keys to review them.`;
+    };
+
+    const moveCursor = (delta) => {
+      const opts = options();
+      if (!opts.length) return;
+      cursor = (cursor + delta + opts.length) % opts.length;
+      opts.forEach((o, i) => o.setAttribute('aria-selected', String(i === cursor)));
+      input.setAttribute('aria-activedescendant', opts[cursor].id);
+      opts[cursor].scrollIntoView({ block: 'nearest' });
+    };
+
+    const choose = (id) => {
+      close();
+      input.value = '';
+      status.textContent = '';
+      this.setDrawer(false);
+      // Deliberately no blur() here: _openPanel takes focus to the panel that
+      // is opening. Blurring used to drop focus onto <body>.
+      this.h.onPick(id);
     };
 
     input.addEventListener('input', () => {
       const items = results(input.value);
       items.length ? render(items) : close();
+      announce(input.value.trim() ? items.length : 0);
+      if (!input.value.trim()) status.textContent = '';
     });
 
     input.addEventListener('keydown', (ev) => {
-      const btns = [...list.querySelectorAll('button')];
-      if (ev.key === 'Escape') { close(); input.blur(); return; }
-      if (!btns.length) return;
+      if (ev.key === 'Escape') { close(); return; }
+      if (!options().length) return;
       if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
         ev.preventDefault();
-        cursor = (cursor + (ev.key === 'ArrowDown' ? 1 : -1) + btns.length) % btns.length;
-        btns.forEach((b, i) => b.setAttribute('aria-selected', String(i === cursor)));
+        moveCursor(ev.key === 'ArrowDown' ? 1 : -1);
       } else if (ev.key === 'Enter') {
         ev.preventDefault();
-        (btns[Math.max(0, cursor)]).click();
+        const opts = options();
+        choose(opts[Math.max(0, cursor)].dataset.id);
       }
     });
 
     list.addEventListener('click', (ev) => {
-      const b = ev.target.closest('button[data-id]');
-      if (!b) return;
-      close();
-      input.value = '';
-      input.blur();
-      this.setDrawer(false);
-      this.h.onPick(b.dataset.id);
+      const o = ev.target.closest('[role="option"]');
+      if (o) choose(o.dataset.id);
     });
 
-    el('search-clear').addEventListener('click', () => { input.value = ''; close(); input.focus(); });
+    el('search-clear').addEventListener('click', () => {
+      input.value = '';
+      close();
+      status.textContent = '';
+      input.focus();
+    });
     document.addEventListener('click', (ev) => {
       if (!ev.target.closest('.search-wrap')) close();
     });
@@ -239,26 +322,55 @@ class UI {
     const bar = el('sidebar');
     const scrim = el('scrim');
     const toggle = el('open-filters');
+    // The drawer only exists under the breakpoint. Above it the sidebar is an
+    // ordinary column and must never be sealed off.
+    const narrow = window.matchMedia('(max-width: 900px)');
+
+    /** A drawer shut by transform alone is still in the tab order — 25 controls
+     *  of it, off the left edge of the screen. */
+    const syncInert = () => {
+      const open = bar.classList.contains('open');
+      bar.inert = narrow.matches && !open;
+      // While the drawer is over the map, the map is not reachable behind it.
+      const behind = narrow.matches && open;
+      el('stage').inert = behind;
+      el('timeline').inert = behind;
+    };
 
     const set = (open) => {
+      const was = bar.classList.contains('open');
       bar.classList.toggle('open', open);
       scrim.hidden = false;
       scrim.classList.toggle('show', open);
       toggle.setAttribute('aria-expanded', String(open));
+      syncInert();
+      if (open && !was && narrow.matches) {
+        el('sidebar-close').focus({ preventScroll: true });
+      } else if (!open && was && narrow.matches && document.activeElement === document.body) {
+        toggle.focus({ preventScroll: true });
+      }
     };
     this.setDrawer = set;
+    syncInert();
+    narrow.addEventListener('change', syncInert);
 
     toggle.addEventListener('click', () => set(!bar.classList.contains('open')));
     el('sidebar-close').addEventListener('click', () => { set(false); toggle.focus(); });
-    scrim.addEventListener('click', () => set(false));
+    scrim.addEventListener('click', () => { set(false); toggle.focus(); });
     document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape' && bar.classList.contains('open')) set(false);
+      if (ev.key === 'Escape' && bar.classList.contains('open')) { set(false); toggle.focus(); }
     });
   }
 
   // --------------------------------------------------------------- panel ---
 
   _buildPanel() {
+    const panel = el('panel');
+    panel.setAttribute('tabindex', '-1');
+    // Closed, the panel is parked off-screen by a transform — which hides it
+    // from the eye and from nothing else.
+    panel.inert = true;
+    this._panelOpener = null;
     el('panel-close').addEventListener('click', () => this.closePanel());
     el('panel').addEventListener('click', (ev) => {
       const edge = ev.target.closest('[data-edge]');
@@ -269,8 +381,18 @@ class UI {
   }
 
   closePanel() {
-    el('panel').classList.remove('open');
+    const panel = el('panel');
+    const wasOpen = panel.classList.contains('open');
+    panel.classList.remove('open');
+    panel.inert = true;
     el('stage').classList.remove('panel-open');
+    // Focus cannot be left standing on a control that just went inert.
+    if (wasOpen) {
+      const back = this._panelOpener && document.contains(this._panelOpener)
+        ? this._panelOpener : el('canvas');
+      try { back.focus({ preventScroll: true }); } catch { /* gone */ }
+    }
+    this._panelOpener = null;
     this.h.onClosePanel();
   }
 
@@ -340,9 +462,21 @@ class UI {
   }
 
   _openPanel() {
-    el('panel').classList.add('open');
+    const panel = el('panel');
+    const wasOpen = panel.classList.contains('open');
+    // Where to send focus back to. A .rel button inside the panel swaps the
+    // panel's own contents, so it is not a destination to return to.
+    if (!wasOpen) {
+      const a = document.activeElement;
+      this._panelOpener = (a && a !== document.body && !panel.contains(a)) ? a : el('canvas');
+    }
+    panel.inert = false;
+    panel.classList.add('open');
     el('stage').classList.add('panel-open');
-    el('panel').scrollTop = 0;
+    panel.scrollTop = 0;
+    // The panel is the content that was just asked for, so focus follows it —
+    // and a keyboard user is no longer dropped onto <body>.
+    panel.focus({ preventScroll: true });
   }
 
   showEdge(edge) {
@@ -443,15 +577,22 @@ class UI {
       Use the tipline, or write to
       <a href="mailto:trentoverpoo@proton.me">trentoverpoo@proton.me</a>.</p>`;
 
-    el('open-modal').addEventListener('click', () => el('modal').classList.add('open'));
-    el('modal').addEventListener('click', (ev) => {
-      if (ev.target.id === 'modal' || ev.target.closest('[data-close]')) {
-        el('modal').classList.remove('open');
-      }
+    const modal = el('modal');
+    let release = null;
+    const open = () => {
+      modal.classList.add('open');
+      release = dialogFocus(modal, el('modal-close'));
+    };
+    const close = () => {
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      if (release) { release(); release = null; }
+    };
+    el('open-modal').addEventListener('click', open);
+    modal.addEventListener('click', (ev) => {
+      if (ev.target.id === 'modal' || ev.target.closest('[data-close]')) close();
     });
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') el('modal').classList.remove('open');
-    });
+    document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
   }
 
   // --------------------------------------------------- small-screen note ---
@@ -474,7 +615,9 @@ class UI {
 
     const note = el('mobile-note');
     const close = () => {
+      if (!note.classList.contains('open')) return;
       note.classList.remove('open');
+      if (this._noteRelease) { this._noteRelease(); this._noteRelease = null; }
       try { localStorage.setItem(NOTE_KEY, '1'); } catch { /* private mode */ }
     };
     note.addEventListener('click', (ev) => {
@@ -493,8 +636,9 @@ class UI {
     try { seen = localStorage.getItem(NOTE_KEY) === '1'; } catch { /* private mode */ }
     if (seen) return;
     if (window.matchMedia && !window.matchMedia('(max-width: 900px)').matches) return;
-    el('mobile-note').classList.add('open');
-    el('mobile-note-close').focus({ preventScroll: true });
+    const note = el('mobile-note');
+    note.classList.add('open');
+    this._noteRelease = dialogFocus(note, el('mobile-note-close'));
   }
 
   // ------------------------------------------------------------- tipline ---
@@ -521,15 +665,22 @@ class UI {
         <a href="mailto:trentoverpoo@proton.me">trentoverpoo@proton.me</a>
       </p>`;
 
-    el('open-tipline').addEventListener('click', () => el('tipline-modal').classList.add('open'));
-    el('tipline-modal').addEventListener('click', (ev) => {
-      if (ev.target.id === 'tipline-modal' || ev.target.closest('[data-close]')) {
-        el('tipline-modal').classList.remove('open');
-      }
+    const modal = el('tipline-modal');
+    let release = null;
+    const open = () => {
+      modal.classList.add('open');
+      release = dialogFocus(modal, el('tipline-modal-close'));
+    };
+    const close = () => {
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      if (release) { release(); release = null; }
+    };
+    el('open-tipline').addEventListener('click', open);
+    modal.addEventListener('click', (ev) => {
+      if (ev.target.id === 'tipline-modal' || ev.target.closest('[data-close]')) close();
     });
-    document.addEventListener('keydown', (ev) => {
-      if (ev.key === 'Escape') el('tipline-modal').classList.remove('open');
-    });
+    document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
   }
 
   // ------------------------------------------------------------- tooltip ---
