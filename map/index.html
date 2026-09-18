@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Southwest Missouri Data Center Map</title>
+<meta name="description" content="An interactive, source-anchored map of the entities, people, land and proceedings behind the southwest Missouri data-center push. Every node and every connection cites a document.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='3' fill='%233987e5'/><circle cx='3' cy='3' r='1.6' fill='%23d95926'/><circle cx='13' cy='4' r='1.6' fill='%23199e70'/><circle cx='4' cy='13' r='1.6' fill='%23199e70'/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <aside id="sidebar">
+    <div class="masthead">
+      <h1>SWMo - Data Center Network Map</h1>
+      <p>Every entity and every connection on this map cites a document in this
+      repository. Nothing here is an allegation of wrongdoing.</p>
+      <p class="counts" id="counts"></p>
+    </div>
+
+    <div class="group">
+      <h2>Find an entity</h2>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search names and aliases…"
+               autocomplete="off" spellcheck="false" aria-label="Search entities">
+        <button id="search-clear" aria-label="Clear search">✕</button>
+        <div id="suggest" role="listbox"></div>
+      </div>
+    </div>
+
+    <div class="group">
+      <h2>Entities <button id="legend-toggle">all / none</button></h2>
+      <div id="legend"></div>
+    </div>
+
+    <div class="group">
+      <h2>Connections</h2>
+      <div id="types"></div>
+    </div>
+
+    <div class="group">
+      <h2>How well established</h2>
+      <div id="tiers"></div>
+      <p class="note">Solid lines rest on a primary document in
+      <code>evidence/</code>. Dashed lines are open threads the file tracks but does
+      not treat as settled — each one says what would resolve it.</p>
+    </div>
+
+    <div class="group">
+      <h2>Time</h2>
+      <div id="age-key"></div>
+    </div>
+  </aside>
+
+  <div id="stage">
+    <canvas id="canvas"></canvas>
+
+    <div id="topbar">
+      <button id="open-tipline" title="Send a tip">Tipline</button>
+      <button id="open-modal" title="What the record does not support">Not claimed</button>
+      <a href="sources.html">Sources</a>
+      <button id="theme-toggle">Light</button>
+    </div>
+
+    <div id="tooltip" role="tooltip"></div>
+    <div id="empty">No entity categories selected.</div>
+
+    <aside id="panel" aria-label="Entity detail">
+      <div class="panel-inner">
+        <button id="panel-close" aria-label="Close panel">✕</button>
+        <div id="panel-body"></div>
+      </div>
+    </aside>
+  </div>
+
+  <div id="timeline">
+    <button id="play" aria-label="Play" title="Play the network assembling"></button>
+    <div class="scrub">
+      <div class="scrub-head">
+        <strong id="scrub-readout"></strong>
+        <span id="scrub-count"></span>
+      </div>
+      <input id="scrubber" type="range" min="0" max="1000" value="1000" step="1"
+             aria-label="Time cursor">
+    </div>
+    <button id="ring-toggle" aria-pressed="false"
+            title="Morph the web into concentric rings by date">Time rings</button>
+  </div>
+
+</div>
+
+<div id="modal" role="dialog" aria-modal="true" aria-label="What this map does not claim">
+  <div class="modal-card">
+    <button id="modal-close" data-close style="float:right;background:none;border:0;cursor:pointer;color:var(--ink-muted);font-size:18px">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div id="tipline-modal" role="dialog" aria-modal="true" aria-label="Send a tip">
+  <div class="modal-card">
+    <button id="tipline-modal-close" data-close style="float:right;background:none;border:0;cursor:pointer;color:var(--ink-muted);font-size:18px">✕</button>
+    <div id="tipline-modal-body"></div>
+  </div>
+</div>
+
+<!-- Classic scripts and a global data file, so the page works from file://
+     as well as over http. Order matters: d3 UMD, then data, then the app. -->
+<script src="js/vendor/d3-quadtree.umd.js"></script>
+<script src="js/vendor/d3-dispatch.umd.js"></script>
+<script src="js/vendor/d3-timer.umd.js"></script>
+<script src="js/vendor/d3-force.umd.js"></script>
+<script src="data/graph.js"></script>
+<script src="js/shapes.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/graph.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
