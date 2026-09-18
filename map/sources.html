@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="sources">
-<div class="sources-wrap">
+<main class="sources-wrap">
   <p style="margin:0 0 20px"><a href="index.html">← Back to the map</a></p>
   <h1>Sources</h1>
   <p class="lede">The map inverted. Every document it depends on, and what rests on
@@ -23,9 +23,9 @@
   check on it, and it is the half that can move or vanish.</p>
   <input id="doc-filter" type="search" placeholder="Filter by path or by what it supports…"
          autocomplete="off" spellcheck="false" aria-label="Filter documents">
-  <p class="note" id="doc-count" style="margin-bottom:18px"></p>
+  <p class="note" id="doc-count" role="status" style="margin-bottom:18px"></p>
   <div id="docs"></div>
-</div>
+</main>
 
 <script src="data/graph.js"></script>
 <script>

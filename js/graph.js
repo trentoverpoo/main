@@ -93,6 +93,9 @@ class GraphView {
     this.camera = { x: 0, y: 0, k: 1 };
     this.hover = null;
     this.selected = null;
+    // Where the keyboard is on the map. Distinct from `selected`, which a
+    // pointer sets too — this is the one that needs a visible focus ring.
+    this.kbFocus = null;
     this.neighbors = new Set();
     this.ringMode = false;
     this.ringStrength = 0;
@@ -432,6 +435,65 @@ class GraphView {
     this.draw();
   }
 
+  // ---------------------------------------------------------- keyboard ---
+  //
+  // The map was reachable by pointer alone: a canvas with no tab stop, no
+  // role and no key handling, which put 85 entities and 117 connections out
+  // of reach of anyone not using a mouse. These four give it a cursor.
+
+  /** Every entity the map is currently showing, in a stable order — hubs
+   *  first, so stepping through starts where the picture starts. */
+  keyboardOrder() {
+    return this.nodes
+      .filter((n) => this._nodeState(n) !== 'hidden' && this._nodeState(n) !== 'future')
+      .sort((a, b) => (b.degree - a.degree) || a.name.localeCompare(b.name));
+  }
+
+  /** The entities joined to this one by a connection that is itself on show. */
+  keyboardNeighbors(id) {
+    const shown = new Set(this.keyboardOrder().map((n) => n.id));
+    const out = new Set();
+    for (const e of this.edges) {
+      if (!this.visibleEdges.has(e.id)) continue;
+      if (e.date && e.date.t > this.timeCursor) continue;
+      const other = e.sourceId === id ? e.targetId : e.targetId === id ? e.sourceId : null;
+      if (other && shown.has(other)) out.add(other);
+    }
+    return [...out]
+      .map((x) => this.byId.get(x))
+      .filter(Boolean)
+      .sort((a, b) => (b.degree - a.degree) || a.name.localeCompare(b.name));
+  }
+
+  /** Moves the cursor and brings it into view. Selecting as well means the
+   *  cursor lights its own connections, exactly as hovering one does. */
+  setKeyboardCursor(id) {
+    this.kbFocus = id;
+    this.select(id);
+    if (id) this.reveal(id);
+    this.draw();
+    return id ? this.byId.get(id) : null;
+  }
+
+  clearKeyboardCursor() {
+    this.kbFocus = null;
+    this.select(null);
+    this.draw();
+  }
+
+  /** Keyboard zoom, about the middle of what can actually be seen. */
+  zoomBy(factor) {
+    const v = this.viewRect();
+    const sx = (v.left + v.right) / 2;
+    const sy = (v.top + v.bottom) / 2;
+    const wx = (sx - this.camera.x) / this.camera.k;
+    const wy = (sy - this.camera.y) / this.camera.k;
+    this.camera.k = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, this.camera.k * factor));
+    this.camera.x = sx - wx * this.camera.k;
+    this.camera.y = sy - wy * this.camera.k;
+    this.draw();
+  }
+
   /** The part of the stage a reader can actually see. The toolbar floats over
    *  the top of it. The detail panel, when it is open, takes the right of it on
    *  a wide screen and the foot of it on a narrow one, where it opens as a sheet
@@ -740,6 +802,21 @@ class GraphView {
       ctx.lineWidth = 2.4;
       tracePath(ctx, cat?.shape || 'circle', n.x, n.y, r + 7.5);
       ctx.stroke();
+    }
+
+    // The keyboard cursor. Two rings, plane under ink, so it holds its 3:1
+    // whatever colour the glyph beneath it happens to be.
+    if (n.id === this.kbFocus) {
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = p.plane;
+      ctx.lineWidth = 4.5;
+      tracePath(ctx, cat?.shape || 'circle', n.x, n.y, r + 12);
+      ctx.stroke();
+      ctx.strokeStyle = p.ink;
+      ctx.lineWidth = 2;
+      tracePath(ctx, cat?.shape || 'circle', n.x, n.y, r + 12);
+      ctx.stroke();
+      ctx.globalAlpha = alpha;
     }
 
     tracePath(ctx, cat?.shape || 'circle', n.x, n.y, r);

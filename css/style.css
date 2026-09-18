@@ -3,7 +3,15 @@
    The three categorical hues are a validated set: they clear the lightness band,
    chroma floor, all-pairs CVD separation and normal-vision floor in both modes.
    Shape and fill carry the remaining category distinctions, so no category is
-   ever identified by colour alone. */
+   ever identified by colour alone.
+
+   That set was validated against itself but not against what it sits on, which
+   is a separate question and the one WCAG asks. Every token here now also
+   clears its threshold against its own background: 4.5:1 for text (SC 1.4.3)
+   and 3:1 for glyphs, edges, age rings and control borders (SC 1.4.11), in
+   both modes. Re-check both properties together before moving any value —
+   darkening a hue for the light plane is what pulls it toward its neighbours
+   under simulated protanopia. */
 
 :root {
   color-scheme: dark;
@@ -13,20 +21,24 @@
   --surface-2:    #232321;
   --ink:          #ffffff;
   --ink-2:        #c3c2b7;
-  --ink-muted:    #898781;
+  --ink-muted:    #8b8984;
   --hairline:     #2c2c2a;
   --border:       rgba(255, 255, 255, 0.10);
+  /* --border is decorative and doubles as a hover wash. A control's edge is
+     information — SC 1.4.11 wants 3:1 for it — so it gets its own token. */
+  --control:      rgba(255, 255, 255, 0.34);
 
-  --hue-principals:    #3987e5;
+  --hue-principals:    #3f8be6;
   --hue-counterparties:#d95926;
   --hue-public:        #199e70;
   --hue-places:        #8e8c85;
 
   --edge:         #6c6a62;
   --edge-strong:  #94918a;
-  --accent:       #3987e5;
+  --accent:       #3f8be6;
+  --cta:          #1d63b8;
 
-  --age-old:      #45443f;
+  --age-old:      #61605c;
   --age-new:      #e8e7e0;
 
   --r:   10px;
@@ -42,20 +54,22 @@
   --surface-2:    #f0efec;
   --ink:          #0b0b0b;
   --ink-2:        #52514e;
-  --ink-muted:    #898781;
+  --ink-muted:    #6e6c67;
   --hairline:     #e1e0d9;
   --border:       rgba(11, 11, 11, 0.10);
+  --control:      rgba(11, 11, 11, 0.45);
 
-  --hue-principals:    #2a78d6;
+  --hue-principals:    #266dc3;
   --hue-counterparties:#eb6834;
-  --hue-public:        #1baf7a;
+  --hue-public:        #19a371;
   --hue-places:        #6f6d66;
 
-  --edge:         #a8a69c;
+  --edge:         #929088;
   --edge-strong:  #6f6d66;
-  --accent:       #2a78d6;
+  --accent:       #266dc3;
+  --cta:          #1d63b8;
 
-  --age-old:      #d8d7d0;
+  --age-old:      #91908b;
   --age-new:      #2e2d2a;
 }
 
@@ -81,6 +95,38 @@ html, body {
 button, input, select { font: inherit; color: inherit; }
 a { color: var(--accent); }
 
+/* One focus indicator for everything, rather than a per-control improvisation.
+   2px on an offset, so the ring sits on the background it has to contrast
+   against — --accent clears 3:1 on every surface in both themes. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Available to a screen reader, absent from the page. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip-path: inset(50%);
+  overflow: hidden; white-space: nowrap;
+}
+
+/* The sidebar puts ~30 tab stops in front of the map. This is the way past. */
+.skip-link {
+  position: absolute; z-index: 100; top: 8px; left: 8px;
+  padding: 10px 16px; min-height: 44px;
+  display: inline-flex; align-items: center;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--control); border-radius: var(--r-s);
+  text-decoration: none; font-size: 13px;
+  transform: translateY(-160%);
+  transition: transform 0.15s;
+}
+.skip-link:focus { transform: none; }
+@media (prefers-reduced-motion: reduce) { .skip-link { transition: none; } }
+
 /* ------------------------------------------------------------- layout --- */
 
 #app {
@@ -93,6 +139,28 @@ a { color: var(--accent); }
 #stage { position: relative; grid-row: 1; overflow: hidden; }
 #canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
 #canvas.dragging { cursor: grabbing; }
+/* The map takes keyboard focus as a whole; which entity the cursor is on is
+   drawn inside the canvas, by _drawKeyboardRing in js/graph.js. */
+#canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* Shown only while the map has keyboard focus — the keys are no use to someone
+   who is never told about them. */
+#canvas-help {
+  position: absolute; z-index: 24; left: 16px; bottom: 14px;
+  max-width: 340px; padding: 9px 12px;
+  background: var(--surface); border: 1px solid var(--control);
+  border-radius: var(--r-s); color: var(--ink-2);
+  font-size: 11.5px; line-height: 1.55;
+  /* Clipped rather than display:none, so it stays in the accessibility tree
+     for the canvas's aria-describedby while it is out of sight. */
+  clip-path: inset(50%);
+  pointer-events: none;
+}
+#canvas-help kbd {
+  font: inherit; font-weight: 600; color: var(--ink);
+  border: 1px solid var(--control); border-radius: 3px; padding: 0 4px;
+}
+#stage.kb-help #canvas-help { clip-path: none; }
 
 /* ------------------------------------------------------------ sidebar --- */
 
@@ -148,7 +216,10 @@ a { color: var(--accent); }
   gap: 8px;
 }
 .group > h2 button {
-  background: none; border: 0; padding: 0; cursor: pointer;
+  background: none; border: 0; cursor: pointer;
+  /* SC 2.5.8 wants 24x24. The negative margin keeps the padding from moving
+     the baseline it is aligned on. */
+  padding: 6px 4px; margin: -6px -4px; min-height: 24px;
   font-size: 10.5px; letter-spacing: 0.04em; text-transform: none;
   color: var(--ink-muted); text-decoration: underline; text-underline-offset: 2px;
 }
@@ -177,35 +248,42 @@ a { color: var(--accent); }
 .search-wrap { position: relative; }
 #search {
   width: 100%;
-  padding: 9px 30px 9px 11px;
+  padding: 9px 34px 9px 11px;
   background: var(--surface-2);
-  border: 1px solid var(--border);
+  border: 1px solid var(--control);
   border-radius: var(--r-s);
-  outline: none;
 }
-#search:focus { border-color: var(--accent); }
+#search:focus-visible { border-color: var(--accent); }
 #search-clear {
-  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
   background: none; border: 0; cursor: pointer; color: var(--ink-muted);
-  padding: 4px 6px; line-height: 1; border-radius: 4px;
+  /* 26x26 — SC 2.5.8 is 24x24, and this one sits inside another target. */
+  width: 26px; height: 26px; padding: 0; line-height: 1;
+  display: grid; place-items: center; border-radius: 4px;
 }
 #search-clear:hover { color: var(--ink); }
 
 #suggest {
   position: absolute; z-index: 40; left: 0; right: 0; top: calc(100% + 4px);
   background: var(--surface-2);
-  border: 1px solid var(--border);
+  border: 1px solid var(--control);
   border-radius: var(--r-s);
   max-height: 264px; overflow-y: auto;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42);
 }
 #suggest:empty { display: none; }
-#suggest button {
+#suggest [role="option"] {
   display: flex; align-items: center; gap: 9px;
   width: 100%; text-align: left; padding: 8px 11px;
-  background: none; border: 0; cursor: pointer; border-radius: 0;
+  cursor: pointer; min-height: 24px;
 }
-#suggest button:hover, #suggest button[aria-selected="true"] { background: var(--border); }
+#suggest [role="option"]:hover { background: var(--border); }
+/* The visual cursor for aria-activedescendant: focus never leaves the input,
+   so the active option has to look active on its own. */
+#suggest [role="option"][aria-selected="true"] {
+  background: var(--border);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
 #suggest .s-name { flex: 1; font-size: 13px; }
 #suggest .s-cat { font-size: 11px; color: var(--ink-muted); }
 
@@ -258,7 +336,7 @@ a { color: var(--accent); }
 }
 #play {
   flex: none; width: 34px; height: 34px; border-radius: 50%;
-  background: var(--surface-2); border: 1px solid var(--border);
+  background: var(--surface-2); border: 1px solid var(--control);
   cursor: pointer; display: grid; place-items: center; color: var(--ink);
 }
 #play:hover { border-color: var(--accent); }
@@ -276,7 +354,7 @@ a { color: var(--accent); }
 
 #ring-toggle {
   flex: none; padding: 8px 13px; border-radius: var(--r-s);
-  background: var(--surface-2); border: 1px solid var(--border);
+  background: var(--surface-2); border: 1px solid var(--control);
   cursor: pointer; font-size: 12px; white-space: nowrap;
 }
 #ring-toggle[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
@@ -299,7 +377,7 @@ a { color: var(--accent); }
 
 #panel-close {
   position: sticky; top: 10px; float: right;
-  background: var(--surface-2); border: 1px solid var(--border);
+  background: var(--surface-2); border: 1px solid var(--control);
   width: 28px; height: 28px; border-radius: 50%;
   cursor: pointer; display: grid; place-items: center; color: var(--ink-2);
   z-index: 2;
@@ -401,7 +479,7 @@ a { color: var(--accent); }
 /* The detail panel covers the right edge, so the controls move out from under it. */
 #stage.panel-open #topbar { left: 16px; right: auto; }
 #topbar button, #topbar a {
-  background: var(--surface); border: 1px solid var(--border);
+  background: var(--surface); border: 1px solid var(--control);
   border-radius: var(--r-s); padding: 7px 12px; cursor: pointer;
   font-size: 12px; color: var(--ink-2); text-decoration: none;
 }
@@ -425,6 +503,14 @@ a { color: var(--accent); }
   border: 1px solid var(--border); border-radius: var(--r);
   padding: 30px 34px 36px;
 }
+.modal-close {
+  float: right; margin: -6px -8px 0 12px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--surface-2); border: 1px solid var(--control);
+  color: var(--ink-2); font-size: 16px; line-height: 1;
+  display: grid; place-items: center; cursor: pointer;
+}
+.modal-close:hover { color: var(--ink); border-color: var(--edge-strong); }
 .modal-card h2 { margin: 0 0 6px; font-size: 21px; letter-spacing: -0.015em; }
 .modal-card > p.lede { margin: 0 0 22px; color: var(--ink-2); font-size: 13.5px; line-height: 1.6; }
 .modal-card h3 {
@@ -475,10 +561,10 @@ html:has(body.sources), body.sources {
 
 #doc-filter {
   width: 100%; max-width: 420px; padding: 9px 12px; margin-bottom: 22px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r-s); outline: none;
+  background: var(--surface); border: 1px solid var(--control);
+  border-radius: var(--r-s);
 }
-#doc-filter:focus { border-color: var(--accent); }
+#doc-filter:focus-visible { border-color: var(--accent); }
 
 /* ------------------------------------------------------ small screens --- */
 
@@ -512,7 +598,7 @@ html:has(body.sources), body.sources {
     display: grid; place-items: center;
     position: absolute; top: 9px; right: 9px;
     width: 38px; height: 38px; border-radius: 50%;
-    background: var(--surface-2); border: 1px solid var(--border);
+    background: var(--surface-2); border: 1px solid var(--control);
     color: var(--ink-2); cursor: pointer; font-size: 14px;
   }
 
@@ -622,7 +708,9 @@ html:has(body.sources), body.sources {
 #mobile-note button {
   display: block; width: 100%; margin-top: 18px;
   padding: 12px 14px; min-height: 44px;
-  background: var(--accent); border: 1px solid var(--accent);
+  /* --accent is tuned to carry text ON a surface; white sitting on it only
+     reaches 3.6:1. --cta is the same blue darkened until white clears 4.5:1. */
+  background: var(--cta); border: 1px solid var(--cta);
   border-radius: var(--r-s); color: #fff; font-weight: 600; cursor: pointer;
 }
 #mobile-note button:hover { filter: brightness(1.08); }
