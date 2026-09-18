@@ -361,7 +361,7 @@ window.__GRAPH__ = {
    },
    "dateNote": "Organizer of NSI Investments, LLC",
    "summary": "Appears in two capacities the record keeps distinct: as counsel and registered agent (ordinary professional work at a 1031-exchange practice), and as a manager of Lumon Solutions Management who signed the $4,075,000 deed of trust.",
-   "caveat": "Whether the manager role is a standing ownership position or limited signing authority is unresolved — Missouri filings do not disclose LLC managers.",
+   "caveat": "Whether the manager role is an active ownership position or simply a limited signing authority position is unresolved",
    "aliases": [
     "Cameron Jones",
     "Parks & Jones",
@@ -402,7 +402,7 @@ window.__GRAPH__ = {
    },
    "dateNote": "Signed the OakStar deed of trust as a Lumon Solutions Management manager",
    "summary": "Lumon Solutions co-founder and a manager of Lumon Solutions Management. Appears in exactly one document in this file despite being a named founder.",
-   "caveat": "Confirmed by visual re-reading of the signature page as \"Ashton Owens\" — not Austin Owens, a different, unconnected family member whose separate entity history is archived.",
+   "caveat": "Any connection to Austin Owens, a local real estate investor",
    "aliases": [],
    "citations": [
     {
@@ -432,7 +432,7 @@ window.__GRAPH__ = {
    },
    "dateNote": "First Kansas annual report listing members owning 5% or more",
    "summary": "Listed as a trustee-member of NSI Investments, LLC holding 5% or more of capital in the Kansas annual reports for 2016 through 2022. LinkedIn lists co-ownership of Affordable Family Storage in the Omaha–Council Bluffs area.",
-   "caveat": "Believed to be a relative of Trent Overhue; no document in this file establishes the relationship.",
+   "caveat": "Believed to be a relative of Trent Overhue; no document in this file establishes the relationship based on public reporting designating Trent Overhue as an operator of Affordable Family Storage.",
    "aliases": [],
    "citations": [
     {
@@ -528,7 +528,7 @@ window.__GRAPH__ = {
    },
    "dateNote": "Registered agent and organizer of JDE Investments, LLC",
    "summary": "Organized JDE Investments, LLC, which held the Marshfield parent parcel before ARY. That places him two steps back in the chain of title, and nothing more.",
-   "caveat": "An earlier version of this project asserted a sibling relationship to Marshfield's city administrator Sam Rost, sourced to a photograph rather than a document. It is unsupported, and the facility is in unincorporated county territory in any event.",
+   "caveat": "There is no evidence supporting a connection between Jason Rost and Sam Rost, the City Administrator of Marshfield.",
    "aliases": [],
    "citations": [
     {
