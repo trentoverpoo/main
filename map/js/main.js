@@ -160,6 +160,8 @@ function boot() {
 
   setCursor(1000);
   applyFilters();
+  // Last, so the note lands over a map that is already drawn.
+  ui.showMobileNote();
 }
 
 try {

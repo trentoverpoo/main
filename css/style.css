@@ -605,6 +605,32 @@ html:has(body.sources), body.sources {
   #panel { height: 92vh; height: 92dvh; }
 }
 
+/* The small-screen note. The map works on a phone and that was worth building,
+   but it is a whole web meant to be read as one picture, and a desktop browser
+   shows more of it at once — so the note says so, once, and gets out of the way.
+   It is display:none by default and only turns on under the breakpoint, so a
+   window dragged wider takes it away rather than leaving it stranded. */
+#mobile-note {
+  position: fixed; inset: 0; z-index: 70; display: none;
+  background: rgba(0, 0, 0, 0.62);
+  padding: 20px 16px; overflow-y: auto;
+}
+#mobile-note .modal-card { max-width: 420px; padding: 24px 22px 22px; }
+#mobile-note h2 { margin: 0 0 10px; font-size: 18px; letter-spacing: -0.015em; }
+#mobile-note p { margin: 0 0 11px; font-size: 13.5px; line-height: 1.6; color: var(--ink-2); }
+#mobile-note p:last-of-type { margin-bottom: 0; }
+#mobile-note button {
+  display: block; width: 100%; margin-top: 18px;
+  padding: 12px 14px; min-height: 44px;
+  background: var(--accent); border: 1px solid var(--accent);
+  border-radius: var(--r-s); color: #fff; font-weight: 600; cursor: pointer;
+}
+#mobile-note button:hover { filter: brightness(1.08); }
+
+@media (max-width: 900px) {
+  #mobile-note.open { display: grid; place-items: center; }
+}
+
 /* Someone who has asked for less motion should not be handed a sliding drawer,
    a sheet, or a camera that flies to a node. */
 @media (prefers-reduced-motion: reduce) {
