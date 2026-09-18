@@ -339,15 +339,76 @@ class UI {
 
   _buildModal() {
     const nc = this.data.nonClaims;
+    const m = this.data.meta;
     const section = (title, items) => !items || !items.length ? '' : `<h3>${esc(title)}</h3>` + items.map((i) =>
       `<div class="nc"><b>${esc(i.title)}</b><span>${esc(i.body.trim())}</span></div>`).join('');
 
     el('modal-body').innerHTML = `
-      <h2>What this map does not claim</h2>
-      <p class="lede">These are the readings the record does not support.</p>
+      <h2>What this map claims, and what it does not</h2>
+      <p class="lede">This project maps who owns what, who is connected to whom, and
+      where the money behind the southwest Missouri data-center build-out comes from.
+      It is assembled from ${m.documentCount} documents — deeds, UCC filings, corporate
+      registrations, SEC filings, permits, court records and captured public pages — and
+      it claims exactly what those documents carry. Not less, and not more.</p>
+
+      <h3>What is claimed, and stood behind</h3>
+      <div class="nc"><b>The entities, the people, the land and the lines between them</b>
+      <span>Each of the ${m.nodeCount} entities and ${m.edgeCount} connections drawn here
+      cites at least one document, and the build refuses to produce the map — it fails, it
+      does not warn — if a citation points at a file that is not in this repository. A solid
+      line rests on a primary record in <code>evidence/</code>. Those lines are not
+      impressions or inferences, and this project owns them.</span></div>
+      <div class="nc"><b>That out-of-state capital and out-of-state operators are working
+      through locally registered entities</b><span>This is the shape of the record, and it
+      is asserted plainly: formation documents filed in other states, officers and agents
+      signing from other states, lenders' instruments recorded against Missouri parcels,
+      and single-purpose entities holding land they bought from local owners. Every step of
+      that is on the map with the filing that establishes it. Read the documents rather
+      than take our word for it — that is what they are here for.</span></div>
+      <div class="nc"><b>The dates, and the order things happened in</b><span>Formation,
+      purchase, recording, permitting and filing dates are as the records state them. Where
+      a record gives only a month or only a year, the map shows only that much, and the
+      time scrubber moves on those dates alone.</span></div>
+
+      <h3>What is not claimed</h3>
+      <div class="nc"><b>No crime, no fraud, no wrongdoing by anyone</b><span>Nothing on
+      this map alleges that any person or company has broken a law, breached a duty or acted
+      improperly. Forming an entity in another state, assembling land through a
+      single-purpose LLC, borrowing against it, using a registered-agent address and
+      declining to name a prospective tenant are all ordinary and lawful ways to do
+      business. If a line here reads as an accusation, that reading is the reader's and not
+      the record's.</span></div>
+      <div class="nc"><b>Connection is not coordination</b><span>An edge means two parties
+      appear together in a document or a transaction. It does not claim they act in concert,
+      share a plan or purpose, or know what the other is doing.</span></div>
+      <div class="nc"><b>No motive, no intent, no forecast</b><span>The record shows what was
+      done and when. It does not establish why, what anyone meant by it, or what anyone
+      will do next — and this map does not guess at any of the three.</span></div>
+      <div class="nc"><b>Nothing about consequences</b><span>No claim is made here about
+      water, electricity, rates, emissions, tax abatements, jobs, property values, or
+      whether any of this is good or bad for the people who live nearby. Those are arguments
+      worth having somewhere else. This is a file, not a brief.</span></div>
+      <div class="nc"><b>A dashed line is a question, not a finding</b><span>Tier-3
+      connections are threads the file tracks and does not treat as settled. Each one has to
+      say what evidence would resolve it, or the build rejects it.</span></div>
+      <div class="nc"><b>An absent line means an absent document</b><span>Where no
+      connection is drawn, nothing has been found — it is not proof that no relationship
+      exists. This map is the portion of the picture that documents currently support.</span></div>
+      <div class="nc"><b>Appearing here is not an accusation</b><span>Many entities and
+      people are on this map because they sold land, lent money, notarized an instrument,
+      issued a permit or filed a routine report. Presence on the map carries no implication
+      about anyone, and the categories and colors mark what a party is, never how it should
+      be judged.</span></div>
+
       ${section('Expressly not claimed', nc.notClaimed)}
       ${section('Open questions — why some expected lines are absent', nc.openQuestions)}
-      ${section('Threads closed by review', nc.closedThreads)}`;
+      ${section('Threads closed by review', nc.closedThreads)}
+
+      <h3>If something here is wrong</h3>
+      <p class="note" style="margin-top:11px">A name, a date, a relationship read the wrong
+      way out of a filing — corrections are wanted, and they are made against the document.
+      Use the tipline, or write to
+      <a href="mailto:trentoverpoo@proton.me">trentoverpoo@proton.me</a>.</p>`;
 
     el('open-modal').addEventListener('click', () => el('modal').classList.add('open'));
     el('modal').addEventListener('click', (ev) => {

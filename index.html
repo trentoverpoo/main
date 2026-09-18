@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Southwest Missouri Data Center Map</title>
+<title>SWMo Data Center Mapping</title>
 <meta name="description" content="An interactive, source-anchored map of the entities, people, land and proceedings behind the southwest Missouri data-center push. Every node and every connection cites a document.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><circle cx='8' cy='8' r='3' fill='%233987e5'/><circle cx='3' cy='3' r='1.6' fill='%23d95926'/><circle cx='13' cy='4' r='1.6' fill='%23199e70'/><circle cx='4' cy='13' r='1.6' fill='%23199e70'/></svg>">
 <link rel="stylesheet" href="css/style.css">
@@ -52,6 +52,12 @@
       <h2>Time</h2>
       <div id="age-key"></div>
     </div>
+
+    <div class="sidebar-foot">
+      <a href="privacy.html">Privacy</a>
+      <span aria-hidden="true">·</span>
+      <a href="terms.html">Terms of use</a>
+    </div>
   </aside>
 
   <div id="stage">
@@ -59,7 +65,7 @@
 
     <div id="topbar">
       <button id="open-tipline" title="Send a tip">Tipline</button>
-      <button id="open-modal" title="What the record does not support">Not claimed</button>
+      <button id="open-modal" title="What this map claims, and what it does not">Not claimed</button>
       <a href="sources.html">Sources</a>
       <button id="theme-toggle">Light</button>
     </div>
@@ -91,7 +97,7 @@
 
 </div>
 
-<div id="modal" role="dialog" aria-modal="true" aria-label="What this map does not claim">
+<div id="modal" role="dialog" aria-modal="true" aria-label="What this map claims, and what it does not">
   <div class="modal-card">
     <button id="modal-close" data-close style="float:right;background:none;border:0;cursor:pointer;color:var(--ink-muted);font-size:18px">✕</button>
     <div id="modal-body"></div>
