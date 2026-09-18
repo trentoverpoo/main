@@ -13,6 +13,9 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
   'August', 'September', 'October', 'November', 'December'];
 
+// Where the small-screen note records that it has been read.
+const NOTE_KEY = 'map-mobile-note';
+
 /** The bare host of a live url, for a link that has nothing better to say. */
 function hostOf(url) {
   const m = /^https?:\/\/([^/?#]+)/i.exec(String(url || ''));
@@ -49,6 +52,7 @@ class UI {
     this._buildDrawer();
     this._buildPanel();
     this._buildModal();
+    this._buildMobileNote();
     this._buildTiplineModal();
   }
 
@@ -445,6 +449,49 @@ class UI {
     document.addEventListener('keydown', (ev) => {
       if (ev.key === 'Escape') el('modal').classList.remove('open');
     });
+  }
+
+  // --------------------------------------------------- small-screen note ---
+
+  /** Said once, to whoever arrives on a phone: the map is usable here, and it
+   *  is still a picture that wants more room than a phone has. Dismissal is
+   *  remembered, because a disclaimer that reappears on every visit stops
+   *  being read and starts being swatted. */
+  _buildMobileNote() {
+    const m = this.data.meta;
+    el('mobile-note-body').innerHTML = `
+      <h2>Better on a bigger screen</h2>
+      <p>Everything works here: pan, pinch to zoom, search, the filters, and the
+      sources behind every entity and every line. Small screens were supported so
+      the map is reachable from anywhere.</p>
+      <p>But this is ${m.nodeCount} entities and ${m.edgeCount} connections meant to
+      be read as one picture, and a phone can only show you part of it at a time.
+      Where you can, open this page in a desktop browser.</p>
+      <button id="mobile-note-close" data-close type="button">Continue on this device</button>`;
+
+    const note = el('mobile-note');
+    const close = () => {
+      note.classList.remove('open');
+      try { localStorage.setItem(NOTE_KEY, '1'); } catch { /* private mode */ }
+    };
+    note.addEventListener('click', (ev) => {
+      if (ev.target.id === 'mobile-note' || ev.target.closest('[data-close]')) close();
+    });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape' && note.classList.contains('open')) close();
+    });
+  }
+
+  /** Opens it, unless this is a wide screen or it has been dismissed before.
+   *  Called once the map is painted, so the note arrives over the thing it is
+   *  a note about rather than over an empty plane. */
+  showMobileNote() {
+    let seen = false;
+    try { seen = localStorage.getItem(NOTE_KEY) === '1'; } catch { /* private mode */ }
+    if (seen) return;
+    if (window.matchMedia && !window.matchMedia('(max-width: 900px)').matches) return;
+    el('mobile-note').classList.add('open');
+    el('mobile-note-close').focus({ preventScroll: true });
   }
 
   // ------------------------------------------------------------- tipline ---
