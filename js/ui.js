@@ -348,16 +348,13 @@ class UI {
       <p class="lede">This project maps who owns what, who is connected to whom, and
       where the money behind the southwest Missouri data-center build-out comes from.
       It is assembled from ${m.documentCount} documents — deeds, UCC filings, corporate
-      registrations, SEC filings, permits, court records and captured public pages — and
-      it claims exactly what those documents carry. Not less, and not more.</p>
+      registrations, SEC filings, permits, court records and captured public pages. This project claims nothing beyond what is stated in public record.</p>
 
       <h3>What is claimed, and stood behind</h3>
       <div class="nc"><b>The entities, the people, the land and the lines between them</b>
       <span>Each of the ${m.nodeCount} entities and ${m.edgeCount} connections drawn here
-      cites at least one document, and the build refuses to produce the map — it fails, it
-      does not warn — if a citation points at a file that is not in this repository. A solid
-      line rests on a primary record in <code>evidence/</code>. Those lines are not
-      impressions or inferences, and this project owns them.</span></div>
+      cites at least one document. The map is built on page-load, and the build fails if relationship between entities is not backed up by an active source. A solid
+      line rests on a primary record in <code>evidence/</code>.</span></div>
       <div class="nc"><b>That out-of-state capital and out-of-state operators are working
       through locally registered entities</b><span>This is the shape of the record, and it
       is asserted plainly: formation documents filed in other states, officers and agents
