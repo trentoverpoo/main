@@ -72,7 +72,7 @@ function boot() {
   // ------------------------------------------------------------ filters ---
   //
   // Two filters of different kinds, applied together. The build in focus decides
-  // what the map is about; the advanced filters decide how much of it is drawn.
+  // what the map is about; the filters decide how much of it is drawn.
   //
   // A focused build also draws its bridges: the connections that leave it, and
   // the entities on the far end of them, faint. Eighty-eight entities in one

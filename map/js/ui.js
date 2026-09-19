@@ -98,7 +98,7 @@ class UI {
     this._buildDrawer();
     this._buildPanel();
     this._buildModal();
-    this._buildAdvancedModal();
+    this._buildFiltersModal();
     this._buildMobileNote();
     this._buildTiplineModal();
   }
@@ -155,7 +155,7 @@ class UI {
   }
 
   /** Turns a category back on from code, for a search landing on an entity the
-   *  advanced filters are holding back. A node is hidden by its category and by
+   *  filters are holding back. A node is hidden by its category and by
    *  nothing else, so this is the whole of what it takes to make one drawable. */
   enableCategory(key) {
     if (this.activeCategories.has(key)) return false;
@@ -165,7 +165,7 @@ class UI {
       input.checked = true;
       input.closest('.check').classList.remove('off');
     }
-    this.syncAdvancedCount();
+    this.syncFilterCount();
     return true;
   }
 
@@ -250,7 +250,7 @@ class UI {
       if (!key) return;
       ev.target.checked ? this.activeCategories.add(key) : this.activeCategories.delete(key);
       ev.target.closest('.check').classList.toggle('off', !ev.target.checked);
-      this.syncAdvancedCount();
+      this.syncFilterCount();
       this.h.onFilter();
     });
 
@@ -262,7 +262,7 @@ class UI {
       });
       this.activeCategories = all ? new Set()
         : new Set(this.data.taxonomy.categories.map((c) => c.key));
-      this.syncAdvancedCount();
+      this.syncFilterCount();
       this.h.onFilter();
     });
   }
@@ -291,7 +291,7 @@ class UI {
       if (!key) return;
       ev.target.checked ? this.activeTypes.add(key) : this.activeTypes.delete(key);
       ev.target.closest('.check').classList.toggle('off', !ev.target.checked);
-      this.syncAdvancedCount();
+      this.syncFilterCount();
       this.h.onFilter();
     });
   }
@@ -315,7 +315,7 @@ class UI {
       if (!t) return;
       ev.target.checked ? this.activeTiers.add(t) : this.activeTiers.delete(t);
       ev.target.closest('.check').classList.toggle('off', !ev.target.checked);
-      this.syncAdvancedCount();
+      this.syncFilterCount();
       this.h.onFilter();
     });
   }
@@ -355,7 +355,7 @@ class UI {
     el('age-key').addEventListener('click', (ev) => {
       const b = ev.target.closest('[data-goto]');
       if (!b) return;
-      if (this.closeAdvanced) this.closeAdvanced();
+      if (this.closeFilters) this.closeFilters();
       this.setDrawer(false);
       this.h.onPick(b.dataset.goto);
     });
@@ -490,7 +490,7 @@ class UI {
   _buildDrawer() {
     const bar = el('sidebar');
     const scrim = el('scrim');
-    const toggle = el('open-filters');
+    const toggle = el('open-menu');
     // The drawer only exists under the breakpoint. Above it the sidebar is an
     // ordinary column and must never be sealed off.
     const narrow = window.matchMedia('(max-width: 900px)');
@@ -765,33 +765,33 @@ class UI {
     document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
   }
 
-  // ----------------------------------------------------- advanced search ---
+  // ------------------------------------------------------------- filters ---
 
   /** The category, connection, tier and time filters used to be five panels of
    *  the sidebar, which put the map's opening question — which build am I
    *  looking at — below a fold of controls most readers never touch. They live
    *  in a dialog now. The controls themselves are untouched: _buildLegend and
    *  the rest still write into the same four elements, which simply moved. */
-  _buildAdvancedModal() {
-    const modal = el('advanced-modal');
+  _buildFiltersModal() {
+    const modal = el('filters-modal');
     if (!modal) return;
-    const opener = el('open-advanced');
+    const opener = el('open-filters');
     let release = null;
 
     const open = () => {
       modal.classList.add('open');
-      release = dialogFocus(modal, el('advanced-modal-close'));
+      release = dialogFocus(modal, el('filters-modal-close'));
     };
     const close = () => {
       if (!modal.classList.contains('open')) return;
       modal.classList.remove('open');
       if (release) { release(); release = null; }
     };
-    this.closeAdvanced = close;
+    this.closeFilters = close;
 
     opener.addEventListener('click', open);
     modal.addEventListener('click', (ev) => {
-      if (ev.target.id === 'advanced-modal' || ev.target.closest('[data-close]')) close();
+      if (ev.target.id === 'filters-modal' || ev.target.closest('[data-close]')) close();
     });
     document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
 
@@ -803,27 +803,27 @@ class UI {
         input.checked = true;
         input.closest('.check').classList.remove('off');
       }
-      this.syncAdvancedCount();
+      this.syncFilterCount();
       this.h.onFilter();
     });
 
-    this.syncAdvancedCount();
+    this.syncFilterCount();
   }
 
   /** How many filters are currently holding something back. A control that has
    *  been put behind a button has to say when it is doing something, or a map
    *  drawing two thirds of what it should looks like a map that is broken. */
-  syncAdvancedCount() {
-    const badge = el('advanced-count');
+  syncFilterCount() {
+    const badge = el('filters-count');
     if (!badge) return;
     const off = (this.data.taxonomy.categories.length - this.activeCategories.size) +
       (this.data.taxonomy.connectionTypes.length - this.activeTypes.size) +
       (3 - this.activeTiers.size);
     badge.hidden = off === 0;
     badge.textContent = String(off);
-    el('open-advanced').setAttribute('aria-label', off
-      ? `Advanced search — ${off} filter${off === 1 ? '' : 's'} narrowing the map`
-      : 'Advanced search');
+    el('open-filters').setAttribute('aria-label', off
+      ? `Filters — ${off} of them narrowing the map`
+      : 'Filters');
   }
 
   // --------------------------------------------------- small-screen note ---

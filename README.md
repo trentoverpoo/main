@@ -165,7 +165,7 @@ from the ladder, and returning the map to it.
   center, and returns the map to the hierarchy it opened on.
 
 The halo is measured against the reader's own clock, not against the day the map
-was last built, and the **Time** panel in advanced search lists what is inside the window
+was last built, and the **Time** panel under **Filters** lists what is inside the window
 and says plainly when nothing is. That is the point of doing it that way: a month
 in which nothing was filed is an answer this page can give, and a banner left
 burning over the last thing anyone happened to add is not. Only a date the record
@@ -191,7 +191,7 @@ written out beside it.
 | `/` | Jump to search |
 | **Which build** | Which of the three the map is drawing. It opens on Marshfield; the other two, and the whole file, are one click away |
 | Sidebar | Which build, and search. Below 900px it is a drawer over the map, behind **Menu** |
-| **Advanced search** | Category, connection type, how well established, and the time key — cumulative, and on top of whichever build is in focus. The button carries a count when any of them is holding something back |
+| **Filters** | Category, connection type, how well established, and the time key — cumulative, and on top of whichever build is in focus. The button carries a count when any of them is holding something back |
 | **Sources** | The map inverted — every document, and what rests on it |
 | **Not claimed** | What the record does not support, and why some expected lines are absent |
 | **Tipline** | What kind of information is useful to send in, and that identities are kept anonymous |

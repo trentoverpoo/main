@@ -41,11 +41,15 @@
         <div id="suggest" role="listbox" aria-label="Matching entities"></div>
       </div>
       <p id="search-status" class="visually-hidden" role="status"></p>
-      <button id="open-advanced" class="advanced-open" aria-haspopup="dialog">
-        Advanced search<span id="advanced-count" class="advanced-count" hidden></span>
+      <button id="open-filters" class="filters-open" aria-haspopup="dialog">
+        <span class="filters-open-label">
+          <svg class="funnel" width="13" height="13" viewBox="0 0 14 14" aria-hidden="true">
+            <path d="M1.5 2h11l-4.3 5.1v4.9l-2.4-1.4V7.1z" fill="currentColor"/>
+          </svg>Filters</span>
+        <span id="filters-count" class="filters-count" hidden></span>
       </button>
-      <p class="note">Search finds one entity. Advanced search narrows what the whole
-      map draws — by category, by kind of connection, and by how well established
+      <p class="note">Search finds one entity. Filters narrow what the whole map
+      draws — by category, by kind of connection, and by how well established
       it is.</p>
     </div>
 
@@ -74,7 +78,7 @@
     <p id="canvas-status" class="visually-hidden" role="status"></p>
 
     <div id="topbar">
-      <button id="open-filters" aria-expanded="false" aria-controls="sidebar"
+      <button id="open-menu" aria-expanded="false" aria-controls="sidebar"
               aria-label="Menu — which build to show, and search">Menu</button>
       <button id="open-tipline" aria-label="Tipline — send a tip"
               data-short="Tip">Tipline</button>
@@ -123,10 +127,10 @@
   </div>
 </div>
 
-<div id="advanced-modal" role="dialog" aria-modal="true" aria-label="Advanced search">
+<div id="filters-modal" role="dialog" aria-modal="true" aria-label="Filters">
   <div class="modal-card">
-    <button id="advanced-modal-close" class="modal-close" data-close aria-label="Close">✕</button>
-    <h2>Advanced search</h2>
+    <button id="filters-modal-close" class="modal-close" data-close aria-label="Close">✕</button>
+    <h2>Filters</h2>
     <p class="lede">These narrow what the map draws, on top of whichever build is in
     focus. They are cumulative: an entity has to pass every one of them to be
     drawn.</p>
@@ -154,7 +158,7 @@
       <div id="age-key"></div>
     </div>
 
-    <div class="advanced-foot">
+    <div class="filters-foot">
       <button id="filters-reset">Reset every filter</button>
     </div>
   </div>
