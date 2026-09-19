@@ -891,10 +891,9 @@ class UI {
       <h3>Anonymity</h3>
       <div class="nc"><b>Your identity stays out of it</b><span>Tips are handled
       anonymously. Nothing you send is published or attributed without your explicit
-      permission.</span></div>
-      <p class="lede">Using an email service like
+      permission. Using an email service like
       <a href="https://account.proton.me/signup" target="_blank" rel="noopener">Proton</a>
-      adds an extra layer of protection to your identity.</p>
+      adds an extra layer of protection to your identity.</span></div>
       <p class="lede" style="margin-top:22px">
         <a href="mailto:trentoverpoo@proton.me">trentoverpoo@proton.me</a>
       </p>`;
