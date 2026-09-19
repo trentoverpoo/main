@@ -9169,8 +9169,8 @@ window.__GRAPH__ = {
   {
    "path": "evidence/03-entities/company/stn-incorporated/public-materials/2026-09-16_stninc-com-blog_2026-growth-strategy-and-cybersecurity-goals.pdf",
    "exists": true,
-   "url": "https://www.stninc.com/blog/stn-vision-and-growth-strategy-2026",
-   "urlLabel": "stninc.com · the post as published",
+   "url": "https://web.archive.org/web/20260420100959/https://www.stninc.com/blog/stn-vision-and-growth-strategy-2026",
+   "urlLabel": "stninc.com · archived post",
    "refs": [
     {
      "kind": "node",
