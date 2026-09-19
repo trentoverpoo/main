@@ -7,6 +7,7 @@
 'use strict';
 
 const { GraphView, UI } = MAP;
+const { recencyOf } = MAP.shapes;
 
 const el = (id) => document.getElementById(id);
 
@@ -185,7 +186,10 @@ function boot() {
   function describe(n) {
     const cat = ui.catById.get(n.category);
     const conns = view.keyboardNeighbors(n.id).length;
+    // The halo and the chip are both things you have to be looking at the
+    // canvas to get. Said here, the same group reaches a screen reader.
     return `${n.name}. ${cat ? cat.label : 'Entity'}. ` +
+      (recencyOf(n.date) ? 'New this week. ' : '') +
       `${conns} connection${conns === 1 ? '' : 's'}, ` +
       `${n.citations.length} source${n.citations.length === 1 ? '' : 's'}. ` +
       'Press Enter for details.';
