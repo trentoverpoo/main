@@ -101,6 +101,7 @@ class UI {
     this._buildFiltersModal();
     this._buildMobileNote();
     this._buildTiplineModal();
+    this._buildShortcutsModal();
   }
 
   palette() { return readPalette(); }
@@ -910,6 +911,50 @@ class UI {
     el('open-tipline').addEventListener('click', open);
     modal.addEventListener('click', (ev) => {
       if (ev.target.id === 'tipline-modal' || ev.target.closest('[data-close]')) close();
+    });
+    document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
+  }
+
+  // ---------------------------------------------------------- shortcuts ---
+
+  /** The keys the map answers to — moved out of the always-on-canvas popover
+   *  and behind this link, so a sighted mouse user can find them without first
+   *  giving the canvas keyboard focus. The canvas keeps its own, silent copy
+   *  for aria-describedby; see #canvas-help in index.html. */
+  _buildShortcutsModal() {
+    const modal = el('shortcuts-modal');
+    if (!modal) return;
+
+    const rows = [
+      { keys: ['←', '→'], desc: 'Step through entities' },
+      { keys: ['↑', '↓'], desc: 'Follow a connection' },
+      { keys: ['Enter'], desc: 'Open details' },
+      { keys: ['+', '−', '0'], desc: 'Zoom' },
+      { keys: ['/'], desc: 'Search' },
+      { keys: ['Esc'], desc: 'Clear' },
+    ];
+    el('shortcuts-modal-body').innerHTML = `
+      <h2>Keyboard shortcuts</h2>
+      <p class="lede">These work once the map has keyboard focus — click it, or tab to it.</p>
+      ${rows.map((r) => `
+        <div class="shortcut-row">
+          <span class="keys">${r.keys.map((k) => `<kbd>${esc(k)}</kbd>`).join(' ')}</span>
+          <span class="desc">${esc(r.desc)}</span>
+        </div>`).join('')}`;
+
+    let release = null;
+    const open = () => {
+      modal.classList.add('open');
+      release = dialogFocus(modal, el('shortcuts-modal-close'));
+    };
+    const close = () => {
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      if (release) { release(); release = null; }
+    };
+    el('open-shortcuts').addEventListener('click', open);
+    modal.addEventListener('click', (ev) => {
+      if (ev.target.id === 'shortcuts-modal' || ev.target.closest('[data-close]')) close();
     });
     document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
   }
