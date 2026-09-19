@@ -25,7 +25,7 @@
   date: 2015-08-26
   citations:
     - doc: evidence/03-entities/company/jde-investments-llc/2015-08-26_articles-of-organization.pdf
-      label: Articles of organization — registered agent and organizer
+      label: Articles of organization · registered agent and organizer
       date: 2015-08-26
 
 - source: sunny-rost
@@ -37,7 +37,7 @@
   date: 2019-10-04
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2019-10-04_inst-2019004679_warranty-deed_jde-to-ary.pdf
-      label: Warranty deed, Inst. 2019004679 — signature
+      label: Warranty deed, Inst. 2019004679 · signature
       date: 2019-10-04
       excerpt: Signed Sunny Rost, Managing Member
 
@@ -64,7 +64,7 @@
   date: 2026-04-24
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf
-      label: Warranty deed, Inst. 2026002242 — signature
+      label: Warranty deed, Inst. 2026002242 · signature
       date: 2026-04-24
 
 - source: ary-investments
@@ -117,7 +117,7 @@
     The project site is exactly 10.00 acres, conveyed in two five-acre steps.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003833_warranty-deed_ary-investments.pdf
-      label: Warranty deed, Inst. 2026003833 — grantee
+      label: Warranty deed, Inst. 2026003833 · grantee
       date: 2026-07-10
 
 # ------------------------------------------------ control of the titleholder -----
@@ -134,7 +134,7 @@
     executed the September deed of trust and assignment of rents alone in the same capacity.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026003834 — signature and acknowledgment
+      label: Deed of trust, Inst. 2026003834 · signature and acknowledgment
       date: 2026-07-10
       excerpt: >
         Manager of LUMON SOLUTIONS MANAGEMENT, LLC, Manager of LUMON SOLUTIONS
@@ -156,7 +156,7 @@
     work.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026003834 — signature page
+      label: Deed of trust, Inst. 2026003834 · signature page
       date: 2026-07-10
 
 - source: ashton-owens
@@ -170,7 +170,7 @@
     The only document in this file in which Ashton Owens appears.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026003834 — signature page
+      label: Deed of trust, Inst. 2026003834 · signature page
       date: 2026-07-10
 
 - source: lumon-solutions-management
@@ -182,7 +182,7 @@
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026003834 — stated capacity
+      label: Deed of trust, Inst. 2026003834 · stated capacity
       date: 2026-07-10
 
 - source: victoria-mccauley
@@ -219,8 +219,8 @@
   citations:
     - external: Law-firm identity verified externally
       url: https://www.williamsmullen.com/offices/virginia-beach-va
-      url_label: williamsmullen.com — the Virginia Beach office
-      label: 222 Central Park Ave Ste 1700, Virginia Beach — the Williams Mullen office
+      url_label: williamsmullen.com · the Virginia Beach office
+      label: 222 Central Park Ave Ste 1700, Virginia Beach · the Williams Mullen office
       date: 2026-04-20
 
 - source: parks-jones-agent-services
@@ -232,7 +232,7 @@
   date: 2026-04-20
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf
-      label: Articles of organization LC014727200 — registered agent
+      label: Articles of organization LC014727200 · registered agent
       date: 2026-04-20
 
 - source: parks-jones-agent-services
@@ -244,7 +244,7 @@
   date: 2026-04-21
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-04-21_articles-of-organization_LC014727379.pdf
-      label: Articles of organization LC014727379 — registered agent
+      label: Articles of organization LC014727379 · registered agent
       date: 2026-04-21
 
 - source: cameron-g-jones
@@ -261,8 +261,8 @@
   citations:
     - external: Firm identity and history verified externally
       url: https://www.lifegenlawgroup.com/cameron-jones/
-      url_label: lifegenlawgroup.com — Cameron G. Jones
-      label: Parks & Jones, Attorneys at Law — now LifeGen Law Group
+      url_label: lifegenlawgroup.com · Cameron G. Jones
+      label: Parks & Jones, Attorneys at Law · now LifeGen Law Group
       date: 2011
 
 - source: parks-jones-agent-services
@@ -274,7 +274,7 @@
   date: 2026-04-20
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf
-      label: Articles of organization — registered agent address
+      label: Articles of organization · registered agent address
       date: 2026-04-20
 
 - source: lifegen-law-group
@@ -286,7 +286,7 @@
   citations:
     - external: Firm address verified externally
       url: https://www.lifegenlawgroup.com/contact-us/
-      url_label: lifegenlawgroup.com — the firm's address
+      url_label: lifegenlawgroup.com · the firm's address
       label: 1983 E Seminole St, Springfield
 
 - source: cameron-g-jones
@@ -317,7 +317,7 @@
     on amendments signed by Cameron G. Jones.
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-05-07_amendment_principal-office-2900-s-national.pdf
-      label: Amendment — principal office to 2900 S. National
+      label: Amendment · principal office to 2900 S. National
       date: 2026-05-07
 
 - source: lumon-solutions-management
@@ -329,7 +329,7 @@
   date: 2026-05-07
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-05-07_amendment_principal-office-2900-s-national.pdf
-      label: Amendment — principal office to 2900 S. National
+      label: Amendment · principal office to 2900 S. National
       date: 2026-05-07
 
 # ------------------------------------------------------- land financing -----
@@ -337,7 +337,7 @@
 - source: oakstar-bank
   target: lumon-solutions-marshfield
   type: finance
-  label: deed of trust — maximum principal $4,075,000
+  label: deed of trust · maximum principal $4,075,000
   tier: 1
   projects: [marshfield]
   date: 2026-07-10
@@ -353,7 +353,7 @@
 - source: oakstar-bank
   target: lumon-solutions-marshfield
   type: finance
-  label: second deed of trust — maximum principal $1,500,000, plus assignment of rents
+  label: second deed of trust · maximum principal $1,500,000, plus assignment of rents
   tier: 1
   projects: [marshfield]
   date: 2026-09-04
@@ -389,7 +389,7 @@
   summary: >
     Model 2000DQKC-2125, serials I010287039, G010262121, G010262123, I010287043. The
     2000DQKC is rated 2000 kW standby / 1825 kW prime, so four units represent roughly 8 MW
-    of standby generation — owned by Lumon and separately financed.
+    of standby generation, owned by Lumon and separately financed.
   citations:
     - doc: evidence/01-marshfield-site/ucc-filings-mo-sos/2026-07-13_20260713000903015_oakstar_four-cummins-generators.pdf
       label: UCC 20260713000903015
@@ -405,7 +405,7 @@
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026003834 — trustee
+      label: Deed of trust, Inst. 2026003834 · trustee
       date: 2026-07-10
 
 - source: notary-a-mcbride
@@ -417,7 +417,7 @@
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026003834 — acknowledgment
+      label: Deed of trust, Inst. 2026003834 · acknowledgment
       date: 2026-07-10
 
 - source: notary-a-mcbride
@@ -429,7 +429,7 @@
   date: 2026-04-24
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf
-      label: Warranty deed, Inst. 2026002242 — acknowledgment
+      label: Warranty deed, Inst. 2026002242 · acknowledgment
       date: 2026-04-24
 
 - source: notary-colette-creach
@@ -441,7 +441,7 @@
   date: 2026-09-04
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-04_inst-2026004988_deed-of-trust_oakstar-bank.pdf
-      label: Deed of trust, Inst. 2026004988 — acknowledgment
+      label: Deed of trust, Inst. 2026004988 · acknowledgment
       date: 2026-09-04
 
 # ---------------------------------------------------- equipment & vendors -----
@@ -454,12 +454,12 @@
   projects: [marshfield]
   date: 2026-09-03
   summary: >
-    All nine Synapse 60-XL Composite Modular Data Center enclosures — eight IT MDC variants
-    and one Network MDC variant — together with power distribution, cooling, fire
+    All nine Synapse 60-XL Composite Modular Data Center enclosures (eight IT MDC variants
+    and one Network MDC variant) together with power distribution, cooling, fire
     suppression, monitoring, controls and commissioning systems.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf
-      label: UCC-1 fixture filing, Inst. 2026004939 — collateral description
+      label: UCC-1 fixture filing, Inst. 2026004939 · collateral description
       date: 2026-09-03
       excerpt: >
         all nine (9) Synapse 60-XL Composite Modular Data Center enclosures (configured as
@@ -473,7 +473,7 @@
   projects: [marshfield]
   date: 2026-05-22
   summary: >
-    The security interest was perfected twice — a California UCC filed 28 August 2026 and a
+    The security interest was perfected twice: a California UCC filed 28 August 2026 and a
     fixture filing recorded in Webster County on 3 September 2026.
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2026-08-28_U260068317932_northstar-enterprise-and-defense_marshfield-modular-data-center-equipment.pdf
@@ -522,7 +522,7 @@
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-technologies-group-inc/sec-edgar/2025-02-13_form-C-AR_fy2022-annual-report.pdf
       url: https://www.sec.gov/Archives/edgar/data/1826924/000166919125000090/0001669191-25-000090-index.htm
-      url_label: SEC EDGAR — filing index, CIK 0001826924
+      url_label: SEC EDGAR · filing index, CIK 0001826924
       label: Form C-AR, FY2022
       date: 2025-02-13
 
@@ -552,8 +552,8 @@
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf
       url: https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410
-      url_label: EdgeIR — the article as published
-      label: EdgeIR — Northstar acquires Compass Quantum
+      url_label: EdgeIR · the article as published
+      label: EdgeIR · Northstar acquires Compass Quantum
       date: 2025-04-10
 
 - source: compass-datacenters
@@ -566,8 +566,8 @@
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf
       url: https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410
-      url_label: EdgeIR — the article as published
-      label: EdgeIR — Northstar acquires Compass Quantum
+      url_label: EdgeIR · the article as published
+      label: EdgeIR · Northstar acquires Compass Quantum
       date: 2025-04-10
 
 - source: sabur-khalid-mian
@@ -579,12 +579,12 @@
   date: 2016-09-19
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png
-      label: California SoS record — entity 3946840
+      label: California SoS record · entity 3946840
 
 - source: sabur-khalid-mian
   target: stn-one-incorporated
   type: ownership
-  label: sole officer — CEO, CFO and Secretary
+  label: sole officer · CEO, CFO and Secretary
   tier: 1
   projects: [marshfield]
   date: 2026-07-22
@@ -603,7 +603,7 @@
   date: 2026-07-16
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png
-      label: California SoS record — converted out 16 July 2026
+      label: California SoS record · converted out 16 July 2026
       date: 2026-07-16
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos-certified-copies/2026-07-21_statement-and-designation-out-of-state-corp_stn-one-incorporated_with-de-good-standing-cert.pdf
       label: Statement and designation, with Delaware good-standing certificate
@@ -618,7 +618,7 @@
   date: 2026-09-03
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf
-      label: UCC-1 fixture filing — filer
+      label: UCC-1 fixture filing · filer
       date: 2026-09-03
 
 - source: kenneth-schwartz
@@ -630,7 +630,7 @@
   date: 2026-09-03
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf
-      label: UCC-1 fixture filing — filer
+      label: UCC-1 fixture filing · filer
       date: 2026-09-03
 
 - source: united-rentals
@@ -657,7 +657,7 @@
   date: 2026-08-12
   citations:
     - doc: evidence/01-marshfield-site/photos/2026-08-12-site-visit/site-photo-rental-power-and-cooling_undated.jpg
-      label: Site photograph — rental power and cooling
+      label: Site photograph · rental power and cooling
       date: 2026-08-12
 
 # ----------------------------------------------------- STN lien history -----
@@ -710,16 +710,16 @@
   date: 2024-03-26
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2024-03-26_U240028270225_arrow-capital-solutions_lease-ACS-01979-0001.pdf
-      label: UCC U240028270225 — first of the series
+      label: UCC U240028270225 · first of the series
       date: 2024-03-26
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2025-12-02_U250215935830_arrow-capital-solutions_lease-ACS-01979-0010.pdf
-      label: UCC U250215935830 — last of the series
+      label: UCC U250215935830 · last of the series
       date: 2025-12-02
 
 - source: csc-representative
   target: stn-incorporated
   type: finance
-  label: three lease-financing liens — all terminated 19 August 2026
+  label: three lease-financing liens · all terminated 19 August 2026
   tier: 1
   projects: [marshfield]
   date: 2021-10-26
@@ -728,13 +728,13 @@
       label: UCC U210097054029
       date: 2021-10-26
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065605618_csc-representative_termination-of-2021-10-26.pdf
-      label: UCC U260065605618 — termination
+      label: UCC U260065605618 · termination
       date: 2026-08-19
 
 - source: ingram-micro-flex
   target: stn-incorporated
   type: finance
-  label: all-assets lien — terminated 11 August 2026
+  label: all-assets lien · terminated 11 August 2026
   tier: 1
   projects: [marshfield]
   date: 2024-01-25
@@ -743,13 +743,13 @@
       label: UCC U240006007617
       date: 2024-01-25
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-11_U260062092927_ingram-micro-flex-payment-solutions_termination-of-2024-01-25.pdf
-      label: UCC U260062092927 — termination
+      label: UCC U260062092927 · termination
       date: 2026-08-11
 
 - source: td-synnex
   target: stn-incorporated
   type: finance
-  label: purchase-money security interest — terminated 19 August 2026
+  label: purchase-money security interest · terminated 19 August 2026
   tier: 1
   projects: [marshfield]
   date: 2024-01-29
@@ -758,7 +758,7 @@
       label: UCC U240006712925
       date: 2024-01-29
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065482634_td-synnex_termination-of-2024-01-29.pdf
-      label: UCC U260065482634 — termination
+      label: UCC U260065482634 · termination
       date: 2026-08-19
 
 # ------------------------------------------------ Sho-Me: adjacency only -----
@@ -772,7 +772,7 @@
   date: 2015-11-19
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2015-11-19_book2015-page5296_warranty-deed_jde-investments-to-sho-me-power-electric-cooperative.pdf
-      label: Warranty deed, Bk 2015 Pg 5296 — signature
+      label: Warranty deed, Bk 2015 Pg 5296 · signature
       date: 2015-11-19
       excerpt: Signed Eric Glidewell, Managing Member
 
@@ -787,7 +787,7 @@
     JDE Investments acquired the parent tract 4 September 2015 (Bk 2015 Pg 4156) and
     conveyed this 20.33-acre piece of it to Sho-Me Power Electric Cooperative by general
     warranty deed 19 November 2015 (Bk 2015 Pg 5296), subject to a road-purposes exception
-    across the east side — the Rifle Range Road frontage.
+    across the east side, the Rifle Range Road frontage.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2015-09-04_book2015-page4156_warranty-deed_glidewell-cleir-rost-to-jde-investments.pdf
       label: Warranty deed, Bk 2015 Pg 4156
@@ -807,8 +807,8 @@
     Sho-Me Power Electric Cooperative acquired the 20.33-acre tract from JDE Investments by
     general warranty deed (Bk 2015 Pg 5296), subject to a road-purposes exception across the
     east side. The Webster County Assessor's parcel viewer carries the same tract today as
-    PID 06-7.0-26-000-000-012.070 (19.24 acres — the road-purposes exception accounts for the
-    ~1.09-acre gap to the deed's 20.33-acre gross figure — deed reference 2015-5296, matching
+    PID 06-7.0-26-000-000-012.070 (19.24 acres, with the road-purposes exception accounting
+    for the ~1.09-acre gap to the deed's 20.33-acre gross figure; deed reference 2015-5296, matching
     the deed exactly), still billed to Sho-Me Power Electric Cooperative, with a substation
     structure visible inside the boundary.
   citations:
@@ -823,7 +823,7 @@
       label: Boundary survey, WCSRB Bk 18 Pg 98
       date: 2015-10-19
     - doc: evidence/01-marshfield-site/parcel-records/2026-09-18_webster-county-gis_parcel-06-7.0-26-000-000-012.070_sho-me-power-electric-cooperative.webp
-      label: Webster County GIS — parcel 06-7.0-26-000-000-012.070
+      label: Webster County GIS · parcel 06-7.0-26-000-000-012.070
       date: 2026-09-18
       excerpt: >
         SHO-ME POWER ELECTRIC COOPERATIVE, PO Box D, Marshfield MO 65706; 19.24 acres;
@@ -842,7 +842,7 @@
     Sho-Me entity and Lumon, NSI or STN appears anywhere in this file.
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf
-      label: Boundary survey, Bk 1 Pg 1229 — adjoining owner
+      label: Boundary survey, Bk 1 Pg 1229 · adjoining owner
       date: 2026-02-12
       excerpt: Adjoining owner to the northwest — Sho-Me Power Electric Cooperative (2015-5296)
 
@@ -860,7 +860,7 @@
   citations:
     - external: Corporate relationship verified externally
       url: https://shometech.com/about-us/
-      url_label: shometech.com — Sho-Me Technologies' own About page
+      url_label: shometech.com · Sho-Me Technologies' own About page
       label: Sho-Me Technologies is a subsidiary of Sho-Me Power Electric Cooperative
 
 # --------------------------------------------------- the NSI side -----
@@ -881,7 +881,7 @@
       date: 2016
       excerpt: Trenton R. Overhue, Trustee (Ozark, MO)
     - doc: evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2022 Annual Report.pdf
-      label: Kansas annual report 2022 — last to disclose members
+      label: Kansas annual report 2022 · last to disclose members
       date: 2022
 
 - source: robi-overhue
@@ -947,7 +947,7 @@
   citations:
     - external: Springfield Daily Citizen
       url: https://sgfcitizen.org/government/springfield-greene-county/protest-against-ai-data-centers/
-      url_label: Springfield Daily Citizen — the article as published
+      url_label: Springfield Daily Citizen · the article as published
       label: NSI A1 LLC acquired 2900 S National Ave, March 2025
       date: 2025-03
 
@@ -960,7 +960,7 @@
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_owner-record-nsi-6.png
-      label: Benton County GIS — owner record
+      label: Benton County GIS · owner record
 
 - source: nsi-6
   target: addr-1736-sunshine
@@ -984,8 +984,8 @@
   citations:
     - doc: evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png
       url: https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985
-      url_label: Missouri DNR permit search — MORA29985 filled in, press Search
-      label: Permit MORA29985 — owner address
+      url_label: Missouri DNR permit search · MORA29985 filled in, press Search
+      label: Permit MORA29985 · owner address
       date: 2026-04-30
 
 - source: trenton-overhue
@@ -998,12 +998,12 @@
   citations:
     - external: Springfield Daily Citizen
       url: https://sgfcitizen.org/economy-growth/plaza-towers-purchased-for-13364000-at-foreclosure-sale/
-      url_label: Springfield Daily Citizen — the article as published
+      url_label: Springfield Daily Citizen · the article as published
       label: Trustee's foreclosure sale, 10 April 2025, $13,364,000
       date: 2025-04-10
     - external: Springfield Business Journal
       url: https://sbj.net/stories/plaza-towers-auctioned-to-highest-bidder,99256
-      url_label: Springfield Business Journal — the article as published
+      url_label: Springfield Business Journal · the article as published
       label: Trustee's foreclosure sale, April 2025
       date: 2025-04
 
@@ -1028,7 +1028,7 @@
   citations:
     - external: Firm roster verified externally
       url: https://www.lifegenlawgroup.com/nathaniel-j-poivre/
-      url_label: lifegenlawgroup.com — Nathaniel J. Poivre
+      url_label: lifegenlawgroup.com · Nathaniel J. Poivre
       label: Nathaniel J. Poivre, attorney at the same Springfield firm as Cameron G. Jones
 
 - source: hogan-land-title
@@ -1054,7 +1054,7 @@
     All three deeds were recorded together at 1:32 PM on 9 September 2026.
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf
-      label: Trustee's warranty deed, Inst. 202604041 — e-recording
+      label: Trustee's warranty deed, Inst. 202604041 · e-recording
       date: 2026-09-09
 
 # --------------------------------------------- Benton County chain of title -----
@@ -1156,7 +1156,7 @@
   projects: [benton]
   date: 2026-09-09
   summary: >
-    Signed 2 September 2026 — the day of the TRO hearing — before a notary in Big Sandy,
+    Signed 2 September 2026, the day of the TRO hearing, before a notary in Big Sandy,
     Chouteau County, Montana.
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604042_trustees-warranty-deed_shawn-hilty-trust-to-nsi-6.pdf
@@ -1188,7 +1188,7 @@
     commonality of execution, not evidence of common control.
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf
-      label: Trustee's warranty deed, Inst. 202604041 — acknowledgment
+      label: Trustee's warranty deed, Inst. 202604041 · acknowledgment
       date: 2026-09-09
 
 - source: notary-a-mcbride
@@ -1200,7 +1200,7 @@
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604043_trustees-warranty-deed_john-hilty-trust-to-nsi-6.pdf
-      label: Trustee's warranty deed, Inst. 202604043 — acknowledgment
+      label: Trustee's warranty deed, Inst. 202604043 · acknowledgment
       date: 2026-09-09
 
 - source: pitts-homes
@@ -1213,7 +1213,7 @@
   citations:
     - doc: evidence/06-benton-county-site/photos/2026-04_google-street-view_29152-old-hwy-65_pitts-homes.png
       url: https://www.google.com/maps/place/29152+Old+Hwy+65,+Warsaw,+MO+65355
-      url_label: Google Maps — 29152 Old Hwy 65, Warsaw
+      url_label: Google Maps · 29152 Old Hwy 65, Warsaw
       label: Street-level imagery, April 2026
       date: 2026-04
 
@@ -1226,7 +1226,7 @@
   date: 2026
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png
-      label: Benton County GIS — parcel 142009000001001002
+      label: Benton County GIS · parcel 142009000001001002
 
 - source: central-electric-cooperative
   target: parcel-central-electric-substation
@@ -1237,7 +1237,7 @@
   date: 2026
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png
-      label: Benton County GIS — parcel 142009000001001003
+      label: Benton County GIS · parcel 142009000001001003
 
 - source: parcel-aquila-switchyard
   target: site-benton
@@ -1252,7 +1252,7 @@
     either utility.
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png
-      label: Benton County GIS — aerial
+      label: Benton County GIS · aerial
 
 - source: parcel-central-electric-substation
   target: site-benton
@@ -1263,7 +1263,7 @@
   date: 2026
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png
-      label: Benton County GIS — aerial
+      label: Benton County GIS · aerial
 
 # ------------------------------------------- litigation, permits, agencies -----
 
@@ -1301,7 +1301,7 @@
   date: 2026-08-24
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf
-      label: Petition — counsel of record
+      label: Petition · counsel of record
       date: 2026-08-24
 
 - source: megan-russell
@@ -1313,7 +1313,7 @@
   date: 2026-08-24
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf
-      label: Petition — counsel of record
+      label: Petition · counsel of record
       date: 2026-08-24
 
 - source: benton-county-commission
@@ -1325,7 +1325,7 @@
   date: 2026-08-10
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf
-      label: Exhibit 1 — moratorium order
+      label: Exhibit 1 · moratorium order
       date: 2026-08-10
 
 - source: missouri-governor-eo-26-02
@@ -1339,7 +1339,7 @@
     Requires a state report on data-center impacts by 30 November 2026.
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf
-      label: Exhibit 1 — recitals
+      label: Exhibit 1 · recitals
       date: 2026-08-10
 
 - source: nsi-a1
@@ -1383,11 +1383,11 @@
   date: 2026-09-17
   citations:
     - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
-      label: Verified petition — signature block
+      label: Verified petition · signature block
       date: 2026-09-17
       excerpt: The Law Office of Chad G. Mann, LLC — Missouri Bar No. 70213
     - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf
-      label: Summons — attorney for petitioner
+      label: Summons · attorney for petitioner
       date: 2026-09-18
 
 - source: case-nsi-a1-v-springfield
@@ -1395,7 +1395,7 @@
   type: legal
   label: challenges as void
   because: >
-    On two independent grounds — that it is zoning enacted without the Chapter 89 notice and
+    On two independent grounds: that it is zoning enacted without the Chapter 89 notice and
     hearing, and that it was not enacted in the form the Charter requires.
   tier: 1
   projects: [springfield]
@@ -1512,7 +1512,7 @@
   date: 2026-08-28
   summary: >
     The summons identifies a party the verified petition does not name. Being named as the
-    party of record on a summons in this litigation is a documented connection — the
+    party of record on a summons in this litigation is a documented connection of the
     strongest kind, a court filing. This file contains no correction, amended summons or
     docket entry explaining the discrepancy, and no assumption should be made about why it
     appears, including that it is an error.
@@ -1531,7 +1531,7 @@
   date: 2026-08-28
   citations:
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf
-      label: Summons — counsel
+      label: Summons · counsel
       date: 2026-08-28
 
 - source: jake-gaddy
@@ -1563,7 +1563,7 @@
 - source: marshfield-fire-district
   target: site-marshfield
   type: legal
-  label: smoke investigation, report 26-0992 — "no fire at this location"
+  label: smoke investigation, report 26-0992 · "no fire at this location"
   tier: 1
   projects: [marshfield]
   date: 2026-07-18
@@ -1588,7 +1588,7 @@
   date: 2026-07-18
   citations:
     - doc: evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf
-      label: Incident report 26-0992 — Owner field
+      label: Incident report 26-0992 · Owner field
       date: 2026-07-18
 
 - source: niangua-fire-district
@@ -1600,13 +1600,13 @@
   date: 2026-07-18
   citations:
     - doc: evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf
-      label: Incident report 26-0992 — automatic aid
+      label: Incident report 26-0992 · automatic aid
       date: 2026-07-18
 
 - source: webster-county-911
   target: site-marshfield
   type: legal
-  label: call CFS2026021837, "FC — FIRE, COMMERCIAL STRUCTURE"
+  label: call CFS2026021837, "FC · FIRE, COMMERCIAL STRUCTURE"
   tier: 1
   projects: [marshfield]
   date: 2026-07-18
@@ -1640,7 +1640,7 @@
   citations:
     - doc: evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png
       url: https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985
-      url_label: Missouri DNR permit search — MORA29985 filled in, press Search
+      url_label: Missouri DNR permit search · MORA29985 filled in, press Search
       label: Permit MORA29985
       date: 2026-04-30
 
@@ -1657,7 +1657,7 @@
   citations:
     - doc: evidence/06-benton-county-site/permits/mo-dnr-permit-MORA30685_cold-storage_nsi-6.png
       url: https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA30685
-      url_label: Missouri DNR permit search — MORA30685 filled in, press Search
+      url_label: Missouri DNR permit search · MORA30685 filled in, press Search
       label: Permit MORA30685
       date: 2026-09-09
 
@@ -1670,7 +1670,7 @@
   date: 2026-08-03
   citations:
     - doc: evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf
-      label: Pre-development review comments — Planning
+      label: Pre-development review comments · Planning
       date: 2026-08-03
 
 - source: city-utilities-springfield
@@ -1682,7 +1682,7 @@
   date: 2026-08-03
   citations:
     - doc: evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf
-      label: Pre-development review comments — City Utilities
+      label: Pre-development review comments · City Utilities
       date: 2026-08-03
 
 - source: webster-county-commission
@@ -1698,7 +1698,7 @@
   citations:
     - external: Webster County Commission action, reported contemporaneously
       url: https://webstercountymo.gov/county-adopts-six-month-moratorium/
-      url_label: webstercountymo.gov — the Commission's own notice
+      url_label: webstercountymo.gov · the Commission's own notice
       label: Six-month moratorium, 16 June 2026
       date: 2026-06-16
 
@@ -1714,12 +1714,12 @@
   summary: >
     Overhue's own account, given as a named panellist. He described identifying "stranded
     power" at a local substation operating below capacity, securing a power agreement, and
-    then purchasing the land — adding that county zoning posed no obstacle. No such
+    then purchasing the land, adding that county zoning posed no obstacle. No such
     agreement, and no identification of its counterparty, appears anywhere in this file.
   citations:
     - external: Biz 417 "B-School" panel
       url: https://www.biz417.com/blog/b-school-recap-data-centers/
-      url_label: Biz 417 — the magazine's own recap of the panel
+      url_label: Biz 417 · the magazine's own recap of the panel
       label: Trent Overhue (Northern States Investments), named panellist
       date: 2026-06-23
       excerpt: >
@@ -1741,7 +1741,7 @@
   citations:
     - external: Springfield Daily Citizen
       url: https://sgfcitizen.org/economy-growth/business/marshfield-data-center-company-says-project-moving-forward-despite-public-outcry/
-      url_label: Springfield Daily Citizen — the article as published
+      url_label: Springfield Daily Citizen · the article as published
       label: Lumon statement, 13 May 2026
       date: 2026-05-13
       excerpt: >
@@ -1757,13 +1757,13 @@
   projects: [benton]
   date: 2026-09-02
   summary: >
-    Testimony at the TRO hearing, reported by KY3 — closing scheduled 9 September, and
+    Testimony at the TRO hearing, reported by KY3: closing scheduled 9 September, and
     withdrawing would cost him $100,000. Across all three sites the same selection logic is
     documented from the developer's own side.
   citations:
     - external: KY3 News, reporting the 2 September 2026 TRO hearing
       url: https://www.ky3.com/2026/09/02/data-center-moratorium-fight-plays-out-benton-county-courtroom/
-      url_label: KY3 — the report as published
+      url_label: KY3 · the report as published
       label: Overhue testimony and counsel's argument
       date: 2026-09-02
       excerpt: purposefully selected Benton County because it has no planning and zoning
@@ -1773,7 +1773,7 @@
 - source: nsi-investments
   target: nsi-6
   type: ownership
-  label: common naming series and principals — no document establishes a parent relationship
+  label: common naming series and principals · no document establishes a parent relationship
   tier: 3
   projects: [benton]
   date: 2026-08-13
@@ -1786,16 +1786,16 @@
     of NSI 6.
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf
-      label: NSI 6 articles — no member or manager disclosed
+      label: NSI 6 articles · no member or manager disclosed
       date: 2026-08-13
     - doc: evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2025 Information Report.pdf
-      label: Kansas information report 2025 — membership no longer disclosed
+      label: Kansas information report 2025 · membership no longer disclosed
       date: 2025
 
 - source: nsi-investments
   target: nsi-a1
   type: ownership
-  label: common naming series — no document establishes a parent relationship
+  label: common naming series · no document establishes a parent relationship
   tier: 3
   projects: [springfield]
   date: 2025-02-24
@@ -1806,7 +1806,7 @@
     An operating agreement or filing naming NSI Investments as a member of NSI, A.1, LLC.
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-a1-llc/2025-02-24_articles-of-organization_LC014612494.pdf
-      label: NSI A.1 articles — no member or manager disclosed
+      label: NSI A.1 articles · no member or manager disclosed
       date: 2025-02-24
 
 - source: northstar-enterprise-defense
@@ -1824,10 +1824,10 @@
     The Loan Agreement's conditions precedent, or payoff letters.
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065482634_td-synnex_termination-of-2024-01-29.pdf
-      label: UCC U260065482634 — one of six terminations
+      label: UCC U260065482634 · one of six terminations
       date: 2026-08-19
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2026-08-28_U260068317932_northstar-enterprise-and-defense_marshfield-modular-data-center-equipment.pdf
-      label: California UCC U260068317932 — perfection
+      label: California UCC U260068317932 · perfection
       date: 2026-08-28
 
 - source: ashton-owens
@@ -1842,7 +1842,7 @@
     Organized October 2022 with Nathaniel Aldrich, administratively dissolved June 2024. The
     domain was registered 13 July 2026 and the live site is personally branded to Owens. The
     page makes no reference to data centers or to any entity in this file, and the deed of
-    trust is dated 10 July — merely recorded on the 13th — which drains most of the meaning
+    trust is dated 10 July, merely recorded on the 13th, which drains most of the meaning
     from the timing coincidence.
   resolves: >
     A MetaWest portfolio page naming any entity in this file, a current registration reviving
@@ -1854,6 +1854,6 @@
     - doc: evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html
       date: 2026-09-17
       url: https://metawestventures.com/
-      url_label: metawestventures.com — the site itself
-      label: Saved capture — raw HTML nav links
+      url_label: metawestventures.com · the site itself
+      label: Saved capture · raw HTML nav links
       excerpt: <a href="mailto:ashton@owensand.co">CONTACT US</a>

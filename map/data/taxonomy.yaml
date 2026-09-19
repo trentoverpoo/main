@@ -106,7 +106,7 @@ projects:
     anchor: site-marshfield
     default: true
     note: >
-      Ten acres off Rifle Range Road, the deepest-documented of the three — chain
+      Ten acres off Rifle Range Road, the deepest-documented of the three: chain
       of title, financing, equipment, permits and the July fire response.
   - key: springfield
     label: Springfield
@@ -173,7 +173,7 @@ hierarchy:
 
   - key: counterparties
     label: Counterparties, lenders and professional services
-    note: Everyone transacting with the entities above — equipment, money and paperwork.
+    note: Everyone transacting with the entities above, on equipment, money and paperwork.
     rows:
       - [stn-incorporated, stn-one-incorporated, northstar-enterprise-defense,
          northstar-technologies-group, compass-quantum, compass-datacenters,
