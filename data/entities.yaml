@@ -378,12 +378,17 @@
   date_note: Counsel named on the Wright County summons
   summary: >
     Counsel named on the summons in the Wright County action — a different attorney from the
-    one who signed the verified petition.
+    one who signed that verified petition. Three weeks later he signed the Greene County
+    petition and preliminary-injunction motion against the City of Springfield himself, as
+    attorney of record.
   citations:
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf
       label: Summons, 26WR-CC00057
       date: 2026-08-28
       excerpt: Chad Garrett Mann, 901 E. St. Louis St., Suite 705, Springfield
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition, 2631-CC01131 — signature block
+      date: 2026-09-17
 
 - id: jake-gaddy
   name: Jake Gaddy
@@ -500,6 +505,12 @@
       label: Verified petition ¶7
       date: 2026-08-27
       excerpt: has served as the applicant and project sponsor
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition ¶11, 2631-CC01131 — the same description, sworn again
+      date: 2026-09-17
+      excerpt: >
+        has served as the applicant and project sponsor for a proposed office and digital
+        infrastructure project at 2900 South National Avenue
 
 # ----------------------------------------------- holding entities & trusts -----
 
@@ -1401,6 +1412,76 @@
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf
       label: Summons naming a different plaintiff
       date: 2026-08-28
+
+- id: springfield-ordinance-28306
+  name: Springfield Special Ordinance 28306
+  short: Ordinance 28306
+  category: government
+  tier: 2
+  date: 2026-06-29
+  date_note: Passed, effective immediately, expiring 17 November 2026
+  aliases: [moratorium, Council Bill 2026-147, data center moratorium]
+  summary: >
+    Springfield's data-center measure: filed as Council Bill 2026-147 on 16 June 2026 and
+    passed on 29 June, it bars the City and City Utilities from accepting or processing any
+    application to evaluate, establish, service or expand a "data center" until 17 November
+    2026 — building permits, site plan review, variances, stormwater, occupancy, utilities
+    and large-load electric service alike. A use counts as a data center if peak demand
+    exceeds 5 MW, or computing takes half the development's electricity, or half its floor
+    area. Council may lift it for a single application by resolution.
+  caveat: >
+    The ordinance itself is not in the evidence folder. Everything here is drawn from how
+    NSI A.1's petition and injunction motion describe Exhibit A, including the allegation
+    that the enactment says "BE IT RESOLVED" and was filed as a resolution.
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition ¶¶51–55, 68
+      date: 2026-09-17
+      excerpt: >
+        Section 2 prohibits the City and its Board of Public Utilities from accepting or
+        processing applications concerning the evaluation, establishment, servicing, or
+        expansion of a [data center]
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_plaintiffs-motion-for-expedited-hearing-and-preliminary-injunction.pdf
+      label: Motion for preliminary injunction ¶42 — the enacting clause
+      date: 2026-09-18
+      excerpt: >
+        substitutes 'BE IT RESOLVED' for Charter § 2.12's prescribed 'BE IT ORDAINED' clause
+        and states on its signature page, 'Filed as Resolution: June 29, 2026'
+
+- id: case-nsi-a1-v-springfield
+  name: NSI, A.1, LLC v. City of Springfield (2631-CC01131)
+  short: NSI A.1 v. Springfield
+  category: litigation
+  tier: 1
+  date: 2026-09-17
+  date_note: Verified petition filed
+  aliases: [2631-CC01131, Greene County, Ordinance 28306, Sunshine Law]
+  summary: >
+    The third suit and the second moratorium challenge — filed in Greene County eleven weeks
+    after Springfield passed Ordinance 28306, and nine days after the Benton County
+    plaintiff won its TRO. Six counts: that the ordinance is zoning in substance and void for
+    want of the Chapter 89 notice and hearing; that it was enacted as a resolution and so
+    lacks the enacting clause the City Charter commands; injunctive relief; a Sunshine Law
+    count over records request R025670-062426; and, pleaded in the alternative, the
+    moratorium's scope and equitable estoppel. The prayer asks only that the City accept and
+    process submissions — not that the project be approved. A motion for an expedited
+    hearing and preliminary injunction followed the next morning, offering $1 in security.
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition for declaratory and injunctive relief
+      date: 2026-09-17
+      excerpt: >
+        Plaintiff asks only that the City not enforce a void zoning moratorium to refuse
+        acceptance and ordinary processing of complete submissions under the law otherwise
+        in force.
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_plaintiffs-motion-for-expedited-hearing-and-preliminary-injunction.pdf
+      label: Motion for expedited hearing and preliminary injunction ¶171
+      date: 2026-09-18
+      excerpt: >
+        security be set in a nominal amount, suggested at $1
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf
+      label: Summons issued to the City, Judge Nathan Robert Taylor
+      date: 2026-09-18
 
 # ------------------------------------------------- land, sites & addresses -----
 
