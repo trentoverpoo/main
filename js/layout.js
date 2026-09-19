@@ -158,7 +158,7 @@ function courses(nodes, hierarchy) {
  *  more room than that gets it, because the camera frames whatever the layout
  *  comes to — whereas a course squeezed into less room than its names need
  *  would simply overlap. */
-function seed(nodes, edges, hierarchy, [worldW, worldH]) {
+function seed(nodes, edges, hierarchy, [worldW, worldH], centre) {
   const authored = courses(nodes, hierarchy || []);
   if (!authored.length) return [worldW, worldH];
 
@@ -215,6 +215,28 @@ function seed(nodes, edges, hierarchy, [worldW, worldH]) {
     const hi = halfW - c.members[last].boxHW;
     c.members.forEach((n, i) => {
       n.slot = last ? lo + ((hi - lo) * i) / last : 0;
+      n.x = n.slot;
+    });
+  }
+
+  // A focused build is read from its own site, so that site takes the middle of
+  // its course and the rest of the course spreads to either side of it. Only the
+  // slots move — the authored order is the reading order and is not re-sorted —
+  // and because the courses below settle towards what they connect to, putting
+  // the site in the middle is what brings its build in under it. Without this a
+  // build authored at one end of the top course opens against the edge of the
+  // stage with half the map empty beside it.
+  const top = rows[0];
+  const anchor = centre ? top.members.find((n) => n.id === centre) : null;
+  if (anchor && top.members.length > 1) {
+    const at = top.members.indexOf(anchor);
+    const last = top.members.length - 1;
+    const lo = -halfW + top.members[0].boxHW;
+    const hi = halfW - top.members[last].boxHW;
+    top.members.forEach((n, i) => {
+      n.slot = i === at ? 0
+        : i < at ? (lo * (at - i)) / at
+        : (hi * (i - at)) / (last - at);
       n.x = n.slot;
     });
   }

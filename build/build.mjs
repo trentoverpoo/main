@@ -1,18 +1,24 @@
 #!/usr/bin/env node
-// Compiles map/data/*.yaml into map/data/graph.json.
+// Compiles map/data/*.yaml into map/data/graph.json, and mirrors both into data/.
 //
 // This script FAILS the build — it does not warn — when a citation points at a file
-// that is not in this repository, when a node or edge carries no citation, or when a
-// tier-3 edge does not say what would resolve it. That is the mechanical enforcement
-// of the standard this file holds itself to.
+// that is not in this repository, when a node or edge carries no citation, when a
+// tier-3 edge does not say what would resolve it, or when an edge does not say which
+// build it belongs to. That is the mechanical enforcement of the standard this file
+// holds itself to.
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { copyFileSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from './vendor/js-yaml.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = join(ROOT, 'map', 'data');
+// The site is published from the repository root as well as from map/, so the
+// root carries a copy of the same four sources and the same two generated
+// files. Keeping them in step by hand is how they drift, so the build does it.
+const MIRROR = join(ROOT, 'data');
+const SOURCES = ['taxonomy.yaml', 'entities.yaml', 'relationships.yaml', 'non-claims.yaml'];
 
 const errors = [];
 const warnings = [];
@@ -32,9 +38,28 @@ const nonClaims = load('non-claims.yaml');
 const categoryKeys = new Set(taxonomy.categories.map((c) => c.key));
 const familyKeys = new Set(taxonomy.hueFamilies.map((f) => f.key));
 const typeKeys = new Set(taxonomy.connectionTypes.map((t) => t.key));
+const projectKeys = new Set((taxonomy.projects || []).map((p) => p.key));
 
 for (const c of taxonomy.categories) {
   if (!familyKeys.has(c.family)) fail(`category "${c.key}" names unknown family "${c.family}"`);
+}
+
+// A project is the map's opening frame, not a claim: it groups connections that
+// belong to one build so the reader can take them one at a time. Its `anchor` is
+// the site a focused view centres on, and exactly one project opens the map.
+const projects = taxonomy.projects || [];
+if (!projects.length) fail('taxonomy.yaml declares no projects');
+const seenProject = new Set();
+for (const p of projects) {
+  const where = `project "${p.key ?? '(no key)'}"`;
+  if (!p.key) fail(`${where}: missing key`);
+  else if (seenProject.has(p.key)) fail(`${where}: duplicate key`);
+  else seenProject.add(p.key);
+  if (!p.label) fail(`${where}: missing label`);
+  if (!p.anchor) fail(`${where}: missing anchor — the site a focused view centres on`);
+}
+if (projects.filter((p) => p.default).length !== 1) {
+  fail('exactly one project must carry "default: true" — it is what the map opens on');
 }
 
 // ---------------------------------------------------------------- dates -----
@@ -123,6 +148,26 @@ function checkCitations(list, where, refLabel) {
   });
 }
 
+// ------------------------------------------------------------ projects -----
+/** Reads an edge's `projects`: a list of declared keys, or `all` for the few
+ *  facts that stand behind every build. Absent is an error, not a default —
+ *  an untagged connection would quietly vanish from every focused view. */
+function readProjects(value, where) {
+  if (value === 'all') return projects.map((p) => p.key);
+  if (!Array.isArray(value) || value.length === 0) {
+    fail(`${where}: no projects. Every connection must say which build it belongs to, or "all".`);
+    return [];
+  }
+  const out = [];
+  for (const key of value) {
+    if (!projectKeys.has(key)) fail(`${where}: unknown project "${key}"`);
+    else if (out.includes(key)) fail(`${where}: project "${key}" named twice`);
+    else out.push(key);
+  }
+  // Declaration order, so every view lists its projects the same way round.
+  return projects.map((p) => p.key).filter((k) => out.includes(k));
+}
+
 // --------------------------------------------------------------- nodes -----
 const byId = new Map();
 const outNodes = nodes.map((n, i) => {
@@ -183,6 +228,10 @@ const outEdges = edges.map((e, i) => {
     fail(`${where}: tier 3 requires "resolves" — the document that would settle it`);
   }
 
+  // Which build this connection belongs to. Authored, never inferred: the graph
+  // is one connected piece, so no distance from a site can be read as membership.
+  const projectsOf = readProjects(e.projects, where);
+
   const id = `${e.source}__${e.target}__${e.type}__${e.date ?? 'undated'}__${i}`;
   const dedupe = `${e.source}|${e.target}|${e.type}|${e.label}`;
   if (seenEdge.has(dedupe)) warn(`${where}: duplicate of an identical earlier edge`);
@@ -207,6 +256,7 @@ const outEdges = edges.map((e, i) => {
     // two distinct lines instead of one run-on sentence.
     because: e.because ? String(e.because).trim() : null,
     tier: e.tier,
+    projects: projectsOf,
     date: parseDate(e.date, where),
     summary: e.summary ? e.summary.trim() : null,
     resolves: e.resolves ? e.resolves.trim() : null,
@@ -220,6 +270,34 @@ const outEdges = edges.map((e, i) => {
 
 for (const n of outNodes) {
   if (n.degree === 0) warn(`node "${n.id}" has no edges and will float unconnected`);
+}
+
+// ------------------------------------------------ project membership -----
+// An entity's project is not authored: it is the union of the projects of the
+// connections it stands on. That is deliberate. Half a dozen entities appear in
+// more than one build — a principal, two vehicles, a notary, an agency — and the
+// record does not assign any of them to one site. Deriving membership from the
+// lines means each of those entities arrives in a view carrying only the
+// connections that belong to it, instead of dragging all of them along.
+const projectMembers = new Map(projects.map((p) => [p.key, new Set()]));
+for (const e of outEdges) {
+  for (const key of e.projects) {
+    projectMembers.get(key)?.add(e.source);
+    projectMembers.get(key)?.add(e.target);
+  }
+}
+for (const n of outNodes) {
+  n.projects = projects.map((p) => p.key).filter((k) => projectMembers.get(k).has(n.id));
+  if (!n.projects.length) {
+    fail(`node "${n.id}" belongs to no project — it would be drawn in no view but the ` +
+      'whole map. Tag one of its connections, or give it one.');
+  }
+}
+for (const p of projects) {
+  if (!byId.has(p.anchor)) fail(`project "${p.key}": anchor "${p.anchor}" is not a declared node`);
+  else if (!projectMembers.get(p.key).has(p.anchor)) {
+    fail(`project "${p.key}": anchor "${p.anchor}" is not on any connection tagged "${p.key}"`);
+  }
 }
 
 // ----------------------------------------------------------- hierarchy -----
@@ -292,19 +370,31 @@ if (errors.length) {
   process.exit(1);
 }
 
+// The repository stores these with CRLF, like the sources they are compiled
+// from. Writing them with bare newlines would rewrite every one of nine
+// thousand lines on the next build and bury the change actually made.
+const crlf = (t) => t.replace(/\r?\n/g, '\r\n');
 const json = JSON.stringify(graph, null, 1);
-writeFileSync(join(DATA, 'graph.json'), json);
+writeFileSync(join(DATA, 'graph.json'), crlf(json));
 // Also emit the graph as a plain script assigning a global. fetch() of a local
 // file is blocked under file://, so the pages load this rather than the JSON —
 // which is what lets the map work from a double-click, with no server.
 writeFileSync(join(DATA, 'graph.js'),
-  `// GENERATED by build/build.mjs — do not edit.\nwindow.__GRAPH__ = ${json};\n`);
+  crlf(`// GENERATED by build/build.mjs — do not edit.\nwindow.__GRAPH__ = ${json};\n`));
+for (const f of [...SOURCES, 'graph.json', 'graph.js']) {
+  copyFileSync(join(DATA, f), join(MIRROR, f));
+}
 const tiers = (arr) => [1, 2, 3].map((t) => `T${t} ${arr.filter((x) => x.tier === t).length}`).join(' · ');
 console.log(`
-  map/data/graph.json and graph.js written
+  map/data/graph.json and graph.js written, and data/ mirrored from it
 
   ${outNodes.length} nodes   ${tiers(outNodes)}
   ${outEdges.length} edges   ${tiers(outEdges)}
+  ${projects.map((p) => `${p.key.padEnd(12)}${
+    String(projectMembers.get(p.key).size).padStart(3)} entities  ${
+    String(outEdges.filter((e) => e.projects.includes(p.key)).length).padStart(3)} connections`)
+    .join('\n  ')}
+
   ${docIndex.size} distinct documents cited, all present on disk
   ${liveUrlCount} of ${allCites.length} citations also carry a live url
 `);

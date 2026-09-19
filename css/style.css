@@ -328,6 +328,63 @@ a { color: var(--accent); }
 .check.off .swatch { opacity: 0.3; }
 .swatch, svg.line { flex: none; vertical-align: -0.18em; }
 
+/* ---------------------------------------------------------- which build --- */
+/* One of four, so the row carries a radio's mark rather than a checkbox's:
+   a ring that fills. The rows are the map's first question, and they are the
+   only control in the sidebar that changes what the map is about. */
+.proj { gap: 10px; }
+.proj::before {
+  content: ""; flex: none; width: 11px; height: 11px;
+  border-radius: 50%; border: 1.5px solid var(--edge-strong);
+  box-shadow: inset 0 0 0 3px var(--surface);
+  background: transparent;
+}
+.proj:has(input:checked)::before {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.proj:has(input:checked) .label { color: var(--ink); font-weight: 600; }
+.proj .label { color: var(--ink-2); }
+#project-note { margin-top: 9px; }
+
+/* ------------------------------------------------------ advanced search --- */
+.advanced-open {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  width: 100%; margin-top: 11px; min-height: 34px;
+  padding: 8px 11px;
+  background: none; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--ink-2); font: inherit; font-size: 12.5px; text-align: left;
+}
+.advanced-open:hover { color: var(--ink); border-color: var(--edge-strong); }
+.advanced-count {
+  flex: none; min-width: 18px; padding: 1px 5px;
+  border-radius: 9px; background: var(--accent); color: var(--plane);
+  font-size: 10.5px; font-weight: 650; text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+#advanced-modal .modal-card { max-width: 560px; }
+#advanced-modal .group + .group { margin-top: 26px; }
+#advanced-modal .modal-card h3 { display: flex; justify-content: space-between;
+  align-items: baseline; gap: 8px; }
+#advanced-modal .modal-card h3 button {
+  background: none; border: 0; cursor: pointer;
+  padding: 6px 4px; margin: -6px -4px; min-height: 24px;
+  font-size: 10.5px; letter-spacing: 0.04em; text-transform: none; font-weight: 400;
+  color: var(--ink-muted); text-decoration: underline; text-underline-offset: 2px;
+}
+#advanced-modal .modal-card h3 button:hover { color: var(--ink); }
+.advanced-foot {
+  margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--hairline);
+}
+#filters-reset {
+  min-height: 34px; padding: 8px 14px;
+  background: none; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--ink-2); font: inherit; font-size: 12.5px;
+}
+#filters-reset:hover { color: var(--ink); border-color: var(--edge-strong); }
+
 .tier-row .line { flex: none; width: 24px; height: 12px; }
 .note { font-size: 11px; line-height: 1.5; color: var(--ink-muted); margin: 7px 0 0; }
 
@@ -568,11 +625,11 @@ a { color: var(--accent); }
 
 /* ------------------------------------------------------------ modal --- */
 
-#modal, #tipline-modal {
+#modal, #tipline-modal, #advanced-modal {
   position: fixed; inset: 0; z-index: 60; display: none;
   background: rgba(0, 0, 0, 0.62); padding: 40px 20px; overflow-y: auto;
 }
-#modal.open, #tipline-modal.open { display: block; }
+#modal.open, #tipline-modal.open, #advanced-modal.open { display: block; }
 .modal-card {
   max-width: 720px; margin: 0 auto; background: var(--surface);
   border: 1px solid var(--border); border-radius: var(--r);
@@ -735,7 +792,7 @@ html:has(body.sources), body.sources {
 
   .sources-wrap { padding: 28px 16px 60px; }
   .modal-card { padding: 24px 18px 30px; }
-  #modal, #tipline-modal { padding: 16px 12px; }
+  #modal, #tipline-modal, #advanced-modal { padding: 16px 12px; }
 }
 
 /* On a phone the five toolbar buttons do not fit a row at their full names, and

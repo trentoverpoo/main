@@ -142,15 +142,36 @@ window.__GRAPH__ = {
     "note": "Equipment supply, tenancy, rentals, acquisitions."
    }
   ],
+  "projects": [
+   {
+    "key": "marshfield",
+    "label": "Marshfield",
+    "anchor": "site-marshfield",
+    "default": true,
+    "note": "Ten acres off Rifle Range Road, the deepest-documented of the three — chain of title, financing, equipment, permits and the July fire response.\n"
+   },
+   {
+    "key": "springfield",
+    "label": "Springfield",
+    "anchor": "site-springfield",
+    "note": "2900 S. National Avenue, where the build has not started: an ordinance barring the use, a suit challenging it, and a utility declining to process the service application.\n"
+   },
+   {
+    "key": "benton",
+    "label": "Benton County",
+    "anchor": "site-benton",
+    "note": "Twelve acres off Old Hwy 65 at Warsaw, assembled from three Hilty family trusts, with a county moratorium and a second suit against it.\n"
+   }
+  ],
   "hierarchy": [
    {
     "key": "sites",
     "label": "The three data centers",
-    "note": "The locations themselves. Everything below is read as standing under one of them.",
+    "note": "The locations themselves. Everything below is read as standing under one of them. Marshfield sits in the middle because it is what the map opens on.\n",
     "rows": [
      [
-      "site-marshfield",
       "site-springfield",
+      "site-marshfield",
       "site-benton"
      ]
     ]
@@ -345,7 +366,12 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 9
+   "degree": 9,
+   "projects": [
+    "marshfield",
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "cameron-g-jones",
@@ -386,7 +412,12 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 4
+   "degree": 4,
+   "projects": [
+    "marshfield",
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "ashton-owens",
@@ -416,7 +447,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "robi-overhue",
@@ -452,7 +486,11 @@ window.__GRAPH__ = {
      "urlLabel": "LinkedIn profile — Robi Overhue"
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "frank-overhue",
@@ -482,7 +520,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "aaron-york",
@@ -512,7 +554,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "jason-rost",
@@ -542,7 +587,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "sunny-rost",
@@ -572,7 +620,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "eric-glidewell",
@@ -609,7 +660,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "paul-inglese",
@@ -638,7 +692,10 @@ window.__GRAPH__ = {
      "urlLabel": "SEC EDGAR — filing index, CIK 0001826924"
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "sabur-khalid-mian",
@@ -675,7 +732,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "scott-foster",
@@ -705,7 +765,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "katherine-wiltse",
@@ -735,7 +798,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ]
   },
   {
    "id": "victoria-mccauley",
@@ -764,7 +831,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "nathaniel-poivre",
@@ -793,7 +863,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "joe-hann-hilty",
@@ -829,7 +902,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "shawn-h-hilty",
@@ -858,7 +934,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "john-h-hilty",
@@ -887,7 +966,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "notary-a-mcbride",
@@ -924,7 +1006,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 4
+   "degree": 4,
+   "projects": [
+    "marshfield",
+    "benton"
+   ]
   },
   {
    "id": "notary-colette-creach",
@@ -953,7 +1039,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "megan-russell",
@@ -982,7 +1071,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "chad-garrett-mann",
@@ -1019,7 +1111,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "jake-gaddy",
@@ -1054,7 +1149,10 @@ window.__GRAPH__ = {
      "urlLabel": "LinkedIn profile — Jake Gaddy"
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "kenneth-schwartz",
@@ -1083,7 +1181,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "lumon-solutions-marshfield",
@@ -1123,7 +1224,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 14
+   "degree": 14,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ]
   },
   {
    "id": "lumon-solutions-management",
@@ -1161,7 +1266,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 8
+   "degree": 8,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ]
   },
   {
    "id": "nsi-6",
@@ -1193,7 +1302,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 10
+   "degree": 10,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "nsi-a1",
@@ -1241,7 +1353,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 5
+   "degree": 5,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "nsi-investments",
@@ -1286,7 +1401,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 6
+   "degree": 6,
+   "projects": [
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "ary-investments",
@@ -1322,7 +1441,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 6
+   "degree": 6,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "jde-investments",
@@ -1358,7 +1480,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 5
+   "degree": 5,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "lovella-hilty-trust",
@@ -1387,7 +1512,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "stanfred-hilty-trust",
@@ -1416,7 +1544,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "joe-hann-hilty-trust",
@@ -1445,7 +1576,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 4
+   "degree": 4,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "shawn-hilty-trust",
@@ -1474,7 +1608,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "john-hilty-trust",
@@ -1503,7 +1640,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 4
+   "degree": 4,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "northstar-enterprise-defense",
@@ -1543,7 +1683,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 6
+   "degree": 6,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "northstar-technologies-group",
@@ -1580,7 +1723,10 @@ window.__GRAPH__ = {
      "urlLabel": "SEC EDGAR — filing index, CIK 0001826924"
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "compass-quantum",
@@ -1609,7 +1755,10 @@ window.__GRAPH__ = {
      "urlLabel": "EdgeIR — the article as published"
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "compass-datacenters",
@@ -1638,7 +1787,10 @@ window.__GRAPH__ = {
      "urlLabel": "EdgeIR — the article as published"
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "stn-incorporated",
@@ -1673,7 +1825,10 @@ window.__GRAPH__ = {
      "urlLabel": "stninc.com — partnerships page"
     }
    ],
-   "degree": 12
+   "degree": 12,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "stn-one-incorporated",
@@ -1709,7 +1864,10 @@ window.__GRAPH__ = {
      "urlLabel": "stninc.com — the post as published"
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "hogan-land-title",
@@ -1745,7 +1903,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "williams-mullen",
@@ -1774,7 +1936,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "lifegen-law-group",
@@ -1803,7 +1968,12 @@ window.__GRAPH__ = {
      "urlLabel": "lifegenlawgroup.com — the firm's own account of its history"
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield",
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "parks-jones-agent-services",
@@ -1832,7 +2002,11 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ]
   },
   {
    "id": "lowther-johnson",
@@ -1861,7 +2035,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "arnold-porter",
@@ -1890,7 +2067,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "spencer-fane",
@@ -1919,7 +2099,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "arista-networks",
@@ -1948,7 +2131,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "pitts-homes",
@@ -1978,7 +2164,10 @@ window.__GRAPH__ = {
      "urlLabel": "Google Maps — 29152 Old Hwy 65, Warsaw"
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "united-rentals",
@@ -2007,7 +2196,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "sunbelt-rentals",
@@ -2036,7 +2228,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "oakstar-bank",
@@ -2074,7 +2269,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 5
+   "degree": 5,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "payment-1-financial",
@@ -2111,7 +2309,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "us-sba",
@@ -2147,7 +2348,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "hpe-financial-services",
@@ -2176,7 +2380,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "arrow-capital-solutions",
@@ -2205,7 +2412,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "csc-representative",
@@ -2241,7 +2451,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "ingram-micro-flex",
@@ -2277,7 +2490,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "td-synnex",
@@ -2313,7 +2529,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "sho-me-power-cooperative",
@@ -2350,7 +2569,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "sho-me-technologies",
@@ -2380,7 +2602,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "aquila-evergy",
@@ -2409,7 +2634,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "central-electric-cooperative",
@@ -2438,7 +2666,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "city-utilities-springfield",
@@ -2468,7 +2699,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "webster-county-commission",
@@ -2497,7 +2731,10 @@ window.__GRAPH__ = {
      "urlLabel": "webstercountymo.gov — the Commission's own notice"
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "city-of-springfield",
@@ -2534,7 +2771,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "benton-county-commission",
@@ -2564,7 +2804,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "missouri-dnr",
@@ -2601,7 +2844,11 @@ window.__GRAPH__ = {
      "urlLabel": "Missouri DNR permit search — MORA30685 filled in, press Search"
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "marshfield",
+    "benton"
+   ]
   },
   {
    "id": "marshfield-fire-district",
@@ -2639,7 +2886,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "niangua-fire-district",
@@ -2668,7 +2918,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "webster-county-911",
@@ -2706,7 +2959,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "webster-county-sheriff",
@@ -2742,7 +2998,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "missouri-governor-eo-26-02",
@@ -2771,7 +3030,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "case-nsi6-v-benton",
@@ -2819,7 +3081,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "case-overhue-v-wiltse",
@@ -2860,7 +3125,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 5
+   "degree": 5,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "springfield-ordinance-28306",
@@ -2902,7 +3170,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "case-nsi-a1-v-springfield",
@@ -2952,7 +3223,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 4
+   "degree": 4,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "site-marshfield",
@@ -3001,7 +3275,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 14
+   "degree": 14,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "site-springfield",
@@ -3045,7 +3322,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 8
+   "degree": 8,
+   "projects": [
+    "springfield"
+   ]
   },
   {
    "id": "site-benton",
@@ -3087,7 +3367,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 6
+   "degree": 6,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "parcel-shome-substation",
@@ -3140,7 +3423,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield"
+   ]
   },
   {
    "id": "parcel-aquila-switchyard",
@@ -3168,7 +3454,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "parcel-central-electric-substation",
@@ -3196,7 +3485,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 2
+   "degree": 2,
+   "projects": [
+    "benton"
+   ]
   },
   {
    "id": "addr-1736-sunshine",
@@ -3250,7 +3542,11 @@ window.__GRAPH__ = {
      "urlLabel": "Springfield Business Journal — the article as published"
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield",
+    "benton"
+   ]
   },
   {
    "id": "addr-1983-seminole",
@@ -3286,7 +3582,12 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 3
+   "degree": 3,
+   "projects": [
+    "marshfield",
+    "springfield",
+    "benton"
+   ]
   },
   {
    "id": "metawest-ventures",
@@ -3330,7 +3631,10 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
-   "degree": 1
+   "degree": 1,
+   "projects": [
+    "marshfield"
+   ]
   }
  ],
  "edges": [
@@ -3344,6 +3648,9 @@ window.__GRAPH__ = {
    "label": "organized",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2015-08-26",
     "t": 1440547200000,
@@ -3372,6 +3679,9 @@ window.__GRAPH__ = {
    "label": "signed as Managing Member",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2019-10-04",
     "t": 1570147200000,
@@ -3401,6 +3711,9 @@ window.__GRAPH__ = {
    "label": "conveys the 119.79-acre parent parcel",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2019-10-04",
     "t": 1570147200000,
@@ -3429,6 +3742,9 @@ window.__GRAPH__ = {
    "label": "signed as Member",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-24",
     "t": 1776988800000,
@@ -3457,6 +3773,9 @@ window.__GRAPH__ = {
    "label": "surveys Tracts 1 and 2 out of the parent parcel",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-02-12",
     "t": 1770854400000,
@@ -3485,6 +3804,9 @@ window.__GRAPH__ = {
    "label": "conveys Tract 1 (5.00 acres)",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-24",
     "t": 1776988800000,
@@ -3513,6 +3835,9 @@ window.__GRAPH__ = {
    "label": "conveys Tract 2 (5.00 acres)",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -3541,6 +3866,9 @@ window.__GRAPH__ = {
    "label": "holds title to the ten acres",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -3569,6 +3897,9 @@ window.__GRAPH__ = {
    "label": "manager",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -3605,6 +3936,9 @@ window.__GRAPH__ = {
    "label": "manager",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -3633,6 +3967,9 @@ window.__GRAPH__ = {
    "label": "manager",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -3661,6 +3998,9 @@ window.__GRAPH__ = {
    "label": "manager of",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -3689,6 +4029,9 @@ window.__GRAPH__ = {
    "label": "organizer",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-20",
     "t": 1776643200000,
@@ -3717,6 +4060,9 @@ window.__GRAPH__ = {
    "label": "organizer",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-21",
     "t": 1776729600000,
@@ -3745,6 +4091,9 @@ window.__GRAPH__ = {
    "label": "attorney at",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-20",
     "t": 1776643200000,
@@ -3773,6 +4122,10 @@ window.__GRAPH__ = {
    "label": "registered agent",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ],
    "date": {
     "iso": "2026-04-20",
     "t": 1776643200000,
@@ -3801,6 +4154,10 @@ window.__GRAPH__ = {
    "label": "registered agent",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ],
    "date": {
     "iso": "2026-04-21",
     "t": 1776729600000,
@@ -3829,6 +4186,11 @@ window.__GRAPH__ = {
    "label": "partner at",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield",
+    "springfield",
+    "benton"
+   ],
    "date": {
     "iso": "2011",
     "t": 1293840000000,
@@ -3857,6 +4219,10 @@ window.__GRAPH__ = {
    "label": "located at",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield",
+    "springfield"
+   ],
    "date": {
     "iso": "2026-04-20",
     "t": 1776643200000,
@@ -3885,6 +4251,9 @@ window.__GRAPH__ = {
    "label": "office at",
    "because": null,
    "tier": 2,
+   "projects": [
+    "benton"
+   ],
    "date": null,
    "summary": null,
    "resolves": null,
@@ -3907,6 +4276,10 @@ window.__GRAPH__ = {
    "label": "was NSI Investments' Missouri agent at this address until January 2021",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ],
    "date": {
     "iso": "2021-01-20",
     "t": 1611100800000,
@@ -3935,6 +4308,9 @@ window.__GRAPH__ = {
    "label": "moved principal office to",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-05-07",
     "t": 1778112000000,
@@ -3963,6 +4339,9 @@ window.__GRAPH__ = {
    "label": "moved principal office to",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-05-07",
     "t": 1778112000000,
@@ -3991,6 +4370,9 @@ window.__GRAPH__ = {
    "label": "deed of trust — maximum principal $4,075,000",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -4020,6 +4402,9 @@ window.__GRAPH__ = {
    "label": "second deed of trust — maximum principal $1,500,000, plus assignment of rents",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-09-04",
     "t": 1788480000000,
@@ -4055,6 +4440,9 @@ window.__GRAPH__ = {
    "label": "blanket all-assets lien",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-13",
     "t": 1783900800000,
@@ -4083,6 +4471,9 @@ window.__GRAPH__ = {
    "label": "lien on four Cummins generators",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-13",
     "t": 1783900800000,
@@ -4112,6 +4503,9 @@ window.__GRAPH__ = {
    "label": "trustee under both deeds of trust",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -4140,6 +4534,9 @@ window.__GRAPH__ = {
    "label": "took the acknowledgment of all three managers",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-10",
     "t": 1783641600000,
@@ -4168,6 +4565,9 @@ window.__GRAPH__ = {
    "label": "took the acknowledgment of Aaron York",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-24",
     "t": 1776988800000,
@@ -4196,6 +4596,9 @@ window.__GRAPH__ = {
    "label": "took the acknowledgment on the September instruments",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-09-04",
     "t": 1788480000000,
@@ -4224,6 +4627,9 @@ window.__GRAPH__ = {
    "label": "owns the nine Synapse 60-XL enclosures at",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-09-03",
     "t": 1788393600000,
@@ -4253,6 +4659,9 @@ window.__GRAPH__ = {
    "label": "Equipment Finance Loan Agreement NED-FLA-2026-STN",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-05-22",
     "t": 1779408000000,
@@ -4288,6 +4697,9 @@ window.__GRAPH__ = {
    "label": "fixture filing naming Lumon as record owner of the real estate",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-09-03",
     "t": 1788393600000,
@@ -4316,6 +4728,9 @@ window.__GRAPH__ = {
    "label": "sole member",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-03-19",
     "t": 1773878400000,
@@ -4345,6 +4760,9 @@ window.__GRAPH__ = {
    "label": "CEO, holds 60%",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2025-02-13",
     "t": 1739404800000,
@@ -4373,6 +4791,9 @@ window.__GRAPH__ = {
    "label": "manager",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-03-19",
     "t": 1773878400000,
@@ -4401,6 +4822,9 @@ window.__GRAPH__ = {
    "label": "acquires majority ownership",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2025-04",
     "t": 1743465600000,
@@ -4429,6 +4853,9 @@ window.__GRAPH__ = {
    "label": "sells the majority stake",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2025-04",
     "t": 1743465600000,
@@ -4457,6 +4884,9 @@ window.__GRAPH__ = {
    "label": "agent for service of process",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2016-09-19",
     "t": 1474243200000,
@@ -4484,6 +4914,9 @@ window.__GRAPH__ = {
    "label": "sole officer — CEO, CFO and Secretary",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-22",
     "t": 1784678400000,
@@ -4512,6 +4945,9 @@ window.__GRAPH__ = {
    "label": "converts out of California",
    "because": "The Delaware successor was formed the same day.",
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-16",
     "t": 1784160000000,
@@ -4547,6 +4983,9 @@ window.__GRAPH__ = {
    "label": "attorney at",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-09-03",
     "t": 1788393600000,
@@ -4575,6 +5014,9 @@ window.__GRAPH__ = {
    "label": "filed the fixture filing for",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-09-03",
     "t": 1788393600000,
@@ -4603,6 +5045,9 @@ window.__GRAPH__ = {
    "label": "rental equipment on site",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-08-12",
     "t": 1786492800000,
@@ -4631,6 +5076,9 @@ window.__GRAPH__ = {
    "label": "rental equipment on site",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-08-12",
     "t": 1786492800000,
@@ -4659,6 +5107,9 @@ window.__GRAPH__ = {
    "label": "blanket all-assets lien, continued 2025",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2021-01-01",
     "t": 1609459200000,
@@ -4687,6 +5138,9 @@ window.__GRAPH__ = {
    "label": "equipment leases (three filings)",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2023-01-30",
     "t": 1675036800000,
@@ -4722,6 +5176,9 @@ window.__GRAPH__ = {
    "label": "purchase-money security interest",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2023-12-20",
     "t": 1703030400000,
@@ -4750,6 +5207,9 @@ window.__GRAPH__ = {
    "label": "seven leases, ACS-01979 series",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2024-03-26",
     "t": 1711411200000,
@@ -4785,6 +5245,9 @@ window.__GRAPH__ = {
    "label": "three lease-financing liens — all terminated 19 August 2026",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2021-10-26",
     "t": 1635206400000,
@@ -4820,6 +5283,9 @@ window.__GRAPH__ = {
    "label": "all-assets lien — terminated 11 August 2026",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2024-01-25",
     "t": 1706140800000,
@@ -4855,6 +5321,9 @@ window.__GRAPH__ = {
    "label": "purchase-money security interest — terminated 19 August 2026",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2024-01-29",
     "t": 1706486400000,
@@ -4890,6 +5359,9 @@ window.__GRAPH__ = {
    "label": "signed as Managing Member",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2015-11-19",
     "t": 1447891200000,
@@ -4919,6 +5391,9 @@ window.__GRAPH__ = {
    "label": "conveys the 20.33-acre tract to Sho-Me Power Electric Cooperative",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2015-11-19",
     "t": 1447891200000,
@@ -4954,6 +5429,9 @@ window.__GRAPH__ = {
    "label": "acquired by warranty deed, 19 Nov 2015",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2015-11-19",
     "t": 1447891200000,
@@ -4998,6 +5476,9 @@ window.__GRAPH__ = {
    "label": "adjoins to the north-west",
    "because": "A 50-foot electric line easement is recorded across the boundary.",
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-02-12",
     "t": 1770854400000,
@@ -5027,6 +5508,9 @@ window.__GRAPH__ = {
    "label": "subsidiary of",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "1997",
     "t": 852076800000,
@@ -5054,6 +5538,10 @@ window.__GRAPH__ = {
    "label": "trustee-member holding 5% or more, 2016–2022",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ],
    "date": {
     "iso": "2016",
     "t": 1451606400000,
@@ -5090,6 +5578,10 @@ window.__GRAPH__ = {
    "label": "trustee-member holding 5% or more, 2016–2022",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ],
    "date": {
     "iso": "2016",
     "t": 1451606400000,
@@ -5118,6 +5610,10 @@ window.__GRAPH__ = {
    "label": "trustee-member holding 5% or more, 2016–2022",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ],
    "date": {
     "iso": "2016",
     "t": 1451606400000,
@@ -5146,6 +5642,10 @@ window.__GRAPH__ = {
    "label": "organizer",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield",
+    "benton"
+   ],
    "date": {
     "iso": "2015-10-08",
     "t": 1444262400000,
@@ -5174,6 +5674,9 @@ window.__GRAPH__ = {
    "label": "primary applicant and listed property owner on PREDEV2026-00192",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-05-26",
     "t": 1779753600000,
@@ -5203,6 +5706,9 @@ window.__GRAPH__ = {
    "label": "acquired the property",
    "because": null,
    "tier": 2,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2025-03",
     "t": 1740787200000,
@@ -5231,6 +5737,9 @@ window.__GRAPH__ = {
    "label": "holds title to the twelve acres",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5258,6 +5767,9 @@ window.__GRAPH__ = {
    "label": "principal office, Suite 304",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-13",
     "t": 1786579200000,
@@ -5286,6 +5798,9 @@ window.__GRAPH__ = {
    "label": "owner address on DNR permit MORA29985",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-30",
     "t": 1777507200000,
@@ -5314,6 +5829,10 @@ window.__GRAPH__ = {
    "label": "bought Plaza Towers at a trustee's foreclosure sale, roughly $13.4M",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield",
+    "benton"
+   ],
    "date": {
     "iso": "2025-04",
     "t": 1743465600000,
@@ -5349,6 +5868,9 @@ window.__GRAPH__ = {
    "label": "organizer",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-13",
     "t": 1786579200000,
@@ -5377,6 +5899,9 @@ window.__GRAPH__ = {
    "label": "attorney at",
    "because": null,
    "tier": 2,
+   "projects": [
+    "benton"
+   ],
    "date": null,
    "summary": null,
    "resolves": null,
@@ -5399,6 +5924,9 @@ window.__GRAPH__ = {
    "label": "organizer of record",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2025-02-24",
     "t": 1740355200000,
@@ -5427,6 +5955,9 @@ window.__GRAPH__ = {
    "label": "e-recorded all three Hilty deeds",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5455,6 +5986,9 @@ window.__GRAPH__ = {
    "label": "trustee",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-07-09",
     "t": 1783555200000,
@@ -5483,6 +6017,9 @@ window.__GRAPH__ = {
    "label": "trustee",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5511,6 +6048,9 @@ window.__GRAPH__ = {
    "label": "trustee",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-02",
     "t": 1788307200000,
@@ -5539,6 +6079,9 @@ window.__GRAPH__ = {
    "label": "trustee",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5567,6 +6110,9 @@ window.__GRAPH__ = {
    "label": "conveys a larger holding in Sections 5, 8 and 9 to the three sons' trusts",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2024-03-18",
     "t": 1710720000000,
@@ -5595,6 +6141,9 @@ window.__GRAPH__ = {
    "label": "conveys the subject tract to the three sons' trusts",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-07-09",
     "t": 1783555200000,
@@ -5623,6 +6172,9 @@ window.__GRAPH__ = {
    "label": "conveys an undivided one-third interest",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5651,6 +6203,9 @@ window.__GRAPH__ = {
    "label": "conveys an undivided one-third interest",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5679,6 +6234,9 @@ window.__GRAPH__ = {
    "label": "conveys an undivided one-third interest",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5707,6 +6265,9 @@ window.__GRAPH__ = {
    "label": "took the acknowledgment, at my office in Springfield",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5735,6 +6296,9 @@ window.__GRAPH__ = {
    "label": "took the acknowledgment",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -5763,6 +6327,9 @@ window.__GRAPH__ = {
    "label": "operated the lot as a manufactured-home sales yard",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-04",
     "t": 1775001600000,
@@ -5791,6 +6358,9 @@ window.__GRAPH__ = {
    "label": "owner of record",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026",
     "t": 1767225600000,
@@ -5818,6 +6388,9 @@ window.__GRAPH__ = {
    "label": "owner of record",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026",
     "t": 1767225600000,
@@ -5845,6 +6418,9 @@ window.__GRAPH__ = {
    "label": "directly across the former Highway 65 alignment",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026",
     "t": 1767225600000,
@@ -5872,6 +6448,9 @@ window.__GRAPH__ = {
    "label": "directly across the former Highway 65 alignment",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026",
     "t": 1767225600000,
@@ -5899,6 +6478,9 @@ window.__GRAPH__ = {
    "label": "plaintiff",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-24",
     "t": 1787529600000,
@@ -5927,6 +6509,9 @@ window.__GRAPH__ = {
    "label": "defendant",
    "because": "A TRO was granted against enforcement, secured by a $10,000 bond.",
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-08",
     "t": 1788825600000,
@@ -5955,6 +6540,9 @@ window.__GRAPH__ = {
    "label": "counsel for the plaintiff",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-24",
     "t": 1787529600000,
@@ -5983,6 +6571,9 @@ window.__GRAPH__ = {
    "label": "attorney at",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-24",
     "t": 1787529600000,
@@ -6011,6 +6602,9 @@ window.__GRAPH__ = {
    "label": "six-month moratorium covering unincorporated Benton County",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-10",
     "t": 1786320000000,
@@ -6039,6 +6633,9 @@ window.__GRAPH__ = {
    "label": "recited in the moratorium order",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-10",
     "t": 1786320000000,
@@ -6067,6 +6664,9 @@ window.__GRAPH__ = {
    "label": "plaintiff",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-09-17",
     "t": 1789603200000,
@@ -6096,6 +6696,9 @@ window.__GRAPH__ = {
    "label": "defendant",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-09-18",
     "t": 1789689600000,
@@ -6125,6 +6728,9 @@ window.__GRAPH__ = {
    "label": "counsel for the plaintiff",
    "because": "He signed the petition and the injunction motion himself.",
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-09-17",
     "t": 1789603200000,
@@ -6161,6 +6767,9 @@ window.__GRAPH__ = {
    "label": "challenges as void",
    "because": "On two independent grounds — that it is zoning enacted without the Chapter 89 notice and hearing, and that it was not enacted in the form the Charter requires.",
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-09-17",
     "t": 1789603200000,
@@ -6190,6 +6799,9 @@ window.__GRAPH__ = {
    "label": "passed it 29 June 2026",
    "because": null,
    "tier": 2,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-06-29",
     "t": 1782691200000,
@@ -6219,6 +6831,9 @@ window.__GRAPH__ = {
    "label": "bars any application to establish the proposed use here",
    "because": null,
    "tier": 2,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-06-29",
     "t": 1782691200000,
@@ -6248,6 +6863,9 @@ window.__GRAPH__ = {
    "label": "will not process the 9.9 MW electric-service application until 17 November",
    "because": null,
    "tier": 2,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-07-24",
     "t": 1784851200000,
@@ -6277,6 +6895,9 @@ window.__GRAPH__ = {
    "label": "plaintiff",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-27",
     "t": 1787788800000,
@@ -6305,6 +6926,9 @@ window.__GRAPH__ = {
    "label": "plaintiff",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-27",
     "t": 1787788800000,
@@ -6333,6 +6957,9 @@ window.__GRAPH__ = {
    "label": "defendant",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-27",
     "t": 1787788800000,
@@ -6361,6 +6988,9 @@ window.__GRAPH__ = {
    "label": "named as Plaintiff/Petitioner on the summons",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-28",
     "t": 1787875200000,
@@ -6390,6 +7020,9 @@ window.__GRAPH__ = {
    "label": "counsel named on the summons",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-28",
     "t": 1787875200000,
@@ -6418,6 +7051,9 @@ window.__GRAPH__ = {
    "label": "organizer",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2024-08-01",
     "t": 1722470400000,
@@ -6446,6 +7082,9 @@ window.__GRAPH__ = {
    "label": "Sunshine requester",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-08-17",
     "t": 1786924800000,
@@ -6474,6 +7113,9 @@ window.__GRAPH__ = {
    "label": "smoke investigation, report 26-0992 — \"no fire at this location\"",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-18",
     "t": 1784332800000,
@@ -6503,6 +7145,9 @@ window.__GRAPH__ = {
    "label": "incident report lists Trent Overhue as Owner",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-18",
     "t": 1784332800000,
@@ -6531,6 +7176,9 @@ window.__GRAPH__ = {
    "label": "automatic aid on the 18 July response",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-18",
     "t": 1784332800000,
@@ -6559,6 +7207,9 @@ window.__GRAPH__ = {
    "label": "call CFS2026021837, \"FC — FIRE, COMMERCIAL STRUCTURE\"",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-18",
     "t": 1784332800000,
@@ -6587,6 +7238,9 @@ window.__GRAPH__ = {
    "label": "extra patrols, 27 July – 26 August 2026",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-07-27",
     "t": 1785110400000,
@@ -6615,6 +7269,9 @@ window.__GRAPH__ = {
    "label": "land-disturbance permit MORA29985, \"LUMON RIFLE RANGE RD.\"",
    "because": null,
    "tier": 1,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-04-30",
     "t": 1777507200000,
@@ -6643,6 +7300,9 @@ window.__GRAPH__ = {
    "label": "land-disturbance permit MORA30685, facility \"COLD STORAGE\"",
    "because": null,
    "tier": 1,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-09",
     "t": 1788912000000,
@@ -6671,6 +7331,9 @@ window.__GRAPH__ = {
    "label": "proposed use does not align with Planned Development 251",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-03",
     "t": 1785715200000,
@@ -6699,6 +7362,9 @@ window.__GRAPH__ = {
    "label": "capacity for up to 10 MW, but standard extension policies likely not to apply",
    "because": null,
    "tier": 1,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2026-08-03",
     "t": 1785715200000,
@@ -6727,6 +7393,9 @@ window.__GRAPH__ = {
    "label": "moratorium adopted but expressly not applied to this build",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-06-16",
     "t": 1781568000000,
@@ -6755,6 +7424,9 @@ window.__GRAPH__ = {
    "label": "describes ~10 MW on five acres, single tenant, power agreement secured before land",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-06-23",
     "t": 1782172800000,
@@ -6784,6 +7456,9 @@ window.__GRAPH__ = {
    "label": "publicly calls it a \"high-performance computing research facility,\" not a data center",
    "because": null,
    "tier": 2,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-05-13",
     "t": 1778630400000,
@@ -6813,6 +7488,9 @@ window.__GRAPH__ = {
    "label": "committed to purchase, 23 July 2026",
    "because": "Counsel argued at the TRO hearing that the county was chosen for having no zoning.",
    "tier": 2,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-09-02",
     "t": 1788307200000,
@@ -6842,6 +7520,9 @@ window.__GRAPH__ = {
    "label": "common naming series and principals — no document establishes a parent relationship",
    "because": null,
    "tier": 3,
+   "projects": [
+    "benton"
+   ],
    "date": {
     "iso": "2026-08-13",
     "t": 1786579200000,
@@ -6877,6 +7558,9 @@ window.__GRAPH__ = {
    "label": "common naming series — no document establishes a parent relationship",
    "because": null,
    "tier": 3,
+   "projects": [
+    "springfield"
+   ],
    "date": {
     "iso": "2025-02-24",
     "t": 1740355200000,
@@ -6905,6 +7589,9 @@ window.__GRAPH__ = {
    "label": "six older liens cleared in the days before this financing was perfected",
    "because": null,
    "tier": 3,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2026-08-19",
     "t": 1787097600000,
@@ -6940,6 +7627,9 @@ window.__GRAPH__ = {
    "label": "co-organizer",
    "because": "The domain's own markup identifies the site as his.",
    "tier": 3,
+   "projects": [
+    "marshfield"
+   ],
    "date": {
     "iso": "2022-10-04",
     "t": 1664841600000,

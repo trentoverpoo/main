@@ -14,14 +14,20 @@
 
 <div id="app">
 
-  <aside id="sidebar" aria-label="Filters and legend">
-    <button id="sidebar-close" aria-label="Close filters">✕</button>
+  <aside id="sidebar" aria-label="Focus and search">
+    <button id="sidebar-close" aria-label="Close the panel">✕</button>
 
     <div class="masthead">
       <h1>SWMo - Data Center Network Map</h1>
       <p>Every entity and every connection on this map cites a document in this
       repository. Nothing here is an allegation of wrongdoing.</p>
       <p class="counts" id="counts"></p>
+    </div>
+
+    <div class="group">
+      <h2>Which build</h2>
+      <div id="projects" role="radiogroup" aria-label="Which build to show"></div>
+      <p class="note" id="project-note"></p>
     </div>
 
     <div class="group">
@@ -35,29 +41,12 @@
         <div id="suggest" role="listbox" aria-label="Matching entities"></div>
       </div>
       <p id="search-status" class="visually-hidden" role="status"></p>
-    </div>
-
-    <div class="group">
-      <h2>Entities <button id="legend-toggle">all / none</button></h2>
-      <div id="legend"></div>
-    </div>
-
-    <div class="group">
-      <h2>Connections</h2>
-      <div id="types"></div>
-    </div>
-
-    <div class="group">
-      <h2>How well established</h2>
-      <div id="tiers"></div>
-      <p class="note">Solid lines rest on a primary document in
-      <code>evidence/</code>. Dashed lines are open threads the file tracks but does
-      not treat as settled — each one says what would resolve it.</p>
-    </div>
-
-    <div class="group">
-      <h2>Time</h2>
-      <div id="age-key"></div>
+      <button id="open-advanced" class="advanced-open" aria-haspopup="dialog">
+        Advanced search<span id="advanced-count" class="advanced-count" hidden></span>
+      </button>
+      <p class="note">Search finds one entity. Advanced search narrows what the whole
+      map draws — by category, by kind of connection, and by how well established
+      it is.</p>
     </div>
 
     <div class="sidebar-foot">
@@ -86,7 +75,7 @@
 
     <div id="topbar">
       <button id="open-filters" aria-expanded="false" aria-controls="sidebar"
-              aria-label="Filters and legend">Filters</button>
+              aria-label="Menu — which build to show, and search">Menu</button>
       <button id="open-tipline" aria-label="Tipline — send a tip"
               data-short="Tip">Tipline</button>
       <button id="open-modal"
@@ -131,6 +120,43 @@
   <div class="modal-card">
     <button id="modal-close" class="modal-close" data-close aria-label="Close">✕</button>
     <div id="modal-body"></div>
+  </div>
+</div>
+
+<div id="advanced-modal" role="dialog" aria-modal="true" aria-label="Advanced search">
+  <div class="modal-card">
+    <button id="advanced-modal-close" class="modal-close" data-close aria-label="Close">✕</button>
+    <h2>Advanced search</h2>
+    <p class="lede">These narrow what the map draws, on top of whichever build is in
+    focus. They are cumulative: an entity has to pass every one of them to be
+    drawn.</p>
+
+    <div class="group">
+      <h3>Entities <button id="legend-toggle">all / none</button></h3>
+      <div id="legend"></div>
+    </div>
+
+    <div class="group">
+      <h3>Connections</h3>
+      <div id="types"></div>
+    </div>
+
+    <div class="group">
+      <h3>How well established</h3>
+      <div id="tiers"></div>
+      <p class="note">Solid lines rest on a primary document in
+      <code>evidence/</code>. Dashed lines are open threads the file tracks but does
+      not treat as settled — each one says what would resolve it.</p>
+    </div>
+
+    <div class="group">
+      <h3>Time</h3>
+      <div id="age-key"></div>
+    </div>
+
+    <div class="advanced-foot">
+      <button id="filters-reset">Reset every filter</button>
+    </div>
   </div>
 </div>
 

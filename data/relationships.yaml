@@ -1,5 +1,18 @@
 # Edges. Every entry carries at least one citation; tier 3 additionally requires
 # `resolves` — the document that would settle it. The build fails otherwise.
+#
+# `projects` names which of the three builds a connection belongs to, and it is
+# authored here rather than worked out from the shape of the graph. The graph is
+# one connected piece — every entity reaches every other — so no distance from a
+# site tells you which build a line is part of. What decides it is the document:
+# most of these were read straight off the evidence/ folder the citation lives in,
+# and the corporate-formation layer, where a filing names an organizer or an agent
+# and says nothing about which site it was for, was decided one line at a time by
+# what the entity at the other end of the chain turns out to be.
+#
+# A connection may belong to more than one build — that is the point of a list —
+# and `all` is for the few facts that stand behind every one of them. The build
+# fails on an edge that names no project, the same way it fails on an uncited one.
 
 # ------------------------------------------ Marshfield chain of title -----
 
@@ -8,6 +21,7 @@
   type: ownership
   label: organized
   tier: 1
+  projects: [marshfield]
   date: 2015-08-26
   citations:
     - doc: evidence/03-entities/company/jde-investments-llc/2015-08-26_articles-of-organization.pdf
@@ -19,6 +33,7 @@
   type: ownership
   label: signed as Managing Member
   tier: 1
+  projects: [marshfield]
   date: 2019-10-04
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2019-10-04_inst-2019004679_warranty-deed_jde-to-ary.pdf
@@ -31,6 +46,7 @@
   type: conveyance
   label: conveys the 119.79-acre parent parcel
   tier: 1
+  projects: [marshfield]
   date: 2019-10-04
   summary: >
     Conveys the S½ NW¼ of Sec. 35 west of Highway CC plus part of Sec. 26.
@@ -44,6 +60,7 @@
   type: ownership
   label: signed as Member
   tier: 1
+  projects: [marshfield]
   date: 2026-04-24
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf
@@ -55,6 +72,7 @@
   type: conveyance
   label: surveys Tracts 1 and 2 out of the parent parcel
   tier: 1
+  projects: [marshfield]
   date: 2026-02-12
   summary: >
     ARY splits off Tract 1 (5.00 ac) and Tract 2 (5.00 ac) fronting Rifle Range Road and
@@ -69,6 +87,7 @@
   type: conveyance
   label: conveys Tract 1 (5.00 acres)
   tier: 1
+  projects: [marshfield]
   date: 2026-04-24
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf
@@ -80,6 +99,7 @@
   type: conveyance
   label: conveys Tract 2 (5.00 acres)
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003833_warranty-deed_ary-investments.pdf
@@ -91,6 +111,7 @@
   type: ownership
   label: holds title to the ten acres
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   summary: >
     The project site is exactly 10.00 acres, conveyed in two five-acre steps.
@@ -106,6 +127,7 @@
   type: ownership
   label: manager
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   summary: >
     Established directly by a recorded, notarised instrument, not by inference. Overhue also
@@ -126,6 +148,7 @@
   type: ownership
   label: manager
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   summary: >
     Signed the $4,075,000 deed of trust as a manager, and signed both Lumon principal-office
@@ -141,6 +164,7 @@
   type: ownership
   label: manager
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   summary: >
     The only document in this file in which Ashton Owens appears.
@@ -154,6 +178,7 @@
   type: ownership
   label: manager of
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
@@ -165,6 +190,7 @@
   type: professional
   label: organizer
   tier: 1
+  projects: [marshfield]
   date: 2026-04-20
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf
@@ -176,6 +202,7 @@
   type: professional
   label: organizer
   tier: 1
+  projects: [marshfield]
   date: 2026-04-21
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-04-21_articles-of-organization_LC014727379.pdf
@@ -187,6 +214,7 @@
   type: professional
   label: attorney at
   tier: 2
+  projects: [marshfield]
   date: 2026-04-20
   citations:
     - external: Law-firm identity verified externally
@@ -200,6 +228,7 @@
   type: professional
   label: registered agent
   tier: 1
+  projects: [marshfield, springfield]
   date: 2026-04-20
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf
@@ -211,6 +240,7 @@
   type: professional
   label: registered agent
   tier: 1
+  projects: [marshfield, springfield]
   date: 2026-04-21
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-04-21_articles-of-organization_LC014727379.pdf
@@ -222,6 +252,7 @@
   type: professional
   label: partner at
   tier: 2
+  projects: all
   date: 2011
   summary: >
     Joined the practice in 2011. Forming single-purpose real-estate LLCs is what a 1031
@@ -239,6 +270,7 @@
   type: adjacency
   label: located at
   tier: 1
+  projects: [marshfield, springfield]
   date: 2026-04-20
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf
@@ -250,6 +282,7 @@
   type: adjacency
   label: office at
   tier: 2
+  projects: [benton]
   citations:
     - external: Firm address verified externally
       url: https://www.lifegenlawgroup.com/contact-us/
@@ -261,6 +294,7 @@
   type: professional
   label: was NSI Investments' Missouri agent at this address until January 2021
   tier: 1
+  projects: [springfield, benton]
   date: 2021-01-20
   summary: >
     Prior versions of this file called the shared address the single most load-bearing fact
@@ -276,6 +310,7 @@
   type: adjacency
   label: moved principal office to
   tier: 1
+  projects: [springfield]
   date: 2026-05-07
   summary: >
     Both Lumon entities amended their principal office to the Springfield project building
@@ -290,6 +325,7 @@
   type: adjacency
   label: moved principal office to
   tier: 1
+  projects: [springfield]
   date: 2026-05-07
   citations:
     - doc: evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-05-07_amendment_principal-office-2900-s-national.pdf
@@ -303,6 +339,7 @@
   type: finance
   label: deed of trust — maximum principal $4,075,000
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   summary: >
     A future-advance instrument under § 443.055 RSMo, cross-collateralised with the
@@ -318,6 +355,7 @@
   type: finance
   label: second deed of trust — maximum principal $1,500,000, plus assignment of rents
   tier: 1
+  projects: [marshfield]
   date: 2026-09-04
   summary: >
     OakStar's stated maximum exposure across the two instruments is $5,575,000.
@@ -334,6 +372,7 @@
   type: finance
   label: blanket all-assets lien
   tier: 1
+  projects: [marshfield]
   date: 2026-07-13
   citations:
     - doc: evidence/01-marshfield-site/ucc-filings-mo-sos/2026-07-13_20260713000902994_oakstar_blanket-all-assets.pdf
@@ -345,6 +384,7 @@
   type: finance
   label: lien on four Cummins generators
   tier: 1
+  projects: [marshfield]
   date: 2026-07-13
   summary: >
     Model 2000DQKC-2125, serials I010287039, G010262121, G010262123, I010287043. The
@@ -361,6 +401,7 @@
   type: professional
   label: trustee under both deeds of trust
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
@@ -372,6 +413,7 @@
   type: professional
   label: took the acknowledgment of all three managers
   tier: 1
+  projects: [marshfield]
   date: 2026-07-10
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
@@ -383,6 +425,7 @@
   type: professional
   label: took the acknowledgment of Aaron York
   tier: 1
+  projects: [marshfield]
   date: 2026-04-24
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf
@@ -394,6 +437,7 @@
   type: professional
   label: took the acknowledgment on the September instruments
   tier: 1
+  projects: [marshfield]
   date: 2026-09-04
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-04_inst-2026004988_deed-of-trust_oakstar-bank.pdf
@@ -407,6 +451,7 @@
   type: commercial
   label: owns the nine Synapse 60-XL enclosures at
   tier: 1
+  projects: [marshfield]
   date: 2026-09-03
   summary: >
     All nine Synapse 60-XL Composite Modular Data Center enclosures — eight IT MDC variants
@@ -425,6 +470,7 @@
   type: finance
   label: Equipment Finance Loan Agreement NED-FLA-2026-STN
   tier: 1
+  projects: [marshfield]
   date: 2026-05-22
   summary: >
     The security interest was perfected twice — a California UCC filed 28 August 2026 and a
@@ -442,6 +488,7 @@
   type: finance
   label: fixture filing naming Lumon as record owner of the real estate
   tier: 1
+  projects: [marshfield]
   date: 2026-09-03
   summary: >
     Attaches Tract 1's legal description as the "Project Site." A fixture filing perfects
@@ -457,6 +504,7 @@
   type: ownership
   label: sole member
   tier: 1
+  projects: [marshfield]
   date: 2026-03-19
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-enterprise-and-defense-llc/2026-03-19_fl-annual-report.pdf
@@ -469,6 +517,7 @@
   type: ownership
   label: CEO, holds 60%
   tier: 1
+  projects: [marshfield]
   date: 2025-02-13
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-technologies-group-inc/sec-edgar/2025-02-13_form-C-AR_fy2022-annual-report.pdf
@@ -482,6 +531,7 @@
   type: ownership
   label: manager
   tier: 1
+  projects: [marshfield]
   date: 2026-03-19
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-enterprise-and-defense-llc/2026-03-19_fl-annual-report.pdf
@@ -493,6 +543,7 @@
   type: commercial
   label: acquires majority ownership
   tier: 1
+  projects: [marshfield]
   date: 2025-04
   summary: >
     Operated since as Northstar Federal and Northstar Enterprise and Defense. That
@@ -510,6 +561,7 @@
   type: commercial
   label: sells the majority stake
   tier: 1
+  projects: [marshfield]
   date: 2025-04
   citations:
     - doc: evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf
@@ -523,6 +575,7 @@
   type: ownership
   label: agent for service of process
   tier: 1
+  projects: [marshfield]
   date: 2016-09-19
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png
@@ -533,6 +586,7 @@
   type: ownership
   label: sole officer — CEO, CFO and Secretary
   tier: 1
+  projects: [marshfield]
   date: 2026-07-22
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos-certified-copies/2026-07-22_statement-of-information_stn-one-incorporated.pdf
@@ -545,6 +599,7 @@
   label: converts out of California
   because: The Delaware successor was formed the same day.
   tier: 1
+  projects: [marshfield]
   date: 2026-07-16
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png
@@ -559,6 +614,7 @@
   type: professional
   label: attorney at
   tier: 1
+  projects: [marshfield]
   date: 2026-09-03
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf
@@ -570,6 +626,7 @@
   type: professional
   label: filed the fixture filing for
   tier: 1
+  projects: [marshfield]
   date: 2026-09-03
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf
@@ -581,6 +638,7 @@
   type: commercial
   label: rental equipment on site
   tier: 1
+  projects: [marshfield]
   date: 2026-08-12
   summary: >
     As of August 2026 the site was running substantially on rental power and cooling, in
@@ -595,6 +653,7 @@
   type: commercial
   label: rental equipment on site
   tier: 1
+  projects: [marshfield]
   date: 2026-08-12
   citations:
     - doc: evidence/01-marshfield-site/photos/2026-08-12-site-visit/site-photo-rental-power-and-cooling_undated.jpg
@@ -608,6 +667,7 @@
   type: finance
   label: blanket all-assets lien, continued 2025
   tier: 1
+  projects: [marshfield]
   date: 2021-01-01
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2021-01-01_U210000010405_us-sba_blanket-all-assets.pdf
@@ -619,6 +679,7 @@
   type: finance
   label: equipment leases (three filings)
   tier: 1
+  projects: [marshfield]
   date: 2023-01-30
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2023-01-30_U230006850018_hpe-financial-services_equipment-lease.pdf
@@ -633,6 +694,7 @@
   type: finance
   label: purchase-money security interest
   tier: 1
+  projects: [marshfield]
   date: 2023-12-20
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2023-12-20_U230089471841_arista-networks_purchase-money-security-interest.pdf
@@ -644,6 +706,7 @@
   type: finance
   label: seven leases, ACS-01979 series
   tier: 1
+  projects: [marshfield]
   date: 2024-03-26
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/2024-03-26_U240028270225_arrow-capital-solutions_lease-ACS-01979-0001.pdf
@@ -658,6 +721,7 @@
   type: finance
   label: three lease-financing liens — all terminated 19 August 2026
   tier: 1
+  projects: [marshfield]
   date: 2021-10-26
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2021-10-26_U210097054029_csc-representative_lease-financing.pdf
@@ -672,6 +736,7 @@
   type: finance
   label: all-assets lien — terminated 11 August 2026
   tier: 1
+  projects: [marshfield]
   date: 2024-01-25
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2024-01-25_U240006007617_ingram-micro-flex-payment-solutions_all-assets.pdf
@@ -686,6 +751,7 @@
   type: finance
   label: purchase-money security interest — terminated 19 August 2026
   tier: 1
+  projects: [marshfield]
   date: 2024-01-29
   citations:
     - doc: evidence/03-entities/company/stn-incorporated/ucc/terminated/2024-01-29_U240006712925_td-synnex_purchase-money-security-interest.pdf
@@ -702,6 +768,7 @@
   type: ownership
   label: signed as Managing Member
   tier: 1
+  projects: [marshfield]
   date: 2015-11-19
   citations:
     - doc: evidence/01-marshfield-site/recorded-instruments/2015-11-19_book2015-page5296_warranty-deed_jde-investments-to-sho-me-power-electric-cooperative.pdf
@@ -714,6 +781,7 @@
   type: conveyance
   label: conveys the 20.33-acre tract to Sho-Me Power Electric Cooperative
   tier: 1
+  projects: [marshfield]
   date: 2015-11-19
   summary: >
     JDE Investments acquired the parent tract 4 September 2015 (Bk 2015 Pg 4156) and
@@ -733,6 +801,7 @@
   type: ownership
   label: acquired by warranty deed, 19 Nov 2015
   tier: 1
+  projects: [marshfield]
   date: 2015-11-19
   summary: >
     Sho-Me Power Electric Cooperative acquired the 20.33-acre tract from JDE Investments by
@@ -766,6 +835,7 @@
   label: adjoins to the north-west
   because: A 50-foot electric line easement is recorded across the boundary.
   tier: 1
+  projects: [marshfield]
   date: 2026-02-12
   summary: >
     What the documents establish is adjacency, not a transaction. No agreement between any
@@ -781,6 +851,7 @@
   type: ownership
   label: subsidiary of
   tier: 2
+  projects: [marshfield]
   date: 1997
   summary: >
     Externally confirmed. Sho-Me Technologies operates 4,700+ miles of fibre on the
@@ -799,6 +870,7 @@
   type: ownership
   label: trustee-member holding 5% or more, 2016–2022
   tier: 1
+  projects: [springfield, benton]
   date: 2016
   summary: >
     Named across seven Kansas annual reports. Kansas stopped requiring member disclosure
@@ -817,6 +889,7 @@
   type: ownership
   label: trustee-member holding 5% or more, 2016–2022
   tier: 1
+  projects: [springfield, benton]
   date: 2016
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2016 Annual Report.pdf
@@ -828,6 +901,7 @@
   type: ownership
   label: trustee-member holding 5% or more, 2016–2022
   tier: 1
+  projects: [springfield, benton]
   date: 2016
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2016 Annual Report.pdf
@@ -839,6 +913,7 @@
   type: professional
   label: organizer
   tier: 1
+  projects: [springfield, benton]
   date: 2015-10-08
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-investments-llc/kansas/AOO.pdf
@@ -850,6 +925,7 @@
   type: legal
   label: primary applicant and listed property owner on PREDEV2026-00192
   tier: 1
+  projects: [springfield]
   date: 2026-05-26
   summary: >
     No NSI entity appears on the city's application. The listed e-mail address is
@@ -866,6 +942,7 @@
   type: conveyance
   label: acquired the property
   tier: 2
+  projects: [springfield]
   date: 2025-03
   citations:
     - external: Springfield Daily Citizen
@@ -879,6 +956,7 @@
   type: ownership
   label: holds title to the twelve acres
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_owner-record-nsi-6.png
@@ -889,6 +967,7 @@
   type: adjacency
   label: principal office, Suite 304
   tier: 1
+  projects: [benton]
   date: 2026-08-13
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf
@@ -900,6 +979,7 @@
   type: adjacency
   label: owner address on DNR permit MORA29985
   tier: 1
+  projects: [marshfield]
   date: 2026-04-30
   citations:
     - doc: evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png
@@ -913,6 +993,7 @@
   type: conveyance
   label: bought Plaza Towers at a trustee's foreclosure sale, roughly $13.4M
   tier: 2
+  projects: [marshfield, benton]
   date: 2025-04
   citations:
     - external: Springfield Daily Citizen
@@ -931,6 +1012,7 @@
   type: professional
   label: organizer
   tier: 1
+  projects: [benton]
   date: 2026-08-13
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf
@@ -942,6 +1024,7 @@
   type: professional
   label: attorney at
   tier: 2
+  projects: [benton]
   citations:
     - external: Firm roster verified externally
       url: https://www.lifegenlawgroup.com/nathaniel-j-poivre/
@@ -953,6 +1036,7 @@
   type: professional
   label: organizer of record
   tier: 1
+  projects: [springfield]
   date: 2025-02-24
   citations:
     - doc: evidence/03-entities/company/nsi/nsi-a1-llc/2025-02-24_articles-of-organization_LC014612494.pdf
@@ -964,6 +1048,7 @@
   type: professional
   label: e-recorded all three Hilty deeds
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   summary: >
     All three deeds were recorded together at 1:32 PM on 9 September 2026.
@@ -979,6 +1064,7 @@
   type: ownership
   label: trustee
   tier: 1
+  projects: [benton]
   date: 2026-07-09
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-07-09_inst-202602845_trustees-warranty-deed_stanfred-hilty-trust-to-three-hilty-trusts.pdf
@@ -990,6 +1076,7 @@
   type: ownership
   label: trustee
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf
@@ -1001,6 +1088,7 @@
   type: ownership
   label: trustee
   tier: 1
+  projects: [benton]
   date: 2026-09-02
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604042_trustees-warranty-deed_shawn-hilty-trust-to-nsi-6.pdf
@@ -1012,6 +1100,7 @@
   type: ownership
   label: trustee
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604043_trustees-warranty-deed_john-hilty-trust-to-nsi-6.pdf
@@ -1023,6 +1112,7 @@
   type: conveyance
   label: conveys a larger holding in Sections 5, 8 and 9 to the three sons' trusts
   tier: 1
+  projects: [benton]
   date: 2024-03-18
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2024-03-18_inst-202400968_trustees-warranty-deed_lovella-hilty-trust-to-three-hilty-trusts.pdf
@@ -1034,6 +1124,7 @@
   type: conveyance
   label: conveys the subject tract to the three sons' trusts
   tier: 1
+  projects: [benton]
   date: 2026-07-09
   summary: >
     Recorded over the counter under the name "Joe Hilty," not by a title company.
@@ -1047,6 +1138,7 @@
   type: conveyance
   label: conveys an undivided one-third interest
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   summary: >
     Consideration recited as one dollar and other good and valuable consideration. Missouri
@@ -1061,6 +1153,7 @@
   type: conveyance
   label: conveys an undivided one-third interest
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   summary: >
     Signed 2 September 2026 — the day of the TRO hearing — before a notary in Big Sandy,
@@ -1075,6 +1168,7 @@
   type: conveyance
   label: conveys an undivided one-third interest
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604043_trustees-warranty-deed_john-hilty-trust-to-nsi-6.pdf
@@ -1086,6 +1180,7 @@
   type: professional
   label: took the acknowledgment, at my office in Springfield
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   summary: >
     The same notary commission appears on the Marshfield OakStar deed of trust of 10 July
@@ -1101,6 +1196,7 @@
   type: professional
   label: took the acknowledgment
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   citations:
     - doc: evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604043_trustees-warranty-deed_john-hilty-trust-to-nsi-6.pdf
@@ -1112,6 +1208,7 @@
   type: commercial
   label: operated the lot as a manufactured-home sales yard
   tier: 1
+  projects: [benton]
   date: 2026-04
   citations:
     - doc: evidence/06-benton-county-site/photos/2026-04_google-street-view_29152-old-hwy-65_pitts-homes.png
@@ -1125,6 +1222,7 @@
   type: ownership
   label: owner of record
   tier: 1
+  projects: [benton]
   date: 2026
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png
@@ -1135,6 +1233,7 @@
   type: ownership
   label: owner of record
   tier: 1
+  projects: [benton]
   date: 2026
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png
@@ -1145,6 +1244,7 @@
   type: adjacency
   label: directly across the former Highway 65 alignment
   tier: 1
+  projects: [benton]
   date: 2026
   summary: >
     This is adjacency and ownership of record only. Nothing in this file shows a power
@@ -1159,6 +1259,7 @@
   type: adjacency
   label: directly across the former Highway 65 alignment
   tier: 1
+  projects: [benton]
   date: 2026
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png
@@ -1171,6 +1272,7 @@
   type: legal
   label: plaintiff
   tier: 1
+  projects: [benton]
   date: 2026-08-24
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf
@@ -1183,6 +1285,7 @@
   label: defendant
   because: A TRO was granted against enforcement, secured by a $10,000 bond.
   tier: 1
+  projects: [benton]
   date: 2026-09-08
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-09-08_temporary-restraining-order.pdf
@@ -1194,6 +1297,7 @@
   type: professional
   label: counsel for the plaintiff
   tier: 1
+  projects: [benton]
   date: 2026-08-24
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf
@@ -1205,6 +1309,7 @@
   type: professional
   label: attorney at
   tier: 1
+  projects: [benton]
   date: 2026-08-24
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf
@@ -1216,6 +1321,7 @@
   type: legal
   label: six-month moratorium covering unincorporated Benton County
   tier: 1
+  projects: [benton]
   date: 2026-08-10
   citations:
     - doc: evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf
@@ -1227,6 +1333,7 @@
   type: legal
   label: recited in the moratorium order
   tier: 1
+  projects: [benton]
   date: 2026-08-10
   summary: >
     Requires a state report on data-center impacts by 30 November 2026.
@@ -1240,6 +1347,7 @@
   type: legal
   label: plaintiff
   tier: 1
+  projects: [springfield]
   date: 2026-09-17
   summary: >
     Pleaded as "the applicant and project sponsor" for the Springfield project, the same
@@ -1257,6 +1365,7 @@
   type: legal
   label: defendant
   tier: 1
+  projects: [springfield]
   date: 2026-09-18
   citations:
     - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf
@@ -1270,6 +1379,7 @@
   label: counsel for the plaintiff
   because: He signed the petition and the injunction motion himself.
   tier: 1
+  projects: [springfield]
   date: 2026-09-17
   citations:
     - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
@@ -1288,6 +1398,7 @@
     On two independent grounds — that it is zoning enacted without the Chapter 89 notice and
     hearing, and that it was not enacted in the form the Charter requires.
   tier: 1
+  projects: [springfield]
   date: 2026-09-17
   citations:
     - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
@@ -1302,6 +1413,7 @@
   type: legal
   label: passed it 29 June 2026
   tier: 2
+  projects: [springfield]
   date: 2026-06-29
   summary: >
     Filed as Council Bill 2026-147 on 16 June, first read 22 June, passed 29 June. The
@@ -1320,6 +1432,7 @@
   type: legal
   label: bars any application to establish the proposed use here
   tier: 2
+  projects: [springfield]
   date: 2026-06-29
   summary: >
     The project's anticipated demand of about 9.9 MW crosses the ordinance's 5 MW test on
@@ -1338,6 +1451,7 @@
   type: legal
   label: will not process the 9.9 MW electric-service application until 17 November
   tier: 2
+  projects: [springfield]
   date: 2026-07-24
   summary: >
     Three weeks after the City's counsel said predevelopment review was the best mechanism
@@ -1356,6 +1470,7 @@
   type: legal
   label: plaintiff
   tier: 1
+  projects: [springfield]
   date: 2026-08-27
   citations:
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-27_verified-petition.pdf
@@ -1367,6 +1482,7 @@
   type: legal
   label: plaintiff
   tier: 1
+  projects: [springfield]
   date: 2026-08-27
   summary: >
     NSI A.1 claims losses exceeding $1,000,000.
@@ -1380,6 +1496,7 @@
   type: legal
   label: defendant
   tier: 1
+  projects: [springfield]
   date: 2026-08-27
   citations:
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-27_verified-petition.pdf
@@ -1391,6 +1508,7 @@
   type: legal
   label: named as Plaintiff/Petitioner on the summons
   tier: 1
+  projects: [springfield]
   date: 2026-08-28
   summary: >
     The summons identifies a party the verified petition does not name. Being named as the
@@ -1409,6 +1527,7 @@
   type: professional
   label: counsel named on the summons
   tier: 1
+  projects: [springfield]
   date: 2026-08-28
   citations:
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf
@@ -1420,6 +1539,7 @@
   type: ownership
   label: organizer
   tier: 1
+  projects: [springfield]
   date: 2024-08-01
   citations:
     - doc: evidence/03-entities/company/payment-1-financial-mo-llc/2024-08-01_articles-of-organization-and-certificate_LC014567126.pdf
@@ -1431,6 +1551,7 @@
   type: legal
   label: Sunshine requester
   tier: 1
+  projects: [marshfield]
   date: 2026-08-17
   citations:
     - doc: evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf
@@ -1444,6 +1565,7 @@
   type: legal
   label: smoke investigation, report 26-0992 — "no fire at this location"
   tier: 1
+  projects: [marshfield]
   date: 2026-07-18
   summary: >
     Responders found a moderate amount of black smoke coming from Generator #3 and shut it
@@ -1462,6 +1584,7 @@
   type: legal
   label: incident report lists Trent Overhue as Owner
   tier: 1
+  projects: [marshfield]
   date: 2026-07-18
   citations:
     - doc: evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf
@@ -1473,6 +1596,7 @@
   type: legal
   label: automatic aid on the 18 July response
   tier: 1
+  projects: [marshfield]
   date: 2026-07-18
   citations:
     - doc: evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf
@@ -1484,6 +1608,7 @@
   type: legal
   label: call CFS2026021837, "FC — FIRE, COMMERCIAL STRUCTURE"
   tier: 1
+  projects: [marshfield]
   date: 2026-07-18
   citations:
     - doc: evidence/05-sunshine-requests/webster-county-911/2026-07-18_CFS2026021837_command-log_fire-commercial-structure_incident-26-0992.pdf
@@ -1495,6 +1620,7 @@
   type: legal
   label: extra patrols, 27 July – 26 August 2026
   tier: 1
+  projects: [marshfield]
   date: 2026-07-27
   summary: >
     Law-enforcement patrols, not fire calls. The location is tagged "(DATA CENTER)" in the
@@ -1509,6 +1635,7 @@
   type: legal
   label: land-disturbance permit MORA29985, "LUMON RIFLE RANGE RD."
   tier: 1
+  projects: [marshfield]
   date: 2026-04-30
   citations:
     - doc: evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png
@@ -1522,6 +1649,7 @@
   type: legal
   label: land-disturbance permit MORA30685, facility "COLD STORAGE"
   tier: 1
+  projects: [benton]
   date: 2026-09-09
   summary: >
     Effective the same day the deeds were recorded. The facility name is "Cold Storage," not
@@ -1538,6 +1666,7 @@
   type: legal
   label: proposed use does not align with Planned Development 251
   tier: 1
+  projects: [springfield]
   date: 2026-08-03
   citations:
     - doc: evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf
@@ -1549,6 +1678,7 @@
   type: legal
   label: capacity for up to 10 MW, but standard extension policies likely not to apply
   tier: 1
+  projects: [springfield]
   date: 2026-08-03
   citations:
     - doc: evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf
@@ -1560,6 +1690,7 @@
   type: legal
   label: moratorium adopted but expressly not applied to this build
   tier: 2
+  projects: [marshfield]
   date: 2026-06-16
   summary: >
     The Commission noted its legal authority with respect to a project already under
@@ -1578,6 +1709,7 @@
   type: commercial
   label: describes ~10 MW on five acres, single tenant, power agreement secured before land
   tier: 2
+  projects: [marshfield]
   date: 2026-06-23
   summary: >
     Overhue's own account, given as a named panellist. He described identifying "stranded
@@ -1599,6 +1731,7 @@
   type: commercial
   label: publicly calls it a "high-performance computing research facility," not a data center
   tier: 2
+  projects: [marshfield]
   date: 2026-05-13
   summary: >
     Eight modular units of roughly 600 sq ft each, about 7,000 sq ft total, using less than
@@ -1621,6 +1754,7 @@
   label: committed to purchase, 23 July 2026
   because: Counsel argued at the TRO hearing that the county was chosen for having no zoning.
   tier: 2
+  projects: [benton]
   date: 2026-09-02
   summary: >
     Testimony at the TRO hearing, reported by KY3 — closing scheduled 9 September, and
@@ -1641,6 +1775,7 @@
   type: ownership
   label: common naming series and principals — no document establishes a parent relationship
   tier: 3
+  projects: [benton]
   date: 2026-08-13
   summary: >
     NSI 6 shares the NSI series name and gives as its principal office a building the
@@ -1662,6 +1797,7 @@
   type: ownership
   label: common naming series — no document establishes a parent relationship
   tier: 3
+  projects: [springfield]
   date: 2025-02-24
   summary: >
     Missouri does not require LLCs to disclose members or managers, so the articles establish
@@ -1678,6 +1814,7 @@
   type: finance
   label: six older liens cleared in the days before this financing was perfected
   tier: 3
+  projects: [marshfield]
   date: 2026-08-19
   summary: >
     Six older STN liens were terminated between 11 and 19 August 2026, days before
@@ -1699,6 +1836,7 @@
   label: co-organizer
   because: The domain's own markup identifies the site as his.
   tier: 3
+  projects: [marshfield]
   date: 2022-10-04
   summary: >
     Organized October 2022 with Nathaniel Aldrich, administratively dissolved June 2024. The

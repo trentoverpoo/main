@@ -90,6 +90,39 @@ connectionTypes:
     note: Equipment supply, tenancy, rentals, acquisitions.
 
 # ---------------------------------------------------------------------------
+# The three builds.
+#
+# The map opens on one of these rather than on all 88 entities at once, because
+# the whole file at once is the one view nobody can read. A project is an
+# editorial grouping and not a documented relationship, so it is declared here
+# and tagged onto connections in relationships.yaml — it never becomes an entity
+# or an edge of its own, and nothing on the canvas is drawn because of it.
+#
+# `anchor` is the site the build is read from: the entity a focused view centres
+# on. `default` marks the one the map opens on.
+projects:
+  - key: marshfield
+    label: Marshfield
+    anchor: site-marshfield
+    default: true
+    note: >
+      Ten acres off Rifle Range Road, the deepest-documented of the three — chain
+      of title, financing, equipment, permits and the July fire response.
+  - key: springfield
+    label: Springfield
+    anchor: site-springfield
+    note: >
+      2900 S. National Avenue, where the build has not started: an ordinance
+      barring the use, a suit challenging it, and a utility declining to process
+      the service application.
+  - key: benton
+    label: Benton County
+    anchor: site-benton
+    note: >
+      Twelve acres off Old Hwy 65 at Warsaw, assembled from three Hilty family
+      trusts, with a county moratorium and a second suit against it.
+
+# ---------------------------------------------------------------------------
 # The opening layout.
 #
 # The map opens on this arrangement rather than on wherever a cold simulation
@@ -105,9 +138,11 @@ connectionTypes:
 hierarchy:
   - key: sites
     label: The three data centers
-    note: The locations themselves. Everything below is read as standing under one of them.
+    note: >
+      The locations themselves. Everything below is read as standing under one of
+      them. Marshfield sits in the middle because it is what the map opens on.
     rows:
-      - [site-marshfield, site-springfield, site-benton]
+      - [site-springfield, site-marshfield, site-benton]
 
   - key: principals
     label: Principals

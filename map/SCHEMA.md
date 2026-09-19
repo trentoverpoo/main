@@ -47,6 +47,12 @@ Tier 4 has no representation in `entities.yaml` or `relationships.yaml`. It live
 | `citations` | yes, ≥1 | see below |
 | `caveat` | no | rendered in the panel as an explicit limit on what the node establishes |
 
+There is deliberately **no `projects` field on a node**. An entity's membership is
+derived by the build, as the union of the projects of the connections it stands on.
+See below.
+
+
+
 ## Edge fields
 
 | Field | Required | Notes |
@@ -55,6 +61,7 @@ Tier 4 has no representation in `entities.yaml` or `relationships.yaml`. It live
 | `type` | yes | one of the keys in `connectionTypes` |
 | `label` | yes | short verb phrase — "conveys Tract 1 to", "manager of" |
 | `tier` | yes | 1–3 |
+| `projects` | yes | which builds this connection belongs to: a list of keys from `projects` in `taxonomy.yaml`, or `all`. The build fails on an edge that names none, the same way it fails on an uncited one |
 | `date` | no | ISO date of the instrument or event |
 | `summary` | no | longer prose for the panel |
 | `citations` | yes, ≥1 | see below |
@@ -132,6 +139,74 @@ rest** — no category is identified by colour alone.
 
 ---
 
+## The three builds
+
+`map/data/taxonomy.yaml` declares the projects the map can focus on. The map opens on
+one of them rather than on all 88 entities at once, because the whole file at once is
+the view nobody reads.
+
+```yaml
+projects:
+  - key: marshfield
+    label: Marshfield
+    anchor: site-marshfield
+    default: true
+    note: >
+      Ten acres off Rifle Range Road, the deepest-documented of the three …
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `key` | yes | named by every edge's `projects` |
+| `label` | yes | what the switch in the sidebar reads |
+| `anchor` | yes | the site the build is read from. A focused view centres on it, and the build fails if it is not a declared node, or not on any connection tagged with this project |
+| `default` | exactly one | the build the map opens on |
+| `note` | no | one or two sentences, shown under the switch |
+
+### Why membership is tagged, and tagged on edges
+
+A project is an **editorial grouping, not a documented relationship.** It never becomes
+a node or an edge, and nothing on the canvas is drawn because of it — which is the same
+reason tier 4 lives in `non-claims.yaml` rather than in the graph.
+
+It has to be authored, because it cannot be derived. The graph is a single connected
+component: every entity reaches every other one, so no distance from a site is
+membership. Breadth-first from `site-springfield` reaches 8 entities at one hop — too
+thin to be a map — 25 at two, which already includes the Marshfield fire district, and
+53 at three, by which point 43 of the 88 are shared by all three sites and the focus is
+gone.
+
+The tag sits on **edges** rather than entities because an entity's membership is
+genuinely ambiguous where its connections are not. Trent Overhue stands on all three
+sites; each of his connections stands on exactly one. Tagged on the entity, every one of
+his connections would follow him into every view. Tagged on the connections, a focused
+view draws him with only the connections that belong to it.
+
+So `entities.yaml` carries no project field at all. The build computes each entity's
+membership as the union of its connections' projects, and **fails** on an entity that
+comes out belonging to none — it would be drawn in no view but the whole map. Fifteen
+entities come out in more than one build; those overlaps are among the more substantial
+things the file has to show, and a schema that forced each entity under one site would
+have had to assert a relationship the record does not state.
+
+Most of the tags were read off the `evidence/` folder each citation lives in, which is
+already arranged by site. What that cannot place is the corporate-formation layer — a
+filing naming an organizer, a registered agent or a firm, which says nothing about which
+site it was for — and those were decided one line at a time by what the entity at the
+other end of the chain turns out to be.
+
+### Bridges
+
+A focused view also draws, faintly, the connections that **leave** it and the entities
+on the far end of them. Those are not extra: a Springfield that quietly omitted the
+principal who is also on the other two sites would be a cleaner picture of something
+that is not true. Bridges are how a focused view stays honest about what it has set
+aside. They carry no **NEW** chip and no recency wash, because both are meant to be
+caught before anything else is read, and what is new in a build the reader is not
+looking at is not.
+
+---
+
 ## The opening layout
 
 `map/data/taxonomy.yaml` also carries `hierarchy`: the arrangement the map opens on,
@@ -144,7 +219,7 @@ hierarchy:
     label: The three data centers
     note: The locations themselves. Everything below stands under one of them.
     rows:
-      - [site-marshfield, site-springfield, site-benton]
+      - [site-springfield, site-marshfield, site-benton]
 ```
 
 | Field | Required | Notes |

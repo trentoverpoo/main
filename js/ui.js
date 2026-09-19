@@ -77,11 +77,19 @@ class UI {
     this.catById = new Map(data.taxonomy.categories.map((c) => [c.key, c]));
     this.typeById = new Map(data.taxonomy.connectionTypes.map((t) => [t.key, t]));
 
+    this.projects = data.taxonomy.projects || [];
+    this.projectByKey = new Map(this.projects.map((p) => [p.key, p]));
+
     this.activeCategories = new Set(data.taxonomy.categories.map((c) => c.key));
     this.activeTypes = new Set(data.taxonomy.connectionTypes.map((t) => t.key));
     this.activeTiers = new Set([1, 2, 3]);
+    // Which build the map opens on. Null is the whole file at once, which is
+    // the one view nobody can read — so it is a choice, not the starting point.
+    const opening = this.projects.find((p) => p.default) || this.projects[0];
+    this.activeProject = opening ? opening.key : null;
 
     this._buildMasthead();
+    this._buildProjects();
     this._buildLegend();
     this._buildTypes();
     this._buildTiers();
@@ -90,6 +98,7 @@ class UI {
     this._buildDrawer();
     this._buildPanel();
     this._buildModal();
+    this._buildAdvancedModal();
     this._buildMobileNote();
     this._buildTiplineModal();
   }
@@ -106,8 +115,111 @@ class UI {
       `${m.nodeCount} entities · ${m.edgeCount} connections · ${m.documentCount} documents`;
   }
 
+  // ------------------------------------------------------------ projects ---
+
+  /** The three builds, and the whole file. Radios rather than buttons: the
+   *  choice is one of four, and a radiogroup is arrowed through and spoken as
+   *  "2 of 4" without any of that having to be written. */
+  _buildProjects() {
+    const host = el('projects');
+    if (!host || !this.projects.length) return;
+
+    const counts = new Map(this.projects.map((p) => [p.key,
+      this.data.nodes.filter((n) => (n.projects || []).includes(p.key)).length]));
+
+    const row = (key, label, note, n) => {
+      const id = `proj-note-${key || 'all'}`;
+      return `
+      <label class="check proj" title="${esc(note)}">
+        <input type="radio" name="project" value="${esc(key)}"
+               ${key === this.activeProject ? 'checked' : ''} aria-describedby="${id}">
+        <span class="label">${esc(label)}</span>
+        <span class="n">${n}</span>
+        <span class="visually-hidden" id="${id}">${esc(note)}</span>
+      </label>`;
+    };
+
+    host.innerHTML = this.projects.map((p) =>
+      row(p.key, p.label, (p.note || '').trim(), counts.get(p.key))).join('') +
+      row('', 'The whole map', 'Every entity in the file at once, and every ' +
+        'connection between them.', this.data.nodes.length);
+
+    host.addEventListener('change', (ev) => {
+      if (ev.target.name !== 'project') return;
+      this.activeProject = ev.target.value || null;
+      this._syncProjectNote();
+      this.setDrawer(false);
+      this.h.onProject();
+    });
+    this._syncProjectNote();
+  }
+
+  /** Turns a category back on from code, for a search landing on an entity the
+   *  advanced filters are holding back. A node is hidden by its category and by
+   *  nothing else, so this is the whole of what it takes to make one drawable. */
+  enableCategory(key) {
+    if (this.activeCategories.has(key)) return false;
+    this.activeCategories.add(key);
+    const input = document.querySelector(`input[data-category="${key}"]`);
+    if (input) {
+      input.checked = true;
+      input.closest('.check').classList.remove('off');
+    }
+    this.syncAdvancedCount();
+    return true;
+  }
+
+  /** Moves the switch from code — a search landing outside the build in focus,
+   *  say. The radio is updated too, or the sidebar would be describing a map
+   *  that is no longer on the screen. */
+  setProject(key) {
+    this.activeProject = key || null;
+    const input = el('projects')
+      && el('projects').querySelector(`input[value="${key || ''}"]`);
+    if (input) input.checked = true;
+    this._syncProjectNote();
+  }
+
+  _syncProjectNote() {
+    const note = el('project-note');
+    if (!note) return;
+    const p = this.activeProject ? this.projectByKey.get(this.activeProject) : null;
+    note.textContent = p ? (p.note || '').trim()
+      : 'Every entity in the file at once. Thorough, and a great deal to read — ' +
+        'the three builds above take it one at a time.';
+  }
+
+  /** What the map is showing, for the readout that follows a switch. */
+  projectLabel() {
+    const p = this.activeProject ? this.projectByKey.get(this.activeProject) : null;
+    return p ? p.label : 'the whole map';
+  }
+
+  /** Everything in a build, or everything in the file when none is in focus.
+   *  The filters sit on top of the build, so their counts have to be of the
+   *  build — a legend reading "Person 24" over a map of twenty-two entities is
+   *  a legend describing something the reader is not looking at. */
+  inFocus(x) {
+    return !this.activeProject || (x.projects || []).includes(this.activeProject);
+  }
+
   _countNodes(catKey) {
-    return this.data.nodes.filter((n) => n.category === catKey).length;
+    return this.data.nodes.filter((n) => n.category === catKey && this.inFocus(n)).length;
+  }
+
+  /** Re-counts the legend, the connection types and the tiers after a switch.
+   *  The rows themselves are untouched: only the numbers on them change. */
+  syncCounts() {
+    for (const cell of document.querySelectorAll('[data-count-cat]')) {
+      cell.textContent = String(this._countNodes(cell.dataset.countCat));
+    }
+    const edges = this.data.edges.filter((e) => this.inFocus(e));
+    for (const cell of document.querySelectorAll('[data-count-type]')) {
+      cell.textContent = String(edges.filter((e) => e.type === cell.dataset.countType).length);
+    }
+    for (const cell of document.querySelectorAll('[data-count-tier]')) {
+      cell.textContent = String(edges.filter((e) => e.tier === Number(cell.dataset.countTier)).length);
+    }
   }
 
   _buildLegend() {
@@ -125,7 +237,7 @@ class UI {
             note ? ` aria-describedby="${nid}"` : ''}>
           ${swatchSVG(c.shape, c.fill, this.hue(fam.key))}
           <span class="label">${esc(c.label)}</span>
-          <span class="n">${this._countNodes(c.key)}</span>
+          <span class="n" data-count-cat="${c.key}">${this._countNodes(c.key)}</span>
           ${note ? `<span class="visually-hidden" id="${nid}">${esc(note)}</span>` : ''}
         </label>`;
       }).join('');
@@ -138,6 +250,7 @@ class UI {
       if (!key) return;
       ev.target.checked ? this.activeCategories.add(key) : this.activeCategories.delete(key);
       ev.target.closest('.check').classList.toggle('off', !ev.target.checked);
+      this.syncAdvancedCount();
       this.h.onFilter();
     });
 
@@ -149,6 +262,7 @@ class UI {
       });
       this.activeCategories = all ? new Set()
         : new Set(this.data.taxonomy.categories.map((c) => c.key));
+      this.syncAdvancedCount();
       this.h.onFilter();
     });
   }
@@ -156,7 +270,9 @@ class UI {
   _buildTypes() {
     const host = el('types');
     const counts = new Map();
-    for (const e of this.data.edges) counts.set(e.type, (counts.get(e.type) || 0) + 1);
+    for (const e of this.data.edges) {
+      if (this.inFocus(e)) counts.set(e.type, (counts.get(e.type) || 0) + 1);
+    }
     host.innerHTML = this.data.taxonomy.connectionTypes.map((t) => {
       const note = t.note || '';
       const nid = `type-note-${t.key}`;
@@ -165,7 +281,7 @@ class UI {
         <input type="checkbox" checked data-type="${t.key}"${
           note ? ` aria-describedby="${nid}"` : ''}>
         <span class="label">${esc(t.label)}</span>
-        <span class="n">${counts.get(t.key) || 0}</span>
+        <span class="n" data-count-type="${t.key}">${counts.get(t.key) || 0}</span>
         ${note ? `<span class="visually-hidden" id="${nid}">${esc(note)}</span>` : ''}
       </label>`;
     }).join('');
@@ -175,6 +291,7 @@ class UI {
       if (!key) return;
       ev.target.checked ? this.activeTypes.add(key) : this.activeTypes.delete(key);
       ev.target.closest('.check').classList.toggle('off', !ev.target.checked);
+      this.syncAdvancedCount();
       this.h.onFilter();
     });
   }
@@ -182,13 +299,15 @@ class UI {
   _buildTiers() {
     const host = el('tiers');
     const counts = new Map();
-    for (const e of this.data.edges) counts.set(e.tier, (counts.get(e.tier) || 0) + 1);
+    for (const e of this.data.edges) {
+      if (this.inFocus(e)) counts.set(e.tier, (counts.get(e.tier) || 0) + 1);
+    }
     host.innerHTML = [1, 2, 3].map((t) => `
       <label class="check tier-row">
         <input type="checkbox" checked data-tier="${t}">
         ${tierLineSVG(t, t === 3 ? '--ink-muted' : '--edge-strong')}
         <span class="label">${esc(TIER[t].label)}</span>
-        <span class="n">${counts.get(t) || 0}</span>
+        <span class="n" data-count-tier="${t}">${counts.get(t) || 0}</span>
       </label>`).join('');
 
     host.addEventListener('change', (ev) => {
@@ -196,6 +315,7 @@ class UI {
       if (!t) return;
       ev.target.checked ? this.activeTiers.add(t) : this.activeTiers.delete(t);
       ev.target.closest('.check').classList.toggle('off', !ev.target.checked);
+      this.syncAdvancedCount();
       this.h.onFilter();
     });
   }
@@ -235,6 +355,7 @@ class UI {
     el('age-key').addEventListener('click', (ev) => {
       const b = ev.target.closest('[data-goto]');
       if (!b) return;
+      if (this.closeAdvanced) this.closeAdvanced();
       this.setDrawer(false);
       this.h.onPick(b.dataset.goto);
     });
@@ -639,6 +760,67 @@ class UI {
       if (ev.target.id === 'modal' || ev.target.closest('[data-close]')) close();
     });
     document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
+  }
+
+  // ----------------------------------------------------- advanced search ---
+
+  /** The category, connection, tier and time filters used to be five panels of
+   *  the sidebar, which put the map's opening question — which build am I
+   *  looking at — below a fold of controls most readers never touch. They live
+   *  in a dialog now. The controls themselves are untouched: _buildLegend and
+   *  the rest still write into the same four elements, which simply moved. */
+  _buildAdvancedModal() {
+    const modal = el('advanced-modal');
+    if (!modal) return;
+    const opener = el('open-advanced');
+    let release = null;
+
+    const open = () => {
+      modal.classList.add('open');
+      release = dialogFocus(modal, el('advanced-modal-close'));
+    };
+    const close = () => {
+      if (!modal.classList.contains('open')) return;
+      modal.classList.remove('open');
+      if (release) { release(); release = null; }
+    };
+    this.closeAdvanced = close;
+
+    opener.addEventListener('click', open);
+    modal.addEventListener('click', (ev) => {
+      if (ev.target.id === 'advanced-modal' || ev.target.closest('[data-close]')) close();
+    });
+    document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') close(); });
+
+    el('filters-reset').addEventListener('click', () => {
+      this.activeCategories = new Set(this.data.taxonomy.categories.map((c) => c.key));
+      this.activeTypes = new Set(this.data.taxonomy.connectionTypes.map((t) => t.key));
+      this.activeTiers = new Set([1, 2, 3]);
+      for (const input of modal.querySelectorAll('input[type="checkbox"]')) {
+        input.checked = true;
+        input.closest('.check').classList.remove('off');
+      }
+      this.syncAdvancedCount();
+      this.h.onFilter();
+    });
+
+    this.syncAdvancedCount();
+  }
+
+  /** How many filters are currently holding something back. A control that has
+   *  been put behind a button has to say when it is doing something, or a map
+   *  drawing two thirds of what it should looks like a map that is broken. */
+  syncAdvancedCount() {
+    const badge = el('advanced-count');
+    if (!badge) return;
+    const off = (this.data.taxonomy.categories.length - this.activeCategories.size) +
+      (this.data.taxonomy.connectionTypes.length - this.activeTypes.size) +
+      (3 - this.activeTiers.size);
+    badge.hidden = off === 0;
+    badge.textContent = String(off);
+    el('open-advanced').setAttribute('aria-label', off
+      ? `Advanced search — ${off} filter${off === 1 ? '' : 's'} narrowing the map`
+      : 'Advanced search');
   }
 
   // --------------------------------------------------- small-screen note ---
