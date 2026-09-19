@@ -875,9 +875,8 @@ class UI {
   _buildTiplineModal() {
     el('tipline-modal-body').innerHTML = `
       <h2>Send a tip</h2>
-      <p class="lede">This project runs on documents. If you have one (a lease, a permit
-      filing, an email, a recording, a name we've gotten wrong), it's useful whether or not
-      you can say how you got it.</p>
+      <p class="lede">This project is entirely sourced from public documents and information.
+      If you have something that we haven't found yet, we'd love to hear about it.</p>
       <h3>What's valuable</h3>
       <div class="nc"><b>Documents</b><span>Filings, contracts, permits, correspondence,
       minutes, financial records: anything with a date and a source, even a partial
@@ -890,6 +889,9 @@ class UI {
       <div class="nc"><b>Your identity stays out of it</b><span>Tips are handled
       anonymously. Nothing you send is published or attributed without your explicit
       permission.</span></div>
+      <p class="lede">Using an email service like
+      <a href="https://account.proton.me/signup" target="_blank" rel="noopener">Proton</a>
+      adds an extra layer of protection to your identity.</p>
       <p class="lede" style="margin-top:22px">
         <a href="mailto:trentoverpoo@proton.me">trentoverpoo@proton.me</a>
       </p>`;
