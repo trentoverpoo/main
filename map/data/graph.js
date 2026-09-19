@@ -148,7 +148,7 @@ window.__GRAPH__ = {
     "label": "Marshfield",
     "anchor": "site-marshfield",
     "default": true,
-    "note": "Ten acres off Rifle Range Road, the deepest-documented of the three — chain of title, financing, equipment, permits and the July fire response.\n"
+    "note": "Ten acres off Rifle Range Road, the deepest-documented of the three: chain of title, financing, equipment, permits and the July fire response.\n"
    },
    {
     "key": "springfield",
@@ -241,7 +241,7 @@ window.__GRAPH__ = {
    {
     "key": "counterparties",
     "label": "Counterparties, lenders and professional services",
-    "note": "Everyone transacting with the entities above — equipment, money and paperwork.",
+    "note": "Everyone transacting with the entities above, on equipment, money and paperwork.",
     "rows": [
      [
       "stn-incorporated",
@@ -351,9 +351,9 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/AOO.pdf",
-     "label": "NSI Investments, LLC — Kansas articles of organization",
+     "label": "NSI Investments, LLC · Kansas articles of organization",
      "date": "2015-10-08",
-     "excerpt": "Official mailing address — Trent Overhue.",
+     "excerpt": "Official mailing address: Trent Overhue.",
      "url": null,
      "urlLabel": null
     },
@@ -398,14 +398,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/AOO.pdf",
-     "label": "NSI Investments, LLC — Kansas articles, organizer",
+     "label": "NSI Investments, LLC · Kansas articles, organizer",
      "date": "2015-10-08",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — signature page",
+     "label": "Deed of trust, Inst. 2026003834 · signature page",
      "date": "2026-07-10",
      "excerpt": "Cameron G. Jones, Manager of LUMON SOLUTIONS MANAGEMENT, LLC",
      "url": null,
@@ -440,7 +440,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — signature page",
+     "label": "Deed of trust, Inst. 2026003834 · signature page",
      "date": "2026-07-10",
      "excerpt": "Ashton Owens, Manager of LUMON SOLUTIONS MANAGEMENT, LLC",
      "url": null,
@@ -473,7 +473,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2016 Annual Report.pdf",
-     "label": "NSI Investments — Kansas annual report 2016",
+     "label": "NSI Investments · Kansas annual report 2016",
      "date": 2016,
      "excerpt": "Robi L. Overhue, Trustee (Council Bluffs, IA)",
      "url": null,
@@ -482,8 +482,8 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/missouri/2026-09-16_linkedin-robi-overhue_affordable-family-storage.pdf",
      "url": "https://www.linkedin.com/in/robi-overhue-318a225b/",
-     "label": "LinkedIn — Robi Overhue, Affordable Family Storage",
-     "urlLabel": "LinkedIn profile — Robi Overhue"
+     "label": "LinkedIn · Robi Overhue, Affordable Family Storage",
+     "urlLabel": "LinkedIn profile · Robi Overhue"
     }
    ],
    "degree": 1,
@@ -513,7 +513,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2016 Annual Report.pdf",
-     "label": "NSI Investments — Kansas annual report 2016",
+     "label": "NSI Investments · Kansas annual report 2016",
      "date": 2016,
      "excerpt": "Frank H. Overhue, Trustee (Council Bluffs, IA)",
      "url": null,
@@ -580,7 +580,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/jde-investments-llc/2015-08-26_articles-of-organization.pdf",
-     "label": "JDE Investments, LLC — articles of organization",
+     "label": "JDE Investments, LLC · articles of organization",
      "date": "2015-08-26",
      "excerpt": "Registered agent and organizer Jason Rost, 831 E. Bedford, Marshfield",
      "url": null,
@@ -640,20 +640,20 @@ window.__GRAPH__ = {
     "year": 2015
    },
    "dateNote": "Signed the JDE-to-Sho-Me warranty deed as Managing Member",
-   "summary": "One of six grantors (with Jennifer Glidewell, Daniel P. and Brenda Cleir, and Jason and Sunny Rost) who conveyed the parent tract to JDE Investments on 4 September 2015. Signed the 19 November 2015 warranty deed conveying the 20.33-acre tract from JDE Investments to Sho-Me Power Electric Cooperative, as JDE's Managing Member — Sunny Rost signed that capacity for the 2019 JDE-to-ARY deed instead, so JDE's managing member changed at some point between the two, which Missouri filings would not otherwise disclose.",
+   "summary": "One of six grantors (with Jennifer Glidewell, Daniel P. and Brenda Cleir, and Jason and Sunny Rost) who conveyed the parent tract to JDE Investments on 4 September 2015. Signed the 19 November 2015 warranty deed conveying the 20.33-acre tract from JDE Investments to Sho-Me Power Electric Cooperative, as JDE's Managing Member. Sunny Rost signed that capacity for the 2019 JDE-to-ARY deed instead, so JDE's managing member changed at some point between the two, which Missouri filings would not otherwise disclose.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2015-09-04_book2015-page4156_warranty-deed_glidewell-cleir-rost-to-jde-investments.pdf",
-     "label": "Warranty deed, Bk 2015 Pg 4156 — grantor",
+     "label": "Warranty deed, Bk 2015 Pg 4156 · grantor",
      "date": "2015-09-03",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2015-11-19_book2015-page5296_warranty-deed_jde-investments-to-sho-me-power-electric-cooperative.pdf",
-     "label": "Warranty deed, Bk 2015 Pg 5296 — signature",
+     "label": "Warranty deed, Bk 2015 Pg 5296 · signature",
      "date": "2015-11-19",
      "excerpt": "Signed Eric Glidewell, Managing Member (JDE Investments, LLC)",
      "url": null,
@@ -689,7 +689,7 @@ window.__GRAPH__ = {
      "url": "https://www.sec.gov/Archives/edgar/data/1826924/000166919125000090/0001669191-25-000090-index.htm",
      "label": "Form C-AR, FY2022 annual report (SEC CIK 0001826924)",
      "date": "2025-02-13",
-     "urlLabel": "SEC EDGAR — filing index, CIK 0001826924"
+     "urlLabel": "SEC EDGAR · filing index, CIK 0001826924"
     }
    ],
    "degree": 1,
@@ -712,22 +712,22 @@ window.__GRAPH__ = {
     "year": 2016
    },
    "dateNote": "Agent for service of process at STN Incorporated's California formation",
-   "summary": "The only named individual behind the equipment owner. Sole officer of STN One Incorporated — CEO, CFO and Secretary.",
+   "summary": "The only named individual behind the equipment owner. Sole officer of STN One Incorporated: CEO, CFO and Secretary.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png",
-     "label": "California SoS record — STN Incorporated, entity 3946840",
+     "label": "California SoS record · STN Incorporated, entity 3946840",
      "date": "2016-09-19",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ca-sos-certified-copies/2026-07-22_statement-of-information_stn-one-incorporated.pdf",
-     "label": "Statement of information — STN One Incorporated",
+     "label": "Statement of information · STN One Incorporated",
      "date": "2026-07-22",
-     "excerpt": "Sabur Mian, sole officer — Chief Executive Officer, Chief Financial Officer and Secretary",
+     "excerpt": "Sabur Mian, sole officer: Chief Executive Officer, Chief Financial Officer and Secretary",
      "url": null,
      "urlLabel": null
     }
@@ -758,7 +758,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/northstar/northstar-enterprise-and-defense-llc/2026-03-19_fl-annual-report.pdf",
-     "label": "Florida annual report — Northstar Enterprise and Defense, LLC",
+     "label": "Florida annual report · Northstar Enterprise and Defense, LLC",
      "date": "2026-03-19",
      "excerpt": "Manager Scott Foster; sole member Northstar Technologies Group, Inc.",
      "url": null,
@@ -791,7 +791,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-27_exhibit-A_wtf-springfield-mo-facebook-post.pdf",
-     "label": "Exhibit A — Facebook post",
+     "label": "Exhibit A · Facebook post",
      "date": "2026-08-24",
      "excerpt": "the data center on Rifle Range Rd in Marshfield has had 2 fire incidents in the last 3 weeks… Now the same developer, Trent Overhue, wants a 10MW data center right up against 100s of homes in Springfield\n",
      "url": null,
@@ -819,13 +819,13 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Organizer named on both Lumon articles of organization",
-   "summary": "Organizer of record for both Lumon entities, of 222 Central Park Ave Ste 1700, Virginia Beach — the Virginia Beach office of the law firm Williams Mullen.",
+   "summary": "Organizer of record for both Lumon entities, of 222 Central Park Ave Ste 1700, Virginia Beach, the Virginia Beach office of the law firm Williams Mullen.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf",
-     "label": "Lumon Solutions Marshfield, LLC — articles of organization LC014727200",
+     "label": "Lumon Solutions Marshfield, LLC · articles of organization LC014727200",
      "date": "2026-04-20",
      "url": null,
      "urlLabel": null
@@ -857,7 +857,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf",
-     "label": "NSI 6, LLC — articles of organization LC014767606",
+     "label": "NSI 6, LLC · articles of organization LC014767606",
      "date": "2026-08-13",
      "url": null,
      "urlLabel": null
@@ -922,7 +922,7 @@ window.__GRAPH__ = {
     "year": 2024
    },
    "dateNote": "Trustee on the Lovella L. Hilty Residuary Trust deed",
-   "summary": "Hilty family trustee; conveyed an undivided one-third interest in the Warsaw tract to NSI 6. Signed separately on 2 September 2026 — the day of the TRO hearing — before a notary in Big Sandy, Chouteau County, Montana.",
+   "summary": "Hilty family trustee; conveyed an undivided one-third interest in the Warsaw tract to NSI 6. Signed separately on 2 September 2026, the day of the TRO hearing, before a notary in Big Sandy, Chouteau County, Montana.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -986,20 +986,20 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Took the acknowledgment on the first ARY warranty deed",
-   "summary": "Greene County notary whose commission appears on instruments on both sides of the file — the Marshfield ARY deed and OakStar deed of trust, and two of the three Hilty deeds to NSI 6, taken \"at my office in Springfield\".",
+   "summary": "Greene County notary whose commission appears on instruments on both sides of the file: the Marshfield ARY deed and OakStar deed of trust, and two of the three Hilty deeds to NSI 6, taken \"at my office in Springfield\".",
    "caveat": "A shared notary is a documented commonality of execution, not evidence of common control.",
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — acknowledgment",
+     "label": "Deed of trust, Inst. 2026003834 · acknowledgment",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf",
-     "label": "Trustee's warranty deed, Inst. 202604041 — acknowledgment",
+     "label": "Trustee's warranty deed, Inst. 202604041 · acknowledgment",
      "date": "2026-09-09",
      "excerpt": "Notary A. McBride, commission",
      "url": null,
@@ -1033,7 +1033,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-09-04_inst-2026004988_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026004988 — acknowledgment",
+     "label": "Deed of trust, Inst. 2026004988 · acknowledgment",
      "date": "2026-09-04",
      "url": null,
      "urlLabel": null
@@ -1091,7 +1091,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Counsel named on the Wright County summons",
-   "summary": "Counsel named on the summons in the Wright County action — a different attorney from the one who signed that verified petition. Three weeks later he signed the Greene County petition and preliminary-injunction motion against the City of Springfield himself, as attorney of record.",
+   "summary": "Counsel named on the summons in the Wright County action, a different attorney from the one who signed that verified petition. Three weeks later he signed the Greene County petition and preliminary-injunction motion against the City of Springfield himself, as attorney of record.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -1105,7 +1105,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf",
-     "label": "Verified petition, 2631-CC01131 — signature block",
+     "label": "Verified petition, 2631-CC01131 · signature block",
      "date": "2026-09-17",
      "url": null,
      "urlLabel": null
@@ -1131,13 +1131,13 @@ window.__GRAPH__ = {
     "year": 2024
    },
    "dateNote": "Organizer of Payment 1 Financial MO LLC",
-   "summary": "Austin, Texas organizer of Payment 1 Financial MO LLC — the entity named as Plaintiff/Petitioner on the Wright County summons.",
+   "summary": "Austin, Texas organizer of Payment 1 Financial MO LLC, the entity named as Plaintiff/Petitioner on the Wright County summons.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/03-entities/company/payment-1-financial-mo-llc/2024-08-01_articles-of-organization-and-certificate_LC014567126.pdf",
-     "label": "Payment 1 Financial MO LLC — articles of organization LC014567126",
+     "label": "Payment 1 Financial MO LLC · articles of organization LC014567126",
      "date": "2024-08-01",
      "url": null,
      "urlLabel": null
@@ -1145,8 +1145,8 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/payment-1-financial-mo-llc/2026-09-17_linkedin-jake-gaddy.pdf",
      "url": "https://www.linkedin.com/in/jcgaddy/",
-     "label": "LinkedIn — Jake Gaddy",
-     "urlLabel": "LinkedIn profile — Jake Gaddy"
+     "label": "LinkedIn · Jake Gaddy",
+     "urlLabel": "LinkedIn profile · Jake Gaddy"
     }
    ],
    "degree": 1,
@@ -1200,7 +1200,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "dateNote": "Organized — four days before it took title",
+   "dateNote": "Organized four days before it took title",
    "summary": "Titleholder of the ten acres at 259 Rifle Range Road, UCC debtor, and grantor on both OakStar deeds of trust. Organized 20 April 2026, four days before taking title.",
    "caveat": null,
    "aliases": [
@@ -1217,7 +1217,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-05-07_amendment_principal-office-2900-s-national.pdf",
-     "label": "Amendment — principal office to 2900 S. National",
+     "label": "Amendment · principal office to 2900 S. National",
      "date": "2026-05-07",
      "excerpt": "Signed Cameron G. Jones",
      "url": null,
@@ -1245,7 +1245,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Organized",
-   "summary": "Manager of Lumon Solutions Marshfield. Its own managers — Overhue, Jones and Owens — each signed the July 2026 deed of trust in that stated capacity.",
+   "summary": "Manager of Lumon Solutions Marshfield. Its own managers (Overhue, Jones and Owens) each signed the July 2026 deed of trust in that stated capacity.",
    "caveat": null,
    "aliases": [
     "LC014727379"
@@ -1260,7 +1260,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — signature block",
+     "label": "Deed of trust, Inst. 2026003834 · signature block",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -1286,7 +1286,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "dateNote": "Organized — three days after the Benton County moratorium",
+   "dateNote": "Organized three days after the Benton County moratorium",
    "summary": "Plaintiff against the Benton County moratorium and now titleholder of the twelve acres at 29101 Old Hwy 65, Warsaw. Organized three days after the ordinance it challenged, and won a temporary restraining order 26 days later.",
    "caveat": null,
    "aliases": [
@@ -1297,7 +1297,7 @@ window.__GRAPH__ = {
      "doc": "evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf",
      "label": "Articles of organization LC014767606",
      "date": "2026-08-13",
-     "excerpt": "Purpose — real estate ownership and investment. Principal office 1736 E Sunshine St Suite 304, Springfield.\n",
+     "excerpt": "Purpose: real estate ownership and investment.' Principal office 1736 E Sunshine St Suite 304, Springfield.\n",
      "url": null,
      "urlLabel": null
     }
@@ -1346,7 +1346,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf",
-     "label": "Verified petition ¶11, 2631-CC01131 — the same description, sworn again",
+     "label": "Verified petition ¶11, 2631-CC01131 · the same description, sworn again",
      "date": "2026-09-17",
      "excerpt": "has served as the applicant and project sponsor for a proposed office and digital infrastructure project at 2900 South National Avenue\n",
      "url": null,
@@ -1388,14 +1388,14 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2022 Annual Report.pdf",
-     "label": "Kansas annual report 2022 — last to disclose members",
+     "label": "Kansas annual report 2022 · last to disclose members",
      "date": 2022,
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2025 Information Report.pdf",
-     "label": "Kansas information report 2025 — no member disclosure",
+     "label": "Kansas information report 2025 · no member disclosure",
      "date": 2025,
      "url": null,
      "urlLabel": null
@@ -1421,7 +1421,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2019
    },
-   "dateNote": "First documented appearance — grantee on Inst. 2019004679",
+   "dateNote": "First documented appearance: grantee on Inst. 2019004679",
    "summary": "Bought the 119.79-acre Marshfield parent parcel from JDE in 2019, split off two five-acre tracts in 2026 and sold both to Lumon. Retains the remaining land around the site.",
    "caveat": null,
    "aliases": [],
@@ -1435,7 +1435,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf",
-     "label": "Boundary survey, Bk 1 Pg 1229 — Tracts 1 and 2",
+     "label": "Boundary survey, Bk 1 Pg 1229 · Tracts 1 and 2",
      "date": "2026-02-12",
      "url": null,
      "urlLabel": null
@@ -1660,7 +1660,7 @@ window.__GRAPH__ = {
     "year": 2017
    },
    "dateNote": "Organized in Delaware",
-   "summary": "Equipment vendor and lender at Marshfield. Financed STN's nine Synapse 60-XL enclosures under Equipment Finance Loan Agreement NED-FLA-2026-STN and perfected the interest twice — a California UCC and a Webster County fixture filing.",
+   "summary": "Equipment vendor and lender at Marshfield. Financed STN's nine Synapse 60-XL enclosures under Equipment Finance Loan Agreement NED-FLA-2026-STN and perfected the interest twice: a California UCC and a Webster County fixture filing.",
    "caveat": null,
    "aliases": [
     "NED",
@@ -1677,7 +1677,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/northstar/northstar-enterprise-and-defense-llc/2026-03-19_fl-annual-report.pdf",
-     "label": "Florida annual report — manager and sole member",
+     "label": "Florida annual report · manager and sole member",
      "date": "2026-03-19",
      "url": null,
      "urlLabel": null
@@ -1703,7 +1703,7 @@ window.__GRAPH__ = {
     "year": 2020
    },
    "dateNote": "Founded (SEC CIK 0001826924)",
-   "summary": "Naples, Florida fibre-reinforced-polymer building-systems company; sole member of Northstar Enterprise and Defense. Its last public financials — FY2022 — report $4,102,639 revenue against $4,126,804 cost of goods sold and a $1,971,196 net loss.",
+   "summary": "Naples, Florida fibre-reinforced-polymer building-systems company; sole member of Northstar Enterprise and Defense. Its last public financials, FY2022, report $4,102,639 revenue against $4,126,804 cost of goods sold and a $1,971,196 net loss.",
    "caveat": "It filed Form C-TR the same day, terminating Regulation CF reporting, so no later public financials exist.",
    "aliases": [],
    "citations": [
@@ -1713,14 +1713,14 @@ window.__GRAPH__ = {
      "label": "Form C-AR, FY2022 annual report",
      "date": "2025-02-13",
      "excerpt": "Revenue $4,102,639; cost of goods sold $4,126,804; net loss $1,971,196; 40 employees",
-     "urlLabel": "SEC EDGAR — filing index, CIK 0001826924"
+     "urlLabel": "SEC EDGAR · filing index, CIK 0001826924"
     },
     {
      "doc": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/sec-edgar/2025-02-13_form-C-TR_termination-of-reporting.pdf",
      "url": "https://www.sec.gov/Archives/edgar/data/1826924/000166919125000092/0001669191-25-000092-index.htm",
      "label": "Form C-TR, termination of reporting",
      "date": "2025-02-13",
-     "urlLabel": "SEC EDGAR — filing index, CIK 0001826924"
+     "urlLabel": "SEC EDGAR · filing index, CIK 0001826924"
     }
    ],
    "degree": 3,
@@ -1750,9 +1750,9 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf",
      "url": "https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410",
-     "label": "EdgeIR — Northstar acquires Compass Quantum",
+     "label": "EdgeIR · Northstar acquires Compass Quantum",
      "date": "2025-04-10",
-     "urlLabel": "EdgeIR — the article as published"
+     "urlLabel": "EdgeIR · the article as published"
     }
    ],
    "degree": 2,
@@ -1782,9 +1782,9 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf",
      "url": "https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410",
-     "label": "EdgeIR — Northstar acquires Compass Quantum",
+     "label": "EdgeIR · Northstar acquires Compass Quantum",
      "date": "2025-04-10",
-     "urlLabel": "EdgeIR — the article as published"
+     "urlLabel": "EdgeIR · the article as published"
     }
    ],
    "degree": 1,
@@ -1807,13 +1807,13 @@ window.__GRAPH__ = {
     "year": 2016
    },
    "dateNote": "Formed as a California corporation (entity 3946840)",
-   "summary": "Owner of the nine modular enclosures at Marshfield and a real operating IT integrator, not a shell — its UCC history shows continuous equipment financing since 2021. Converted out of California on 16 July 2026.",
+   "summary": "Owner of the nine modular enclosures at Marshfield and a real operating IT integrator, not a shell. Its UCC history shows continuous equipment financing since 2021. Converted out of California on 16 July 2026.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png",
-     "label": "California SoS record — converted out",
+     "label": "California SoS record · converted out",
      "date": "2026-07-16",
      "url": null,
      "urlLabel": null
@@ -1821,8 +1821,8 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/stn-incorporated/public-materials/2026-09-16_stninc-com-partnerships-page_screenshot.png",
      "url": "https://www.stninc.com/partnerships/skild#our-partners",
-     "label": "Partnerships page — Arista, Dell, HPE, Juniper, Lenovo, NetApp, NVIDIA and others",
-     "urlLabel": "stninc.com — partnerships page"
+     "label": "Partnerships page · Arista, Dell, HPE, Juniper, Lenovo, NetApp, NVIDIA and others",
+     "urlLabel": "stninc.com · partnerships page"
     }
    ],
    "degree": 12,
@@ -1861,7 +1861,7 @@ window.__GRAPH__ = {
      "url": "https://www.stninc.com/blog/stn-vision-and-growth-strategy-2026",
      "label": "STN 2026 growth strategy",
      "excerpt": "Distributed network of data centers across the world, currently we are operating 4 and looking to rapidly expand in 2026 including building and operating large data centers.\n",
-     "urlLabel": "stninc.com — the post as published"
+     "urlLabel": "stninc.com · the post as published"
     }
    ],
    "degree": 2,
@@ -1890,14 +1890,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-a1-llc/2025-02-24_articles-of-organization_LC014612494.pdf",
-     "label": "NSI, A.1, LLC — articles of organization, organizer",
+     "label": "NSI, A.1, LLC · articles of organization, organizer",
      "date": "2025-02-24",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf",
-     "label": "Trustee's warranty deed, Inst. 202604041 — e-recording",
+     "label": "Trustee's warranty deed, Inst. 202604041 · e-recording",
      "date": "2026-09-09",
      "url": null,
      "urlLabel": null
@@ -1930,7 +1930,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf",
-     "label": "Articles of organization LC014727200 — organizer address",
+     "label": "Articles of organization LC014727200 · organizer address",
      "date": "2026-04-20",
      "url": null,
      "urlLabel": null
@@ -1965,7 +1965,7 @@ window.__GRAPH__ = {
      "url": "https://www.lifegenlawgroup.com/our-firm/",
      "label": "Parks & Jones / LifeGen Law Group, 1983 E Seminole St, Springfield",
      "excerpt": "An estate planning, probate, elder law and 1031 tax-deferred exchange practice founded in 1993; Cameron G. Jones joined in 2011; became LifeGen Law Group in 2023.\n",
-     "urlLabel": "lifegenlawgroup.com — the firm's own account of its history"
+     "urlLabel": "lifegenlawgroup.com · the firm's own account of its history"
     }
    ],
    "degree": 3,
@@ -1996,7 +1996,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf",
-     "label": "Articles of organization LC014727200 — registered agent",
+     "label": "Articles of organization LC014727200 · registered agent",
      "date": "2026-04-20",
      "url": null,
      "urlLabel": null
@@ -2029,7 +2029,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf",
-     "label": "Petition — counsel of record",
+     "label": "Petition · counsel of record",
      "date": "2026-08-24",
      "url": null,
      "urlLabel": null
@@ -2061,7 +2061,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf",
-     "label": "UCC-1 fixture filing, Inst. 2026004939 — filer",
+     "label": "UCC-1 fixture filing, Inst. 2026004939 · filer",
      "date": "2026-09-03",
      "url": null,
      "urlLabel": null
@@ -2093,7 +2093,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — trustee",
+     "label": "Deed of trust, Inst. 2026003834 · trustee",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -2125,7 +2125,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2023-12-20_U230089471841_arista-networks_purchase-money-security-interest.pdf",
-     "label": "UCC U230089471841 — purchase-money security interest",
+     "label": "UCC U230089471841 · purchase-money security interest",
      "date": "2023-12-20",
      "url": null,
      "urlLabel": null
@@ -2161,7 +2161,7 @@ window.__GRAPH__ = {
      "label": "Street-level imagery, April 2026",
      "date": "2026-04",
      "excerpt": "Display units on blocks and a sign carrying the parcel address",
-     "urlLabel": "Google Maps — 29152 Old Hwy 65, Warsaw"
+     "urlLabel": "Google Maps · 29152 Old Hwy 65, Warsaw"
     }
    ],
    "degree": 1,
@@ -2184,7 +2184,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Branded equipment photographed on site",
-   "summary": "Rental equipment branded United Rentals is visible in the 12 August 2026 ground photographs — part of the evidence that the site was running substantially on rental power and cooling.",
+   "summary": "Rental equipment branded United Rentals is visible in the 12 August 2026 ground photographs, part of the evidence that the site was running substantially on rental power and cooling.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -2222,7 +2222,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/photos/2026-08-12-site-visit/site-photo-rental-power-and-cooling_undated.jpg",
-     "label": "Site photograph — rental power and cooling",
+     "label": "Site photograph · rental power and cooling",
      "date": "2026-08-12",
      "url": null,
      "urlLabel": null
@@ -2248,7 +2248,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "First deed of trust executed",
-   "summary": "Local lender on the Marshfield land. Two future-advance, cross-collateralised deeds of trust — $4,075,000 and $1,500,000 — put its stated maximum exposure at $5,575,000, plus a blanket all-assets lien and a lien on four Cummins generators.",
+   "summary": "Local lender on the Marshfield land. Two future-advance, cross-collateralised deeds of trust ($4,075,000 and $1,500,000) put its stated maximum exposure at $5,575,000, plus a blanket all-assets lien and a lien on four Cummins generators.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -2289,8 +2289,8 @@ window.__GRAPH__ = {
     "year": 2024
    },
    "dateNote": "Organized",
-   "summary": "Named as Plaintiff/Petitioner on the summons in the Wright County action — a different party from the two named in the verified petition. A real Missouri LLC organized in 2024 for \"manage investments and lending opportunities\".",
-   "caveat": "This file contains no correction, amended summons or docket entry explaining the discrepancy, and no assumption should be made about why it appears — including that it is an error.",
+   "summary": "Named as Plaintiff/Petitioner on the summons in the Wright County action, a different party from the two named in the verified petition. A real Missouri LLC organized in 2024 for \"manage investments and lending opportunities\".",
+   "caveat": "This file contains no correction, amended summons or docket entry explaining the discrepancy, and no assumption should be made about why it appears, including that it is an error.",
    "aliases": [],
    "citations": [
     {
@@ -2304,7 +2304,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf",
      "label": "Summons, 26WR-CC00057",
      "date": "2026-08-28",
-     "excerpt": "Plaintiff/Petitioner — PAYMENT 1 FINANCIAL MO LLC",
+     "excerpt": "Plaintiff/Petitioner: PAYMENT 1 FINANCIAL MO LLC",
      "url": null,
      "urlLabel": null
     }
@@ -2329,20 +2329,20 @@ window.__GRAPH__ = {
     "year": 2021
    },
    "dateNote": "Blanket all-assets lien filed against STN",
-   "summary": "Holds a blanket all-assets lien against STN filed in January 2021 and continued in November 2025 — the oldest surviving entry in STN's financing history.",
+   "summary": "Holds a blanket all-assets lien against STN filed in January 2021 and continued in November 2025, the oldest surviving entry in STN's financing history.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2021-01-01_U210000010405_us-sba_blanket-all-assets.pdf",
-     "label": "UCC U210000010405 — blanket all assets",
+     "label": "UCC U210000010405 · blanket all assets",
      "date": "2021-01-01",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2025-11-11_U250208325221_us-sba_continuation-of-2021-01-01.pdf",
-     "label": "UCC U250208325221 — continuation",
+     "label": "UCC U250208325221 · continuation",
      "date": "2025-11-11",
      "url": null,
      "urlLabel": null
@@ -2374,7 +2374,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2023-01-30_U230006850018_hpe-financial-services_equipment-lease.pdf",
-     "label": "UCC U230006850018 — equipment lease",
+     "label": "UCC U230006850018 · equipment lease",
      "date": "2023-01-30",
      "url": null,
      "urlLabel": null
@@ -2400,13 +2400,13 @@ window.__GRAPH__ = {
     "year": 2024
    },
    "dateNote": "First of seven lease filings against STN",
-   "summary": "STN's most frequent lessor — seven UCC filings between March 2024 and December 2025 under the ACS-01979 series.",
+   "summary": "STN's most frequent lessor, with seven UCC filings between March 2024 and December 2025 under the ACS-01979 series.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2024-03-26_U240028270225_arrow-capital-solutions_lease-ACS-01979-0001.pdf",
-     "label": "UCC U240028270225 — lease ACS-01979-0001",
+     "label": "UCC U240028270225 · lease ACS-01979-0001",
      "date": "2024-03-26",
      "url": null,
      "urlLabel": null
@@ -2438,14 +2438,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2021-10-26_U210097054029_csc-representative_lease-financing.pdf",
-     "label": "UCC U210097054029 — lease financing",
+     "label": "UCC U210097054029 · lease financing",
      "date": "2021-10-26",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065605618_csc-representative_termination-of-2021-10-26.pdf",
-     "label": "UCC U260065605618 — termination",
+     "label": "UCC U260065605618 · termination",
      "date": "2026-08-19",
      "url": null,
      "urlLabel": null
@@ -2477,14 +2477,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2024-01-25_U240006007617_ingram-micro-flex-payment-solutions_all-assets.pdf",
-     "label": "UCC U240006007617 — all assets",
+     "label": "UCC U240006007617 · all assets",
      "date": "2024-01-25",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-11_U260062092927_ingram-micro-flex-payment-solutions_termination-of-2024-01-25.pdf",
-     "label": "UCC U260062092927 — termination",
+     "label": "UCC U260062092927 · termination",
      "date": "2026-08-11",
      "url": null,
      "urlLabel": null
@@ -2516,14 +2516,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2024-01-29_U240006712925_td-synnex_purchase-money-security-interest.pdf",
-     "label": "UCC U240006712925 — purchase-money security interest",
+     "label": "UCC U240006712925 · purchase-money security interest",
      "date": "2024-01-29",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065482634_td-synnex_termination-of-2024-01-29.pdf",
-     "label": "UCC U260065482634 — termination",
+     "label": "UCC U260065482634 · termination",
      "date": "2026-08-19",
      "url": null,
      "urlLabel": null
@@ -2562,9 +2562,9 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf",
-     "label": "Boundary survey, Bk 1 Pg 1229 — adjoining owner",
+     "label": "Boundary survey, Bk 1 Pg 1229 · adjoining owner",
      "date": "2026-02-12",
-     "excerpt": "Adjoining owner to the northwest — Sho-Me Power Electric Cooperative (2015-5296)",
+     "excerpt": "Adjoining owner to the northwest: Sho-Me Power Electric Cooperative (2015-5296)",
      "url": null,
      "urlLabel": null
     }
@@ -2623,13 +2623,13 @@ window.__GRAPH__ = {
    },
    "dateNote": "Owner of record on the Benton County parcel record",
    "summary": "Owner of record of the 4.5-acre switchyard tract directly across the old Highway 65 alignment from the Warsaw parcel.",
-   "caveat": "\"Aquila, Inc.\" is a stale owner name — the company was acquired in 2008 and its Missouri operations are now Evergy. County GIS owner records are assessor data, not instruments.",
+   "caveat": "\"Aquila, Inc.\" is a stale owner name. The company was acquired in 2008 and its Missouri operations are now Evergy. County GIS owner records are assessor data, not instruments.",
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png",
-     "label": "Benton County GIS — parcel 142009000001001002",
-     "excerpt": "AQUILA INC., % KCP&L (Property Tax Dept), PO Box 41867, Kansas City — 4.5 acres",
+     "label": "Benton County GIS · parcel 142009000001001002",
+     "excerpt": "AQUILA INC., % KCP&L (Property Tax Dept), PO Box 41867, Kansas City: 4.5 acres",
      "url": null,
      "urlLabel": null
     }
@@ -2660,8 +2660,8 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png",
-     "label": "Benton County GIS — parcel 142009000001001003",
-     "excerpt": "CENTRAL ELECTRIC POWER COOPERATIVE, PO Box 269, 2106 Jefferson St., Jefferson City — 9 acres",
+     "label": "Benton County GIS · parcel 142009000001001003",
+     "excerpt": "CENTRAL ELECTRIC POWER COOPERATIVE, PO Box 269, 2106 Jefferson St., Jefferson City: 9 acres",
      "url": null,
      "urlLabel": null
     }
@@ -2692,7 +2692,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf",
-     "label": "Pre-development review comments — City Utilities (Josh Casey)",
+     "label": "Pre-development review comments · City Utilities (Josh Casey)",
      "date": "2026-08-03",
      "excerpt": "has capacity at a substation in the vicinity of the subject property to provide up to 10MW without negatively impacting CU's system\n",
      "url": null,
@@ -2719,7 +2719,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Adopted a six-month moratorium",
-   "summary": "Adopted a six-month moratorium on data centers, solar, wind and BESS in unincorporated areas on 16 June 2026 — expressly not applied to the Rifle Range Road build, the Commission noting its authority over a project already under construction is limited.",
+   "summary": "Adopted a six-month moratorium on data centers, solar, wind and BESS in unincorporated areas on 16 June 2026. It was expressly not applied to the Rifle Range Road build, the Commission noting its authority over a project already under construction is limited.",
    "caveat": "The ordinance itself is not in the evidence folder. It is a known collection gap.",
    "aliases": [],
    "citations": [
@@ -2728,7 +2728,7 @@ window.__GRAPH__ = {
      "url": "https://webstercountymo.gov/county-adopts-six-month-moratorium/",
      "label": "Six-month moratorium, 16 June 2026",
      "date": "2026-06-16",
-     "urlLabel": "webstercountymo.gov — the Commission's own notice"
+     "urlLabel": "webstercountymo.gov · the Commission's own notice"
     }
    ],
    "degree": 1,
@@ -2764,9 +2764,9 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf",
-     "label": "Pre-development review comments — Planning (Monica Pearcy)",
+     "label": "Pre-development review comments · Planning (Monica Pearcy)",
      "date": "2026-08-03",
-     "excerpt": "Update — It was determined that the proposed use does not align with the PD's permitted uses.\n",
+     "excerpt": "Update: It was determined that the proposed use does not align with the PD's permitted uses.\n",
      "url": null,
      "urlLabel": null
     }
@@ -2797,7 +2797,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf",
-     "label": "Exhibit 1 — Benton County moratorium order",
+     "label": "Exhibit 1 · Benton County moratorium order",
      "date": "2026-08-10",
      "excerpt": "2,500 sq ft or more, or has aggregate IT power capacity of 250 kW or more\n",
      "url": null,
@@ -2824,7 +2824,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Marshfield land-disturbance permit MORA29985 effective",
-   "summary": "Issued both land-disturbance permits — MORA29985 for \"LUMON RIFLE RANGE RD.\" effective 30 April 2026, and MORA30685 for \"COLD STORAGE\" at the Warsaw parcel effective 9 September 2026, the same day the deeds were recorded.",
+   "summary": "Issued both land-disturbance permits: MORA29985 for \"LUMON RIFLE RANGE RD.\" effective 30 April 2026, and MORA30685 for \"COLD STORAGE\" at the Warsaw parcel effective 9 September 2026, the same day the deeds were recorded.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -2833,7 +2833,7 @@ window.__GRAPH__ = {
      "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985",
      "label": "Permit MORA29985",
      "date": "2026-04-30",
-     "urlLabel": "Missouri DNR permit search — MORA29985 filled in, press Search"
+     "urlLabel": "Missouri DNR permit search · MORA29985 filled in, press Search"
     },
     {
      "doc": "evidence/06-benton-county-site/permits/mo-dnr-permit-MORA30685_cold-storage_nsi-6.png",
@@ -2841,7 +2841,7 @@ window.__GRAPH__ = {
      "label": "Permit MORA30685",
      "date": "2026-09-09",
      "excerpt": "Facility \"COLD STORAGE\", 29101 Old Hwy 65, Warsaw; owner NSI 6, LLC",
-     "urlLabel": "Missouri DNR permit search — MORA30685 filled in, press Search"
+     "urlLabel": "Missouri DNR permit search · MORA30685 filled in, press Search"
     }
    ],
    "degree": 2,
@@ -2865,7 +2865,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Responded to the smoke investigation at the site",
-   "summary": "Responded to the 18 July 2026 incident, classified it \"Investigation — Smoke Investigation\" under report 26-0992, and shut down Generator #3, causing a power loss to one server room. Its two Sunshine responses together establish one response in three months and none in August.",
+   "summary": "Responded to the 18 July 2026 incident, classified it \"Investigation - Smoke Investigation\" under report 26-0992, and shut down Generator #3, causing a power loss to one server room. Its two Sunshine responses together establish one response in three months and none in August.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -2879,7 +2879,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-09-15_response-to-howell_august-2026-no-responses.pdf",
-     "label": "Response — August 2026, no responses",
+     "label": "Response · August 2026, no responses",
      "date": "2026-09-15",
      "excerpt": "Marshfield Fire Protection District has not responded to any incidents at the data center during the timeframe that you have requested\n",
      "url": null,
@@ -2912,7 +2912,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf",
-     "label": "Incident report 26-0992 — automatic aid",
+     "label": "Incident report 26-0992 · automatic aid",
      "date": "2026-07-18",
      "url": null,
      "urlLabel": null
@@ -2938,7 +2938,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Call for service CFS2026021837 opened",
-   "summary": "Opened call CFS2026021837 at 20:38:22 on 18 July 2026, coded \"FC — FIRE, COMMERCIAL STRUCTURE,\" and closed it at 21:34:57 with the disposition \"Complete – No fire at this location, everything back up and running.\"",
+   "summary": "Opened call CFS2026021837 at 20:38:22 on 18 July 2026, coded \"FC - FIRE, COMMERCIAL STRUCTURE,\" and closed it at 21:34:57 with the disposition \"Complete – No fire at this location, everything back up and running.\"",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -3024,7 +3024,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf",
-     "label": "Exhibit 1 — moratorium order, recitals",
+     "label": "Exhibit 1 · moratorium order, recitals",
      "date": "2026-08-10",
      "url": null,
      "urlLabel": null
@@ -3100,7 +3100,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "dateNote": "Verified petition filed — one day before Missouri's anti-SLAPP law took effect",
+   "dateNote": "Verified petition filed one day before Missouri's anti-SLAPP law took effect",
    "summary": "Defamation and injurious-falsehood suit in Wright County over Facebook and YouTube publications asserting two fire incidents in three weeks. On number and timing the documentary record supports the plaintiffs; on characterisation the petition understates the contemporaneous fire-district record. Both sources agree there was no fire.",
    "caveat": null,
    "aliases": [
@@ -3113,7 +3113,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-27_verified-petition.pdf",
      "label": "Verified petition",
      "date": "2026-08-27",
-     "excerpt": "¶15 — is associated with a digital infrastructure facility located on Rifle Range Road in or near Marshfield\n",
+     "excerpt": "¶15: is associated with a digital infrastructure facility located on Rifle Range Road in or near Marshfield\n",
      "url": null,
      "urlLabel": null
     },
@@ -3145,7 +3145,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Passed, effective immediately, expiring 17 November 2026",
-   "summary": "Springfield's data-center measure: filed as Council Bill 2026-147 on 16 June 2026 and passed on 29 June, it bars the City and City Utilities from accepting or processing any application to evaluate, establish, service or expand a \"data center\" until 17 November 2026 — building permits, site plan review, variances, stormwater, occupancy, utilities and large-load electric service alike. A use counts as a data center if peak demand exceeds 5 MW, or computing takes half the development's electricity, or half its floor area. Council may lift it for a single application by resolution.",
+   "summary": "Springfield's data-center measure: filed as Council Bill 2026-147 on 16 June 2026 and passed on 29 June, it bars the City and City Utilities from accepting or processing any application to evaluate, establish, service or expand a \"data center\" until 17 November 2026: building permits, site plan review, variances, stormwater, occupancy, utilities and large-load electric service alike. A use counts as a data center if peak demand exceeds 5 MW, or computing takes half the development's electricity, or half its floor area. Council may lift it for a single application by resolution.",
    "caveat": "The ordinance itself is not in the evidence folder. Everything here is drawn from how NSI A.1's petition and injunction motion describe Exhibit A, including the allegation that the enactment says \"BE IT RESOLVED\" and was filed as a resolution.",
    "aliases": [
     "moratorium",
@@ -3163,7 +3163,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_plaintiffs-motion-for-expedited-hearing-and-preliminary-injunction.pdf",
-     "label": "Motion for preliminary injunction ¶42 — the enacting clause",
+     "label": "Motion for preliminary injunction ¶42 · the enacting clause",
      "date": "2026-09-18",
      "excerpt": "substitutes 'BE IT RESOLVED' for Charter § 2.12's prescribed 'BE IT ORDAINED' clause and states on its signature page, 'Filed as Resolution: June 29, 2026'\n",
      "url": null,
@@ -3190,7 +3190,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Verified petition filed",
-   "summary": "The third suit and the second moratorium challenge — filed in Greene County eleven weeks after Springfield passed Ordinance 28306, and nine days after the Benton County plaintiff won its TRO. Six counts: that the ordinance is zoning in substance and void for want of the Chapter 89 notice and hearing; that it was enacted as a resolution and so lacks the enacting clause the City Charter commands; injunctive relief; a Sunshine Law count over records request R025670-062426; and, pleaded in the alternative, the moratorium's scope and equitable estoppel. The prayer asks only that the City accept and process submissions — not that the project be approved. A motion for an expedited hearing and preliminary injunction followed the next morning, offering $1 in security.",
+   "summary": "The third suit and the second moratorium challenge, filed in Greene County eleven weeks after Springfield passed Ordinance 28306, and nine days after the Benton County plaintiff won its TRO. Six counts: that the ordinance is zoning in substance and void for want of the Chapter 89 notice and hearing; that it was enacted as a resolution and so lacks the enacting clause the City Charter commands; injunctive relief; a Sunshine Law count over records request R025670-062426; and, pleaded in the alternative, the moratorium's scope and equitable estoppel. The prayer asks only that the City accept and process submissions, not that the project be approved. A motion for an expedited hearing and preliminary injunction followed the next morning, offering $1 in security.",
    "caveat": null,
    "aliases": [
     "2631-CC01131",
@@ -3246,7 +3246,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Tracts 1 and 2 surveyed out of the 119.79-acre parent parcel",
-   "summary": "The physical build — exactly 10.00 acres in unincorporated Webster County, conveyed in two five-acre steps. Aerials show white modular units on a concrete pad, trailer-mounted generators, pad transformers and an electrical substation immediately adjacent.",
+   "summary": "The physical build: exactly 10.00 acres in unincorporated Webster County, conveyed in two five-acre steps. Aerials show white modular units on a concrete pad, trailer-mounted generators, pad transformers and an electrical substation immediately adjacent.",
    "caveat": "The 911 CAD location field reads 295 Rifle Range Road; the deeds, the DNR permit and Marshfield FPD's own records read 259.",
    "aliases": [
     "Marshfield",
@@ -3345,7 +3345,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Three deeds conveying undivided thirds recorded together at 1:32 PM",
-   "summary": "Twelve acres in unincorporated Benton County immediately south of the Warsaw city limits — the strip between the old and relocated Highway 65 alignments. Formerly a manufactured-home sales yard. Groundwork commenced the day title closed.",
+   "summary": "Twelve acres in unincorporated Benton County immediately south of the Warsaw city limits, the strip between the old and relocated Highway 65 alignments. Formerly a manufactured-home sales yard. Groundwork commenced the day title closed.",
    "caveat": "Each deed recites consideration of one dollar and other good and valuable consideration. No deed of trust, mortgage or other financing instrument against this parcel appears anywhere in this file.",
    "aliases": [
     "Warsaw",
@@ -3356,13 +3356,13 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_owner-record-nsi-6.png",
-     "label": "Benton County GIS — owner record, parcel 142009000001006000",
+     "label": "Benton County GIS · owner record, parcel 142009000001006000",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png",
-     "label": "Benton County GIS — aerial, 12 acres",
+     "label": "Benton County GIS · aerial, 12 acres",
      "url": null,
      "urlLabel": null
     }
@@ -3387,13 +3387,13 @@ window.__GRAPH__ = {
     "year": 2015
    },
    "dateNote": "Conveyed to Sho-Me Power Electric Cooperative",
-   "summary": "A 20.33-acre tract adjoining the Marshfield site to the north-west, part of a larger parcel JDE Investments, LLC acquired 4 September 2015 (Bk 2015 Pg 4156, from Eric & Jennifer Glidewell, Daniel P. & Brenda Cleir, and Jason & Sunny Rost). JDE had the tract surveyed for Sho-Me Power Corp on 19 October 2015, then conveyed it by general warranty deed to Sho-Me Power Electric Cooperative on 19 November 2015 (Bk 2015 Pg 5296), subject to a road-purposes exception across the east side — the Rifle Range Road frontage. The Webster County Assessor's parcel viewer carries the same tract today as PID 06-7.0-26-000-000-012.070 (19.24 acres, Sec. 26-31-18, deed reference 2015-5296, matching the deed exactly), still billed to Sho-Me Power Electric Cooperative; its aerial shows a substation structure within the parcel boundary. The ~1.09-acre gap between the deed's 20.33-acre gross figure and the assessor's 19.24-acre figure is the road-purposes exception recited in the deed itself.",
+   "summary": "A 20.33-acre tract adjoining the Marshfield site to the north-west, part of a larger parcel JDE Investments, LLC acquired 4 September 2015 (Bk 2015 Pg 4156, from Eric & Jennifer Glidewell, Daniel P. & Brenda Cleir, and Jason & Sunny Rost). JDE had the tract surveyed for Sho-Me Power Corp on 19 October 2015, then conveyed it by general warranty deed to Sho-Me Power Electric Cooperative on 19 November 2015 (Bk 2015 Pg 5296), subject to a road-purposes exception across the east side, the Rifle Range Road frontage. The Webster County Assessor's parcel viewer carries the same tract today as PID 06-7.0-26-000-000-012.070 (19.24 acres, Sec. 26-31-18, deed reference 2015-5296, matching the deed exactly), still billed to Sho-Me Power Electric Cooperative; its aerial shows a substation structure within the parcel boundary. The ~1.09-acre gap between the deed's 20.33-acre gross figure and the assessor's 19.24-acre figure is the road-purposes exception recited in the deed itself.",
    "caveat": null,
    "aliases": [],
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2015-09-04_book2015-page4156_warranty-deed_glidewell-cleir-rost-to-jde-investments.pdf",
-     "label": "Warranty deed, Bk 2015 Pg 4156 — JDE's source of title",
+     "label": "Warranty deed, Bk 2015 Pg 4156 · JDE's source of title",
      "date": "2015-09-04",
      "url": null,
      "urlLabel": null
@@ -3416,7 +3416,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/01-marshfield-site/parcel-records/2026-09-18_webster-county-gis_parcel-06-7.0-26-000-000-012.070_sho-me-power-electric-cooperative.webp",
-     "label": "Webster County GIS — parcel 06-7.0-26-000-000-012.070",
+     "label": "Webster County GIS · parcel 06-7.0-26-000-000-012.070",
      "date": "2026-09-18",
      "excerpt": "SHO-ME POWER ELECTRIC COOPERATIVE, PO Box D, Marshfield MO 65706; 19.24 acres; Sec. 26, Twp. 31, Rng. 18; deed reference 2015-5296; substation structure visible within the parcel boundary\n",
      "url": null,
@@ -3449,7 +3449,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png",
-     "label": "Benton County GIS — parcel 142009000001001002",
+     "label": "Benton County GIS · parcel 142009000001001002",
      "url": null,
      "urlLabel": null
     }
@@ -3480,7 +3480,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png",
-     "label": "Benton County GIS — parcel 142009000001001003",
+     "label": "Benton County GIS · parcel 142009000001001003",
      "url": null,
      "urlLabel": null
     }
@@ -3514,7 +3514,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf",
-     "label": "NSI 6 articles — principal office",
+     "label": "NSI 6 articles · principal office",
      "date": "2026-08-13",
      "excerpt": "1736 E Sunshine St Suite 304, Springfield",
      "url": null,
@@ -3523,23 +3523,23 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png",
      "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985",
-     "label": "DNR permit MORA29985 — owner address",
+     "label": "DNR permit MORA29985 · owner address",
      "date": "2026-04-30",
-     "urlLabel": "Missouri DNR permit search — MORA29985 filled in, press Search"
+     "urlLabel": "Missouri DNR permit search · MORA29985 filled in, press Search"
     },
     {
      "external": "Springfield Daily Citizen",
      "url": "https://sgfcitizen.org/economy-growth/plaza-towers-purchased-for-13364000-at-foreclosure-sale/",
      "label": "Trustee's foreclosure sale, 10 April 2025, $13,364,000",
      "date": "2025-04-10",
-     "urlLabel": "Springfield Daily Citizen — the article as published"
+     "urlLabel": "Springfield Daily Citizen · the article as published"
     },
     {
      "external": "Springfield Business Journal",
      "url": "https://sbj.net/stories/plaza-towers-auctioned-to-highest-bidder,99256",
      "label": "Trustee's foreclosure sale, April 2025",
      "date": "2025-04",
-     "urlLabel": "Springfield Business Journal — the article as published"
+     "urlLabel": "Springfield Business Journal · the article as published"
     }
    ],
    "degree": 3,
@@ -3564,7 +3564,7 @@ window.__GRAPH__ = {
    },
    "dateNote": "Statement of change removing Cameron G. Jones as NSI Investments' Missouri agent",
    "summary": "The office of Parks & Jones / LifeGen Law Group, and the registered-agent address for both Lumon entities. It is a law office, not a formation mill.",
-   "caveat": "Shared use of this address is weak evidence of anything. Co-location is not connection — a link requires a transaction, an instrument, a filing or a statement.",
+   "caveat": "Shared use of this address is weak evidence of anything. Co-location is not connection: a link requires a transaction, an instrument, a filing or a statement.",
    "aliases": [],
    "citations": [
     {
@@ -3576,7 +3576,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf",
-     "label": "Lumon Marshfield articles — registered agent address",
+     "label": "Lumon Marshfield articles · registered agent address",
      "date": "2026-04-20",
      "url": null,
      "urlLabel": null
@@ -3605,7 +3605,7 @@ window.__GRAPH__ = {
    },
    "dateNote": "Organized by Nathaniel Aldrich and Ashton Owens",
    "summary": "Organized in October 2022 and administratively dissolved in June 2024. The domain metawestventures.com was registered 13 July 2026 and the live site describes \"a venture capital firm in the heartland.\" Its own markup identifies the site as Ashton Owens's, by his name, e-mail handle and personal social accounts.",
-   "caveat": "The page makes no reference to data centers, Lumon, NSI, Marshfield or Springfield, or to any named portfolio company. The deed of trust is dated 10 July and merely recorded on the 13th — a clerk's date — which drains most of the meaning from the timing coincidence. Tracked as unresolved, not as a connection.",
+   "caveat": "The page makes no reference to data centers, Lumon, NSI, Marshfield or Springfield, or to any named portfolio company. The deed of trust is dated 10 July and merely recorded on the 13th, a clerk's date, which drains most of the meaning from the timing coincidence. Tracked as unresolved, not as a connection.",
    "aliases": [],
    "citations": [
     {
@@ -3619,9 +3619,9 @@ window.__GRAPH__ = {
      "doc": "evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html",
      "date": "2026-09-17",
      "url": "https://metawestventures.com/",
-     "label": "Saved capture of metawestventures.com — raw HTML",
+     "label": "Saved capture of metawestventures.com · raw HTML",
      "excerpt": "<a href=\"mailto:ashton@owensand.co\">CONTACT US</a>\n",
-     "urlLabel": "metawestventures.com — the site itself"
+     "urlLabel": "metawestventures.com · the site itself"
     },
     {
      "doc": "evidence/03-entities/company/metawest-ventures-llc/2024-06-13_administrative-dissolution_LC014410313.pdf",
@@ -3662,7 +3662,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/jde-investments-llc/2015-08-26_articles-of-organization.pdf",
-     "label": "Articles of organization — registered agent and organizer",
+     "label": "Articles of organization · registered agent and organizer",
      "date": "2015-08-26",
      "url": null,
      "urlLabel": null
@@ -3693,7 +3693,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2019-10-04_inst-2019004679_warranty-deed_jde-to-ary.pdf",
-     "label": "Warranty deed, Inst. 2019004679 — signature",
+     "label": "Warranty deed, Inst. 2019004679 · signature",
      "date": "2019-10-04",
      "excerpt": "Signed Sunny Rost, Managing Member",
      "url": null,
@@ -3756,7 +3756,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf",
-     "label": "Warranty deed, Inst. 2026002242 — signature",
+     "label": "Warranty deed, Inst. 2026002242 · signature",
      "date": "2026-04-24",
      "url": null,
      "urlLabel": null
@@ -3880,7 +3880,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003833_warranty-deed_ary-investments.pdf",
-     "label": "Warranty deed, Inst. 2026003833 — grantee",
+     "label": "Warranty deed, Inst. 2026003833 · grantee",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -3911,7 +3911,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — signature and acknowledgment",
+     "label": "Deed of trust, Inst. 2026003834 · signature and acknowledgment",
      "date": "2026-07-10",
      "excerpt": "Manager of LUMON SOLUTIONS MANAGEMENT, LLC, Manager of LUMON SOLUTIONS MARSHFIELD, LLC\n",
      "url": null,
@@ -3950,7 +3950,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — signature page",
+     "label": "Deed of trust, Inst. 2026003834 · signature page",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -3981,7 +3981,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — signature page",
+     "label": "Deed of trust, Inst. 2026003834 · signature page",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -4012,7 +4012,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — stated capacity",
+     "label": "Deed of trust, Inst. 2026003834 · stated capacity",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -4106,9 +4106,9 @@ window.__GRAPH__ = {
     {
      "external": "Law-firm identity verified externally",
      "url": "https://www.williamsmullen.com/offices/virginia-beach-va",
-     "label": "222 Central Park Ave Ste 1700, Virginia Beach — the Williams Mullen office",
+     "label": "222 Central Park Ave Ste 1700, Virginia Beach · the Williams Mullen office",
      "date": "2026-04-20",
-     "urlLabel": "williamsmullen.com — the Virginia Beach office"
+     "urlLabel": "williamsmullen.com · the Virginia Beach office"
     }
    ]
   },
@@ -4137,7 +4137,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf",
-     "label": "Articles of organization LC014727200 — registered agent",
+     "label": "Articles of organization LC014727200 · registered agent",
      "date": "2026-04-20",
      "url": null,
      "urlLabel": null
@@ -4169,7 +4169,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-04-21_articles-of-organization_LC014727379.pdf",
-     "label": "Articles of organization LC014727379 — registered agent",
+     "label": "Articles of organization LC014727379 · registered agent",
      "date": "2026-04-21",
      "url": null,
      "urlLabel": null
@@ -4203,9 +4203,9 @@ window.__GRAPH__ = {
     {
      "external": "Firm identity and history verified externally",
      "url": "https://www.lifegenlawgroup.com/cameron-jones/",
-     "label": "Parks & Jones, Attorneys at Law — now LifeGen Law Group",
+     "label": "Parks & Jones, Attorneys at Law · now LifeGen Law Group",
      "date": 2011,
-     "urlLabel": "lifegenlawgroup.com — Cameron G. Jones"
+     "urlLabel": "lifegenlawgroup.com · Cameron G. Jones"
     }
    ]
   },
@@ -4234,7 +4234,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-04-20_articles-of-organization_LC014727200.pdf",
-     "label": "Articles of organization — registered agent address",
+     "label": "Articles of organization · registered agent address",
      "date": "2026-04-20",
      "url": null,
      "urlLabel": null
@@ -4262,7 +4262,7 @@ window.__GRAPH__ = {
      "external": "Firm address verified externally",
      "url": "https://www.lifegenlawgroup.com/contact-us/",
      "label": "1983 E Seminole St, Springfield",
-     "urlLabel": "lifegenlawgroup.com — the firm's address"
+     "urlLabel": "lifegenlawgroup.com · the firm's address"
     }
    ]
   },
@@ -4322,7 +4322,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-marshfield-llc/2026-05-07_amendment_principal-office-2900-s-national.pdf",
-     "label": "Amendment — principal office to 2900 S. National",
+     "label": "Amendment · principal office to 2900 S. National",
      "date": "2026-05-07",
      "url": null,
      "urlLabel": null
@@ -4353,7 +4353,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/lumon-solutions/lumon-solutions-management-llc/2026-05-07_amendment_principal-office-2900-s-national.pdf",
-     "label": "Amendment — principal office to 2900 S. National",
+     "label": "Amendment · principal office to 2900 S. National",
      "date": "2026-05-07",
      "url": null,
      "urlLabel": null
@@ -4367,7 +4367,7 @@ window.__GRAPH__ = {
    "sourceId": "oakstar-bank",
    "targetId": "lumon-solutions-marshfield",
    "type": "finance",
-   "label": "deed of trust — maximum principal $4,075,000",
+   "label": "deed of trust · maximum principal $4,075,000",
    "because": null,
    "tier": 1,
    "projects": [
@@ -4399,7 +4399,7 @@ window.__GRAPH__ = {
    "sourceId": "oakstar-bank",
    "targetId": "lumon-solutions-marshfield",
    "type": "finance",
-   "label": "second deed of trust — maximum principal $1,500,000, plus assignment of rents",
+   "label": "second deed of trust · maximum principal $1,500,000, plus assignment of rents",
    "because": null,
    "tier": 1,
    "projects": [
@@ -4480,7 +4480,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "Model 2000DQKC-2125, serials I010287039, G010262121, G010262123, I010287043. The 2000DQKC is rated 2000 kW standby / 1825 kW prime, so four units represent roughly 8 MW of standby generation — owned by Lumon and separately financed.",
+   "summary": "Model 2000DQKC-2125, serials I010287039, G010262121, G010262123, I010287043. The 2000DQKC is rated 2000 kW standby / 1825 kW prime, so four units represent roughly 8 MW of standby generation, owned by Lumon and separately financed.",
    "resolves": null,
    "citations": [
     {
@@ -4517,7 +4517,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — trustee",
+     "label": "Deed of trust, Inst. 2026003834 · trustee",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -4548,7 +4548,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026003834 — acknowledgment",
+     "label": "Deed of trust, Inst. 2026003834 · acknowledgment",
      "date": "2026-07-10",
      "url": null,
      "urlLabel": null
@@ -4579,7 +4579,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf",
-     "label": "Warranty deed, Inst. 2026002242 — acknowledgment",
+     "label": "Warranty deed, Inst. 2026002242 · acknowledgment",
      "date": "2026-04-24",
      "url": null,
      "urlLabel": null
@@ -4610,7 +4610,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-09-04_inst-2026004988_deed-of-trust_oakstar-bank.pdf",
-     "label": "Deed of trust, Inst. 2026004988 — acknowledgment",
+     "label": "Deed of trust, Inst. 2026004988 · acknowledgment",
      "date": "2026-09-04",
      "url": null,
      "urlLabel": null
@@ -4636,12 +4636,12 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "All nine Synapse 60-XL Composite Modular Data Center enclosures — eight IT MDC variants and one Network MDC variant — together with power distribution, cooling, fire suppression, monitoring, controls and commissioning systems.",
+   "summary": "All nine Synapse 60-XL Composite Modular Data Center enclosures (eight IT MDC variants and one Network MDC variant) together with power distribution, cooling, fire suppression, monitoring, controls and commissioning systems.",
    "resolves": null,
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf",
-     "label": "UCC-1 fixture filing, Inst. 2026004939 — collateral description",
+     "label": "UCC-1 fixture filing, Inst. 2026004939 · collateral description",
      "date": "2026-09-03",
      "excerpt": "all nine (9) Synapse 60-XL Composite Modular Data Center enclosures (configured as eight (8) IT MDC variants and one (1) Network MDC variant)\n",
      "url": null,
@@ -4668,7 +4668,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "The security interest was perfected twice — a California UCC filed 28 August 2026 and a fixture filing recorded in Webster County on 3 September 2026.",
+   "summary": "The security interest was perfected twice: a California UCC filed 28 August 2026 and a fixture filing recorded in Webster County on 3 September 2026.",
    "resolves": null,
    "citations": [
     {
@@ -4777,7 +4777,7 @@ window.__GRAPH__ = {
      "url": "https://www.sec.gov/Archives/edgar/data/1826924/000166919125000090/0001669191-25-000090-index.htm",
      "label": "Form C-AR, FY2022",
      "date": "2025-02-13",
-     "urlLabel": "SEC EDGAR — filing index, CIK 0001826924"
+     "urlLabel": "SEC EDGAR · filing index, CIK 0001826924"
     }
    ]
   },
@@ -4837,9 +4837,9 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf",
      "url": "https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410",
-     "label": "EdgeIR — Northstar acquires Compass Quantum",
+     "label": "EdgeIR · Northstar acquires Compass Quantum",
      "date": "2025-04-10",
-     "urlLabel": "EdgeIR — the article as published"
+     "urlLabel": "EdgeIR · the article as published"
     }
    ]
   },
@@ -4868,9 +4868,9 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf",
      "url": "https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410",
-     "label": "EdgeIR — Northstar acquires Compass Quantum",
+     "label": "EdgeIR · Northstar acquires Compass Quantum",
      "date": "2025-04-10",
-     "urlLabel": "EdgeIR — the article as published"
+     "urlLabel": "EdgeIR · the article as published"
     }
    ]
   },
@@ -4898,7 +4898,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png",
-     "label": "California SoS record — entity 3946840",
+     "label": "California SoS record · entity 3946840",
      "url": null,
      "urlLabel": null
     }
@@ -4911,7 +4911,7 @@ window.__GRAPH__ = {
    "sourceId": "sabur-khalid-mian",
    "targetId": "stn-one-incorporated",
    "type": "ownership",
-   "label": "sole officer — CEO, CFO and Secretary",
+   "label": "sole officer · CEO, CFO and Secretary",
    "because": null,
    "tier": 1,
    "projects": [
@@ -4959,7 +4959,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ca-sos_stn-incorporated_3946840_converted-out.png",
-     "label": "California SoS record — converted out 16 July 2026",
+     "label": "California SoS record · converted out 16 July 2026",
      "date": "2026-07-16",
      "url": null,
      "urlLabel": null
@@ -4997,7 +4997,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf",
-     "label": "UCC-1 fixture filing — filer",
+     "label": "UCC-1 fixture filing · filer",
      "date": "2026-09-03",
      "url": null,
      "urlLabel": null
@@ -5028,7 +5028,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-09-03_inst-2026004939_ucc1-fixture-filing_northstar-vs-stn.pdf",
-     "label": "UCC-1 fixture filing — filer",
+     "label": "UCC-1 fixture filing · filer",
      "date": "2026-09-03",
      "url": null,
      "urlLabel": null
@@ -5090,7 +5090,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/photos/2026-08-12-site-visit/site-photo-rental-power-and-cooling_undated.jpg",
-     "label": "Site photograph — rental power and cooling",
+     "label": "Site photograph · rental power and cooling",
      "date": "2026-08-12",
      "url": null,
      "urlLabel": null
@@ -5221,14 +5221,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2024-03-26_U240028270225_arrow-capital-solutions_lease-ACS-01979-0001.pdf",
-     "label": "UCC U240028270225 — first of the series",
+     "label": "UCC U240028270225 · first of the series",
      "date": "2024-03-26",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2025-12-02_U250215935830_arrow-capital-solutions_lease-ACS-01979-0010.pdf",
-     "label": "UCC U250215935830 — last of the series",
+     "label": "UCC U250215935830 · last of the series",
      "date": "2025-12-02",
      "url": null,
      "urlLabel": null
@@ -5242,7 +5242,7 @@ window.__GRAPH__ = {
    "sourceId": "csc-representative",
    "targetId": "stn-incorporated",
    "type": "finance",
-   "label": "three lease-financing liens — all terminated 19 August 2026",
+   "label": "three lease-financing liens · all terminated 19 August 2026",
    "because": null,
    "tier": 1,
    "projects": [
@@ -5266,7 +5266,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065605618_csc-representative_termination-of-2021-10-26.pdf",
-     "label": "UCC U260065605618 — termination",
+     "label": "UCC U260065605618 · termination",
      "date": "2026-08-19",
      "url": null,
      "urlLabel": null
@@ -5280,7 +5280,7 @@ window.__GRAPH__ = {
    "sourceId": "ingram-micro-flex",
    "targetId": "stn-incorporated",
    "type": "finance",
-   "label": "all-assets lien — terminated 11 August 2026",
+   "label": "all-assets lien · terminated 11 August 2026",
    "because": null,
    "tier": 1,
    "projects": [
@@ -5304,7 +5304,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-11_U260062092927_ingram-micro-flex-payment-solutions_termination-of-2024-01-25.pdf",
-     "label": "UCC U260062092927 — termination",
+     "label": "UCC U260062092927 · termination",
      "date": "2026-08-11",
      "url": null,
      "urlLabel": null
@@ -5318,7 +5318,7 @@ window.__GRAPH__ = {
    "sourceId": "td-synnex",
    "targetId": "stn-incorporated",
    "type": "finance",
-   "label": "purchase-money security interest — terminated 19 August 2026",
+   "label": "purchase-money security interest · terminated 19 August 2026",
    "because": null,
    "tier": 1,
    "projects": [
@@ -5342,7 +5342,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065482634_td-synnex_termination-of-2024-01-29.pdf",
-     "label": "UCC U260065482634 — termination",
+     "label": "UCC U260065482634 · termination",
      "date": "2026-08-19",
      "url": null,
      "urlLabel": null
@@ -5373,7 +5373,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2015-11-19_book2015-page5296_warranty-deed_jde-investments-to-sho-me-power-electric-cooperative.pdf",
-     "label": "Warranty deed, Bk 2015 Pg 5296 — signature",
+     "label": "Warranty deed, Bk 2015 Pg 5296 · signature",
      "date": "2015-11-19",
      "excerpt": "Signed Eric Glidewell, Managing Member",
      "url": null,
@@ -5400,7 +5400,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2015
    },
-   "summary": "JDE Investments acquired the parent tract 4 September 2015 (Bk 2015 Pg 4156) and conveyed this 20.33-acre piece of it to Sho-Me Power Electric Cooperative by general warranty deed 19 November 2015 (Bk 2015 Pg 5296), subject to a road-purposes exception across the east side — the Rifle Range Road frontage.",
+   "summary": "JDE Investments acquired the parent tract 4 September 2015 (Bk 2015 Pg 4156) and conveyed this 20.33-acre piece of it to Sho-Me Power Electric Cooperative by general warranty deed 19 November 2015 (Bk 2015 Pg 5296), subject to a road-purposes exception across the east side, the Rifle Range Road frontage.",
    "resolves": null,
    "citations": [
     {
@@ -5438,7 +5438,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2015
    },
-   "summary": "Sho-Me Power Electric Cooperative acquired the 20.33-acre tract from JDE Investments by general warranty deed (Bk 2015 Pg 5296), subject to a road-purposes exception across the east side. The Webster County Assessor's parcel viewer carries the same tract today as PID 06-7.0-26-000-000-012.070 (19.24 acres — the road-purposes exception accounts for the ~1.09-acre gap to the deed's 20.33-acre gross figure — deed reference 2015-5296, matching the deed exactly), still billed to Sho-Me Power Electric Cooperative, with a substation structure visible inside the boundary.",
+   "summary": "Sho-Me Power Electric Cooperative acquired the 20.33-acre tract from JDE Investments by general warranty deed (Bk 2015 Pg 5296), subject to a road-purposes exception across the east side. The Webster County Assessor's parcel viewer carries the same tract today as PID 06-7.0-26-000-000-012.070 (19.24 acres, with the road-purposes exception accounting for the ~1.09-acre gap to the deed's 20.33-acre gross figure; deed reference 2015-5296, matching the deed exactly), still billed to Sho-Me Power Electric Cooperative, with a substation structure visible inside the boundary.",
    "resolves": null,
    "citations": [
     {
@@ -5458,7 +5458,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/01-marshfield-site/parcel-records/2026-09-18_webster-county-gis_parcel-06-7.0-26-000-000-012.070_sho-me-power-electric-cooperative.webp",
-     "label": "Webster County GIS — parcel 06-7.0-26-000-000-012.070",
+     "label": "Webster County GIS · parcel 06-7.0-26-000-000-012.070",
      "date": "2026-09-18",
      "excerpt": "SHO-ME POWER ELECTRIC COOPERATIVE, PO Box D, Marshfield MO 65706; 19.24 acres; Sec. 26, Twp. 31, Rng. 18; deed reference 2015-5296\n",
      "url": null,
@@ -5490,9 +5490,9 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf",
-     "label": "Boundary survey, Bk 1 Pg 1229 — adjoining owner",
+     "label": "Boundary survey, Bk 1 Pg 1229 · adjoining owner",
      "date": "2026-02-12",
-     "excerpt": "Adjoining owner to the northwest — Sho-Me Power Electric Cooperative (2015-5296)",
+     "excerpt": "Adjoining owner to the northwest: Sho-Me Power Electric Cooperative (2015-5296)",
      "url": null,
      "urlLabel": null
     }
@@ -5524,7 +5524,7 @@ window.__GRAPH__ = {
      "external": "Corporate relationship verified externally",
      "url": "https://shometech.com/about-us/",
      "label": "Sho-Me Technologies is a subsidiary of Sho-Me Power Electric Cooperative",
-     "urlLabel": "shometech.com — Sho-Me Technologies' own About page"
+     "urlLabel": "shometech.com · Sho-Me Technologies' own About page"
     }
    ]
   },
@@ -5561,7 +5561,7 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2022 Annual Report.pdf",
-     "label": "Kansas annual report 2022 — last to disclose members",
+     "label": "Kansas annual report 2022 · last to disclose members",
      "date": 2022,
      "url": null,
      "urlLabel": null
@@ -5723,7 +5723,7 @@ window.__GRAPH__ = {
      "url": "https://sgfcitizen.org/government/springfield-greene-county/protest-against-ai-data-centers/",
      "label": "NSI A1 LLC acquired 2900 S National Ave, March 2025",
      "date": "2025-03",
-     "urlLabel": "Springfield Daily Citizen — the article as published"
+     "urlLabel": "Springfield Daily Citizen · the article as published"
     }
    ]
   },
@@ -5751,7 +5751,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_owner-record-nsi-6.png",
-     "label": "Benton County GIS — owner record",
+     "label": "Benton County GIS · owner record",
      "url": null,
      "urlLabel": null
     }
@@ -5813,9 +5813,9 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png",
      "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985",
-     "label": "Permit MORA29985 — owner address",
+     "label": "Permit MORA29985 · owner address",
      "date": "2026-04-30",
-     "urlLabel": "Missouri DNR permit search — MORA29985 filled in, press Search"
+     "urlLabel": "Missouri DNR permit search · MORA29985 filled in, press Search"
     }
    ]
   },
@@ -5847,14 +5847,14 @@ window.__GRAPH__ = {
      "url": "https://sgfcitizen.org/economy-growth/plaza-towers-purchased-for-13364000-at-foreclosure-sale/",
      "label": "Trustee's foreclosure sale, 10 April 2025, $13,364,000",
      "date": "2025-04-10",
-     "urlLabel": "Springfield Daily Citizen — the article as published"
+     "urlLabel": "Springfield Daily Citizen · the article as published"
     },
     {
      "external": "Springfield Business Journal",
      "url": "https://sbj.net/stories/plaza-towers-auctioned-to-highest-bidder,99256",
      "label": "Trustee's foreclosure sale, April 2025",
      "date": "2025-04",
-     "urlLabel": "Springfield Business Journal — the article as published"
+     "urlLabel": "Springfield Business Journal · the article as published"
     }
    ]
   },
@@ -5910,7 +5910,7 @@ window.__GRAPH__ = {
      "external": "Firm roster verified externally",
      "url": "https://www.lifegenlawgroup.com/nathaniel-j-poivre/",
      "label": "Nathaniel J. Poivre, attorney at the same Springfield firm as Cameron G. Jones",
-     "urlLabel": "lifegenlawgroup.com — Nathaniel J. Poivre"
+     "urlLabel": "lifegenlawgroup.com · Nathaniel J. Poivre"
     }
    ]
   },
@@ -5969,7 +5969,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf",
-     "label": "Trustee's warranty deed, Inst. 202604041 — e-recording",
+     "label": "Trustee's warranty deed, Inst. 202604041 · e-recording",
      "date": "2026-09-09",
      "url": null,
      "urlLabel": null
@@ -6212,7 +6212,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "Signed 2 September 2026 — the day of the TRO hearing — before a notary in Big Sandy, Chouteau County, Montana.",
+   "summary": "Signed 2 September 2026, the day of the TRO hearing, before a notary in Big Sandy, Chouteau County, Montana.",
    "resolves": null,
    "citations": [
     {
@@ -6279,7 +6279,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf",
-     "label": "Trustee's warranty deed, Inst. 202604041 — acknowledgment",
+     "label": "Trustee's warranty deed, Inst. 202604041 · acknowledgment",
      "date": "2026-09-09",
      "url": null,
      "urlLabel": null
@@ -6310,7 +6310,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604043_trustees-warranty-deed_john-hilty-trust-to-nsi-6.pdf",
-     "label": "Trustee's warranty deed, Inst. 202604043 — acknowledgment",
+     "label": "Trustee's warranty deed, Inst. 202604043 · acknowledgment",
      "date": "2026-09-09",
      "url": null,
      "urlLabel": null
@@ -6344,7 +6344,7 @@ window.__GRAPH__ = {
      "url": "https://www.google.com/maps/place/29152+Old+Hwy+65,+Warsaw,+MO+65355",
      "label": "Street-level imagery, April 2026",
      "date": "2026-04",
-     "urlLabel": "Google Maps — 29152 Old Hwy 65, Warsaw"
+     "urlLabel": "Google Maps · 29152 Old Hwy 65, Warsaw"
     }
    ]
   },
@@ -6372,7 +6372,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png",
-     "label": "Benton County GIS — parcel 142009000001001002",
+     "label": "Benton County GIS · parcel 142009000001001002",
      "url": null,
      "urlLabel": null
     }
@@ -6402,7 +6402,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png",
-     "label": "Benton County GIS — parcel 142009000001001003",
+     "label": "Benton County GIS · parcel 142009000001001003",
      "url": null,
      "urlLabel": null
     }
@@ -6432,7 +6432,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png",
-     "label": "Benton County GIS — aerial",
+     "label": "Benton County GIS · aerial",
      "url": null,
      "urlLabel": null
     }
@@ -6462,7 +6462,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png",
-     "label": "Benton County GIS — aerial",
+     "label": "Benton County GIS · aerial",
      "url": null,
      "urlLabel": null
     }
@@ -6554,7 +6554,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf",
-     "label": "Petition — counsel of record",
+     "label": "Petition · counsel of record",
      "date": "2026-08-24",
      "url": null,
      "urlLabel": null
@@ -6585,7 +6585,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_petition-for-declaratory-judgment-and-injunctive-relief.pdf",
-     "label": "Petition — counsel of record",
+     "label": "Petition · counsel of record",
      "date": "2026-08-24",
      "url": null,
      "urlLabel": null
@@ -6616,7 +6616,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf",
-     "label": "Exhibit 1 — moratorium order",
+     "label": "Exhibit 1 · moratorium order",
      "date": "2026-08-10",
      "url": null,
      "urlLabel": null
@@ -6647,7 +6647,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26BE-CC00056_nsi-6-v-benton-county/2026-08-24_exhibit-1_benton-county-data-center-moratorium-order.pdf",
-     "label": "Exhibit 1 — recitals",
+     "label": "Exhibit 1 · recitals",
      "date": "2026-08-10",
      "url": null,
      "urlLabel": null
@@ -6712,7 +6712,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf",
      "label": "Summons issued, 2631-CC01131",
      "date": "2026-09-18",
-     "excerpt": "The State of Missouri to — CITY OF SPRINGFIELD, MISSOURI",
+     "excerpt": "The State of Missouri to: CITY OF SPRINGFIELD, MISSOURI",
      "url": null,
      "urlLabel": null
     }
@@ -6742,15 +6742,15 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf",
-     "label": "Verified petition — signature block",
+     "label": "Verified petition · signature block",
      "date": "2026-09-17",
-     "excerpt": "The Law Office of Chad G. Mann, LLC — Missouri Bar No. 70213",
+     "excerpt": "The Law Office of Chad G. Mann, LLC, Missouri Bar No. 70213",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf",
-     "label": "Summons — attorney for petitioner",
+     "label": "Summons · attorney for petitioner",
      "date": "2026-09-18",
      "url": null,
      "urlLabel": null
@@ -6765,7 +6765,7 @@ window.__GRAPH__ = {
    "targetId": "springfield-ordinance-28306",
    "type": "legal",
    "label": "challenges as void",
-   "because": "On two independent grounds — that it is zoning enacted without the Chapter 89 notice and hearing, and that it was not enacted in the form the Charter requires.",
+   "because": "On two independent grounds: that it is zoning enacted without the Chapter 89 notice and hearing, and that it was not enacted in the form the Charter requires.",
    "tier": 1,
    "projects": [
     "springfield"
@@ -6997,14 +6997,14 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "The summons identifies a party the verified petition does not name. Being named as the party of record on a summons in this litigation is a documented connection — the strongest kind, a court filing. This file contains no correction, amended summons or docket entry explaining the discrepancy, and no assumption should be made about why it appears, including that it is an error.",
+   "summary": "The summons identifies a party the verified petition does not name. Being named as the party of record on a summons in this litigation is a documented connection of the strongest kind, a court filing. This file contains no correction, amended summons or docket entry explaining the discrepancy, and no assumption should be made about why it appears, including that it is an error.",
    "resolves": null,
    "citations": [
     {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf",
      "label": "Summons, 26WR-CC00057",
      "date": "2026-08-28",
-     "excerpt": "Plaintiff/Petitioner — PAYMENT 1 FINANCIAL MO LLC",
+     "excerpt": "Plaintiff/Petitioner: PAYMENT 1 FINANCIAL MO LLC",
      "url": null,
      "urlLabel": null
     }
@@ -7034,7 +7034,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf",
-     "label": "Summons — counsel",
+     "label": "Summons · counsel",
      "date": "2026-08-28",
      "url": null,
      "urlLabel": null
@@ -7110,7 +7110,7 @@ window.__GRAPH__ = {
    "sourceId": "marshfield-fire-district",
    "targetId": "site-marshfield",
    "type": "legal",
-   "label": "smoke investigation, report 26-0992 — \"no fire at this location\"",
+   "label": "smoke investigation, report 26-0992 · \"no fire at this location\"",
    "because": null,
    "tier": 1,
    "projects": [
@@ -7159,7 +7159,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf",
-     "label": "Incident report 26-0992 — Owner field",
+     "label": "Incident report 26-0992 · Owner field",
      "date": "2026-07-18",
      "url": null,
      "urlLabel": null
@@ -7190,7 +7190,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/05-sunshine-requests/marshfield-fire-protection-district/2026-08-17_response-to-wiltse_with-incident-report-26-0992.pdf",
-     "label": "Incident report 26-0992 — automatic aid",
+     "label": "Incident report 26-0992 · automatic aid",
      "date": "2026-07-18",
      "url": null,
      "urlLabel": null
@@ -7204,7 +7204,7 @@ window.__GRAPH__ = {
    "sourceId": "webster-county-911",
    "targetId": "site-marshfield",
    "type": "legal",
-   "label": "call CFS2026021837, \"FC — FIRE, COMMERCIAL STRUCTURE\"",
+   "label": "call CFS2026021837, \"FC · FIRE, COMMERCIAL STRUCTURE\"",
    "because": null,
    "tier": 1,
    "projects": [
@@ -7286,7 +7286,7 @@ window.__GRAPH__ = {
      "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985",
      "label": "Permit MORA29985",
      "date": "2026-04-30",
-     "urlLabel": "Missouri DNR permit search — MORA29985 filled in, press Search"
+     "urlLabel": "Missouri DNR permit search · MORA29985 filled in, press Search"
     }
    ]
   },
@@ -7317,7 +7317,7 @@ window.__GRAPH__ = {
      "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA30685",
      "label": "Permit MORA30685",
      "date": "2026-09-09",
-     "urlLabel": "Missouri DNR permit search — MORA30685 filled in, press Search"
+     "urlLabel": "Missouri DNR permit search · MORA30685 filled in, press Search"
     }
    ]
   },
@@ -7345,7 +7345,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf",
-     "label": "Pre-development review comments — Planning",
+     "label": "Pre-development review comments · Planning",
      "date": "2026-08-03",
      "url": null,
      "urlLabel": null
@@ -7376,7 +7376,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf",
-     "label": "Pre-development review comments — City Utilities",
+     "label": "Pre-development review comments · City Utilities",
      "date": "2026-08-03",
      "url": null,
      "urlLabel": null
@@ -7410,7 +7410,7 @@ window.__GRAPH__ = {
      "url": "https://webstercountymo.gov/county-adopts-six-month-moratorium/",
      "label": "Six-month moratorium, 16 June 2026",
      "date": "2026-06-16",
-     "urlLabel": "webstercountymo.gov — the Commission's own notice"
+     "urlLabel": "webstercountymo.gov · the Commission's own notice"
     }
    ]
   },
@@ -7433,7 +7433,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "Overhue's own account, given as a named panellist. He described identifying \"stranded power\" at a local substation operating below capacity, securing a power agreement, and then purchasing the land — adding that county zoning posed no obstacle. No such agreement, and no identification of its counterparty, appears anywhere in this file.",
+   "summary": "Overhue's own account, given as a named panellist. He described identifying \"stranded power\" at a local substation operating below capacity, securing a power agreement, and then purchasing the land, adding that county zoning posed no obstacle. No such agreement, and no identification of its counterparty, appears anywhere in this file.",
    "resolves": null,
    "citations": [
     {
@@ -7442,7 +7442,7 @@ window.__GRAPH__ = {
      "label": "Trent Overhue (Northern States Investments), named panellist",
      "date": "2026-06-23",
      "excerpt": "approximately 10 megawatts on roughly five acres; single-tenant, high-performance computing; up to 15 jobs; closed-loop cooling with occasional replenishment only\n",
-     "urlLabel": "Biz 417 — the magazine's own recap of the panel"
+     "urlLabel": "Biz 417 · the magazine's own recap of the panel"
     }
    ]
   },
@@ -7474,7 +7474,7 @@ window.__GRAPH__ = {
      "label": "Lumon statement, 13 May 2026",
      "date": "2026-05-13",
      "excerpt": "Political pressure does not make a lawful project unlawful… this project is lawful, properly positioned under the current framework, and is moving forward.\n",
-     "urlLabel": "Springfield Daily Citizen — the article as published"
+     "urlLabel": "Springfield Daily Citizen · the article as published"
     }
    ]
   },
@@ -7497,7 +7497,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2026
    },
-   "summary": "Testimony at the TRO hearing, reported by KY3 — closing scheduled 9 September, and withdrawing would cost him $100,000. Across all three sites the same selection logic is documented from the developer's own side.",
+   "summary": "Testimony at the TRO hearing, reported by KY3: closing scheduled 9 September, and withdrawing would cost him $100,000. Across all three sites the same selection logic is documented from the developer's own side.",
    "resolves": null,
    "citations": [
     {
@@ -7506,7 +7506,7 @@ window.__GRAPH__ = {
      "label": "Overhue testimony and counsel's argument",
      "date": "2026-09-02",
      "excerpt": "purposefully selected Benton County because it has no planning and zoning",
-     "urlLabel": "KY3 — the report as published"
+     "urlLabel": "KY3 · the report as published"
     }
    ]
   },
@@ -7517,7 +7517,7 @@ window.__GRAPH__ = {
    "sourceId": "nsi-investments",
    "targetId": "nsi-6",
    "type": "ownership",
-   "label": "common naming series and principals — no document establishes a parent relationship",
+   "label": "common naming series and principals · no document establishes a parent relationship",
    "because": null,
    "tier": 3,
    "projects": [
@@ -7534,14 +7534,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf",
-     "label": "NSI 6 articles — no member or manager disclosed",
+     "label": "NSI 6 articles · no member or manager disclosed",
      "date": "2026-08-13",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/2025 Information Report.pdf",
-     "label": "Kansas information report 2025 — membership no longer disclosed",
+     "label": "Kansas information report 2025 · membership no longer disclosed",
      "date": 2025,
      "url": null,
      "urlLabel": null
@@ -7555,7 +7555,7 @@ window.__GRAPH__ = {
    "sourceId": "nsi-investments",
    "targetId": "nsi-a1",
    "type": "ownership",
-   "label": "common naming series — no document establishes a parent relationship",
+   "label": "common naming series · no document establishes a parent relationship",
    "because": null,
    "tier": 3,
    "projects": [
@@ -7572,7 +7572,7 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/nsi/nsi-a1-llc/2025-02-24_articles-of-organization_LC014612494.pdf",
-     "label": "NSI A.1 articles — no member or manager disclosed",
+     "label": "NSI A.1 articles · no member or manager disclosed",
      "date": "2025-02-24",
      "url": null,
      "urlLabel": null
@@ -7603,14 +7603,14 @@ window.__GRAPH__ = {
    "citations": [
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/terminated/2026-08-19_U260065482634_td-synnex_termination-of-2024-01-29.pdf",
-     "label": "UCC U260065482634 — one of six terminations",
+     "label": "UCC U260065482634 · one of six terminations",
      "date": "2026-08-19",
      "url": null,
      "urlLabel": null
     },
     {
      "doc": "evidence/03-entities/company/stn-incorporated/ucc/2026-08-28_U260068317932_northstar-enterprise-and-defense_marshfield-modular-data-center-equipment.pdf",
-     "label": "California UCC U260068317932 — perfection",
+     "label": "California UCC U260068317932 · perfection",
      "date": "2026-08-28",
      "url": null,
      "urlLabel": null
@@ -7636,7 +7636,7 @@ window.__GRAPH__ = {
     "precision": "day",
     "year": 2022
    },
-   "summary": "Organized October 2022 with Nathaniel Aldrich, administratively dissolved June 2024. The domain was registered 13 July 2026 and the live site is personally branded to Owens. The page makes no reference to data centers or to any entity in this file, and the deed of trust is dated 10 July — merely recorded on the 13th — which drains most of the meaning from the timing coincidence.",
+   "summary": "Organized October 2022 with Nathaniel Aldrich, administratively dissolved June 2024. The domain was registered 13 July 2026 and the live site is personally branded to Owens. The page makes no reference to data centers or to any entity in this file, and the deed of trust is dated 10 July, merely recorded on the 13th, which drains most of the meaning from the timing coincidence.",
    "resolves": "A MetaWest portfolio page naming any entity in this file, a current registration reviving the LLC, or capital-contribution records.",
    "citations": [
     {
@@ -7650,9 +7650,9 @@ window.__GRAPH__ = {
      "doc": "evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html",
      "date": "2026-09-17",
      "url": "https://metawestventures.com/",
-     "label": "Saved capture — raw HTML nav links",
+     "label": "Saved capture · raw HTML nav links",
      "excerpt": "<a href=\"mailto:ashton@owensand.co\">CONTACT US</a>",
-     "urlLabel": "metawestventures.com — the site itself"
+     "urlLabel": "metawestventures.com · the site itself"
     }
    ]
   }
@@ -7693,7 +7693,7 @@ window.__GRAPH__ = {
    "path": "evidence/01-marshfield-site/permits/mo-dnr-permit-MORA29985_lumon-rifle-range-rd.png",
    "exists": true,
    "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA29985",
-   "urlLabel": "Missouri DNR permit search — MORA29985 filled in, press Search",
+   "urlLabel": "Missouri DNR permit search · MORA29985 filled in, press Search",
    "refs": [
     {
      "kind": "node",
@@ -8369,7 +8369,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html",
    "exists": true,
    "url": "https://metawestventures.com/",
-   "urlLabel": "metawestventures.com — the site itself",
+   "urlLabel": "metawestventures.com · the site itself",
    "refs": [
     {
      "kind": "node",
@@ -8428,7 +8428,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/press/2025-04-10_edgeir-com_northstar-acquires-compass-quantum.pdf",
    "exists": true,
    "url": "https://www.edgeir.com/northstar-acquires-compass-quantum-to-expand-modular-edge-and-defense-solutions-20250410",
-   "urlLabel": "EdgeIR — the article as published",
+   "urlLabel": "EdgeIR · the article as published",
    "refs": [
     {
      "kind": "node",
@@ -8456,7 +8456,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/sec-edgar/2025-02-13_form-C-AR_fy2022-annual-report.pdf",
    "exists": true,
    "url": "https://www.sec.gov/Archives/edgar/data/1826924/000166919125000090/0001669191-25-000090-index.htm",
-   "urlLabel": "SEC EDGAR — filing index, CIK 0001826924",
+   "urlLabel": "SEC EDGAR · filing index, CIK 0001826924",
    "refs": [
     {
      "kind": "node",
@@ -8479,7 +8479,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/northstar/northstar-technologies-group-inc/sec-edgar/2025-02-13_form-C-TR_termination-of-reporting.pdf",
    "exists": true,
    "url": "https://www.sec.gov/Archives/edgar/data/1826924/000166919125000092/0001669191-25-000092-index.htm",
-   "urlLabel": "SEC EDGAR — filing index, CIK 0001826924",
+   "urlLabel": "SEC EDGAR · filing index, CIK 0001826924",
    "refs": [
     {
      "kind": "node",
@@ -8673,7 +8673,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/nsi/nsi-investments-llc/missouri/2026-09-16_linkedin-robi-overhue_affordable-family-storage.pdf",
    "exists": true,
    "url": "https://www.linkedin.com/in/robi-overhue-318a225b/",
-   "urlLabel": "LinkedIn profile — Robi Overhue",
+   "urlLabel": "LinkedIn profile · Robi Overhue",
    "refs": [
     {
      "kind": "node",
@@ -8709,7 +8709,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/payment-1-financial-mo-llc/2026-09-17_linkedin-jake-gaddy.pdf",
    "exists": true,
    "url": "https://www.linkedin.com/in/jcgaddy/",
-   "urlLabel": "LinkedIn profile — Jake Gaddy",
+   "urlLabel": "LinkedIn profile · Jake Gaddy",
    "refs": [
     {
      "kind": "node",
@@ -8812,7 +8812,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/stn-incorporated/public-materials/2026-09-16_stninc-com-blog_2026-growth-strategy-and-cybersecurity-goals.pdf",
    "exists": true,
    "url": "https://www.stninc.com/blog/stn-vision-and-growth-strategy-2026",
-   "urlLabel": "stninc.com — the post as published",
+   "urlLabel": "stninc.com · the post as published",
    "refs": [
     {
      "kind": "node",
@@ -8825,7 +8825,7 @@ window.__GRAPH__ = {
    "path": "evidence/03-entities/company/stn-incorporated/public-materials/2026-09-16_stninc-com-partnerships-page_screenshot.png",
    "exists": true,
    "url": "https://www.stninc.com/partnerships/skild#our-partners",
-   "urlLabel": "stninc.com — partnerships page",
+   "urlLabel": "stninc.com · partnerships page",
    "refs": [
     {
      "kind": "node",
@@ -9555,7 +9555,7 @@ window.__GRAPH__ = {
    "path": "evidence/06-benton-county-site/permits/mo-dnr-permit-MORA30685_cold-storage_nsi-6.png",
    "exists": true,
    "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA30685",
-   "urlLabel": "Missouri DNR permit search — MORA30685 filled in, press Search",
+   "urlLabel": "Missouri DNR permit search · MORA30685 filled in, press Search",
    "refs": [
     {
      "kind": "node",
@@ -9573,7 +9573,7 @@ window.__GRAPH__ = {
    "path": "evidence/06-benton-county-site/photos/2026-04_google-street-view_29152-old-hwy-65_pitts-homes.png",
    "exists": true,
    "url": "https://www.google.com/maps/place/29152+Old+Hwy+65,+Warsaw,+MO+65355",
-   "urlLabel": "Google Maps — 29152 Old Hwy 65, Warsaw",
+   "urlLabel": "Google Maps · 29152 Old Hwy 65, Warsaw",
    "refs": [
     {
      "kind": "node",

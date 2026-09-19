@@ -186,7 +186,7 @@ class UI {
     if (!note) return;
     const p = this.activeProject ? this.projectByKey.get(this.activeProject) : null;
     note.textContent = p ? (p.note || '').trim()
-      : 'Every entity in the file at once. Thorough, and a great deal to read — ' +
+      : 'Every entity in the file at once. Thorough, and a great deal to read; ' +
         'the three builds above take it one at a time.';
   }
 
@@ -330,7 +330,7 @@ class UI {
         <span class="bar"></span>
         <span>${new Date(t1).getUTCFullYear()}</span>
       </div>
-      <p class="note">Every node carries a ring shaded by its earliest documented date —
+      <p class="note">Every node carries a ring shaded by its earliest documented date,
       an achromatic channel, so it never competes with category colour.</p>
 
       <div class="fresh-key${fresh.length ? '' : ' empty'}">
@@ -344,7 +344,7 @@ class UI {
           <span class="fresh-when">${esc(formatDate(n.date))}</span>
         </button></li>`).join('')}</ul>
       <p class="note">Each of these carries a halo on the map and a <b>NEW</b> chip
-      above it — the more recent the entry, the stronger the halo. Only dates the
+      above it. The more recent the entry, the stronger the halo. Only dates the
       record gives to the day count: an entity the file dates to a month or a year
       is not one it dates to a Tuesday.</p>`
       : `<p class="note">Nothing in the record is dated inside ${RECENT_PHRASE},
@@ -573,7 +573,7 @@ class UI {
       ? `<blockquote>${esc(String(c.excerpt).trim())}</blockquote>` : '';
     const link = c.doc
       ? `<a class="doc" href="../${esc(c.doc)}" target="_blank" rel="noopener">${esc(c.doc)}</a>`
-      : `<span class="ext">External source — not in evidence/</span>`;
+      : `<span class="ext">External source, not in evidence/</span>`;
     // The archived copy is the source of the claim and never moves. The live url,
     // where one exists, is where the same source can be read today — a reader's own
     // check on it, and the thing that can rot. Both are shown; the archived one first.
@@ -620,13 +620,13 @@ class UI {
         ${recencyOf(node.date) ? `<span class="p-new">New</span>` : ''}</div>
       <h2 class="p-title">${esc(node.name)}</h2>
       ${date ? `<p class="p-date">${esc(date)}${
-        node.dateNote ? ` — ${esc(node.dateNote)}` : ''}</p>` : ''}
+        node.dateNote ? ` · ${esc(node.dateNote)}` : ''}</p>` : ''}
       <p class="p-body">${esc(node.summary)}</p>
       ${node.caveat ? `<p class="p-caveat"><b>What this does not establish.</b>
         ${esc(node.caveat)}</p>` : ''}
-      <div class="p-section">Sources — ${node.citations.length}</div>
+      <div class="p-section">Sources · ${node.citations.length}</div>
       ${node.citations.map((c) => this._citationHTML(c)).join('')}
-      <div class="p-section">Connections — ${
+      <div class="p-section">Connections · ${
         this.data.edges.filter((e) => e.sourceId === node.id || e.targetId === node.id).length}</div>
       ${related}`;
     this._openPanel();
@@ -663,13 +663,13 @@ class UI {
       ${edge.summary ? `<p class="p-body">${esc(edge.summary)}</p>` : ''}
       ${edge.resolves ? `<p class="p-caveat"><b>What would resolve this.</b>
         ${esc(edge.resolves)}</p>` : ''}
-      <div class="p-section">Sources — ${edge.citations.length}</div>
+      <div class="p-section">Sources · ${edge.citations.length}</div>
       ${edge.citations.map((c) => this._citationHTML(c)).join('')}
       <div class="p-section">Endpoints</div>
       <button class="rel" data-goto="${esc(s.id)}"><span class="rel-name">${esc(s.name)}</span>
-        <span class="rel-desc">from — open this entity</span></button>
+        <span class="rel-desc">from · open this entity</span></button>
       <button class="rel" data-goto="${esc(t.id)}"><span class="rel-name">${esc(t.name)}</span>
-        <span class="rel-desc">to — open this entity</span></button>`;
+        <span class="rel-desc">to · open this entity</span></button>`;
     this._openPanel();
   }
 
@@ -685,7 +685,7 @@ class UI {
       <h2>What this map claims, and what it does not</h2>
       <p class="lede">This project maps who owns what, who is connected to whom, and
       where the money behind the southwest Missouri data-center build-out comes from.
-      It is assembled from ${m.documentCount} documents — deeds, UCC filings, corporate
+      It is assembled from ${m.documentCount} documents: deeds, UCC filings, corporate
       registrations, SEC filings, permits, court records and captured public pages. This project claims nothing beyond what is stated in public record.</p>
 
       <h3>What is claimed, and stood behind</h3>
@@ -699,7 +699,7 @@ class UI {
       signing from other states, lenders' instruments recorded against Missouri parcels,
       and single-purpose entities holding land they bought from local owners. Every step of
       that is on the map with the filing that establishes it. Read the documents rather
-      than take our word for it — that is what they are here for.</span></div>
+      than take our word for it. That is what they are here for.</span></div>
       <div class="nc"><b>The dates, and the order things happened in</b><span>Formation,
       purchase, recording, permitting and filing dates are as the records state them. Where
       a record gives only a month or only a year, the map shows only that much, and the
@@ -718,7 +718,7 @@ class UI {
       share a plan or purpose, or know what the other is doing.</span></div>
       <div class="nc"><b>No motive, no intent, no forecast</b><span>The record shows what was
       done and when. It does not establish why, what anyone meant by it, or what anyone
-      will do next — and this map does not guess at any of the three.</span></div>
+      will do next, and this map does not guess at any of the three.</span></div>
       <div class="nc"><b>Nothing about consequences</b><span>No claim is made here about
       water, electricity, rates, emissions, tax abatements, jobs, property values, or
       whether any of this is good or bad for the people who live nearby. Those are arguments
@@ -727,7 +727,7 @@ class UI {
       connections are threads the file tracks and does not treat as settled. Each one has to
       say what evidence would resolve it, or the build rejects it.</span></div>
       <div class="nc"><b>An absent line means an absent document</b><span>Where no
-      connection is drawn, nothing has been found — it is not proof that no relationship
+      connection is drawn, nothing has been found. It is not proof that no relationship
       exists. This map is the portion of the picture that documents currently support.</span></div>
       <div class="nc"><b>Appearing here is not an accusation</b><span>Many entities and
       people are on this map because they sold land, lent money, notarized an instrument,
@@ -736,12 +736,12 @@ class UI {
       be judged.</span></div>
 
       ${section('Expressly not claimed', nc.notClaimed)}
-      ${section('Open questions — why some expected lines are absent', nc.openQuestions)}
+      ${section('Open questions: why some expected lines are absent', nc.openQuestions)}
       ${section('Threads closed by review', nc.closedThreads)}
 
       <h3>If something here is wrong</h3>
       <p class="note" style="margin-top:11px">A name, a date, a relationship read the wrong
-      way out of a filing — corrections are wanted, and they are made against the document.
+      way out of a filing. Corrections are wanted, and they are made against the document.
       Use the tipline, or write to
       <a href="mailto:trentoverpoo@proton.me">trentoverpoo@proton.me</a>.</p>`;
 
@@ -820,7 +820,7 @@ class UI {
     badge.hidden = off === 0;
     badge.textContent = String(off);
     el('open-filters').setAttribute('aria-label', off
-      ? `Filters — ${off} of them narrowing the map`
+      ? `Filters: ${off} of them narrowing the map`
       : 'Filters');
   }
 
@@ -875,12 +875,12 @@ class UI {
   _buildTiplineModal() {
     el('tipline-modal-body').innerHTML = `
       <h2>Send a tip</h2>
-      <p class="lede">This project runs on documents. If you have one — a lease, a permit
-      filing, an email, a recording, a name we've gotten wrong — it's useful whether or not
+      <p class="lede">This project runs on documents. If you have one (a lease, a permit
+      filing, an email, a recording, a name we've gotten wrong), it's useful whether or not
       you can say how you got it.</p>
       <h3>What's valuable</h3>
       <div class="nc"><b>Documents</b><span>Filings, contracts, permits, correspondence,
-      minutes, financial records — anything with a date and a source, even a partial
+      minutes, financial records: anything with a date and a source, even a partial
       one.</span></div>
       <div class="nc"><b>Corrections</b><span>A name, date, or relationship on this map
       that's wrong, outdated, or missing context.</span></div>
@@ -932,7 +932,7 @@ class UI {
     ];
     el('shortcuts-modal-body').innerHTML = `
       <h2>Keyboard shortcuts</h2>
-      <p class="lede">These work once the map has keyboard focus — click it, or tab to it.</p>
+      <p class="lede">These work once the map has keyboard focus. Click it, or tab to it.</p>
       ${rows.map((r) => `
         <div class="shortcut-row">
           <span class="keys">${r.keys.map((k) => `<kbd>${esc(k)}</kbd>`).join(' ')}</span>

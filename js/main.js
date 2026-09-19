@@ -18,7 +18,7 @@ function applyTheme(theme) {
   btn.textContent = next;
   // SC 2.5.3: the visible word has to start the accessible name, or "click
   // Light" reaches nothing.
-  btn.setAttribute('aria-label', `${next} theme — switch to it`);
+  btn.setAttribute('aria-label', `Switch to the ${next} theme`);
   try { localStorage.setItem('map-theme', theme); } catch { /* private mode */ }
 }
 
@@ -168,7 +168,7 @@ function boot() {
     el('scrub-count').textContent = `${shown} of ${data.meta.nodeCount} entities documented by then`;
     // Without this a screen reader reads the raw 0-1000 position.
     scrubber.setAttribute('aria-valuetext',
-      `${readout.textContent} — ${shown} of ${data.meta.nodeCount} entities documented by then`);
+      `${readout.textContent}: ${shown} of ${data.meta.nodeCount} entities documented by then`);
     if (!silent) scrubber.value = String(v);
   }
 
