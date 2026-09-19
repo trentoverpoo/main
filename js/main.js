@@ -41,12 +41,13 @@ function boot() {
 
   const ui = new UI(data, {
     onFilter: () => applyFilters(),
+    onProject: () => showProject(),
     // The panel opens before the camera moves, so the camera knows how much of
     // the stage is left to frame the node into — on a phone the panel is a
     // sheet over the foot of it, and the middle of the map is behind it.
     // The keyboard cursor follows a pointer pick too, so tabbing back into the
     // map resumes from the entity the eye is already on.
-    onPick: (id) => { view.kbFocus = id; view.select(id); ui.showNode(byId.get(id)); view.focus(id); },
+    onPick: (id) => { reveal(id); view.kbFocus = id; view.select(id); ui.showNode(byId.get(id)); view.focus(id); },
     onPickEdge: (id) => {
       const e = edgeById.get(id);
       if (!e) return;
@@ -69,25 +70,83 @@ function boot() {
   });
 
   // ------------------------------------------------------------ filters ---
+  //
+  // Two filters of different kinds, applied together. The build in focus decides
+  // what the map is about; the filters decide how much of it is drawn.
+  //
+  // A focused build also draws its bridges: the connections that leave it, and
+  // the entities on the far end of them, faint. Eighty-eight entities in one
+  // frame is the view nobody reads, but a Springfield that quietly omits the
+  // principal who is also on the other two sites would be a cleaner picture of
+  // something that is not true. The bridges are how a focused view stays honest
+  // about what it has set aside.
   function applyFilters() {
-    const nodes = new Set();
+    const key = ui.activeProject;
+    const passes = (id) => ui.activeCategories.has(byId.get(id).category);
+
+    const core = new Set();
     for (const n of data.nodes) {
-      if (ui.activeCategories.has(n.category)) nodes.add(n.id);
+      if (!ui.activeCategories.has(n.category)) continue;
+      if (!key || (n.projects || []).includes(key)) core.add(n.id);
     }
+
     const edges = new Set();
+    const bridgeEdges = new Set();
+    const bridgeNodes = new Set();
     for (const e of data.edges) {
       if (!ui.activeTypes.has(e.type)) continue;
       if (!ui.activeTiers.has(e.tier)) continue;
-      if (!nodes.has(e.sourceId) || !nodes.has(e.targetId)) continue;
-      edges.add(e.id);
+      if (!passes(e.sourceId) || !passes(e.targetId)) continue;
+      if (!key || (e.projects || []).includes(key)) {
+        if (core.has(e.sourceId) && core.has(e.targetId)) edges.add(e.id);
+      } else if (core.has(e.sourceId) || core.has(e.targetId)) {
+        bridgeEdges.add(e.id);
+        if (!core.has(e.sourceId)) bridgeNodes.add(e.sourceId);
+        if (!core.has(e.targetId)) bridgeNodes.add(e.targetId);
+      }
     }
-    view.setVisible(nodes, edges);
+
+    const nodes = new Set([...core, ...bridgeNodes]);
+    view.setVisible(nodes, new Set([...edges, ...bridgeEdges]), bridgeNodes, bridgeEdges);
     const wasEmpty = el('empty').classList.contains('show');
     el('empty').classList.toggle('show', nodes.size === 0);
     // A cursor left on an entity the filters just removed is a cursor on
     // nothing, and the ring would keep being drawn for it.
     if (view.kbFocus && !nodes.has(view.kbFocus)) view.clearKeyboardCursor();
     if (nodes.size === 0 && !wasEmpty) announce('No entity categories selected. The map is empty.');
+    return { core, bridgeNodes, edges, bridgeEdges };
+  }
+
+  /** Search runs over the whole file, and the panel links on to entities the
+   *  build in focus may not draw. Sending the camera to a node that is not on
+   *  the map is how that ends up looking broken, so the focus moves first: to
+   *  the one build that holds it, or to the whole map when several do. */
+  function reveal(id) {
+    if (view.visibleNodes.has(id)) return;
+    const n = byId.get(id);
+    if (!n) return;
+    // Two things can be holding it back, and both have to give: the build in
+    // focus, and its own category if that has been switched off.
+    const wasFiltered = ui.enableCategory(n.category);
+    const offBuild = !!ui.activeProject && !(n.projects || []).includes(ui.activeProject);
+    if (offBuild) ui.setProject((n.projects || []).length === 1 ? n.projects[0] : null);
+    showProject();
+    if (offBuild) announce(`${n.name} is not in that build. Showing ${ui.projectLabel()}.`);
+    else if (wasFiltered) announce(`${n.name} was filtered out. Its category is back on.`);
+  }
+
+  /** Switching build re-lays the ladder on what is left and re-frames it, with
+   *  that build's own site in the middle. Nothing in a canvas announces itself,
+   *  so the count is spoken too. */
+  function showProject() {
+    const counts = applyFilters();
+    ui.syncCounts();
+    const p = ui.activeProject ? ui.projectByKey.get(ui.activeProject) : null;
+    view.reseat(p ? p.anchor : null);
+    const n = counts.core.size;
+    const b = counts.bridgeNodes.size;
+    announce(`Showing ${ui.projectLabel()}. ${n} ${n === 1 ? 'entity' : 'entities'}` +
+      (b ? `, and ${b} more faint where connections leave it.` : '.'));
   }
 
   // ----------------------------------------------------------- timeline ---
@@ -287,6 +346,10 @@ function boot() {
 
   setCursor(1000);
   applyFilters();
+  // The map opens on one build. Seating and framing happen the same way a
+  // switch does, so the opening view and every later one are the same code.
+  const opening = ui.activeProject ? ui.projectByKey.get(ui.activeProject) : null;
+  if (opening) view.reseat(opening.anchor);
   // Last, so the note lands over a map that is already drawn.
   ui.showMobileNote();
 }

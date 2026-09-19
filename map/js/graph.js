@@ -123,6 +123,14 @@ class GraphView {
     this.timeCursor = Infinity;
     this.visibleNodes = new Set(this.nodes.map((n) => n.id));
     this.visibleEdges = new Set(this.edges.map((e) => e.id));
+    // Drawn, reachable and faint: what a focused build touches but does not
+    // contain. These are the lines that leave the build the reader is looking
+    // at — the principal who is also on the other two sites, the vehicle that
+    // feeds them both — and they are the part of the picture a focused view
+    // would otherwise be lying by omission about.
+    this.bridgeNodes = new Set();
+    this.bridgeEdges = new Set();
+    this.frameCentre = null;
 
     this._indexEdges();
     this._measureStage();
@@ -142,11 +150,30 @@ class GraphView {
    *  than the stage. Undersizing it would only hand the overflow to the bounds
    *  clamp, which would pile the ends of the long courses on top of each
    *  other; oversizing it costs a little zoom and nothing else. */
-  _seedLayout() {
-    const need = MAP.layout.seed(this.nodes, this.edges,
-      this.data.taxonomy.hierarchy, this.stageBase);
+  _seedLayout(nodes, edges, centre) {
+    const need = MAP.layout.seed(nodes || this.nodes, edges || this.edges,
+      this.data.taxonomy.hierarchy, this.stageBase, centre);
     this.layoutNeed = need.map(Math.ceil);
     this._sizeWorld();
+  }
+
+  /** Re-seats the ladder on whatever is currently drawn. A focused build is a
+   *  fifth of the entities, and seating it in the whole map's slots would open
+   *  on a page of holes; laying out only what is showing closes them, and
+   *  `centre` puts that build's own site at the top of the column the rest of
+   *  it hangs from. Nodes that are not drawn keep their seats, so switching
+   *  back to the whole map does not scramble it. */
+  reseat(centre) {
+    const nodes = this.nodes.filter((n) => this.visibleNodes.has(n.id));
+    if (!nodes.length) return;
+    const ids = new Set(nodes.map((n) => n.id));
+    const edges = this.edges.filter((e) => ids.has(e.sourceId) && ids.has(e.targetId));
+    // Kept, not just used once: a resize re-frames, and the build in focus
+    // should not slide out of the middle when the window changes shape.
+    this.frameCentre = ids.has(centre) ? centre : null;
+    this._seedLayout(nodes, edges, this.frameCentre);
+    this._settle();
+    this.fit(16);
   }
 
   /** The first frame is the settled one. Separation and framing cost a few
@@ -470,9 +497,11 @@ class GraphView {
 
   setTimeCursor(t) { this.timeCursor = t; this.draw(); }
 
-  setVisible(nodeIds, edgeIds) {
+  setVisible(nodeIds, edgeIds, bridgeNodeIds, bridgeEdgeIds) {
     this.visibleNodes = nodeIds;
     this.visibleEdges = edgeIds;
+    this.bridgeNodes = bridgeNodeIds || new Set();
+    this.bridgeEdges = bridgeEdgeIds || new Set();
     this.draw();
   }
 
@@ -623,6 +652,18 @@ class GraphView {
     let maxX = Math.max(...pts.map((n) => n.x + n.boxHW));
     let minY = Math.min(...pts.map((n) => n.y - n.boxUp));
     let maxY = Math.max(...pts.map((n) => n.y + n.boxDown));
+    // A focused build is read from its own site, so the frame is widened around
+    // that site until it sits in the middle of it, rather than being centred on
+    // whatever box the rest of the build happens to occupy. Widening rather
+    // than shifting is what keeps the far side of the map on screen; it costs a
+    // little zoom and nothing else.
+    const anchor = this.frameCentre && this.visibleNodes.has(this.frameCentre)
+      ? this.byId.get(this.frameCentre) : null;
+    if (anchor && Number.isFinite(anchor.x)) {
+      const reach = Math.max(anchor.x - minX, maxX - anchor.x);
+      minX = anchor.x - reach;
+      maxX = anchor.x + reach;
+    }
     // A name that had to take an alternate slot can reach past its own box,
     // and placement is world-space, so the boxes from the last frame hold.
     for (const b of this._labelBoxes || []) {
@@ -692,6 +733,7 @@ class GraphView {
     if (this.selected && !this.neighbors.has(n.id)) return 'dim';
     if (this.selected === n.id) return 'selected';
     if (this.hover === n.id) return 'hover';
+    if (this.bridgeNodes.has(n.id)) return 'bridge';
     return 'normal';
   }
 
@@ -703,6 +745,7 @@ class GraphView {
       return this.neighbors.has(e.sourceId) && this.neighbors.has(e.targetId) ? 'active' : 'dim';
     }
     if (this.hover && (this.hover === e.sourceId || this.hover === e.targetId)) return 'active';
+    if (this.bridgeEdges.has(e.id)) return 'bridge';
     return 'normal';
   }
 
@@ -815,6 +858,7 @@ class GraphView {
     if (state === 'active') { color = p.accent; alpha = 0.95; width = spec.width + 0.9; }
     else if (state === 'dim') alpha = spec.alpha * 0.16;
     else if (state === 'future') alpha = spec.alpha * 0.1;
+    else if (state === 'bridge') alpha = spec.alpha * 0.34;
     else if (this.selected || this.hover) alpha = spec.alpha * 0.3;
 
     ctx.save();
@@ -840,6 +884,7 @@ class GraphView {
     let alpha = 1;
     if (state === 'dim') alpha = 0.2;
     else if (state === 'future') alpha = 0.13;
+    else if (state === 'bridge') alpha = 0.4;
 
     ctx.save();
     ctx.globalAlpha = alpha;
@@ -937,7 +982,8 @@ class GraphView {
       // A floor under the ramp, so the far edge of the window is still plainly
       // lit: the group is everything that has happened lately, and a member of
       // it that has faded to nothing is a member the reader never sees.
-      const peak = p.freshVeil * (0.38 + 0.62 * n.fresh) * (state === 'dim' ? 0.25 : 1);
+      const peak = p.freshVeil * (0.38 + 0.62 * n.fresh) *
+        (state === 'dim' ? 0.25 : state === 'bridge' ? 0.3 : 1);
       const g = ctx.createRadialGradient(n.x, n.y, n.radius * 0.5, n.x, n.y, outer);
       g.addColorStop(0, withAlpha(p.fresh, peak));
       g.addColorStop(0.38, withAlpha(p.fresh, peak * 0.55));
@@ -962,6 +1008,11 @@ class GraphView {
     if (!n.fresh) return;
     const state = this._nodeState(n);
     if (state === 'hidden' || state === 'future' || state === 'dim') return;
+    // Not on a bridge. The chip is meant to be caught before anything else is
+    // read, and a solid inverted chip over the faintest glyph on the map would
+    // do exactly that for something that belongs to a build the reader is not
+    // looking at. It is drawn when they switch to that build.
+    if (state === 'bridge') return;
     if (this.camera.k * CHIP_FONT < CHIP_MIN_PX) return;
     const { ctx, palette: p } = this;
     const y = n.y - n.radius - CHIP_GAP - CHIP_H;
@@ -1083,7 +1134,10 @@ class GraphView {
     // measured this name at. Type does as much of the work here as the halo
     // does: a name that is merely lit still reads as secondary next to one
     // that is set darker and heavier than its neighbours.
-    const strong = state === 'selected' || n.fresh > 0;
+    // What is new is set darker and heavier — but not on a bridge, where the
+    // glyph is faint and a bold black name over it would be the loudest thing
+    // on a map about somewhere else.
+    const strong = state === 'selected' || (n.fresh > 0 && state !== 'bridge');
     ctx.save();
     ctx.font = `${strong ? 600 : 450} ${LABEL_FONT}px ${this.fontFamily}`;
     ctx.textAlign = slot.align;
@@ -1092,6 +1146,7 @@ class GraphView {
     ctx.lineJoin = 'round';
     ctx.strokeStyle = withAlpha(p.plane, 0.9);
     const fill = strong ? p.ink : p.ink2;
+    if (state === 'bridge') ctx.globalAlpha = 0.55;
     n.lines.forEach((line, i) => {
       const y = slot.y + i * LINE_H;
       ctx.strokeText(line, slot.x, y);

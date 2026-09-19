@@ -165,7 +165,7 @@ from the ladder, and returning the map to it.
   center, and returns the map to the hierarchy it opened on.
 
 The halo is measured against the reader's own clock, not against the day the map
-was last built, and the sidebar's **Time** panel lists what is inside the window
+was last built, and the **Time** panel under **Filters** lists what is inside the window
 and says plainly when nothing is. That is the point of doing it that way: a month
 in which nothing was filed is an answer this page can give, and a banner left
 burning over the last thing anyone happened to add is not. Only a date the record
@@ -189,7 +189,9 @@ written out beside it.
 | Double-click / double-tap the plane | Re-frame the whole web — the way back from a zoom |
 | Hover | Name, category, date, source and connection counts. A pointer thing: touch goes from a tap straight to the panel |
 | `/` | Jump to search |
-| Sidebar | Filter by category, connection type and how well established. Below 900px it is a drawer over the map, behind **Filters** |
+| **Which build** | Which of the three the map is drawing. It opens on Marshfield; the other two, and the whole file, are one click away |
+| Sidebar | Which build, and search. Below 900px it is a drawer over the map, behind **Menu** |
+| **Filters** | Category, connection type, how well established, and the time key — cumulative, and on top of whichever build is in focus. The button carries a count when any of them is holding something back |
 | **Sources** | The map inverted — every document, and what rests on it |
 | **Not claimed** | What the record does not support, and why some expected lines are absent |
 | **Tipline** | What kind of information is useful to send in, and that identities are kept anonymous |
@@ -202,7 +204,8 @@ map/
   sources.html        document index
   SCHEMA.md           field contracts for nodes, edges and citations
   data/
-    taxonomy.yaml     categories, connection types, hue families, the opening hierarchy
+    taxonomy.yaml     categories, connection types, hue families, the three builds,
+                      the opening hierarchy
     entities.yaml     nodes          ─┐
     relationships.yaml edges          ├─ hand-authored from the record
     non-claims.yaml   tier 4, text only ─┘
@@ -212,7 +215,7 @@ map/
     main.js           bootstrap, timeline, controls
     layout.js         the opening hierarchy — courses, and where each name sits on one
     graph.js          simulation, camera, canvas renderer, hit testing
-    ui.js             sidebar, search, panels, modal
+    ui.js             sidebar, build switcher, search, panels, modals
     shapes.js         glyphs, palette, tier line styles
     vendor/           d3-force and its three dependencies, UMD builds
 build/
@@ -226,7 +229,11 @@ build/
    claim rests on — not just a path. If the document is a capture of a page that is
    still on the public web, add the `url` it was captured from, and a `url_label`
    saying what the link opens.
-2. Add edges to `data/relationships.yaml`. Tier 3 needs `resolves`.
+2. Add edges to `data/relationships.yaml`. Every edge needs `projects` — which of
+   the three builds it belongs to, or `all` — and tier 3 needs `resolves`. An
+   entity's own membership is not authored: it is the union of the projects of
+   the connections it stands on, so an entity with no tagged connection fails
+   the build.
 3. Give it a seat in `hierarchy` in `data/taxonomy.yaml`: the band it belongs to,
    and where in that row it reads.
 4. `node build/build.mjs`. If it fails, it names the file and the field.
