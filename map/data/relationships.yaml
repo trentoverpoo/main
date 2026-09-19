@@ -1216,6 +1216,14 @@
       url_label: Google Maps · 29152 Old Hwy 65, Warsaw
       label: Street-level imagery, April 2026
       date: 2026-04
+      excerpt: >
+        Rows of display units on blocks behind a Pitts Homes, Inc. sign, captured from
+        the road. Street View labels its own position 29152 Old Hwy 65
+    - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png
+      label: Benton County GIS · aerial, parcel 142009000001006000
+      excerpt: >
+        The same rows of units standing inside the 12-acre parcel boundary, which is
+        what places the yard on this parcel rather than beside it
 
 - source: aquila-evergy
   target: parcel-aquila-switchyard

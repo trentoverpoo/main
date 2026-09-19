@@ -6,8 +6,8 @@ window.__GRAPH__ = {
   "nodeCount": 88,
   "edgeCount": 125,
   "documentCount": 93,
-  "citationCount": 284,
-  "liveUrlCount": 38,
+  "citationCount": 296,
+  "liveUrlCount": 40,
   "documentsWithLiveUrl": 11,
   "timeExtent": [
    700185600000,
@@ -366,6 +366,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 9,
    "projects": [
     "marshfield",
@@ -412,6 +413,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 4,
    "projects": [
     "marshfield",
@@ -447,6 +449,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield"
@@ -486,6 +489,7 @@ window.__GRAPH__ = {
      "urlLabel": "LinkedIn profile · Robi Overhue"
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "springfield",
@@ -520,6 +524,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "springfield",
@@ -554,6 +559,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -587,6 +593,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -620,6 +627,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -660,6 +668,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -692,6 +701,7 @@ window.__GRAPH__ = {
      "urlLabel": "SEC EDGAR · filing index, CIK 0001826924"
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -732,6 +742,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield"
@@ -765,6 +776,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -798,6 +810,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield",
@@ -831,6 +844,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield"
@@ -863,6 +877,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -902,6 +917,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -934,6 +950,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -966,6 +983,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -1006,6 +1024,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 4,
    "projects": [
     "marshfield",
@@ -1039,6 +1058,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -1071,6 +1091,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -1111,6 +1132,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "springfield"
@@ -1149,6 +1171,7 @@ window.__GRAPH__ = {
      "urlLabel": "LinkedIn profile · Jake Gaddy"
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "springfield"
@@ -1181,6 +1204,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield"
@@ -1224,6 +1248,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 14,
    "projects": [
     "marshfield",
@@ -1266,6 +1291,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 8,
    "projects": [
     "marshfield",
@@ -1302,6 +1328,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 10,
    "projects": [
     "benton"
@@ -1353,6 +1380,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 5,
    "projects": [
     "springfield"
@@ -1401,6 +1429,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 6,
    "projects": [
     "springfield",
@@ -1441,6 +1470,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 6,
    "projects": [
     "marshfield"
@@ -1480,6 +1510,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 5,
    "projects": [
     "marshfield"
@@ -1512,6 +1543,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -1544,6 +1576,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -1576,6 +1609,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 4,
    "projects": [
     "benton"
@@ -1608,6 +1642,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -1640,6 +1675,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 4,
    "projects": [
     "benton"
@@ -1683,6 +1719,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 6,
    "projects": [
     "marshfield"
@@ -1723,6 +1760,7 @@ window.__GRAPH__ = {
      "urlLabel": "SEC EDGAR · filing index, CIK 0001826924"
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield"
@@ -1755,6 +1793,7 @@ window.__GRAPH__ = {
      "urlLabel": "EdgeIR · the article as published"
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield"
@@ -1787,6 +1826,7 @@ window.__GRAPH__ = {
      "urlLabel": "EdgeIR · the article as published"
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -1825,6 +1865,7 @@ window.__GRAPH__ = {
      "urlLabel": "stninc.com · partnerships page"
     }
    ],
+   "chain": null,
    "degree": 12,
    "projects": [
     "marshfield"
@@ -1864,6 +1905,7 @@ window.__GRAPH__ = {
      "urlLabel": "stninc.com · the post as published"
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield"
@@ -1903,6 +1945,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "springfield",
@@ -1936,6 +1979,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -1968,6 +2012,7 @@ window.__GRAPH__ = {
      "urlLabel": "lifegenlawgroup.com · the firm's own account of its history"
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield",
@@ -2002,6 +2047,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield",
@@ -2035,6 +2081,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -2067,6 +2114,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2099,6 +2147,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2131,6 +2180,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2160,10 +2210,18 @@ window.__GRAPH__ = {
      "url": "https://www.google.com/maps/place/29152+Old+Hwy+65,+Warsaw,+MO+65355",
      "label": "Street-level imagery, April 2026",
      "date": "2026-04",
-     "excerpt": "Display units on blocks and a sign carrying the parcel address",
+     "excerpt": "Rows of display units on blocks behind a Pitts Homes, Inc. sign. Street View labels its own position 29152 Old Hwy 65; the address line on the sign is not legible at this resolution. The county aerial is what ties the yard to the parcel, by showing the same rows of units inside its boundary\n",
      "urlLabel": "Google Maps · 29152 Old Hwy 65, Warsaw"
+    },
+    {
+     "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png",
+     "label": "Benton County GIS · aerial, parcel 142009000001006000",
+     "excerpt": "Rows of manufactured units standing inside the 12-acre parcel boundary. The viewer's dropped pin reverse-geocodes to 29045 Old Highway 65, a third address for the same lot; the DNR permit gives the facility address as 29101\n",
+     "url": null,
+     "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -2196,6 +2254,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2228,6 +2287,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2269,6 +2329,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 5,
    "projects": [
     "marshfield"
@@ -2309,6 +2370,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "springfield"
@@ -2348,6 +2410,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2380,6 +2443,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2412,6 +2476,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2451,6 +2516,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2490,6 +2556,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2529,6 +2596,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2569,6 +2637,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield"
@@ -2602,6 +2671,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2634,6 +2704,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -2666,6 +2737,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -2699,6 +2771,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "springfield"
@@ -2731,6 +2804,7 @@ window.__GRAPH__ = {
      "urlLabel": "webstercountymo.gov · the Commission's own notice"
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2771,6 +2845,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "springfield"
@@ -2804,6 +2879,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "benton"
@@ -2844,6 +2920,7 @@ window.__GRAPH__ = {
      "urlLabel": "Missouri DNR permit search · MORA30685 filled in, press Search"
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "marshfield",
@@ -2886,6 +2963,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield"
@@ -2918,6 +2996,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2959,6 +3038,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -2998,6 +3078,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -3030,6 +3111,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "benton"
@@ -3081,6 +3163,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "benton"
@@ -3125,6 +3208,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 5,
    "projects": [
     "springfield"
@@ -3170,6 +3254,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "springfield"
@@ -3223,6 +3308,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 4,
    "projects": [
     "springfield"
@@ -3270,9 +3356,101 @@ window.__GRAPH__ = {
     },
     {
      "doc": "evidence/01-marshfield-site/parcel-records/Screenshot 2026-09-15 154133.png",
-     "label": "Webster County parcel record",
+     "label": "Webster County parcel record · the 119.79-acre parent",
+     "date": "2026-09-15",
+     "excerpt": "Parcel 06-7.0-35-000-000-007.000, ARY INVESTMENTS, LLC, PO Box C, Marshfield MO 65706; 119.79 acres; 35-31-18; deed reference 2019-004679. This is where the 119.79-acre figure comes from. The 2019 deed itself recites no acreage\n",
      "url": null,
      "urlLabel": null
+    }
+   ],
+   "chain": [
+    {
+     "from": "Eric and Jennifer Glidewell, Daniel P. and Brenda Cleir, Jason and Sunny Rost",
+     "to": "JDE Investments, LLC",
+     "interest": "A tract in Sections 26, 27, 34 and 35, well larger than the site",
+     "note": null,
+     "date": {
+      "iso": "2015-09-04",
+      "t": 1441324800000,
+      "precision": "day",
+      "year": 2015
+     },
+     "citations": [
+      {
+       "doc": "evidence/01-marshfield-site/recorded-instruments/2015-09-04_book2015-page4156_warranty-deed_glidewell-cleir-rost-to-jde-investments.pdf",
+       "label": "Warranty deed, Bk 2015 Pg 4156",
+       "date": "2015-09-04",
+       "excerpt": "Dated 3 September 2015, recorded 4 September 2015 at 9:39 AM. Six individual grantors, all of Webster County, to JDE Investments, LLC\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
+    },
+    {
+     "from": "JDE Investments, LLC",
+     "to": "ARY Investments, LLC",
+     "interest": "The parent parcel, the S half of the NW quarter of Sec. 35 west of Highway CC",
+     "note": null,
+     "date": {
+      "iso": "2019-10-04",
+      "t": 1570147200000,
+      "precision": "day",
+      "year": 2019
+     },
+     "citations": [
+      {
+       "doc": "evidence/01-marshfield-site/recorded-instruments/2019-10-04_inst-2019004679_warranty-deed_jde-to-ary.pdf",
+       "label": "Warranty deed, Inst. 2019004679",
+       "date": "2019-10-04",
+       "excerpt": "Signed Sunny Rost, Managing Member of JDE. Consideration recited as ten dollars and other good and valuable consideration\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
+    },
+    {
+     "from": "ARY Investments, LLC",
+     "to": "Lumon Solutions Marshfield, LLC",
+     "interest": "Tract 1, 5.00 acres",
+     "note": null,
+     "date": {
+      "iso": "2026-04-24",
+      "t": 1776988800000,
+      "precision": "day",
+      "year": 2026
+     },
+     "citations": [
+      {
+       "doc": "evidence/01-marshfield-site/recorded-instruments/2026-04-27_inst-2026002242_warranty-deed_ary-investments.pdf",
+       "label": "Warranty deed, Inst. 2026002242",
+       "date": "2026-04-24",
+       "excerpt": "Dated 24 April 2026, recorded 27 April 2026. Signed Aaron York, Member. 440.02 by 495.02 feet in the NE quarter of the NW quarter of Sec. 35\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
+    },
+    {
+     "from": "ARY Investments, LLC",
+     "to": "Lumon Solutions Marshfield, LLC",
+     "interest": "Tract 2, 5.00 acres, completing the ten",
+     "note": null,
+     "date": {
+      "iso": "2026-07-10",
+      "t": 1783641600000,
+      "precision": "day",
+      "year": 2026
+     },
+     "citations": [
+      {
+       "doc": "evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003833_warranty-deed_ary-investments.pdf",
+       "label": "Warranty deed, Inst. 2026003833",
+       "date": "2026-07-10",
+       "excerpt": "Dated 10 July 2026, recorded 13 July 2026. Tract 2 on the survey filed in Book 1 at Page 1229, lying directly south of Tract 1\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
     }
    ],
    "degree": 14,
@@ -3322,6 +3500,29 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": [
+    {
+     "from": "Not established by any instrument in this file",
+     "to": "NSI A1 LLC",
+     "interest": "The whole 2.8-acre property",
+     "note": "No deed for this purchase is in this file. The buyer and the month are reported by the Springfield Daily Citizen and carried here as an attributed claim, not as a recorded one. This is the one site of the three whose chain of title rests on no recorded instrument.",
+     "date": {
+      "iso": "2025-03",
+      "t": 1740787200000,
+      "precision": "month",
+      "year": 2025
+     },
+     "citations": [
+      {
+       "external": "Springfield Daily Citizen",
+       "url": "https://sgfcitizen.org/government/springfield-greene-county/protest-against-ai-data-centers/",
+       "label": "NSI A1 LLC acquired 2900 S National Ave, March 2025",
+       "date": "2025-03",
+       "urlLabel": "Springfield Daily Citizen · the article as published"
+      }
+     ]
+    }
+   ],
    "degree": 8,
    "projects": [
     "springfield"
@@ -3345,7 +3546,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Three deeds conveying undivided thirds recorded together at 1:32 PM",
-   "summary": "Twelve acres in unincorporated Benton County immediately south of the Warsaw city limits, the strip between the old and relocated Highway 65 alignments. Formerly a manufactured-home sales yard. Groundwork commenced the day title closed.",
+   "summary": "Twelve acres in unincorporated Benton County immediately south of the Warsaw city limits, the strip between the old and relocated Highway 65 alignments. Formerly a manufactured-home sales yard. The state land-disturbance permit for the parcel took effect on 9 September 2026, the same day the three deeds were recorded.",
    "caveat": "Each deed recites consideration of one dollar and other good and valuable consideration. No deed of trust, mortgage or other financing instrument against this parcel appears anywhere in this file.",
    "aliases": [
     "Warsaw",
@@ -3365,6 +3566,104 @@ window.__GRAPH__ = {
      "label": "Benton County GIS · aerial, 12 acres",
      "url": null,
      "urlLabel": null
+    },
+    {
+     "doc": "evidence/06-benton-county-site/permits/mo-dnr-permit-MORA30685_cold-storage_nsi-6.png",
+     "url": "https://apps5.mo.gov/mocwis_public/permitSearch.action?permitNo=MORA30685",
+     "label": "Land-disturbance permit MORA30685 · effective the day title closed",
+     "date": "2026-09-09",
+     "excerpt": "Facility \"COLD STORAGE\", 29101 Old Hwy 65, Warsaw; owner NSI 6, LLC. Effective 09/09/2026, expires 02/07/2027. The permit takes effect that day; no document in this file shows when work on the ground actually began\n",
+     "urlLabel": "Missouri DNR permit search · MORA30685 filled in, press Search"
+    }
+   ],
+   "chain": [
+    {
+     "from": "Stanfred L. Hilty Residuary Trust",
+     "to": "John H. Hilty Residuary Trust, Shawn H. Hilty Residuary Trust and Joe Hann Hilty Revocable Trust",
+     "interest": "The whole tract",
+     "note": "The chain in this file begins here. How the Stanfred trust came to hold the tract is not established by any instrument gathered so far. The 2024 Lovella L. Hilty Residuary Trust deed, Inst. 202400968, is a different and larger description in Sections 5, 8 and 9 and is not a link in this parcel's chain.",
+     "date": {
+      "iso": "2026-07-09",
+      "t": 1783555200000,
+      "precision": "day",
+      "year": 2026
+     },
+     "citations": [
+      {
+       "doc": "evidence/06-benton-county-site/recorded-instruments/2026-07-09_inst-202602845_trustees-warranty-deed_stanfred-hilty-trust-to-three-hilty-trusts.pdf",
+       "label": "Trustee's warranty deed, Inst. 202602845",
+       "date": "2026-07-09",
+       "excerpt": "Joe Hann Hilty, solely as Trustee of the Stanfred L. Hilty Residuary Trust. Submitted for recording under the name \"Joe Hilty,\" not by a title company\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
+    },
+    {
+     "from": "Joe Hann Hilty Revocable Trust",
+     "to": "NSI 6, LLC",
+     "interest": "An undivided one-third",
+     "note": null,
+     "date": {
+      "iso": "2026-09-09",
+      "t": 1788912000000,
+      "precision": "day",
+      "year": 2026
+     },
+     "citations": [
+      {
+       "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604041_trustees-warranty-deed_joe-hann-hilty-trust-to-nsi-6.pdf",
+       "label": "Trustee's warranty deed, Inst. 202604041",
+       "date": "2026-09-09",
+       "excerpt": "Recorded 1:32:13 PM. Signed 9 September 2026 before a notary in Springfield, Greene County, Missouri\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
+    },
+    {
+     "from": "Shawn H. Hilty Residuary Trust",
+     "to": "NSI 6, LLC",
+     "interest": "An undivided one-third",
+     "note": "Signed a week ahead of the other two, on 2 September 2026, before a notary in Big Sandy, Chouteau County, Montana, and recorded with them.",
+     "date": {
+      "iso": "2026-09-09",
+      "t": 1788912000000,
+      "precision": "day",
+      "year": 2026
+     },
+     "citations": [
+      {
+       "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604042_trustees-warranty-deed_shawn-hilty-trust-to-nsi-6.pdf",
+       "label": "Trustee's warranty deed, Inst. 202604042",
+       "date": "2026-09-02",
+       "excerpt": "Recorded 1:32:14 PM. Dated 2 September 2026",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
+    },
+    {
+     "from": "John H. Hilty Residuary Trust",
+     "to": "NSI 6, LLC",
+     "interest": "An undivided one-third, completing the fee",
+     "note": null,
+     "date": {
+      "iso": "2026-09-09",
+      "t": 1788912000000,
+      "precision": "day",
+      "year": 2026
+     },
+     "citations": [
+      {
+       "doc": "evidence/06-benton-county-site/recorded-instruments/2026-09-09_inst-202604043_trustees-warranty-deed_john-hilty-trust-to-nsi-6.pdf",
+       "label": "Trustee's warranty deed, Inst. 202604043",
+       "date": "2026-09-09",
+       "excerpt": "Recorded 1:32:15 PM. Signed 9 September 2026 before a notary in Springfield, Greene County, Missouri\n",
+       "url": null,
+       "urlLabel": null
+      }
+     ]
     }
    ],
    "degree": 6,
@@ -3423,6 +3722,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield"
@@ -3454,6 +3754,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -3485,6 +3786,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 2,
    "projects": [
     "benton"
@@ -3542,6 +3844,7 @@ window.__GRAPH__ = {
      "urlLabel": "Springfield Business Journal · the article as published"
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield",
@@ -3582,6 +3885,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 3,
    "projects": [
     "marshfield",
@@ -3631,6 +3935,7 @@ window.__GRAPH__ = {
      "urlLabel": null
     }
    ],
+   "chain": null,
    "degree": 1,
    "projects": [
     "marshfield"
@@ -6344,7 +6649,15 @@ window.__GRAPH__ = {
      "url": "https://www.google.com/maps/place/29152+Old+Hwy+65,+Warsaw,+MO+65355",
      "label": "Street-level imagery, April 2026",
      "date": "2026-04",
+     "excerpt": "Rows of display units on blocks behind a Pitts Homes, Inc. sign, captured from the road. Street View labels its own position 29152 Old Hwy 65\n",
      "urlLabel": "Google Maps · 29152 Old Hwy 65, Warsaw"
+    },
+    {
+     "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_parcel-142009000001006000_aerial-12-acres_29045-old-hwy-65.png",
+     "label": "Benton County GIS · aerial, parcel 142009000001006000",
+     "excerpt": "The same rows of units standing inside the 12-acre parcel boundary, which is what places the yard on this parcel rather than beside it\n",
+     "url": null,
+     "urlLabel": null
     }
    ]
   },
@@ -7778,6 +8091,11 @@ window.__GRAPH__ = {
      "name": "Eric Glidewell"
     },
     {
+     "kind": "chain",
+     "id": "node[79] site-marshfield#0",
+     "name": "259 Rifle Range Road, Marshfield (Webster County) · chain of title"
+    },
+    {
      "kind": "node",
      "id": "parcel-shome-substation",
      "name": "Sho-Me tract adjoining the Marshfield site (20.33 acres)"
@@ -7857,6 +8175,11 @@ window.__GRAPH__ = {
      "name": "ARY Investments, LLC"
     },
     {
+     "kind": "chain",
+     "id": "node[79] site-marshfield#1",
+     "name": "259 Rifle Range Road, Marshfield (Webster County) · chain of title"
+    },
+    {
      "kind": "edge",
      "id": "sunny-rost__jde-investments__ownership__2019-10-04__1",
      "name": "Sunny Rost → JDE Investments, LLC"
@@ -7913,6 +8236,11 @@ window.__GRAPH__ = {
      "name": "Aaron York"
     },
     {
+     "kind": "chain",
+     "id": "node[79] site-marshfield#2",
+     "name": "259 Rifle Range Road, Marshfield (Webster County) · chain of title"
+    },
+    {
      "kind": "edge",
      "id": "aaron-york__ary-investments__ownership__2026-04-24__3",
      "name": "Aaron York → ARY Investments, LLC"
@@ -7935,6 +8263,11 @@ window.__GRAPH__ = {
    "url": null,
    "urlLabel": null,
    "refs": [
+    {
+     "kind": "chain",
+     "id": "node[79] site-marshfield#3",
+     "name": "259 Rifle Range Road, Marshfield (Webster County) · chain of title"
+    },
     {
      "kind": "edge",
      "id": "ary-investments__lumon-solutions-marshfield__conveyance__2026-07-10__6",
@@ -9518,8 +9851,18 @@ window.__GRAPH__ = {
    "refs": [
     {
      "kind": "node",
+     "id": "pitts-homes",
+     "name": "Pitts Homes, Inc."
+    },
+    {
+     "kind": "node",
      "id": "site-benton",
      "name": "29101 Old Hwy 65, Warsaw (Benton County)"
+    },
+    {
+     "kind": "edge",
+     "id": "pitts-homes__site-benton__commercial__2026-04__83",
+     "name": "Pitts Homes, Inc. → 29101 Old Hwy 65"
     },
     {
      "kind": "edge",
@@ -9561,6 +9904,11 @@ window.__GRAPH__ = {
      "kind": "node",
      "id": "missouri-dnr",
      "name": "Missouri Department of Natural Resources"
+    },
+    {
+     "kind": "node",
+     "id": "site-benton",
+     "name": "29101 Old Hwy 65, Warsaw (Benton County)"
     },
     {
      "kind": "edge",
@@ -9622,6 +9970,11 @@ window.__GRAPH__ = {
      "name": "Stanfred L. Hilty Residuary Trust"
     },
     {
+     "kind": "chain",
+     "id": "node[81] site-benton#0",
+     "name": "29101 Old Hwy 65, Warsaw (Benton County) · chain of title"
+    },
+    {
      "kind": "edge",
      "id": "joe-hann-hilty__stanfred-hilty-trust__ownership__2026-07-09__72",
      "name": "Joe Hann Hilty → Stanfred L. Hilty Residuary Trust"
@@ -9658,6 +10011,11 @@ window.__GRAPH__ = {
      "kind": "node",
      "id": "hogan-land-title",
      "name": "Hogan Land Title Company"
+    },
+    {
+     "kind": "chain",
+     "id": "node[81] site-benton#1",
+     "name": "29101 Old Hwy 65, Warsaw (Benton County) · chain of title"
     },
     {
      "kind": "edge",
@@ -9698,6 +10056,11 @@ window.__GRAPH__ = {
      "name": "Shawn H. Hilty Residuary Trust"
     },
     {
+     "kind": "chain",
+     "id": "node[81] site-benton#2",
+     "name": "29101 Old Hwy 65, Warsaw (Benton County) · chain of title"
+    },
+    {
      "kind": "edge",
      "id": "shawn-h-hilty__shawn-hilty-trust__ownership__2026-09-02__74",
      "name": "Shawn H. Hilty → Shawn H. Hilty Residuary Trust"
@@ -9724,6 +10087,11 @@ window.__GRAPH__ = {
      "kind": "node",
      "id": "john-hilty-trust",
      "name": "John H. Hilty Residuary Trust"
+    },
+    {
+     "kind": "chain",
+     "id": "node[81] site-benton#3",
+     "name": "29101 Old Hwy 65, Warsaw (Benton County) · chain of title"
     },
     {
      "kind": "edge",

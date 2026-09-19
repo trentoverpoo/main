@@ -168,6 +168,39 @@ function readProjects(value, where) {
   return projects.map((p) => p.key).filter((k) => out.includes(k));
 }
 
+// ----------------------------------------------------------- chain -----
+// A site's chain of title: the conveyances that carry the parcel from one holder
+// to the next, in the order they happened. Only conveyances belong here. A survey,
+// an aerial or a parcel record says who holds the land, not how it passed, so it
+// stays in the node's own citations. A step that the record does not establish is
+// written as one, with `note` saying what is missing — a gap named is a gap the
+// reader can check, and a chain that quietly skips one is the misleading kind.
+function readChain(value, where, ofName) {
+  if (value === undefined || value === null) return null;
+  if (!Array.isArray(value) || value.length === 0) {
+    fail(`${where}: "chain" must be a non-empty list of conveyance steps`);
+    return null;
+  }
+  return value.map((s, i) => {
+    const at = `${where} chain[${i}]`;
+    if (!s || !s.from) fail(`${at}: missing "from" — who the interest passed out of`);
+    if (!s || !s.to) fail(`${at}: missing "to" — who it passed to`);
+    return {
+      from: s.from ? String(s.from).trim() : '',
+      to: s.to ? String(s.to).trim() : '',
+      // What passed: the whole fee, a named tract, an undivided share.
+      interest: s.interest ? String(s.interest).trim() : null,
+      note: s.note ? String(s.note).trim() : null,
+      date: parseDate(s.date, at),
+      citations: checkCitations(s.citations, at, {
+        kind: 'chain',
+        id: `${where}#${i}`,
+        name: `${ofName} · chain of title`,
+      }),
+    };
+  });
+}
+
 // --------------------------------------------------------------- nodes -----
 const byId = new Map();
 const outNodes = nodes.map((n, i) => {
@@ -205,6 +238,7 @@ const outNodes = nodes.map((n, i) => {
     caveat: n.caveat ? n.caveat.trim() : null,
     aliases: n.aliases || [],
     citations: checkCitations(n.citations, where, { kind: 'node', id: n.id, name: n.name }),
+    chain: readChain(n.chain, where, n.name),
     degree: 0,
   };
   byId.set(n.id, out);
@@ -337,7 +371,8 @@ if (taxonomy.hierarchy) {
 
 // --------------------------------------------------------------- output -----
 const dated = [...outNodes, ...outEdges].filter((x) => x.date).map((x) => x.date.t);
-const allCites = [...outNodes, ...outEdges].flatMap((x) => x.citations);
+const allCites = [...outNodes, ...outEdges].flatMap((x) => x.citations)
+  .concat(outNodes.flatMap((n) => (n.chain || []).flatMap((s) => s.citations)));
 const liveUrlCount = allCites.filter((c) => c && c.url).length;
 const graph = {
   meta: {

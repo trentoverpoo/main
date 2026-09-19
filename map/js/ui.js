@@ -590,6 +590,28 @@ class UI {
     </div>`;
   }
 
+  // The chain of title, which the three sites carry in place of a flat source list.
+  // Each step is a conveyance: who the interest passed out of, who it passed to, and
+  // the instrument that says so. The order is itself the claim, so the steps are an
+  // ordered list with the flow of ownership drawn between them, and a step the record
+  // does not establish says so in its own words rather than being quietly dropped.
+  _chainHTML(chain) {
+    const steps = chain.map((s) => `<li class="chain-step">
+      <div class="chain-flow">
+        <span class="chain-party">${esc(s.from)}</span>
+        <span class="chain-to" aria-hidden="true">→</span>
+        <span class="chain-party">${esc(s.to)}</span>
+      </div>
+      ${s.date || s.interest ? `<div class="chain-meta">${
+        [s.date ? formatDate(s.date) : null, s.interest]
+          .filter(Boolean).map((x) => esc(x)).join(' · ')}</div>` : ''}
+      ${s.note ? `<p class="chain-note">${esc(s.note)}</p>` : ''}
+      ${s.citations.map((c) => this._citationHTML(c)).join('')}
+    </li>`).join('');
+    return `<div class="p-section">Chain of title · ${chain.length} step${
+      chain.length === 1 ? '' : 's'}</div><ol class="chain">${steps}</ol>`;
+  }
+
   showNode(node) {
     const cat = this.catById.get(node.category);
     const date = formatDate(node.date);
@@ -624,11 +646,18 @@ class UI {
       <p class="p-body">${esc(node.summary)}</p>
       ${node.caveat ? `<p class="p-caveat"><b>What this does not establish.</b>
         ${esc(node.caveat)}</p>` : ''}
-      <div class="p-section">Sources · ${node.citations.length}</div>
-      ${node.citations.map((c) => this._citationHTML(c)).join('')}
-      <div class="p-section">Connections · ${
-        this.data.edges.filter((e) => e.sourceId === node.id || e.targetId === node.id).length}</div>
-      ${related}`;
+      ${node.chain && node.chain.length
+        ? this._chainHTML(node.chain) + (node.citations.length
+          ? `<div class="p-section">Also on file · ${node.citations.length}</div>
+             ${node.citations.map((c) => this._citationHTML(c)).join('')}` : '')
+        : `<div class="p-section">Sources · ${node.citations.length}</div>
+           ${node.citations.map((c) => this._citationHTML(c)).join('')}`}
+      <details class="p-fold">
+        <summary class="p-section p-fold-head">Connections · ${
+          this.data.edges.filter((e) => e.sourceId === node.id || e.targetId === node.id).length
+        }<span class="p-fold-hint">on the map</span></summary>
+        ${related}
+      </details>`;
     this._openPanel();
   }
 

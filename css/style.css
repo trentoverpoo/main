@@ -579,6 +579,65 @@ a { color: var(--accent); }
 }
 .cite a.live:hover .live-tag, .doc-live:hover .live-tag { border-color: var(--accent); color: var(--accent); }
 
+/* Connections are already drawn on the canvas, so the panel keeps its copy of
+   them folded away rather than making the reader scroll past it to reach
+   anything else. <details> carries the open/closed state and the keyboard. */
+.p-fold { margin-top: 20px; }
+.p-fold-head {
+  margin: 0; cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: 7px;
+}
+.p-fold-head::-webkit-details-marker { display: none; }
+.p-fold-head::before {
+  content: '';
+  width: 5px; height: 5px; flex: none;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(-45deg); transition: transform 0.15s;
+}
+.p-fold[open] > .p-fold-head::before { transform: rotate(45deg); }
+.p-fold-head:hover { color: var(--ink-2); }
+.p-fold-head:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.p-fold-hint {
+  font-weight: 500; letter-spacing: 0.04em; text-transform: none;
+  font-size: 10px; opacity: 0.7;
+}
+
+/* The chain of title. Each step is one conveyance; the rule running down the
+   left and the arrow on it are the flow of ownership from one holder to the
+   next, which is the whole reason these are a sequence and not a list. */
+.chain { list-style: none; margin: 0; padding: 0; }
+.chain-step { position: relative; padding-left: 18px; }
+.chain-step::before {
+  content: ''; position: absolute; left: 3.5px; top: 6px; bottom: 6px;
+  border-left: 1px solid var(--edge-strong); opacity: 0.45;
+}
+.chain-step:first-child::before { top: 14px; }
+.chain-step:last-child::before { bottom: auto; height: 10px; }
+/* The arrow sits on the rule between one step and the next, knocking a hole in
+   it, so the ownership reads as one movement down the column. */
+.chain-step + .chain-step::after {
+  content: '↓'; position: absolute; left: 0; top: -14px;
+  width: 8px; text-align: center;
+  font-size: 12.5px; line-height: 1; color: var(--ink-2);
+  background: var(--surface); padding: 2px 0;
+}
+.chain-step + .chain-step { margin-top: 20px; }
+.chain-flow {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px;
+  font-size: 12.5px; font-weight: 600; line-height: 1.4;
+}
+.chain-to { color: var(--ink-muted); font-weight: 400; flex: none; }
+.chain-meta {
+  font-size: 11px; color: var(--ink-muted); margin-top: 3px; line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+.chain-note {
+  font-size: 12px; line-height: 1.55; color: var(--ink-2);
+  margin: 8px 0 0; padding-left: 9px;
+  border-left: 2px solid var(--hue-counterparties);
+}
+.chain .cite { margin-top: 9px; margin-bottom: 0; }
+
 .rel { display: block; width: 100%; text-align: left; background: none;
   border: 0; border-top: 1px solid var(--hairline); padding: 9px 2px; cursor: pointer; }
 .rel:hover .rel-name { color: var(--accent); }
