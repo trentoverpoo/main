@@ -1509,7 +1509,10 @@
     generators, pad transformers and an electrical substation immediately adjacent.
   caveat: >
     The 911 CAD location field reads 295 Rifle Range Road; the deeds, the DNR permit and
-    Marshfield FPD's own records read 259.
+    Marshfield FPD's own records read 259. The two aerials were published in June 2026 by
+    Northstar's chief sales officer, in a post showing Northstar's work that names no
+    site, address or county. They have been visually verified as this site; the post
+    simply does not say so.
   chain:
     - from: Eric and Jennifer Glidewell, Daniel P. and Brenda Cleir, Jason and Sunny Rost
       to: JDE Investments, LLC
@@ -1561,7 +1564,28 @@
       date: 2026-02-12
       excerpt: Tract 1 (5.00 ac) and Tract 2 (5.00 ac) fronting Rifle Range Road
     - doc: evidence/01-marshfield-site/photos/site-aerials/marshfield-site-aerial-1.jpg
+      url: https://www.linkedin.com/posts/kymclaughlin_buildbetter-buildnorthstar-modular-activity-7475491666263629824-vwM1
+      url_label: LinkedIn · Kyle McLaughlin, Northstar · the post as published
       label: Site aerial
+      date: 2026-06-24
+      preview: true
+      excerpt: >
+        A row of white modular units on a poured pad, ducting and dry coolers along the
+        near face, a mobile crane mid-lift, and green trailer-mounted generators standing
+        on the slab to the east. The fenced electrical substation on the rise beyond is
+        the Sho-Me tract. The date is the date of the post, which is the latest the site
+        can have looked like this, not the date the photograph was taken
+    - doc: evidence/01-marshfield-site/photos/site-aerials/marshfield-site-aerial-2.jpg
+      url: https://www.linkedin.com/posts/kymclaughlin_buildbetter-buildnorthstar-modular-activity-7475491666263629824-vwM1
+      url_label: LinkedIn · Kyle McLaughlin, Northstar · the post as published
+      label: Site aerial
+      date: 2026-06-24
+      preview: true
+      excerpt: >
+        The same ground from above: the poured pad with white modular units in two ranks,
+        a line of green trailer-mounted generators along the west edge with fuel and cable
+        runs between them, graded earth and staged material to the east, and Rifle Range
+        Road across the top of the frame
     - doc: evidence/01-marshfield-site/parcel-records/Screenshot 2026-09-15 154133.png
       label: Webster County parcel record · the 119.79-acre parent
       date: 2026-09-15

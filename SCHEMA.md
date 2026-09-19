@@ -100,6 +100,34 @@ citations:
   today. See below.
 - `url_label` — optional, and only alongside `url`: what the live link actually opens.
   Falls back to the bare host.
+- `preview` — optional, `true` only: show the cited image in the panel. See below.
+
+### Showing a cited image
+
+Most of the images in `evidence/` are records to be read at full size — a parcel viewer,
+a permit, a screenshot of a filing. A few are photographs that *are* the evidence, and
+describing one in prose while refusing to show it asks the reader to take on trust the
+one kind of source they could have judged for themselves.
+
+`preview: true` marks such a citation. The image is drawn in the entity panel directly
+under the summary, captioned with the citation's own `label` and `date`, and it links to
+the full-size file. The citation still appears in the source list below with its
+`excerpt` and its links, so the picture appears once and the record of it appears once.
+
+It is opt-in per citation, never inferred from the file extension, because the default
+for a record is to be read rather than displayed. The build enforces:
+
+- `preview` may only be `true` — any other value fails, so `preview: no` cannot quietly
+  turn into a truthy string;
+- it requires a `doc`; an `external` source has no file in this repository to show;
+- that `doc` must be an image (`.jpg`, `.jpeg`, `.png`, `.webp`, `.gif`, `.avif`);
+- the citation must carry a `label`, because a shown image is captioned.
+
+Where a photograph comes from a source that does not itself say what it shows, the panel
+says so — in the `excerpt`, or in the entity's `caveat`. The site aerials on
+`site-marshfield` are the worked example: they were published in a company post that
+names no site, address or county, and were identified visually. The caveat states both,
+so the reader knows which part is the poster's and which part is this file's.
 
 ### The live url
 
