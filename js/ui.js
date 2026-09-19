@@ -4,7 +4,8 @@ window.MAP = window.MAP || {};
 (function (MAP) {
 'use strict';
 
-const { swatchSVG, tierLineSVG, readPalette, FAMILY_VAR, TIER } = MAP.shapes;
+const { swatchSVG, tierLineSVG, readPalette, FAMILY_VAR, TIER,
+  RECENT_DAYS, recencyOf } = MAP.shapes;
 
 const el = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
@@ -56,6 +57,13 @@ function formatDate(d) {
   if (d.precision === 'year') return String(dt.getUTCFullYear());
   if (d.precision === 'month') return `${MONTHS[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
   return `${dt.getUTCDate()} ${MONTHS[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
+}
+
+/** What to call an entity in a list. The three data centers carry a name the
+ *  record does not use above the address it does, and the address on its own —
+ *  which is all `short` is — names nothing a reader would recognise. */
+function listName(n) {
+  return n.label && n.label.length ? n.label.join(', ') : n.name;
 }
 
 class UI {
@@ -191,6 +199,7 @@ class UI {
 
   _buildAgeKey() {
     const [t0, t1] = this.data.meta.timeExtent;
+    const fresh = this.freshNodes();
     el('age-key').innerHTML = `
       <div class="age-ramp">
         <span>${new Date(t0).getUTCFullYear()}</span>
@@ -198,7 +207,43 @@ class UI {
         <span>${new Date(t1).getUTCFullYear()}</span>
       </div>
       <p class="note">Every node carries a ring shaded by its earliest documented date —
-      an achromatic channel, so it never competes with category colour.</p>`;
+      an achromatic channel, so it never competes with category colour.</p>
+
+      <div class="fresh-key${fresh.length ? '' : ' empty'}">
+        <span class="fresh-dot" aria-hidden="true"></span>
+        <span class="label">New in the last ${RECENT_DAYS} days</span>
+        <span class="n">${fresh.length}</span>
+      </div>
+      ${fresh.length ? `<ul class="fresh-list">${fresh.map((n) => `
+        <li><button class="fresh-go" data-goto="${esc(n.id)}">
+          <span class="fresh-name">${esc(listName(n))}</span>
+          <span class="fresh-when">${esc(formatDate(n.date))}</span>
+        </button></li>`).join('')}</ul>
+      <p class="note">Each of these carries a halo on the map and a <b>NEW</b> chip
+      above it — the more recent the entry, the stronger the halo. Only dates the
+      record gives to the day count: an entity the file dates to a month or a year
+      is not one it dates to a Tuesday.</p>`
+      : `<p class="note">Nothing in the record is dated inside the last
+      ${RECENT_DAYS} days, so nothing on the map is haloed. A quiet week is an
+      answer, and this says so rather than leaving the last thing added lit.</p>`}`;
+
+    // The list is how a keyboard reaches what the halo points at. A canvas
+    // cannot be scanned by anyone who is not looking at it.
+    el('age-key').addEventListener('click', (ev) => {
+      const b = ev.target.closest('[data-goto]');
+      if (!b) return;
+      this.setDrawer(false);
+      this.h.onPick(b.dataset.goto);
+    });
+  }
+
+  /** Whatever the record dates inside the recency window, most recent first.
+   *  The same helper the renderer measures the halo with, so the sidebar and
+   *  the canvas cannot disagree about what is new. */
+  freshNodes() {
+    return this.data.nodes
+      .filter((n) => recencyOf(n.date) > 0)
+      .sort((a, b) => b.date.t - a.date.t || a.name.localeCompare(b.name));
   }
 
   // -------------------------------------------------------------- search ---
@@ -446,7 +491,8 @@ class UI {
     el('panel-body').innerHTML = `
       <div class="p-kicker">${swatchSVG(cat.shape, cat.fill, this.hue(node.family), 15)}
         <span>${esc(cat.label)}</span>
-        ${node.tier !== 1 ? `<span>· ${esc(TIER[node.tier].label)}</span>` : ''}</div>
+        ${node.tier !== 1 ? `<span>· ${esc(TIER[node.tier].label)}</span>` : ''}
+        ${recencyOf(node.date) ? `<span class="p-new">New this week</span>` : ''}</div>
       <h2 class="p-title">${esc(node.name)}</h2>
       ${date ? `<p class="p-date">${esc(date)}${
         node.dateNote ? ` — ${esc(node.dateNote)}` : ''}</p>` : ''}
@@ -690,7 +736,8 @@ class UI {
     tip.innerHTML = `
       <div class="t-name">${esc(node.name)}</div>
       <div class="t-meta">${swatchSVG(cat.shape, cat.fill, this.hue(node.family), 12)}
-        <span>${esc(cat.label)}</span>${date ? `<span>· ${esc(date)}</span>` : ''}</div>
+        <span>${esc(cat.label)}</span>${date ? `<span>· ${esc(date)}</span>` : ''}${
+        recencyOf(node.date) ? `<span class="t-new">New</span>` : ''}</div>
       <div class="t-cites">${node.citations.length} source${
         node.citations.length === 1 ? '' : 's'} · ${node.degree} connection${
         node.degree === 1 ? '' : 's'}${node.tier === 3 ? ' · unresolved' : ''}</div>`;

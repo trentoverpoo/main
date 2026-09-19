@@ -32,6 +32,12 @@ function readPalette() {
     accent: v('--accent'),
     ageOld: v('--age-old'),
     ageNew: v('--age-new'),
+    // The freshness halo. Its peak opacity is a token too: the same bloom that
+    // reads as light on the dark plane reads as a heavy smudge on the light
+    // one, and the difference belongs in the stylesheet with every other
+    // colour decision rather than as a magic number in the renderer.
+    fresh: v('--fresh'),
+    freshVeil: parseFloat(v('--fresh-veil')) || 0,
   };
 }
 
@@ -129,6 +135,36 @@ function swatchSVG(shape, fill, cssVar, size = 17) {
     viewBox="0 0 ${size} ${size}" aria-hidden="true">${inner}</svg>`;
 }
 
+/* ------------------------------------------------------------- recency ---
+   What counts as "new" on a map that is meant to answer "what is happening".
+   Measured against the reader's own clock rather than the build date, so the
+   window is the one the sentence promises — the last seven days — and a quiet
+   fortnight honestly shows nothing new instead of a stale banner over the last
+   thing anyone happened to add. */
+const RECENT_DAYS = 7;
+const DAY_MS = 86400000;
+
+/** How new a dated thing is, on 0-1 across that window: 1 on the day it is
+ *  dated, falling to 0 at the far edge of it. Anything older, undated, or
+ *  dated only to the month or the year returns 0, which is the same statement
+ *  as "not part of this group".
+ *
+ *  The precision test is the point of the function, not a detail of it. "2026"
+ *  is not evidence that something happened this week, and a node the record
+ *  dates to a month is not one the record dates to a Tuesday — putting a
+ *  freshness halo on either would claim a precision the file does not have.
+ *
+ *  A date ahead of the clock is treated as the newest there is rather than as
+ *  an error: node dates are UTC midnight, and a reader far enough east is
+ *  simply reading today's entry before UTC agrees it is today. */
+function recencyOf(date, now = Date.now()) {
+  if (!date || date.precision !== 'day') return 0;
+  const days = (now - date.t) / DAY_MS;
+  if (days <= 0) return 1;
+  if (days >= RECENT_DAYS) return 0;
+  return 1 - days / RECENT_DAYS;
+}
+
 /** Tier is carried by line style, so verification status survives greyscale. */
 const TIER = {
   1: { label: 'Primary document', dash: [], width: 1.5, alpha: 0.92 },
@@ -147,5 +183,6 @@ function tierLineSVG(tier, cssVar) {
 
 MAP.shapes = {
   FAMILY_VAR, readPalette, mix, withAlpha, tracePath, swatchSVG, TIER, tierLineSVG,
+  RECENT_DAYS, recencyOf,
 };
 }(window.MAP));

@@ -23,7 +23,7 @@ window.MAP = window.MAP || {};
 const {
   forceSimulation, forceLink, forceManyBody, forceX, forceY, forceRadial,
 } = d3;
-const { readPalette, tracePath, mix, withAlpha, TIER } = MAP.shapes;
+const { readPalette, tracePath, mix, withAlpha, recencyOf, TIER } = MAP.shapes;
 
 // Names are laid out in world units alongside the glyphs, not as a screen
 // overlay, and the layout reserves the room each one needs. A name therefore
@@ -49,6 +49,27 @@ const EDGE_SLOP = 7;
 const EDGE_SLOP_COARSE = 14;
 const ZOOM_MIN = 0.22;
 const ZOOM_MAX = 4.5;
+
+// ------------------------------------------------------------ new this week ---
+// The halo on anything the record dates inside the last seven days, and the
+// chip that says so in words. Both are sized in world units like the names,
+// so they hold their relationship to the glyph at every zoom.
+//
+// Softness is the whole trick. Every other mark on this map has a hard edge —
+// the age ring, the selection ring, the keyboard cursor, the tier-3 dashes —
+// so a bloom with no edge at all cannot be mistaken for any of them at a
+// glance, and it needs no colour of its own to stay distinct from them.
+const GLOW_MIN = 12;       // bloom past the glyph on the oldest node still inside the window
+const GLOW_MAX = 34;       // ... and on one dated today
+const CHIP_TEXT = 'NEW';
+const CHIP_FONT = 9;
+const CHIP_H = 13.5;
+const CHIP_PAD_X = 5;
+const CHIP_GAP = 5;        // glyph edge to the foot of the chip
+// Its own legibility floor, a little under the names': three bold capitals
+// survive a size a mixed-case name does not, and the opening framing — the
+// one nobody has touched yet — is exactly where this has to be readable.
+const CHIP_MIN_PX = 5.5;
 
 /** At most two lines, split at whichever space leaves the evenest pair: a
  *  residuary trust reads better stacked than as one line the width of a
@@ -189,28 +210,55 @@ class GraphView {
     [this.worldW, this.worldH] = this.worldBase;
   }
 
-  /** Glyph size, age ramp, and the box each node holds open for its name. */
+  /** Glyph size, age ramp, freshness, and the box each node holds open for its
+   *  name and its chip. */
   _prepareNodes() {
     const [t0, t1] = this.data.meta.timeExtent;
     const span = Math.max(1, t1 - t0);
     const { ctx } = this;
+    // Read once. It is the same for every node, and it is wanted here per
+    // name and again per chip on every frame.
+    this.fontFamily = getComputedStyle(document.body).fontFamily;
     ctx.save();
-    ctx.font = `450 ${LABEL_FONT}px ${getComputedStyle(document.body).fontFamily}`;
+    ctx.font = `700 ${CHIP_FONT}px ${this.fontFamily}`;
+    const chipW = ctx.measureText(CHIP_TEXT).width + CHIP_PAD_X * 2;
     for (const n of this.nodes) {
       n.age = n.date ? (n.date.t - t0) / span : 0.5;
+      // 0 for everything the window does not cover, so `n.fresh` reads as the
+      // membership test and the intensity ramp at once. Fixed for the life of
+      // the page: a map that quietly changed weight under a reader who left
+      // the tab open overnight would be worse than one that is a day stale.
+      n.fresh = recencyOf(n.date);
       n.radius = 7 + Math.sqrt(n.degree) * 2.5;
+      n.chipW = n.fresh ? chipW : 0;
+      // A fresh name is drawn bold, so it is measured bold. Measuring at one
+      // weight and painting at another is how a layout that reserves room for
+      // every name ends up with two of them touching.
+      ctx.font = `${n.fresh ? 600 : 450} ${LABEL_FONT}px ${this.fontFamily}`;
       // A name the file spells out over two lines is drawn as written — each
       // data center carries a recognisable name above an address that, on its
       // own, most readers would not place.
       n.lines = n.label && n.label.length ? n.label : wrapLabel(ctx, n.short, WRAP_W);
       n.labelW = Math.max(...n.lines.map((l) => ctx.measureText(l).width));
       n.labelH = n.lines.length * LINE_H;
-      // The reserved box: the glyph, and the name sitting under it.
-      n.boxHW = Math.max(n.radius + 4, n.labelW / 2) + PAD_X;
-      n.boxUp = n.radius + 4 + PAD_Y;
+      // The reserved box: the glyph, the name under it, and — on a fresh node
+      // — the chip over it. The chip's room is held at every zoom even though
+      // it is only painted where its type is legible, so the arrangement does
+      // not shift under a reader who is only zooming.
+      n.boxHW = Math.max(n.radius + 4, n.labelW / 2, n.chipW / 2) + PAD_X;
+      n.boxUp = (n.fresh ? n.radius + CHIP_GAP + CHIP_H : n.radius + 4) + PAD_Y;
       n.boxDown = n.radius + LABEL_GAP + n.labelH + PAD_Y;
     }
     ctx.restore();
+  }
+
+  /** Everything the map is currently calling new, most recent first. The
+   *  sidebar lists it: a halo is only an answer to someone who is looking at
+   *  the canvas, and the canvas is the one part of this page a keyboard cannot
+   *  read. */
+  freshNodes() {
+    return this.nodes.filter((n) => n.fresh)
+      .sort((a, b) => b.date.t - a.date.t || a.name.localeCompare(b.name));
   }
 
   _initSim() {
@@ -669,8 +717,16 @@ class GraphView {
 
     if (this.ringStrength > 0.05) this._drawRings();
 
+    // Under the threads and the glyphs. What is new is a wash the map is read
+    // on top of, not one more mark competing with the ones that carry
+    // category, tier and selection.
+    this._drawRecency();
+
     for (const e of this.edges) this._drawEdge(e);
     for (const n of this.nodes) this._drawNode(n);
+    // Over every glyph rather than inside _drawNode, so a neighbour drawn
+    // later cannot land on top of a chip drawn earlier.
+    for (const n of this.nodes) this._drawNewChip(n);
 
     for (const placement of this._layoutLabels().placed) this._paintLabel(placement);
 
@@ -848,6 +904,80 @@ class GraphView {
     ctx.restore();
   }
 
+  /** The freshness halo: a soft achromatic bloom on everything the record dates
+   *  inside the last seven days.
+   *
+   *  Achromatic for the reason the age ring is. Time is not one of the three
+   *  categorical hues; a fourth would have to re-clear the all-pairs
+   *  colour-vision separation those three were chosen to pass, and a bloom in
+   *  a category's own colour would muddy the glyph it is trying to point at.
+   *  Which end of the achromatic scale is the loud one differs by mode, so the
+   *  colour and its peak opacity are both tokens.
+   *
+   *  Spread and opacity both ramp with recency, and the two compound: today's
+   *  entry throws roughly six times the light of one from six days ago, so
+   *  "the newest thing here" is legible from across the map rather than being
+   *  a judgement between two similar washes.
+   *
+   *  It follows the node's own state rather than shouting over it — scrubbed
+   *  into the future or filtered out and it is gone, pushed back by a
+   *  selection elsewhere and it recedes with everything else. What is new does
+   *  not outrank what the reader asked to see. */
+  _drawRecency() {
+    const { ctx, palette: p } = this;
+    if (!p.freshVeil) return;
+    ctx.save();
+    for (const n of this.nodes) {
+      if (!n.fresh) continue;
+      const state = this._nodeState(n);
+      if (state === 'hidden' || state === 'future') continue;
+      const outer = n.radius + GLOW_MIN + (GLOW_MAX - GLOW_MIN) * n.fresh;
+      // A floor under the ramp, so the far edge of the window is still plainly
+      // lit: the group is "this week", and a member of it that has faded to
+      // nothing is a member the reader never sees.
+      const peak = p.freshVeil * (0.38 + 0.62 * n.fresh) * (state === 'dim' ? 0.25 : 1);
+      const g = ctx.createRadialGradient(n.x, n.y, n.radius * 0.5, n.x, n.y, outer);
+      g.addColorStop(0, withAlpha(p.fresh, peak));
+      g.addColorStop(0.38, withAlpha(p.fresh, peak * 0.55));
+      g.addColorStop(1, withAlpha(p.fresh, 0));
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, outer, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  /** The chip that says it in words. The halo says "new" in light alone, and
+   *  light alone is not a channel every reader has — this is the half that
+   *  survives greyscale, colour-blindness and a phone in the sun, and it is
+   *  the same statement the panel and the sidebar make.
+   *
+   *  Painted only where its type would actually be legible. Zoomed further out
+   *  than that the halo carries the group on its own, which is what a bloom is
+   *  good at and a 2px word is not. */
+  _drawNewChip(n) {
+    if (!n.fresh) return;
+    const state = this._nodeState(n);
+    if (state === 'hidden' || state === 'future' || state === 'dim') return;
+    if (this.camera.k * CHIP_FONT < CHIP_MIN_PX) return;
+    const { ctx, palette: p } = this;
+    const y = n.y - n.radius - CHIP_GAP - CHIP_H;
+    ctx.save();
+    // Solid, and inverted against the plane: the chip is the one mark on this
+    // map that is meant to be caught before anything else is read.
+    ctx.fillStyle = p.fresh;
+    ctx.beginPath();
+    ctx.roundRect(n.x - n.chipW / 2, y, n.chipW, CHIP_H, CHIP_H / 2);
+    ctx.fill();
+    ctx.font = `700 ${CHIP_FONT}px ${this.fontFamily}`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = p.plane;
+    ctx.fillText(CHIP_TEXT, n.x, y + CHIP_H / 2 + 0.4);
+    ctx.restore();
+  }
+
   /** How much ink a name in this box would land on: glyphs, and names already
    *  placed. Zero means the slot is clear. Threads are not counted — a name
    *  reading across a line is fine, a name sitting on a glyph is not. */
@@ -867,12 +997,22 @@ class GraphView {
       if (this._nodeState(n) === 'hidden') continue;
       const r = n.radius + 3;
       glyphs.push({ x0: n.x - r, x1: n.x + r, y0: n.y - r, y1: n.y + r });
+      // A chip is ink as much as a glyph is, and it is the mark the reader is
+      // meant to catch first — a name laid across it costs both of them.
+      if (n.fresh) {
+        glyphs.push({
+          x0: n.x - n.chipW / 2, x1: n.x + n.chipW / 2,
+          y0: n.y - n.radius - CHIP_GAP - CHIP_H, y1: n.y - n.radius - CHIP_GAP,
+        });
+      }
     }
     // Placed in importance order, so a hub keeps the slot under its glyph and
-    // a leaf is the one that has to shoulder aside.
+    // a leaf is the one that has to shoulder aside. What is new picks before
+    // the hubs do, newest first: an entity nobody can name is not a
+    // development anyone can read.
     const ranked = [...this.nodes].sort((a, b) => {
-      const w = (n) => (n.id === this.selected ? 3 : n.id === this.hover ? 2 : 0);
-      return (w(b) - w(a)) || (b.degree - a.degree);
+      const w = (n) => (n.id === this.selected ? 4 : n.id === this.hover ? 3 : n.fresh ? 2 : 0);
+      return (w(b) - w(a)) || (b.fresh - a.fresh) || (b.degree - a.degree);
     });
 
     const boxes = [];
@@ -881,10 +1021,19 @@ class GraphView {
     for (const n of ranked) {
       const state = this._nodeState(n);
       if (state === 'hidden' || state === 'future' || state === 'dim') continue;
-      const forced = state === 'selected' || state === 'hover';
+      // What is new is placed on the same terms as what is selected: it keeps
+      // its name at any zoom, and it is worth a collision if a crowded corner
+      // leaves it no clear slot. A chip reading NEW over a glyph nobody can
+      // name is the one outcome this feature cannot afford, and there are only
+      // ever a handful of these — they pick their slots before anything else
+      // does, so a pile-up would take a week of filings landing on one spot.
+      const forced = state === 'selected' || state === 'hover' || n.fresh > 0;
       // The layout holds a slot open for every name, so nothing is dropped at
       // the default framing. Zoomed far out the type would be sub-pixel, and
-      // only the hubs are worth drawing.
+      // only the hubs are worth drawing — that, and this week, which is the
+      // whole-map view doing what the page is for: pull back far enough and
+      // the only things still named are the spine of the network and whatever
+      // has just happened.
       if (!forced && this.camera.k * LABEL_FONT < MIN_LABEL_PX && n.degree < HUB_DEGREE) continue;
 
       const w = n.labelW;
@@ -928,15 +1077,19 @@ class GraphView {
 
   _paintLabel({ n, state, slot }) {
     const { ctx, palette: p } = this;
+    // Full ink at the heavier weight, which is also the weight _prepareNodes
+    // measured this name at. Type does as much of the work here as the halo
+    // does: a name that is merely lit still reads as secondary next to one
+    // that is set darker and heavier than its neighbours.
+    const strong = state === 'selected' || n.fresh > 0;
     ctx.save();
-    ctx.font = `${state === 'selected' ? 600 : 450} ${LABEL_FONT}px ${
-      getComputedStyle(document.body).fontFamily}`;
+    ctx.font = `${strong ? 600 : 450} ${LABEL_FONT}px ${this.fontFamily}`;
     ctx.textAlign = slot.align;
     ctx.textBaseline = 'top';
     ctx.lineWidth = 3.2;
     ctx.lineJoin = 'round';
     ctx.strokeStyle = withAlpha(p.plane, 0.9);
-    const fill = state === 'selected' ? p.ink : p.ink2;
+    const fill = strong ? p.ink : p.ink2;
     n.lines.forEach((line, i) => {
       const y = slot.y + i * LINE_H;
       ctx.strokeText(line, slot.x, y);

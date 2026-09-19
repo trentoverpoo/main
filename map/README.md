@@ -154,11 +154,24 @@ from the ladder, and returning the map to it.
 
 - every node carries an **age ring**, shaded light-to-bright by its earliest
   documented date, on an achromatic scale that never competes with category colour;
+- anything the record dates inside **the last seven days** carries a soft halo, a
+  **NEW** chip and its name in full ink — and the more recent the entry, the
+  stronger the halo, so the newest thing on the file reads as the newest thing on
+  the file;
 - the **scrubber** ghosts what had not yet happened, holding positions stable so the
   web does not rearrange underneath you — press play to watch it assemble from 1996
   to September 2026;
 - **Time rings** morphs the same web into concentric year rings, oldest at the
   center, and returns the map to the hierarchy it opened on.
+
+The halo is measured against the reader's own clock, not against the day the map
+was last built, and the sidebar's **Time** panel lists what is inside the window
+and says plainly when nothing is. That is the point of doing it that way: a week
+in which nothing was filed is an answer this page can give, and a banner left
+burning over the last thing anyone happened to add is not. Only a date the record
+carries **to the day** counts — an entity the file dates to a month or a year is
+not one it dates to a Tuesday, and lighting it up would claim a precision the
+record does not have.
 
 ## Interacting
 

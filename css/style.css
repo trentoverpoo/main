@@ -41,6 +41,16 @@
   --age-old:      #61605c;
   --age-new:      #e8e7e0;
 
+  /* "New this week". Achromatic, like the age ramp and for the same reason:
+     time is not one of the three categorical hues, a fourth would have to
+     re-clear the all-pairs colour-vision separation the others were chosen to
+     pass, and a wash in a category's own colour would muddy the very glyph it
+     is pointing at. --fresh-veil is the halo's peak opacity, which has to
+     differ by mode — light on a dark plane carries much further than dark on
+     a light one. */
+  --fresh:        #fbf8ec;
+  --fresh-veil:   0.46;
+
   --r:   10px;
   --r-s: 7px;
   --pad: 18px;
@@ -71,6 +81,12 @@
 
   --age-old:      #91908b;
   --age-new:      #2e2d2a;
+
+  /* On paper the loud end of an achromatic scale is the dark end, so the halo
+     inverts with the plane and reads as a lift rather than a light. Kept well
+     below the dark mode's peak: the same opacity there is a smudge. */
+  --fresh:        #2f2d27;
+  --fresh-veil:   0.3;
 }
 
 * { box-sizing: border-box; }
@@ -322,6 +338,59 @@ a { color: var(--accent); }
   border: 1px solid var(--border);
 }
 
+/* ---------------------------------------------------- new this week --- */
+/* The halo on the canvas is light, and light alone is not a channel every
+   reader has. Everything it says is said here in words and in a number, and
+   the list below is how a keyboard reaches what the halo points at — a canvas
+   cannot be scanned by anyone who is not looking at it. */
+
+.fresh-key {
+  display: flex; align-items: center; gap: 9px;
+  margin-top: 13px; padding-top: 12px;
+  border-top: 1px solid var(--hairline);
+  font-size: 12.5px;
+}
+.fresh-key .label { flex: 1; }
+.fresh-key .n { font-size: 11px; color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+.fresh-key.empty .label, .fresh-key.empty .n { color: var(--ink-muted); }
+.fresh-key.empty .fresh-dot { opacity: 0.3; }
+
+/* The legend swatch is the mark the canvas draws: a glyph inside a bloom with
+   no edge of its own, so it cannot be read as one more ring. It is painted
+   from --fresh at --fresh-veil, the same two tokens the renderer reads, so the
+   key and the map cannot drift apart in either theme. */
+.fresh-dot { flex: none; position: relative; width: 19px; height: 19px; }
+.fresh-dot::before {
+  content: ''; position: absolute; inset: 0; border-radius: 50%;
+  background: var(--fresh); opacity: var(--fresh-veil); filter: blur(3px);
+}
+.fresh-dot::after {
+  content: ''; position: absolute; inset: 6px; border-radius: 50%;
+  background: var(--hue-places);
+}
+
+.fresh-list { list-style: none; margin: 9px 0 0; padding: 0; display: grid; gap: 2px; }
+.fresh-go {
+  width: 100%; text-align: left; cursor: pointer;
+  background: none; border: 0; border-radius: 5px;
+  padding: 5px 6px; margin: 0 -6px;
+  display: flex; align-items: baseline; gap: 8px;
+}
+.fresh-go:hover { background: var(--border); }
+.fresh-name { flex: 1; font-size: 12.5px; color: var(--ink); line-height: 1.35; }
+.fresh-when {
+  flex: none; font-size: 11px; color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* The panel's own marker. A filled chip, so it survives greyscale — it is the
+   same statement the NEW chip makes on the canvas. */
+.p-new {
+  background: var(--fresh); color: var(--plane);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 2px 6px; border-radius: 999px; line-height: 1.5;
+}
+
 /* ---------------------------------------------------------- timeline --- */
 
 #timeline {
@@ -468,6 +537,11 @@ a { color: var(--accent); }
 #tooltip .t-name { font-size: 13px; font-weight: 600; line-height: 1.35; }
 #tooltip .t-meta { font-size: 11px; color: var(--ink-muted); margin-top: 3px; display: flex; gap: 7px; align-items: center; }
 #tooltip .t-cites { font-size: 11px; color: var(--ink-2); margin-top: 6px; }
+#tooltip .t-new {
+  background: var(--fresh); color: var(--plane);
+  font-size: 9.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 1px 5px; border-radius: 999px;
+}
 
 /* ------------------------------------------------------------ topbar --- */
 
@@ -607,6 +681,10 @@ html:has(body.sources), body.sources {
   /* --- room for a fingertip --- */
   .check { padding: 8px 6px; }
   .check .label { font-size: 13px; }
+  /* Same treatment as the filter rows: a fingertip is the same size in this
+     list as it is in the one above it. */
+  .fresh-go { padding: 9px 6px; }
+  .fresh-name { font-size: 13px; }
   #suggest button { padding: 11px 11px; }
   /* Under 16px iOS zooms the whole page in on focus and leaves it there. */
   #search, #doc-filter { font-size: 16px; padding-top: 11px; padding-bottom: 11px; }
