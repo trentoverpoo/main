@@ -5,7 +5,7 @@ window.MAP = window.MAP || {};
 'use strict';
 
 const { swatchSVG, tierLineSVG, readPalette, FAMILY_VAR, TIER,
-  RECENT_DAYS, recencyOf } = MAP.shapes;
+  RECENT_PHRASE, recencyOf } = MAP.shapes;
 
 const el = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
@@ -59,11 +59,14 @@ function formatDate(d) {
   return `${dt.getUTCDate()} ${MONTHS[dt.getUTCMonth()]} ${dt.getUTCFullYear()}`;
 }
 
-/** What to call an entity in a list. The three data centers carry a name the
- *  record does not use above the address it does, and the address on its own —
- *  which is all `short` is — names nothing a reader would recognise. */
+/** What to call an entity in a list that points at the map: whatever the map
+ *  itself draws under the glyph, so a reader scanning the list and then the
+ *  canvas is reading the same words twice rather than matching a formal style
+ *  against a short one. `label` first, because the three data centers carry a
+ *  recognisable name above an address that on its own — which is all `short`
+ *  is for them — names nothing anyone would place. */
 function listName(n) {
-  return n.label && n.label.length ? n.label.join(', ') : n.name;
+  return n.label && n.label.length ? n.label.join(', ') : (n.short || n.name);
 }
 
 class UI {
@@ -211,7 +214,7 @@ class UI {
 
       <div class="fresh-key${fresh.length ? '' : ' empty'}">
         <span class="fresh-dot" aria-hidden="true"></span>
-        <span class="label">New in the last ${RECENT_DAYS} days</span>
+        <span class="label">New in ${RECENT_PHRASE}</span>
         <span class="n">${fresh.length}</span>
       </div>
       ${fresh.length ? `<ul class="fresh-list">${fresh.map((n) => `
@@ -223,9 +226,9 @@ class UI {
       above it — the more recent the entry, the stronger the halo. Only dates the
       record gives to the day count: an entity the file dates to a month or a year
       is not one it dates to a Tuesday.</p>`
-      : `<p class="note">Nothing in the record is dated inside the last
-      ${RECENT_DAYS} days, so nothing on the map is haloed. A quiet week is an
-      answer, and this says so rather than leaving the last thing added lit.</p>`}`;
+      : `<p class="note">Nothing in the record is dated inside ${RECENT_PHRASE},
+      so nothing on the map is haloed. A quiet month is an answer, and this says
+      so rather than leaving the last thing added lit.</p>`}`;
 
     // The list is how a keyboard reaches what the halo points at. A canvas
     // cannot be scanned by anyone who is not looking at it.
@@ -492,7 +495,7 @@ class UI {
       <div class="p-kicker">${swatchSVG(cat.shape, cat.fill, this.hue(node.family), 15)}
         <span>${esc(cat.label)}</span>
         ${node.tier !== 1 ? `<span>· ${esc(TIER[node.tier].label)}</span>` : ''}
-        ${recencyOf(node.date) ? `<span class="p-new">New this week</span>` : ''}</div>
+        ${recencyOf(node.date) ? `<span class="p-new">New</span>` : ''}</div>
       <h2 class="p-title">${esc(node.name)}</h2>
       ${date ? `<p class="p-date">${esc(date)}${
         node.dateNote ? ` — ${esc(node.dateNote)}` : ''}</p>` : ''}

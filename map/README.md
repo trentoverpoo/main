@@ -154,7 +154,7 @@ from the ladder, and returning the map to it.
 
 - every node carries an **age ring**, shaded light-to-bright by its earliest
   documented date, on an achromatic scale that never competes with category colour;
-- anything the record dates inside **the last seven days** carries a soft halo, a
+- anything the record dates inside **the last thirty days** carries a soft halo, a
   **NEW** chip and its name in full ink — and the more recent the entry, the
   stronger the halo, so the newest thing on the file reads as the newest thing on
   the file;
@@ -166,12 +166,16 @@ from the ladder, and returning the map to it.
 
 The halo is measured against the reader's own clock, not against the day the map
 was last built, and the sidebar's **Time** panel lists what is inside the window
-and says plainly when nothing is. That is the point of doing it that way: a week
+and says plainly when nothing is. That is the point of doing it that way: a month
 in which nothing was filed is an answer this page can give, and a banner left
 burning over the last thing anyone happened to add is not. Only a date the record
 carries **to the day** counts — an entity the file dates to a month or a year is
 not one it dates to a Tuesday, and lighting it up would claim a precision the
 record does not have.
+
+The width of the window is one constant, `RECENT_DAYS` in `js/shapes.js`, and
+every phrase the page says about it is derived from that constant rather than
+written out beside it.
 
 ## Interacting
 

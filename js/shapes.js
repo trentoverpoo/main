@@ -138,10 +138,16 @@ function swatchSVG(shape, fill, cssVar, size = 17) {
 /* ------------------------------------------------------------- recency ---
    What counts as "new" on a map that is meant to answer "what is happening".
    Measured against the reader's own clock rather than the build date, so the
-   window is the one the sentence promises — the last seven days — and a quiet
-   fortnight honestly shows nothing new instead of a stale banner over the last
-   thing anyone happened to add. */
-const RECENT_DAYS = 7;
+   window is the one the prose promises — the last thirty days — and a quiet
+   month honestly shows nothing new instead of a stale banner over the last
+   thing anyone happened to add.
+
+   One constant sets the width of it, and every phrase the page says out loud
+   is derived from that constant rather than typed out beside it. Widening the
+   window is therefore one edit, and cannot leave the sidebar saying "week"
+   over a month's worth of haloed nodes. */
+const RECENT_DAYS = 30;
+const RECENT_PHRASE = `the last ${RECENT_DAYS} days`;
 const DAY_MS = 86400000;
 
 /** How new a dated thing is, on 0-1 across that window: 1 on the day it is
@@ -150,9 +156,11 @@ const DAY_MS = 86400000;
  *  as "not part of this group".
  *
  *  The precision test is the point of the function, not a detail of it. "2026"
- *  is not evidence that something happened this week, and a node the record
- *  dates to a month is not one the record dates to a Tuesday — putting a
- *  freshness halo on either would claim a precision the file does not have.
+ *  is not evidence that something happened lately, and a node the record dates
+ *  to a month is not one the record dates to a Tuesday — putting a freshness
+ *  halo on either would claim a precision the file does not have. It would
+ *  also seat it wrongly on the ramp, since a month-precision date parses to
+ *  the first of the month whatever day the thing actually happened on.
  *
  *  A date ahead of the clock is treated as the newest there is rather than as
  *  an error: node dates are UTC midnight, and a reader far enough east is
@@ -183,6 +191,6 @@ function tierLineSVG(tier, cssVar) {
 
 MAP.shapes = {
   FAMILY_VAR, readPalette, mix, withAlpha, tracePath, swatchSVG, TIER, tierLineSVG,
-  RECENT_DAYS, recencyOf,
+  RECENT_DAYS, RECENT_PHRASE, recencyOf,
 };
 }(window.MAP));
