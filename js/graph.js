@@ -50,8 +50,8 @@ const EDGE_SLOP_COARSE = 14;
 const ZOOM_MIN = 0.22;
 const ZOOM_MAX = 4.5;
 
-// ------------------------------------------------------------ new this week ---
-// The halo on anything the record dates inside the last seven days, and the
+// --------------------------------------------------------- what is recent ---
+// The halo on anything the record dates inside the recency window, and the
 // chip that says so in words. Both are sized in world units like the names,
 // so they hold their relationship to the glyph at every zoom.
 //
@@ -905,7 +905,7 @@ class GraphView {
   }
 
   /** The freshness halo: a soft achromatic bloom on everything the record dates
-   *  inside the last seven days.
+   *  inside the recency window — see RECENT_DAYS in shapes.js for its width.
    *
    *  Achromatic for the reason the age ring is. Time is not one of the three
    *  categorical hues; a fourth would have to re-clear the all-pairs
@@ -915,9 +915,11 @@ class GraphView {
    *  colour and its peak opacity are both tokens.
    *
    *  Spread and opacity both ramp with recency, and the two compound: today's
-   *  entry throws roughly six times the light of one from six days ago, so
-   *  "the newest thing here" is legible from across the map rather than being
-   *  a judgement between two similar washes.
+   *  entry throws roughly six times the light of one at the far edge of the
+   *  window, so "the newest thing here" is legible from across the map rather
+   *  than being a judgement between two similar washes. That compounding is
+   *  what lets the window be a month wide without the middle of it shouting
+   *  as loudly as this morning does.
    *
    *  It follows the node's own state rather than shouting over it — scrubbed
    *  into the future or filtered out and it is gone, pushed back by a
@@ -933,8 +935,8 @@ class GraphView {
       if (state === 'hidden' || state === 'future') continue;
       const outer = n.radius + GLOW_MIN + (GLOW_MAX - GLOW_MIN) * n.fresh;
       // A floor under the ramp, so the far edge of the window is still plainly
-      // lit: the group is "this week", and a member of it that has faded to
-      // nothing is a member the reader never sees.
+      // lit: the group is everything that has happened lately, and a member of
+      // it that has faded to nothing is a member the reader never sees.
       const peak = p.freshVeil * (0.38 + 0.62 * n.fresh) * (state === 'dim' ? 0.25 : 1);
       const g = ctx.createRadialGradient(n.x, n.y, n.radius * 0.5, n.x, n.y, outer);
       g.addColorStop(0, withAlpha(p.fresh, peak));
@@ -1030,10 +1032,10 @@ class GraphView {
       const forced = state === 'selected' || state === 'hover' || n.fresh > 0;
       // The layout holds a slot open for every name, so nothing is dropped at
       // the default framing. Zoomed far out the type would be sub-pixel, and
-      // only the hubs are worth drawing — that, and this week, which is the
-      // whole-map view doing what the page is for: pull back far enough and
-      // the only things still named are the spine of the network and whatever
-      // has just happened.
+      // only the hubs are worth drawing — that, and whatever is recent, which
+      // is the whole-map view doing what the page is for: pull back far enough
+      // and the only things still named are the spine of the network and what
+      // has happened lately.
       if (!forced && this.camera.k * LABEL_FONT < MIN_LABEL_PX && n.degree < HUB_DEGREE) continue;
 
       const w = n.labelW;

@@ -41,7 +41,7 @@
   --age-old:      #61605c;
   --age-new:      #e8e7e0;
 
-  /* "New this week". Achromatic, like the age ramp and for the same reason:
+  /* The freshness halo. Achromatic, like the age ramp and for the same reason:
      time is not one of the three categorical hues, a fourth would have to
      re-clear the all-pairs colour-vision separation the others were chosen to
      pass, and a wash in a category's own colour would muddy the very glyph it
@@ -338,7 +338,7 @@ a { color: var(--accent); }
   border: 1px solid var(--border);
 }
 
-/* ---------------------------------------------------- new this week --- */
+/* --------------------------------------------------- what is recent --- */
 /* The halo on the canvas is light, and light alone is not a channel every
    reader has. Everything it says is said here in words and in a number, and
    the list below is how a keyboard reaches what the halo points at — a canvas
@@ -384,7 +384,8 @@ a { color: var(--accent); }
 }
 
 /* The panel's own marker. A filled chip, so it survives greyscale — it is the
-   same statement the NEW chip makes on the canvas. */
+   same statement the NEW chip makes on the canvas. It does not repeat how wide
+   the window is, because the entity's exact date is the next line down. */
 .p-new {
   background: var(--fresh); color: var(--plane);
   font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;

@@ -40,7 +40,7 @@ Tier 4 has no representation in `entities.yaml` or `relationships.yaml`. It live
 | `label` | no | one or two lines drawn verbatim, instead of wrapping `short`. For names the wrap has to be *said* rather than guessed — the three data centers, which carry a recognisable name above an address most readers would not place on its own |
 | `category` | yes | one of the nine keys in `categories` (see below) |
 | `tier` | yes | 1–3 |
-| `date` | no | ISO `YYYY-MM-DD`, `YYYY-MM` or `YYYY` — the entity's earliest documented appearance. Drives the time ring, the date ramp and the scrubber. A **`YYYY-MM-DD`** date inside the last seven days also drives the "new this week" halo; a date given only to the month or the year never does, because the record has not placed it in a week |
+| `date` | no | ISO `YYYY-MM-DD`, `YYYY-MM` or `YYYY` — the entity's earliest documented appearance. Drives the time ring, the date ramp and the scrubber. A **`YYYY-MM-DD`** date inside the recency window (`RECENT_DAYS` in `js/shapes.js`, currently 30) also drives the "new" halo; a date given only to the month or the year never does, because the record has not placed it on a day |
 | `date_note` | no | what the date actually marks ("organized", "incorporated", "first documented signature") |
 | `summary` | yes | one to three sentences, in the report's voice |
 | `aliases` | no | additional search terms |
