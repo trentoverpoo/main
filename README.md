@@ -4,7 +4,7 @@ A node-and-edge map of the entities, people, land and proceedings on record
 here — pannable, zoomable, filterable, searchable, and traceable to a document
 at every point.
 
-**Open `map/index.html`.** Double-clicking it from disk works — no server, no build
+**Open `index.html`.** Double-clicking it from disk works — no server, no build
 step, no network. Canvas rendering, plain classic scripts, and `d3-force` vendored
 as UMD into `js/vendor/`.
 
@@ -17,7 +17,7 @@ neither: the graph ships as `data/graph.js`, a plain script that assigns
 Serving it works identically, if you'd rather:
 
 ```sh
-python3 -m http.server 8000     # then open http://localhost:8000/map/
+python3 -m http.server 8000     # then open http://localhost:8000/
 ```
 
 ---
@@ -34,12 +34,12 @@ node build/build.mjs
 ```
 
 ```
-  map/data/graph.json and graph.js written
+  data/graph.json and graph.js written
 
-  85 nodes   T1 81 · T2 3 · T3 1
-  117 edges  T1 102 · T2 11 · T3 4
-  88 distinct documents cited, all present on disk
-  38 of 261 citations also carry a live url
+  88 nodes   T1 83 · T2 4 · T3 1
+  125 edges  T1 107 · T2 14 · T3 4
+  94 distinct documents cited, all present on disk
+  42 of 297 citations also carry a live url
 ```
 
 Edit the YAML, re-run, reload. `graph.json` and `graph.js` are both generated —

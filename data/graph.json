@@ -1,13 +1,13 @@
 {
  "meta": {
   "generated": "2026-09-19",
-  "source": "Compiled from map/data/*.yaml",
+  "source": "Compiled from data/*.yaml",
   "nodeCount": 88,
   "edgeCount": 125,
-  "documentCount": 93,
-  "citationCount": 296,
-  "liveUrlCount": 40,
-  "documentsWithLiveUrl": 11,
+  "documentCount": 94,
+  "citationCount": 297,
+  "liveUrlCount": 42,
+  "documentsWithLiveUrl": 13,
   "timeExtent": [
    700185600000,
    1789689600000
@@ -3332,7 +3332,7 @@
    },
    "dateNote": "Tracts 1 and 2 surveyed out of the 119.79-acre parent parcel",
    "summary": "The physical build: exactly 10.00 acres in unincorporated Webster County, conveyed in two five-acre steps. Aerials show white modular units on a concrete pad, trailer-mounted generators, pad transformers and an electrical substation immediately adjacent.",
-   "caveat": "The 911 CAD location field reads 295 Rifle Range Road; the deeds, the DNR permit and Marshfield FPD's own records read 259.",
+   "caveat": "The 911 CAD location field reads 295 Rifle Range Road; the deeds, the DNR permit and Marshfield FPD's own records read 259. The two aerials were published in June 2026 by Northstar's chief sales officer, in a post showing Northstar's work that names no site, address or county. They have been visually verified as this site; the post simply does not say so.",
    "aliases": [
     "Marshfield",
     "Rifle Range",
@@ -3349,9 +3349,21 @@
     },
     {
      "doc": "evidence/01-marshfield-site/photos/site-aerials/marshfield-site-aerial-1.jpg",
+     "url": "https://www.linkedin.com/posts/kymclaughlin_buildbetter-buildnorthstar-modular-activity-7475491666263629824-vwM1",
      "label": "Site aerial",
-     "url": null,
-     "urlLabel": null
+     "date": "2026-06-24",
+     "excerpt": "A row of white modular units on a poured pad, ducting and dry coolers along the near face, a mobile crane mid-lift, and green trailer-mounted generators standing on the slab to the east. The fenced electrical substation on the rise beyond is the Sho-Me tract. The date is the date of the post, which is the latest the site can have looked like this, not the date the photograph was taken\n",
+     "urlLabel": "LinkedIn · Kyle McLaughlin, Northstar · the post as published",
+     "preview": true
+    },
+    {
+     "doc": "evidence/01-marshfield-site/photos/site-aerials/marshfield-site-aerial-2.jpg",
+     "url": "https://www.linkedin.com/posts/kymclaughlin_buildbetter-buildnorthstar-modular-activity-7475491666263629824-vwM1",
+     "label": "Site aerial",
+     "date": "2026-06-24",
+     "excerpt": "The same ground from above: the poured pad with white modular units in two ranks, a line of green trailer-mounted generators along the west edge with fuel and cable runs between them, graded earth and staged material to the east, and Rifle Range Road across the top of the frame\n",
+     "urlLabel": "LinkedIn · Kyle McLaughlin, Northstar · the post as published",
+     "preview": true
     },
     {
      "doc": "evidence/01-marshfield-site/parcel-records/Screenshot 2026-09-15 154133.png",
@@ -8068,8 +8080,21 @@
   {
    "path": "evidence/01-marshfield-site/photos/site-aerials/marshfield-site-aerial-1.jpg",
    "exists": true,
-   "url": null,
-   "urlLabel": null,
+   "url": "https://www.linkedin.com/posts/kymclaughlin_buildbetter-buildnorthstar-modular-activity-7475491666263629824-vwM1",
+   "urlLabel": "LinkedIn · Kyle McLaughlin, Northstar · the post as published",
+   "refs": [
+    {
+     "kind": "node",
+     "id": "site-marshfield",
+     "name": "259 Rifle Range Road, Marshfield (Webster County)"
+    }
+   ]
+  },
+  {
+   "path": "evidence/01-marshfield-site/photos/site-aerials/marshfield-site-aerial-2.jpg",
+   "exists": true,
+   "url": "https://www.linkedin.com/posts/kymclaughlin_buildbetter-buildnorthstar-modular-activity-7475491666263629824-vwM1",
+   "urlLabel": "LinkedIn · Kyle McLaughlin, Northstar · the post as published",
    "refs": [
     {
      "kind": "node",

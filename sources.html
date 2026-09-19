@@ -62,7 +62,7 @@ function render(q) {
 
   host.innerHTML = rows.map((d) => `
     <div class="doc-row">
-      <a class="doc-path" href="../${esc(d.path)}" target="_blank" rel="noopener">${esc(d.path)}</a>
+      <a class="doc-path" href="${esc(encodeURI(d.path))}" target="_blank" rel="noopener">${esc(d.path)}</a>
       ${d.url ? `<div class="doc-live-row"><a class="doc-live" href="${esc(d.url)}"
         target="_blank" rel="noopener noreferrer"><span class="live-tag">Live</span>${
         esc(d.urlLabel || hostOf(d.url))}</a></div>` : ''}

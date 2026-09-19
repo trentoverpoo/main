@@ -528,6 +528,38 @@ a { color: var(--accent); }
 .p-because-arrow { color: var(--ink-muted); flex: none; }
 .p-body { font-size: 13.5px; line-height: 1.62; color: var(--ink-2); margin: 0 0 15px; }
 
+/* A cited image, shown rather than only linked. The plates sit under the summary
+   because that is the sentence they answer, and they are deliberately small: the
+   panel is a reading column, and a photograph that fills it stops being evidence
+   and starts being decoration. Full size is one click away, which is also where
+   anything worth looking at closely has to be read anyway. */
+.p-plates {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 9px;
+  margin: 0 0 16px;
+}
+.p-plates-one { grid-template-columns: 1fr; }
+.plate { margin: 0; min-width: 0; }
+.plate a {
+  display: block; border-radius: var(--r-s);
+  border: 1px solid var(--border); overflow: hidden; background: var(--surface-2);
+}
+.plate a:hover { border-color: var(--edge-strong); }
+.plate a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* One ratio for every plate, so two photographs that were not framed alike still
+   make a tidy pair. The crop is cosmetic — the file behind the link is untouched. */
+.plate img {
+  display: block; width: 100%; height: auto;
+  aspect-ratio: 3 / 2; object-fit: cover;
+}
+.p-plates-one .plate img { aspect-ratio: 16 / 9; }
+.plate figcaption {
+  margin-top: 6px; font-size: 10.5px; line-height: 1.4; color: var(--ink-muted);
+  text-wrap: pretty;
+}
+.plate-date {
+  display: block; font-variant-numeric: tabular-nums; opacity: 0.8;
+}
+
 .p-caveat {
   border-left: 2px solid var(--hue-counterparties);
   background: var(--surface-2);

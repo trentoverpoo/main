@@ -566,13 +566,52 @@ class UI {
     this.h.onClosePanel();
   }
 
+  // Every cited file sits beside index.html, under evidence/, so a doc path is
+  // already the href — no prefix. Six of the cited filenames carry spaces, so the
+  // path is percent-encoded before it is used as one.
+  _docHref(path) { return encodeURI(String(path)); }
+
+  _citeDate(c) {
+    if (!c.date) return null;
+    const n = String(c.date).length;
+    return formatDate({ t: Date.parse(c.date),
+      precision: n === 4 ? 'year' : n === 7 ? 'month' : 'day' });
+  }
+
+  /** Citations marked `preview` are drawn, not only listed. They sit directly under
+   *  the summary, against the prose that describes them, and each one still carries
+   *  its label and date — a figure here is a source, not an illustration. The full
+   *  excerpt and the links stay on the citation's own card further down, so the
+   *  image appears once and the record of it appears once. */
+  _platesHTML(citations) {
+    const shown = citations.filter((c) => c.preview && c.doc);
+    if (!shown.length) return '';
+    const plates = shown.map((c) => {
+      const date = this._citeDate(c);
+      const href = this._docHref(c.doc);
+      // The caption is the citation's label, which is often the same short words on
+      // two different photographs. The alt text has to tell them apart, so it comes
+      // from the excerpt — the sentence that says what is actually in the frame.
+      const alt = c.excerpt
+        ? String(c.excerpt).trim().split(/(?<=\.)\s/)[0] : c.label;
+      return `<figure class="plate">
+        <a href="${esc(href)}" target="_blank" rel="noopener"
+           title="Open the full-size file">
+          <img src="${esc(href)}" alt="${esc(alt)}" loading="lazy" decoding="async">
+        </a>
+        <figcaption>${esc(c.label)}${
+          date ? `<span class="plate-date">${esc(date)}</span>` : ''}</figcaption>
+      </figure>`;
+    }).join('');
+    return `<div class="p-plates${shown.length === 1 ? ' p-plates-one' : ''}">${plates}</div>`;
+  }
+
   _citationHTML(c) {
-    const date = c.date ? formatDate({ t: Date.parse(c.date), precision:
-      String(c.date).length === 4 ? 'year' : String(c.date).length === 7 ? 'month' : 'day' }) : null;
+    const date = this._citeDate(c);
     const quote = c.excerpt
       ? `<blockquote>${esc(String(c.excerpt).trim())}</blockquote>` : '';
     const link = c.doc
-      ? `<a class="doc" href="../${esc(c.doc)}" target="_blank" rel="noopener">${esc(c.doc)}</a>`
+      ? `<a class="doc" href="${esc(this._docHref(c.doc))}" target="_blank" rel="noopener">${esc(c.doc)}</a>`
       : `<span class="ext">External source, not in evidence/</span>`;
     // The archived copy is the source of the claim and never moves. The live url,
     // where one exists, is where the same source can be read today — a reader's own
@@ -644,6 +683,7 @@ class UI {
       ${date ? `<p class="p-date">${esc(date)}${
         node.dateNote ? ` · ${esc(node.dateNote)}` : ''}</p>` : ''}
       <p class="p-body">${esc(node.summary)}</p>
+      ${this._platesHTML(node.citations)}
       ${node.caveat ? `<p class="p-caveat"><b>What this does not establish.</b>
         ${esc(node.caveat)}</p>` : ''}
       ${node.chain && node.chain.length
