@@ -1,7 +1,7 @@
 {
  "meta": {
   "generated": "2026-09-19",
-  "source": "REPORT.md, compiled from map/data/*.yaml",
+  "source": "Compiled from map/data/*.yaml",
   "nodeCount": 88,
   "edgeCount": 125,
   "documentCount": 93,
@@ -2485,7 +2485,7 @@
    },
    "dateNote": "Adopted a six-month moratorium",
    "summary": "Adopted a six-month moratorium on data centers, solar, wind and BESS in unincorporated areas on 16 June 2026 — expressly not applied to the Rifle Range Road build, the Commission noting its authority over a project already under construction is limited.",
-   "caveat": "The ordinance itself is not in the evidence folder; it is listed as a collection gap in OPEN-QUESTIONS.md § 10.",
+   "caveat": "The ordinance itself is not in the evidence folder. It is a known collection gap.",
    "aliases": [],
    "citations": [
     {
@@ -3307,21 +3307,22 @@
    "aliases": [],
    "citations": [
     {
-     "doc": "archive/people-no-documented-connection/owens-ashton-other-ventures/2022-10-04_articles-of-organization_metawest-ventures-llc_LC014410313.pdf",
+     "doc": "evidence/03-entities/company/metawest-ventures-llc/2022-10-04_articles-of-organization_LC014410313.pdf",
      "label": "Articles of organization LC014410313",
      "date": "2022-10-04",
      "url": null,
      "urlLabel": null
     },
     {
-     "doc": "archive/prior-analysis/misc-resources/METAWEST Ventures — A Midwestern Investment Firm.html",
+     "doc": "evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html",
+     "date": "2026-09-17",
      "url": "https://metawestventures.com/",
      "label": "Saved capture of metawestventures.com — raw HTML",
      "excerpt": "<a href=\"mailto:ashton@owensand.co\">CONTACT US</a>\n",
      "urlLabel": "metawestventures.com — the site itself"
     },
     {
-     "doc": "archive/people-no-documented-connection/aldrich/2024-06-13_administrative-dissolution_metawest-ventures-llc.pdf",
+     "doc": "evidence/03-entities/company/metawest-ventures-llc/2024-06-13_administrative-dissolution_LC014410313.pdf",
      "label": "Administrative dissolution",
      "date": "2024-06-13",
      "url": null,
@@ -6948,14 +6949,15 @@
    "resolves": "A MetaWest portfolio page naming any entity in this file, a current registration reviving the LLC, or capital-contribution records.",
    "citations": [
     {
-     "doc": "archive/people-no-documented-connection/owens-ashton-other-ventures/2022-10-04_articles-of-organization_metawest-ventures-llc_LC014410313.pdf",
+     "doc": "evidence/03-entities/company/metawest-ventures-llc/2022-10-04_articles-of-organization_LC014410313.pdf",
      "label": "Articles of organization LC014410313",
      "date": "2022-10-04",
      "url": null,
      "urlLabel": null
     },
     {
-     "doc": "archive/prior-analysis/misc-resources/METAWEST Ventures — A Midwestern Investment Firm.html",
+     "doc": "evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html",
+     "date": "2026-09-17",
      "url": "https://metawestventures.com/",
      "label": "Saved capture — raw HTML nav links",
      "excerpt": "<a href=\"mailto:ashton@owensand.co\">CONTACT US</a>",
@@ -6965,55 +6967,6 @@
   }
  ],
  "documents": [
-  {
-   "path": "archive/people-no-documented-connection/aldrich/2024-06-13_administrative-dissolution_metawest-ventures-llc.pdf",
-   "exists": true,
-   "url": null,
-   "urlLabel": null,
-   "refs": [
-    {
-     "kind": "node",
-     "id": "metawest-ventures",
-     "name": "MetaWest Ventures LLC"
-    }
-   ]
-  },
-  {
-   "path": "archive/people-no-documented-connection/owens-ashton-other-ventures/2022-10-04_articles-of-organization_metawest-ventures-llc_LC014410313.pdf",
-   "exists": true,
-   "url": null,
-   "urlLabel": null,
-   "refs": [
-    {
-     "kind": "node",
-     "id": "metawest-ventures",
-     "name": "MetaWest Ventures LLC"
-    },
-    {
-     "kind": "edge",
-     "id": "ashton-owens__metawest-ventures__ownership__2022-10-04__124",
-     "name": "Ashton Owens → MetaWest Ventures LLC"
-    }
-   ]
-  },
-  {
-   "path": "archive/prior-analysis/misc-resources/METAWEST Ventures — A Midwestern Investment Firm.html",
-   "exists": true,
-   "url": "https://metawestventures.com/",
-   "urlLabel": "metawestventures.com — the site itself",
-   "refs": [
-    {
-     "kind": "node",
-     "id": "metawest-ventures",
-     "name": "MetaWest Ventures LLC"
-    },
-    {
-     "kind": "edge",
-     "id": "ashton-owens__metawest-ventures__ownership__2022-10-04__124",
-     "name": "Ashton Owens → MetaWest Ventures LLC"
-    }
-   ]
-  },
   {
    "path": "evidence/01-marshfield-site/parcel-records/2026-09-18_webster-county-gis_parcel-06-7.0-26-000-000-012.070_sho-me-power-electric-cooperative.webp",
    "exists": true,
@@ -7687,6 +7640,55 @@
      "kind": "edge",
      "id": "lumon-solutions-marshfield__site-springfield__adjacency__2026-05-07__21",
      "name": "Lumon Marshfield → 2900 S. National"
+    }
+   ]
+  },
+  {
+   "path": "evidence/03-entities/company/metawest-ventures-llc/2022-10-04_articles-of-organization_LC014410313.pdf",
+   "exists": true,
+   "url": null,
+   "urlLabel": null,
+   "refs": [
+    {
+     "kind": "node",
+     "id": "metawest-ventures",
+     "name": "MetaWest Ventures LLC"
+    },
+    {
+     "kind": "edge",
+     "id": "ashton-owens__metawest-ventures__ownership__2022-10-04__124",
+     "name": "Ashton Owens → MetaWest Ventures LLC"
+    }
+   ]
+  },
+  {
+   "path": "evidence/03-entities/company/metawest-ventures-llc/2024-06-13_administrative-dissolution_LC014410313.pdf",
+   "exists": true,
+   "url": null,
+   "urlLabel": null,
+   "refs": [
+    {
+     "kind": "node",
+     "id": "metawest-ventures",
+     "name": "MetaWest Ventures LLC"
+    }
+   ]
+  },
+  {
+   "path": "evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html",
+   "exists": true,
+   "url": "https://metawestventures.com/",
+   "urlLabel": "metawestventures.com — the site itself",
+   "refs": [
+    {
+     "kind": "node",
+     "id": "metawest-ventures",
+     "name": "MetaWest Ventures LLC"
+    },
+    {
+     "kind": "edge",
+     "id": "ashton-owens__metawest-ventures__ownership__2022-10-04__124",
+     "name": "Ashton Owens → MetaWest Ventures LLC"
     }
    ]
   },

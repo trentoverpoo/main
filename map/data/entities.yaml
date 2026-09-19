@@ -1190,8 +1190,7 @@
     areas on 16 June 2026 — expressly not applied to the Rifle Range Road build, the
     Commission noting its authority over a project already under construction is limited.
   caveat: >
-    The ordinance itself is not in the evidence folder; it is listed as a collection gap in
-    OPEN-QUESTIONS.md § 10.
+    The ordinance itself is not in the evidence folder. It is a known collection gap.
   citations:
     - external: Webster County Commission action, reported contemporaneously
       url: https://webstercountymo.gov/county-adopts-six-month-moratorium/
@@ -1708,15 +1707,16 @@
     on the 13th — a clerk's date — which drains most of the meaning from the timing
     coincidence. Tracked as unresolved, not as a connection.
   citations:
-    - doc: archive/people-no-documented-connection/owens-ashton-other-ventures/2022-10-04_articles-of-organization_metawest-ventures-llc_LC014410313.pdf
+    - doc: evidence/03-entities/company/metawest-ventures-llc/2022-10-04_articles-of-organization_LC014410313.pdf
       label: Articles of organization LC014410313
       date: 2022-10-04
-    - doc: archive/prior-analysis/misc-resources/METAWEST Ventures — A Midwestern Investment Firm.html
+    - doc: evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html
+      date: 2026-09-17
       url: https://metawestventures.com/
       url_label: metawestventures.com — the site itself
       label: Saved capture of metawestventures.com — raw HTML
       excerpt: >
         <a href="mailto:ashton@owensand.co">CONTACT US</a>
-    - doc: archive/people-no-documented-connection/aldrich/2024-06-13_administrative-dissolution_metawest-ventures-llc.pdf
+    - doc: evidence/03-entities/company/metawest-ventures-llc/2024-06-13_administrative-dissolution_LC014410313.pdf
       label: Administrative dissolution
       date: 2024-06-13

@@ -1710,10 +1710,11 @@
     A MetaWest portfolio page naming any entity in this file, a current registration reviving
     the LLC, or capital-contribution records.
   citations:
-    - doc: archive/people-no-documented-connection/owens-ashton-other-ventures/2022-10-04_articles-of-organization_metawest-ventures-llc_LC014410313.pdf
+    - doc: evidence/03-entities/company/metawest-ventures-llc/2022-10-04_articles-of-organization_LC014410313.pdf
       label: Articles of organization LC014410313
       date: 2022-10-04
-    - doc: archive/prior-analysis/misc-resources/METAWEST Ventures — A Midwestern Investment Firm.html
+    - doc: evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html
+      date: 2026-09-17
       url: https://metawestventures.com/
       url_label: metawestventures.com — the site itself
       label: Saved capture — raw HTML nav links
