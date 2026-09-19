@@ -285,9 +285,6 @@ function boot() {
     announce(`Connection ${branch.at + 1} of ${branch.list.length}. ${describe(next)}`);
   }
 
-  canvas.addEventListener('focus', () => el('stage').classList.add('kb-help'));
-  canvas.addEventListener('blur', () => el('stage').classList.remove('kb-help'));
-
   canvas.addEventListener('keydown', (ev) => {
     if (ev.altKey || ev.ctrlKey || ev.metaKey) return;
 
