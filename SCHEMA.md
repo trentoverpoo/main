@@ -10,20 +10,20 @@ map/data/relationships.yaml ─┘
 
 The build **fails** — it does not warn — if any citation points at a file that is not in
 this repository, or if any node or edge carries no citation at all. That is the mechanical
-enforcement of the standard in [`METHOD.md`](../METHOD.md).
+enforcement of the standard this file holds itself to.
 
 ---
 
 ## Verification tiers
 
-The tiers mirror the three-part standard in `METHOD.md` § "The standard applied".
+The tiers are the three-part standard every line here is held to.
 
 | Tier | Meaning | Renders as |
 |---|---|---|
 | **1** | Stated in a primary document in `evidence/`, cited by path and instrument number | Solid line, full strength |
 | **2** | A party's own statement — sworn filing, permit application, public-records response, on-record appearance — carried as *that party's characterization* | Solid line, lighter weight, "stated" marker |
 | **3** | An open question or unresolved reading: the relationship is asserted, incomplete, or contested, and the file says so | Dashed line, muted, "unresolved" marker |
-| **4** | Something `REPORT.md` § 12 expressly declines to claim | **Never drawn.** Listed in the "What this map does not claim" panel only |
+| **4** | Something the record expressly declines to claim | **Never drawn.** Listed in the "What this map does not claim" panel only |
 
 Tier 4 has no representation in `entities.yaml` or `relationships.yaml`. It lives in
 `map/data/non-claims.yaml` and reaches the UI as text, never as geometry.

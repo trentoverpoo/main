@@ -1,8 +1,8 @@
 # The interactive map
 
-A node-and-edge map of the entities, people, land and proceedings in
-[`REPORT.md`](../REPORT.md) — pannable, zoomable, filterable, searchable, and
-traceable to a document at every point.
+A node-and-edge map of the entities, people, land and proceedings on record
+here — pannable, zoomable, filterable, searchable, and traceable to a document
+at every point.
 
 **Open `map/index.html`.** Double-clicking it from disk works — no server, no build
 step, no network. Canvas rendering, plain classic scripts, and `d3-force` vendored
@@ -72,14 +72,14 @@ See [`SCHEMA.md`](SCHEMA.md) § "The live url" for the field contract.
 
 ## How well established
 
-The tiers mirror [`METHOD.md`](../METHOD.md)'s own standard.
+The tiers are the standard every line here is held to.
 
 | | | Drawn as |
 |---|---|---|
 | **1** | Stated in a primary document in `evidence/` | Solid line |
 | **2** | A party's own statement, or externally verified from a named public source | Solid, lighter |
 | **3** | An open question or unresolved reading the file tracks but does not settle | Dashed, muted, and it says what would resolve it |
-| **4** | Something `REPORT.md` § 12 expressly declines to claim | **Never drawn.** Text only, in "Not claimed" |
+| **4** | Something the record expressly declines to claim | **Never drawn.** Text only, in "Not claimed" |
 
 Tier 4 is the important one. A line on a map is an assertion; a paragraph is not.
 The readings the record does not support live in `data/non-claims.yaml` and reach
@@ -121,7 +121,7 @@ page is readable the moment it appears. It reads top to bottom —
 | **Public bodies, proceedings, utilities and adjacent land** | who has taken a position, and the ground next door |
 
 The bands are authored in [`data/taxonomy.yaml`](data/taxonomy.yaml), because
-which rung an entity stands on is a reading of `REPORT.md` and not something the
+which rung an entity stands on is a reading of the record and not something the
 edge list knows. **The build fails if an entity is placed twice or left out** —
 the same mechanical check that keeps the citations honest, applied to the thing
 a reader sees first. Within its course each name then settles towards the
@@ -187,7 +187,7 @@ map/
   data/
     taxonomy.yaml     categories, connection types, hue families, the opening hierarchy
     entities.yaml     nodes          ─┐
-    relationships.yaml edges          ├─ hand-authored from REPORT.md
+    relationships.yaml edges          ├─ hand-authored from the record
     non-claims.yaml   tier 4, text only ─┘
     graph.json        GENERATED — do not edit
     graph.js          GENERATED — the same data as a global, for file://
@@ -214,6 +214,5 @@ build/
    and where in that row it reads.
 4. `node build/build.mjs`. If it fails, it names the file and the field.
 
-The failure mode this guards against is the one
-[`METHOD.md`](../METHOD.md) documents in its own correction log: a claim that
-outlived the document it rested on. Here, that cannot survive a build.
+The failure mode this guards against is the ordinary one: a claim that outlived
+the document it rested on. Here, that cannot survive a build.

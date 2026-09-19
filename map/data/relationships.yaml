@@ -1235,6 +1235,122 @@
       label: Exhibit 1 — recitals
       date: 2026-08-10
 
+- source: nsi-a1
+  target: case-nsi-a1-v-springfield
+  type: legal
+  label: plaintiff
+  tier: 1
+  date: 2026-09-17
+  summary: >
+    Pleaded as "the applicant and project sponsor" for the Springfield project, the same
+    description it carries in the Wright County petition.
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition ¶11
+      date: 2026-09-17
+      excerpt: >
+        has served as the applicant and project sponsor for a proposed office and digital
+        infrastructure project at 2900 South National Avenue
+
+- source: city-of-springfield
+  target: case-nsi-a1-v-springfield
+  type: legal
+  label: defendant
+  tier: 1
+  date: 2026-09-18
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf
+      label: Summons issued, 2631-CC01131
+      date: 2026-09-18
+      excerpt: The State of Missouri to — CITY OF SPRINGFIELD, MISSOURI
+
+- source: chad-garrett-mann
+  target: case-nsi-a1-v-springfield
+  type: professional
+  label: counsel for the plaintiff
+  because: He signed the petition and the injunction motion himself.
+  tier: 1
+  date: 2026-09-17
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition — signature block
+      date: 2026-09-17
+      excerpt: The Law Office of Chad G. Mann, LLC — Missouri Bar No. 70213
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf
+      label: Summons — attorney for petitioner
+      date: 2026-09-18
+
+- source: case-nsi-a1-v-springfield
+  target: springfield-ordinance-28306
+  type: legal
+  label: challenges as void
+  because: >
+    On two independent grounds — that it is zoning enacted without the Chapter 89 notice and
+    hearing, and that it was not enacted in the form the Charter requires.
+  tier: 1
+  date: 2026-09-17
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition, Counts I–III
+      date: 2026-09-17
+      excerpt: >
+        Because the City did not strictly comply with the mandatory enactment procedures
+        applicable to zoning legislation, Ordinance 28306 is invalid and void ab initio.
+
+- source: city-of-springfield
+  target: springfield-ordinance-28306
+  type: legal
+  label: passed it 29 June 2026
+  tier: 2
+  date: 2026-06-29
+  summary: >
+    Filed as Council Bill 2026-147 on 16 June, first read 22 June, passed 29 June. The
+    petition alleges the file shows no Planning and Zoning Commission referral or report and
+    no zoning hearing on fifteen days' published notice.
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition ¶¶51, 96
+      date: 2026-09-17
+      excerpt: >
+        Council Bill 2026-147 was filed on June 16, 2026, received a first reading on June
+        22, 2026, and was passed on June 29, 2026 as Special Ordinance 28306.
+
+- source: springfield-ordinance-28306
+  target: site-springfield
+  type: legal
+  label: bars any application to establish the proposed use here
+  tier: 2
+  date: 2026-06-29
+  summary: >
+    The project's anticipated demand of about 9.9 MW crosses the ordinance's 5 MW test on
+    its own, so the moratorium reaches the site whatever share of floor area the computing
+    component takes.
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_plaintiffs-motion-for-expedited-hearing-and-preliminary-injunction.pdf
+      label: Motion ¶¶21–22
+      date: 2026-09-18
+      excerpt: >
+        Ordinance 28306 therefore reaches the Project through its independent electrical-
+        demand criterion even if computing functions are accessory by floor area.
+
+- source: city-utilities-springfield
+  target: site-springfield
+  type: legal
+  label: will not process the 9.9 MW electric-service application until 17 November
+  tier: 2
+  date: 2026-07-24
+  summary: >
+    Three weeks after the City's counsel said predevelopment review was the best mechanism
+    to keep working through the pause, City Utilities said it could take no application-
+    specific work at all, including work in progress, and offered general guidance only.
+  citations:
+    - doc: evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf
+      label: Verified petition ¶¶72, 79–81
+      date: 2026-09-17
+      excerpt: >
+        it could not process the Project's electric-service application identifying
+        anticipated demand of approximately 9.9 megawatts before November 17, 2026
+
 - source: trenton-overhue
   target: case-overhue-v-wiltse
   type: legal
@@ -1594,10 +1710,11 @@
     A MetaWest portfolio page naming any entity in this file, a current registration reviving
     the LLC, or capital-contribution records.
   citations:
-    - doc: archive/people-no-documented-connection/owens-ashton-other-ventures/2022-10-04_articles-of-organization_metawest-ventures-llc_LC014410313.pdf
+    - doc: evidence/03-entities/company/metawest-ventures-llc/2022-10-04_articles-of-organization_LC014410313.pdf
       label: Articles of organization LC014410313
       date: 2022-10-04
-    - doc: archive/prior-analysis/misc-resources/METAWEST Ventures — A Midwestern Investment Firm.html
+    - doc: evidence/03-entities/company/metawest-ventures-llc/public-materials/2026-09-17_metawestventures-com_saved-capture.html
+      date: 2026-09-17
       url: https://metawestventures.com/
       url_label: metawestventures.com — the site itself
       label: Saved capture — raw HTML nav links

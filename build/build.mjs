@@ -4,7 +4,7 @@
 // This script FAILS the build — it does not warn — when a citation points at a file
 // that is not in this repository, when a node or edge carries no citation, or when a
 // tier-3 edge does not say what would resolve it. That is the mechanical enforcement
-// of the standard in METHOD.md.
+// of the standard this file holds itself to.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, resolve, join } from 'node:path';
@@ -264,7 +264,7 @@ const liveUrlCount = allCites.filter((c) => c && c.url).length;
 const graph = {
   meta: {
     generated: new Date().toISOString().slice(0, 10),
-    source: 'REPORT.md, compiled from map/data/*.yaml',
+    source: 'Compiled from map/data/*.yaml',
     nodeCount: outNodes.length,
     edgeCount: outEdges.length,
     documentCount: docIndex.size,
