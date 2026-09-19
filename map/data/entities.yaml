@@ -21,7 +21,7 @@
     - doc: evidence/03-entities/company/nsi/nsi-investments-llc/kansas/AOO.pdf
       label: NSI Investments, LLC · Kansas articles of organization
       date: 2015-10-08
-      excerpt: 'Official mailing address: Trent Overhue.'
+      excerpt: Official mailing address — Trent Overhue.
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-07-13_inst-2026003834_deed-of-trust_oakstar-bank.pdf
       label: Deed of trust, Inst. 2026003834
       date: 2026-07-10
@@ -210,7 +210,7 @@
     - doc: evidence/03-entities/company/stn-incorporated/ca-sos-certified-copies/2026-07-22_statement-of-information_stn-one-incorporated.pdf
       label: Statement of information · STN One Incorporated
       date: 2026-07-22
-      excerpt: 'Sabur Mian, sole officer: Chief Executive Officer, Chief Financial Officer and Secretary'
+      excerpt: Sabur Mian, sole officer — Chief Executive Officer, Chief Financial Officer and Secretary
 
 - id: scott-foster
   name: Scott Foster
@@ -479,7 +479,7 @@
       label: Articles of organization LC014767606
       date: 2026-08-13
       excerpt: >
-        Purpose: real estate ownership and investment.' Principal office 1736 E Sunshine St
+        Purpose — real estate ownership and investment.' Principal office 1736 E Sunshine St
         Suite 304, Springfield.
 
 - id: nsi-a1
@@ -981,7 +981,7 @@
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf
       label: Summons, 26WR-CC00057
       date: 2026-08-28
-      excerpt: 'Plaintiff/Petitioner: PAYMENT 1 FINANCIAL MO LLC'
+      excerpt: Plaintiff/Petitioner — PAYMENT 1 FINANCIAL MO LLC
 
 - id: us-sba
   name: U.S. Small Business Administration
@@ -1102,7 +1102,7 @@
     - doc: evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf
       label: Boundary survey, Bk 1 Pg 1229 · adjoining owner
       date: 2026-02-12
-      excerpt: 'Adjoining owner to the northwest: Sho-Me Power Electric Cooperative (2015-5296)'
+      excerpt: Adjoining owner to the northwest — Sho-Me Power Electric Cooperative (2015-5296)
 
 - id: sho-me-technologies
   name: Sho-Me Technologies, L.L.C.
@@ -1138,7 +1138,7 @@
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png
       label: Benton County GIS · parcel 142009000001001002
-      excerpt: 'AQUILA INC., % KCP&L (Property Tax Dept), PO Box 41867, Kansas City: 4.5 acres'
+      excerpt: AQUILA INC., % KCP&L (Property Tax Dept), PO Box 41867, Kansas City — 4.5 acres
 
 - id: central-electric-cooperative
   name: Central Electric Power Cooperative
@@ -1155,7 +1155,7 @@
   citations:
     - doc: evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png
       label: Benton County GIS · parcel 142009000001001003
-      excerpt: 'CENTRAL ELECTRIC POWER COOPERATIVE, PO Box 269, 2106 Jefferson St., Jefferson City: 9 acres'
+      excerpt: CENTRAL ELECTRIC POWER COOPERATIVE, PO Box 269, 2106 Jefferson St., Jefferson City — 9 acres
 
 - id: city-utilities-springfield
   name: City Utilities of Springfield
@@ -1216,7 +1216,7 @@
       label: Pre-development review comments · Planning (Monica Pearcy)
       date: 2026-08-03
       excerpt: >
-        Update: It was determined that the proposed use does not align with the PD's
+        Update — It was determined that the proposed use does not align with the PD's
         permitted uses.
 
 - id: benton-county-commission
@@ -1268,7 +1268,7 @@
   date: 2026-07-18
   date_note: Responded to the smoke investigation at the site
   summary: >
-    Responded to the 18 July 2026 incident, classified it "Investigation - Smoke
+    Responded to the 18 July 2026 incident, classified it "Investigation — Smoke
     Investigation" under report 26-0992, and shut down Generator #3, causing a power loss to
     one server room. Its two Sunshine responses together establish one response in three
     months and none in August.
@@ -1308,7 +1308,7 @@
   date: 2026-07-18
   date_note: Call for service CFS2026021837 opened
   summary: >
-    Opened call CFS2026021837 at 20:38:22 on 18 July 2026, coded "FC - FIRE, COMMERCIAL
+    Opened call CFS2026021837 at 20:38:22 on 18 July 2026, coded "FC — FIRE, COMMERCIAL
     STRUCTURE," and closed it at 21:34:57 with the disposition "Complete – No fire at this
     location, everything back up and running."
   citations:
@@ -1406,7 +1406,7 @@
       label: Verified petition
       date: 2026-08-27
       excerpt: >
-        ¶15: is associated with a digital infrastructure facility located on Rifle Range
+        ¶15 — is associated with a digital infrastructure facility located on Rifle Range
         Road in or near Marshfield
     - doc: evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf
       label: Summons naming a different plaintiff

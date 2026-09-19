@@ -353,7 +353,7 @@ window.__GRAPH__ = {
      "doc": "evidence/03-entities/company/nsi/nsi-investments-llc/kansas/AOO.pdf",
      "label": "NSI Investments, LLC · Kansas articles of organization",
      "date": "2015-10-08",
-     "excerpt": "Official mailing address: Trent Overhue.",
+     "excerpt": "Official mailing address — Trent Overhue.",
      "url": null,
      "urlLabel": null
     },
@@ -727,7 +727,7 @@ window.__GRAPH__ = {
      "doc": "evidence/03-entities/company/stn-incorporated/ca-sos-certified-copies/2026-07-22_statement-of-information_stn-one-incorporated.pdf",
      "label": "Statement of information · STN One Incorporated",
      "date": "2026-07-22",
-     "excerpt": "Sabur Mian, sole officer: Chief Executive Officer, Chief Financial Officer and Secretary",
+     "excerpt": "Sabur Mian, sole officer — Chief Executive Officer, Chief Financial Officer and Secretary",
      "url": null,
      "urlLabel": null
     }
@@ -1297,7 +1297,7 @@ window.__GRAPH__ = {
      "doc": "evidence/03-entities/company/nsi/nsi-6-llc/2026-08-13_articles-of-organization_LC014767606.pdf",
      "label": "Articles of organization LC014767606",
      "date": "2026-08-13",
-     "excerpt": "Purpose: real estate ownership and investment.' Principal office 1736 E Sunshine St Suite 304, Springfield.\n",
+     "excerpt": "Purpose — real estate ownership and investment.' Principal office 1736 E Sunshine St Suite 304, Springfield.\n",
      "url": null,
      "urlLabel": null
     }
@@ -2304,7 +2304,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf",
      "label": "Summons, 26WR-CC00057",
      "date": "2026-08-28",
-     "excerpt": "Plaintiff/Petitioner: PAYMENT 1 FINANCIAL MO LLC",
+     "excerpt": "Plaintiff/Petitioner — PAYMENT 1 FINANCIAL MO LLC",
      "url": null,
      "urlLabel": null
     }
@@ -2564,7 +2564,7 @@ window.__GRAPH__ = {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf",
      "label": "Boundary survey, Bk 1 Pg 1229 · adjoining owner",
      "date": "2026-02-12",
-     "excerpt": "Adjoining owner to the northwest: Sho-Me Power Electric Cooperative (2015-5296)",
+     "excerpt": "Adjoining owner to the northwest — Sho-Me Power Electric Cooperative (2015-5296)",
      "url": null,
      "urlLabel": null
     }
@@ -2629,7 +2629,7 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1002_aquila-inc-substation.png",
      "label": "Benton County GIS · parcel 142009000001001002",
-     "excerpt": "AQUILA INC., % KCP&L (Property Tax Dept), PO Box 41867, Kansas City: 4.5 acres",
+     "excerpt": "AQUILA INC., % KCP&L (Property Tax Dept), PO Box 41867, Kansas City — 4.5 acres",
      "url": null,
      "urlLabel": null
     }
@@ -2661,7 +2661,7 @@ window.__GRAPH__ = {
     {
      "doc": "evidence/06-benton-county-site/parcel-records/benton-county-gis_adjoining-parcel-1003_central-electric-power-cooperative.png",
      "label": "Benton County GIS · parcel 142009000001001003",
-     "excerpt": "CENTRAL ELECTRIC POWER COOPERATIVE, PO Box 269, 2106 Jefferson St., Jefferson City: 9 acres",
+     "excerpt": "CENTRAL ELECTRIC POWER COOPERATIVE, PO Box 269, 2106 Jefferson St., Jefferson City — 9 acres",
      "url": null,
      "urlLabel": null
     }
@@ -2766,7 +2766,7 @@ window.__GRAPH__ = {
      "doc": "evidence/02-springfield-site/2026-08-03_PREDEV2026-00192_predevelopment-review-comments.pdf",
      "label": "Pre-development review comments · Planning (Monica Pearcy)",
      "date": "2026-08-03",
-     "excerpt": "Update: It was determined that the proposed use does not align with the PD's permitted uses.\n",
+     "excerpt": "Update — It was determined that the proposed use does not align with the PD's permitted uses.\n",
      "url": null,
      "urlLabel": null
     }
@@ -2865,7 +2865,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Responded to the smoke investigation at the site",
-   "summary": "Responded to the 18 July 2026 incident, classified it \"Investigation - Smoke Investigation\" under report 26-0992, and shut down Generator #3, causing a power loss to one server room. Its two Sunshine responses together establish one response in three months and none in August.",
+   "summary": "Responded to the 18 July 2026 incident, classified it \"Investigation — Smoke Investigation\" under report 26-0992, and shut down Generator #3, causing a power loss to one server room. Its two Sunshine responses together establish one response in three months and none in August.",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -2938,7 +2938,7 @@ window.__GRAPH__ = {
     "year": 2026
    },
    "dateNote": "Call for service CFS2026021837 opened",
-   "summary": "Opened call CFS2026021837 at 20:38:22 on 18 July 2026, coded \"FC - FIRE, COMMERCIAL STRUCTURE,\" and closed it at 21:34:57 with the disposition \"Complete – No fire at this location, everything back up and running.\"",
+   "summary": "Opened call CFS2026021837 at 20:38:22 on 18 July 2026, coded \"FC — FIRE, COMMERCIAL STRUCTURE,\" and closed it at 21:34:57 with the disposition \"Complete – No fire at this location, everything back up and running.\"",
    "caveat": null,
    "aliases": [],
    "citations": [
@@ -3113,7 +3113,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-27_verified-petition.pdf",
      "label": "Verified petition",
      "date": "2026-08-27",
-     "excerpt": "¶15: is associated with a digital infrastructure facility located on Rifle Range Road in or near Marshfield\n",
+     "excerpt": "¶15 — is associated with a digital infrastructure facility located on Rifle Range Road in or near Marshfield\n",
      "url": null,
      "urlLabel": null
     },
@@ -5492,7 +5492,7 @@ window.__GRAPH__ = {
      "doc": "evidence/01-marshfield-site/recorded-instruments/2026-03-27_book1-page1229_boundary-survey_ary-investments.pdf",
      "label": "Boundary survey, Bk 1 Pg 1229 · adjoining owner",
      "date": "2026-02-12",
-     "excerpt": "Adjoining owner to the northwest: Sho-Me Power Electric Cooperative (2015-5296)",
+     "excerpt": "Adjoining owner to the northwest — Sho-Me Power Electric Cooperative (2015-5296)",
      "url": null,
      "urlLabel": null
     }
@@ -6712,7 +6712,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-18_summons-issued_city-of-springfield.pdf",
      "label": "Summons issued, 2631-CC01131",
      "date": "2026-09-18",
-     "excerpt": "The State of Missouri to: CITY OF SPRINGFIELD, MISSOURI",
+     "excerpt": "The State of Missouri to — CITY OF SPRINGFIELD, MISSOURI",
      "url": null,
      "urlLabel": null
     }
@@ -6744,7 +6744,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/2631-CC01131_nsi-a1-v-city-of-springfield/2026-09-17_verified-petition-for-declaratory-and-injunctive-relief.pdf",
      "label": "Verified petition · signature block",
      "date": "2026-09-17",
-     "excerpt": "The Law Office of Chad G. Mann, LLC, Missouri Bar No. 70213",
+     "excerpt": "The Law Office of Chad G. Mann, LLC — Missouri Bar No. 70213",
      "url": null,
      "urlLabel": null
     },
@@ -7004,7 +7004,7 @@ window.__GRAPH__ = {
      "doc": "evidence/04-litigation/26WR-CC00057_overhue-and-nsi-a1-v-wiltse/2026-08-28_summons.pdf",
      "label": "Summons, 26WR-CC00057",
      "date": "2026-08-28",
-     "excerpt": "Plaintiff/Petitioner: PAYMENT 1 FINANCIAL MO LLC",
+     "excerpt": "Plaintiff/Petitioner — PAYMENT 1 FINANCIAL MO LLC",
      "url": null,
      "urlLabel": null
     }
